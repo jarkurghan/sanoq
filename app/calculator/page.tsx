@@ -108,7 +108,7 @@ export default function CalculatorPage() {
         const baseNum = Number.parseInt(base);
         const digits = [];
 
-        for (let i = 0; i < Math.min(baseNum, 10); i++) {
+        for (let i = 1; i < Math.min(baseNum, 10); i++) {
             digits.push(i.toString());
         }
 
@@ -131,9 +131,6 @@ export default function CalculatorPage() {
                 </div>
 
                 <div className="grid grid-cols-4 gap-2">
-                    <Button variant="outline" className="col-span-2" onClick={clearDisplay}>
-                        {t("calculator.clear")}
-                    </Button>
                     <Button variant="outline" onClick={() => performOperation("/")} className="text-primary">
                         ÷
                     </Button>
@@ -141,27 +138,53 @@ export default function CalculatorPage() {
                         ×
                     </Button>
 
-                    {/* Render available digits */}
-                    {digits.map((digit, index) => (
-                        <Button key={digit} variant="outline" onClick={() => inputDigit(digit)} className={digit >= "A" ? "bg-muted/50" : ""}>
-                            {digit}
-                        </Button>
-                    ))}
-
-                    {/* Fill remaining spaces if needed */}
-                    {Array.from({ length: Math.max(0, 12 - digits.length) }).map((_, index) => (
-                        <div key={`empty-${index}`}></div>
-                    ))}
-
                     <Button variant="outline" onClick={() => performOperation("-")} className="text-primary">
                         -
                     </Button>
                     <Button variant="outline" onClick={() => performOperation("+")} className="text-primary">
                         +
                     </Button>
-                    <Button variant="outline" onClick={handleEquals} className="col-span-2 bg-primary text-primary-foreground hover:bg-primary/90">
+                    <Button variant="outline" onClick={() => performOperation("+")} className="text-primary">
+                        ±
+                    </Button>
+                    <Button variant="outline" onClick={() => performOperation("+")} className="text-primary">
+                        1/x
+                    </Button>
+                    <Button variant="outline" onClick={() => performOperation("+")} className="text-primary">
+                        x²
+                    </Button>
+                    <Button variant="outline" onClick={() => performOperation("+")} className="text-primary">
+                        √x
+                    </Button>
+                    {/* <Button variant="outline" onClick={() => performOperation("+")} className="text-primary">
+                        x^y
+                    </Button> */}
+                    <Button variant="outline" onClick={() => performOperation("+")} className="text-primary">
+                        %
+                    </Button>
+                    <Button variant="outline" className="text-primary" onClick={clearDisplay}>
+                        {t("calculator.clear")}
+                    </Button>
+                    <Button variant="outline" onClick={handleEquals} className="col-span-2 text-primary">
                         =
                     </Button>
+                    {/* Render available digits */}
+                    {digits.map((digit, index) => (
+                        <Button key={digit} variant="outline" onClick={() => inputDigit(digit)} className={digit >= "A" ? "bg-muted/50" : ""}>
+                            {digit}
+                        </Button>
+                    ))}
+                    <Button key={"0"} variant="outline" onClick={() => inputDigit("0")} className={("0" >= "A" ? "bg-muted/50" : "") + "col-span-2"}>
+                        {"0"}
+                    </Button>
+                    <Button key={"."} variant="outline" onClick={() => inputDigit("0")} className={"col-span-1"}>
+                        {"."}
+                    </Button>
+
+                    {/* Fill remaining spaces if needed */}
+                    {Array.from({ length: Math.max(0, 12 - digits.length) }).map((_, index) => (
+                        <div key={`empty-${index}`}></div>
+                    ))}
                 </div>
             </div>
         );
@@ -262,14 +285,15 @@ export default function CalculatorPage() {
             <div className="flex-1 container py-4 max-w-6xl ml-0 lg:ml-64">
                 <h1 className="text-2xl font-bold mb-2">{t("calculator.title")}</h1>
                 <p className="text-sm text-muted-foreground mb-8">{t("calculator.description")}</p>
-
-                <Card>
-                    <CardHeader>
-                        <CardTitle>{getCalculatorTitle()}</CardTitle>
-                        <CardDescription>{getCalculatorDescription()}</CardDescription>
-                    </CardHeader>
-                    <CardContent>{renderCalculator()}</CardContent>
-                </Card>
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                    <Card>
+                        <CardHeader>
+                            {/* <CardTitle>{getCalculatorTitle()}</CardTitle>
+                            <CardDescription>{getCalculatorDescription()}</CardDescription> */}
+                        </CardHeader>
+                        <CardContent>{renderCalculator()}</CardContent>
+                    </Card>
+                </div>
             </div>
 
             {/* Right sidebar as part of the content */}
