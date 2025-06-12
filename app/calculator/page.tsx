@@ -1,12 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/language-context";
-import RightSidebarContent from "@/components/right-sidebar-content";
 import { useSearchParams } from "next/navigation";
 import { DEFAULT_NUMBER_SYSTEM, DEFAULT_CALCULATOR_TYPE } from "@/lib/constants";
+import StandartCalculator from "@/components/standart-calculator";
+import CalculatorText from "@/components/standart-calculator-info";
+import CalculatorRightSidebar from "@/components/calculator-right-sidebar";
 
 export default function CalculatorPage() {
     const { t } = useLanguage();
@@ -14,6 +16,7 @@ export default function CalculatorPage() {
 
     const base = searchParams.get("base") || DEFAULT_NUMBER_SYSTEM;
     const type = searchParams.get("type") || DEFAULT_CALCULATOR_TYPE;
+    const [digits, setDigits] = useState<string[]>([]);
 
     const [display, setDisplay] = useState("0");
     const [firstOperand, setFirstOperand] = useState<string | null>(null);
@@ -118,77 +121,14 @@ export default function CalculatorPage() {
             }
         }
 
-        return digits;
+        digits.push("0");
+
+        setDigits(digits);
     };
 
-    const renderStandardCalculator = () => {
-        const digits = getAvailableDigits();
-
-        return (
-            <div className="space-y-4">
-                <div className="border rounded-md p-4 text-right text-2xl font-mono h-16 flex items-center justify-end overflow-x-auto bg-muted/50">
-                    {display}
-                </div>
-
-                <div className="grid grid-cols-4 gap-2">
-                    <Button variant="outline" onClick={() => performOperation("/")} className="text-primary">
-                        ÷
-                    </Button>
-                    <Button variant="outline" onClick={() => performOperation("*")} className="text-primary">
-                        ×
-                    </Button>
-
-                    <Button variant="outline" onClick={() => performOperation("-")} className="text-primary">
-                        -
-                    </Button>
-                    <Button variant="outline" onClick={() => performOperation("+")} className="text-primary">
-                        +
-                    </Button>
-                    <Button variant="outline" onClick={() => performOperation("+")} className="text-primary">
-                        ±
-                    </Button>
-                    <Button variant="outline" onClick={() => performOperation("+")} className="text-primary">
-                        1/x
-                    </Button>
-                    <Button variant="outline" onClick={() => performOperation("+")} className="text-primary">
-                        x²
-                    </Button>
-                    <Button variant="outline" onClick={() => performOperation("+")} className="text-primary">
-                        √x
-                    </Button>
-                    {/* <Button variant="outline" onClick={() => performOperation("+")} className="text-primary">
-                        x^y
-                    </Button> */}
-                    <Button variant="outline" onClick={() => performOperation("+")} className="text-primary">
-                        %
-                    </Button>
-                    <Button variant="outline" className="text-primary" onClick={clearDisplay}>
-                        {t("calculator.clear")}
-                    </Button>
-                    <Button variant="outline" onClick={handleEquals} className="col-span-2 text-primary">
-                        =
-                    </Button>
-                    {/* Render available digits */}
-                    {digits.map((digit, index) => (
-                        <Button key={digit} variant="outline" onClick={() => inputDigit(digit)} className={digit >= "A" ? "bg-muted/50" : ""}>
-                            {digit}
-                        </Button>
-                    ))}
-                    <Button key={"0"} variant="outline" onClick={() => inputDigit("0")} className={("0" >= "A" ? "bg-muted/50" : "") + "col-span-2"}>
-                        {"0"}
-                    </Button>
-                    <Button key={"."} variant="outline" onClick={() => inputDigit("0")} className={"col-span-1"}>
-                        {"."}
-                    </Button>
-
-                    {/* Fill remaining spaces if needed */}
-                    {Array.from({ length: Math.max(0, 12 - digits.length) }).map((_, index) => (
-                        <div key={`empty-${index}`}></div>
-                    ))}
-                </div>
-            </div>
-        );
-    };
+    useEffect(() => {
+        getAvailableDigits();
+    }, [base]);
 
     const renderAdvancedCalculator = () => {
         return (
@@ -204,8 +144,6 @@ export default function CalculatorPage() {
     };
 
     const renderLogicalCalculator = () => {
-        const digits = getAvailableDigits();
-
         return (
             <div className="space-y-4">
                 <div className="border rounded-md p-4 text-right text-2xl font-mono h-16 flex items-center justify-end overflow-x-auto bg-muted/50">
@@ -247,28 +185,6 @@ export default function CalculatorPage() {
         );
     };
 
-    const getCalculatorTitle = () => {
-        switch (type) {
-            case "advanced":
-                return t("calculator.advanced.title");
-            case "logical":
-                return t("calculator.logical.title");
-            default:
-                return t("calculator.standard.title");
-        }
-    };
-
-    const getCalculatorDescription = () => {
-        switch (type) {
-            case "advanced":
-                return t("calculator.advanced.description");
-            case "logical":
-                return t("calculator.logical.description");
-            default:
-                return t("calculator.standard.description");
-        }
-    };
-
     const renderCalculator = () => {
         switch (type) {
             case "advanced":
@@ -276,29 +192,24 @@ export default function CalculatorPage() {
             case "logical":
                 return renderLogicalCalculator();
             default:
-                return renderStandardCalculator();
+                return <StandartCalculator clearDisplay={clearDisplay} base={base} />;
         }
     };
 
     return (
         <div className="flex">
-            <div className="flex-1 container py-4 max-w-6xl ml-0 lg:ml-64">
-                <h1 className="text-2xl font-bold mb-2">{t("calculator.title")}</h1>
-                <p className="text-sm text-muted-foreground mb-8">{t("calculator.description")}</p>
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <div className="flex-1 container py-4 max-w-7xl ml-0 lg:ml-64 px-2 sm:px-8 sm:grid grid-cols-[1fr_auto] gap-8 xl:gap-20">
+                <CalculatorText />
+                <div className="w-fit">
                     <Card>
-                        <CardHeader>
-                            {/* <CardTitle>{getCalculatorTitle()}</CardTitle>
-                            <CardDescription>{getCalculatorDescription()}</CardDescription> */}
-                        </CardHeader>
+                        <CardHeader className="pt-1" />
                         <CardContent>{renderCalculator()}</CardContent>
                     </Card>
                 </div>
             </div>
 
-            {/* Right sidebar as part of the content */}
             <div className="hidden lg:block">
-                <RightSidebarContent />
+                <CalculatorRightSidebar />
             </div>
         </div>
     );
