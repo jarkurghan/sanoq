@@ -1,7 +1,11 @@
 "use client"
 
 import Link from "next/link"
+<<<<<<< HEAD
 import { usePathname, useParams } from "next/navigation"
+=======
+import { usePathname } from "next/navigation"
+>>>>>>> 17bb9f410574f5eb3eb4b9fffd08d02e6bf61b1c
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Calculator, Code, Home, Info, BookOpen, Menu, X } from "lucide-react"
@@ -10,6 +14,7 @@ import { useLanguage } from "@/contexts/language-context"
 import LanguageSwitcher from "@/components/language-switcher"
 import ThemeToggle from "@/components/theme-toggle"
 
+<<<<<<< HEAD
 export default function Navbar() {
   const pathname = usePathname()
   const params = useParams()
@@ -25,11 +30,30 @@ export default function Navbar() {
     { name: "nav.about", href: `/${lang}/about`, icon: Info },
   ]
 
+=======
+const navItems = [
+  { name: "nav.conversion", href: "/", icon: Home },
+  { name: "nav.education", href: "/education", icon: BookOpen },
+  { name: "nav.calculator", href: "/calculator", icon: Calculator },
+  { name: "nav.code", href: "/code", icon: Code },
+  { name: "nav.about", href: "/about", icon: Info },
+]
+
+export default function Navbar() {
+  const pathname = usePathname()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { t } = useLanguage()
+
+>>>>>>> 17bb9f410574f5eb3eb4b9fffd08d02e6bf61b1c
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="px-4 md:px-8 lg:px-12 w-full flex h-14 items-center">
         <div className="flex items-center space-x-8">
+<<<<<<< HEAD
           <Link href={`/${lang}`} className="flex items-center space-x-2">
+=======
+          <Link href="/" className="flex items-center space-x-2">
+>>>>>>> 17bb9f410574f5eb3eb4b9fffd08d02e6bf61b1c
             <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-primary-foreground">
               <Calculator className="h-5 w-5" />
             </div>
@@ -79,7 +103,11 @@ export default function Navbar() {
           <div className="fixed inset-0 bg-background">
             {/* Header with close button */}
             <div className="flex items-center justify-between p-4 border-b">
+<<<<<<< HEAD
               <Link href={`/${lang}`} className="flex items-center space-x-2" onClick={() => setMobileMenuOpen(false)}>
+=======
+              <Link href="/" className="flex items-center space-x-2" onClick={() => setMobileMenuOpen(false)}>
+>>>>>>> 17bb9f410574f5eb3eb4b9fffd08d02e6bf61b1c
                 <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-primary-foreground">
                   <Calculator className="h-5 w-5" />
                 </div>

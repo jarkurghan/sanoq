@@ -1,7 +1,11 @@
 "use client"
 
 import Link from "next/link"
+<<<<<<< HEAD
 import { usePathname, useParams } from "next/navigation"
+=======
+import { usePathname } from "next/navigation"
+>>>>>>> 17bb9f410574f5eb3eb4b9fffd08d02e6bf61b1c
 import { cn } from "@/lib/utils"
 import { ChevronRight } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
@@ -28,17 +32,28 @@ const sidebarMenus = {
 
 export default function GlobalSidebar() {
   const pathname = usePathname()
+<<<<<<< HEAD
   const params = useParams()
   const lang = (params.lang as string) || "uz"
+=======
+>>>>>>> 17bb9f410574f5eb3eb4b9fffd08d02e6bf61b1c
   const { t } = useLanguage()
 
   // Determine which sidebar to show based on current path
   const getCurrentSidebar = () => {
+<<<<<<< HEAD
     if (pathname.includes("/education")) {
       return { items: sidebarMenus.education, basePath: `/${lang}/education` }
     }
     if (pathname.includes("/code")) {
       return { items: sidebarMenus.code, basePath: `/${lang}/code` }
+=======
+    if (pathname.startsWith("/education")) {
+      return { items: sidebarMenus.education, basePath: "/education" }
+    }
+    if (pathname.startsWith("/code")) {
+      return { items: sidebarMenus.code, basePath: "/code" }
+>>>>>>> 17bb9f410574f5eb3eb4b9fffd08d02e6bf61b1c
     }
     return null
   }

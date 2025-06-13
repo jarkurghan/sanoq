@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+<<<<<<< HEAD
     "dev": "next dev",
+=======
+    "dev": "next dev --turbopack",
+>>>>>>> 17bb9f410574f5eb3eb4b9fffd08d02e6bf61b1c
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -64,7 +68,11 @@
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+<<<<<<< HEAD
     "postcss": "^8.5",
+=======
+    "postcss": "^8",
+>>>>>>> 17bb9f410574f5eb3eb4b9fffd08d02e6bf61b1c
     "tailwindcss": "^3.4.17",
     "typescript": "^5"
   }
