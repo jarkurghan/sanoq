@@ -136,7 +136,6 @@ const translations: Record<Language, Record<string, string>> = {
     "calculator.title": "Number System Calculator",
     "calculator.description": "Perform calculations in different number systems.",
     "calculator.standard.title": "Standard Calculator",
-<<<<<<< HEAD
     "calculator.standard.description":
       "Simple and intuitive interface designed for everyday calculations, easy and convenient to use. Allows you to perform basic arithmetic operations quickly and accurately.",
     "calculator.basic.features": "Basic features:",
@@ -146,9 +145,6 @@ const translations: Record<Language, Record<string, string>> = {
     "calculator.square.root": "Square and root:",
     "calculator.clear.delete": "Clear and delete buttons:",
     "calculator.decimal.numbers": "Working with decimal numbers:",
-=======
-    "calculator.standard.description": "Perform basic arithmetic operations in different number systems.",
->>>>>>> 17bb9f410574f5eb3eb4b9fffd08d02e6bf61b1c
     "calculator.advanced.title": "Advanced Calculator",
     "calculator.advanced.description": "Advanced mathematical operations and functions.",
     "calculator.logical.title": "Logical Calculator",
@@ -161,7 +157,6 @@ const translations: Record<Language, Record<string, string>> = {
     "calculator.clear": "Clear",
 
     // calculator info
-<<<<<<< HEAD
     "calculator.info.description.10":
       "is a positional number system naturally used by humans, based on 10 digits. Used in most calculators, user interfaces, and all areas of mathematics",
     "calculator.info.description.2":
@@ -396,43 +391,6 @@ const translations: Record<Language, Record<string, string>> = {
       "When pentatrigesimal number system is selected, this calculator performs calculations according to the pentatrigesimal number system",
     "calculator.info.warning.36":
       "When hexatrigesimal number system is selected, this calculator performs calculations according to the hexatrigesimal number system",
-=======
-    "calculator.info.description.10": "Clear",
-    "calculator.info.description.2": "Clear",
-    "calculator.info.description.8": "Clear",
-    "calculator.info.description.16": "Clear",
-    "calculator.info.description.3": "Clear",
-    "calculator.info.description.4": "Clear",
-    "calculator.info.description.5": "Clear",
-    "calculator.info.description.6": "Clear",
-    "calculator.info.description.7": "Clear",
-    "calculator.info.description.9": "Clear",
-    "calculator.info.description.11": "Clear",
-    "calculator.info.description.12": "Clear",
-    "calculator.info.description.13": "Clear",
-    "calculator.info.description.14": "Clear",
-    "calculator.info.description.15": "Clear",
-    "calculator.info.description.17": "Clear",
-    "calculator.info.description.18": "Clear",
-    "calculator.info.description.19": "Clear",
-    "calculator.info.description.20": "Clear",
-    "calculator.info.description.21": "Clear",
-    "calculator.info.description.22": "Clear",
-    "calculator.info.description.23": "Clear",
-    "calculator.info.description.24": "Clear",
-    "calculator.info.description.25": "Clear",
-    "calculator.info.description.26": "Clear",
-    "calculator.info.description.27": "Clear",
-    "calculator.info.description.28": "Clear",
-    "calculator.info.description.29": "Clear",
-    "calculator.info.description.30": "Clear",
-    "calculator.info.description.31": "Clear",
-    "calculator.info.description.32": "Clear",
-    "calculator.info.description.33": "Clear",
-    "calculator.info.description.34": "Clear",
-    "calculator.info.description.35": "Clear",
-    "calculator.info.description.36": "Clear",
->>>>>>> 17bb9f410574f5eb3eb4b9fffd08d02e6bf61b1c
 
     // Code page
     "code.title": "Number Systems Code",
@@ -575,7 +533,6 @@ const translations: Record<Language, Record<string, string>> = {
     "calculator.description": "Turli sanoq sistemalarida hisob-kitoblarni bajaring.",
     "calculator.standard.title": "Standart Kalkulyator",
     "calculator.standard.description": "Turli sanoq sistemalarida asosiy arifmetik amallarni bajaring.",
-<<<<<<< HEAD
     "calculator.basic.features": "Asosiy imkoniyatlar:",
     "calculator.arithmetic": "Arifmetik amallar:",
     "calculator.sign.change": "Ishora o'zgartirish va teskari son:",
@@ -583,8 +540,6 @@ const translations: Record<Language, Record<string, string>> = {
     "calculator.square.root": "Kvadrat va ildiz:",
     "calculator.clear.delete": "Tozalash va o'chirish tugmalari:",
     "calculator.decimal.numbers": "O'nlik sonlar bilan ishlash:",
-=======
->>>>>>> 17bb9f410574f5eb3eb4b9fffd08d02e6bf61b1c
     "calculator.advanced.title": "Ilg'or Kalkulyator",
     "calculator.advanced.description": "Ilg'or matematik amallar va funksiyalar.",
     "calculator.logical.title": "Mantiqiy Kalkulyator",
@@ -597,7 +552,6 @@ const translations: Record<Language, Record<string, string>> = {
     "calculator.clear": "Tozalash",
 
     // calculator info
-<<<<<<< HEAD
     "calculator.info.description.10":
       "bu insonlar tomonidan tabiiy foydalaniladigan, 10 ta raqamga asoslangan pozitsion sanoq sistemasi. Ko‘pchilik kalkulyatorlar, foydalanuvchi interfeyslari va matematikaning barcha sohalarida ishlatiladi",
     "calculator.info.description.2":
@@ -668,44 +622,6 @@ const translations: Record<Language, Record<string, string>> = {
     "calculator.info.description.36":
       "bu 36 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
 
-=======
-    "calculator.info.description.10": "bu insonlar tomonidan tabiiy foydalaniladigan, 10 ta raqamga asoslangan pozitsion sanoq sistemasi. Ko‘pchilik kalkulyatorlar, foydalanuvchi interfeyslari va matematikaning barcha sohalarida ishlatiladi",
-    "calculator.info.description.2": "bu 2 ta raqamga asoslangan pozitsion sanoq sistemasi. Kompyuterlarning asosiy ishlash prinsipi shu sanoq sistemasiga asoslangan: xotira, protsessor, fayllar, elektr signallar va hokazo",
-    "calculator.info.description.8": "bu 8 ta raqamga asoslangan pozitsion sanoq sistemasi. Ba'zi joylarda ishlatiladi",
-    "calculator.info.description.16": "bu 16 ta raqamga asoslangan pozitsion sanoq sistemasi. Kompyuter texnologiyasi, xotira manzillari, rang kodlari (CSS), bit operatsiyalar, assembler va debugging uchun ishlatiladi",
-    "calculator.info.description.3": "bu 3 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.4": "bu 4 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.5": "bu 5 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.6": "bu 6 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.7": "bu 7 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.9": "bu 9 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.11": "bu 11 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.12": "bu 12 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.13": "bu 13 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.14": "bu 14 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.15": "bu 15 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.17": "bu 17 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.18": "bu 18 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.19": "bu 19 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.20": "bu 20 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.21": "bu 21 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.22": "bu 22 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.23": "bu 23 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.24": "bu 24 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi, biroq bu sanoq sistemasini soat misolida ko'rish mumkin",
-    "calculator.info.description.25": "bu 25 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.26": "bu 26 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.27": "bu 27 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.28": "bu 28 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.29": "bu 29 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.30": "bu 30 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.31": "bu 31 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.32": "bu 32 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.33": "bu 33 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.34": "bu 34 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.35": "bu 35 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-    "calculator.info.description.36": "bu 36 ta raqamga asoslangan pozitsion sanoq sistemasi. Zamonaviy dunyoda deyarli ishlatilmaydi",
-   
->>>>>>> 17bb9f410574f5eb3eb4b9fffd08d02e6bf61b1c
     "calculator.info.title.10": "O'nlik sanoq sistemasi",
     "calculator.info.title.2": "Ikkilik sanoq sistemasi",
     "calculator.info.title.8": "Sakkizlik sanoq sistemasi",
@@ -745,19 +661,14 @@ const translations: Record<Language, Record<string, string>> = {
     "calculator.info.digits.10": "O'nlik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, 0",
     "calculator.info.digits.2": "Ikkilik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 0",
     "calculator.info.digits.8": "Sakkizlik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 0",
-<<<<<<< HEAD
     "calculator.info.digits.16":
       "O'n oltilik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, 0. Bu yerda: 0–9 odatdagi raqamlar, A–F esa mos ravishda 10–15 qiymatlarini anglatadi",
-=======
-    "calculator.info.digits.16": "O'n oltilik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, 0. Bu yerda: 0–9 odatdagi raqamlar, A–F esa mos ravishda 10–15 qiymatlarini anglatadi",
->>>>>>> 17bb9f410574f5eb3eb4b9fffd08d02e6bf61b1c
     "calculator.info.digits.3": "Uchlik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 0",
     "calculator.info.digits.4": "To'rtlik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 0",
     "calculator.info.digits.5": "Beshlik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 0",
     "calculator.info.digits.6": "Oltilik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 0",
     "calculator.info.digits.7": "Yettilik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 0",
     "calculator.info.digits.9": "Ikkilik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 0",
-<<<<<<< HEAD
     "calculator.info.digits.11":
       "O'n birlik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, 0. Bu yerda: 0–9 odatdagi raqamlar, A esa 10 qiymatini anglatadi",
     "calculator.info.digits.12":
@@ -863,69 +774,6 @@ const translations: Record<Language, Record<string, string>> = {
       "O'ttiz beshlik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni o'ttiz beshlik sanoq sistemasi bo'yicha bajaradi",
     "calculator.info.warning.36":
       "O'ttiz oltilik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni o'ttiz oltilik sanoq sistemasi bo'yicha bajaradi",
-=======
-    "calculator.info.digits.11": "O'n birlik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, 0. Bu yerda: 0–9 odatdagi raqamlar, A esa 10 qiymatini anglatadi",
-    "calculator.info.digits.12": "O'n ikkilik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, 0. Bu yerda: 0–9 odatdagi raqamlar, A–B esa mos ravishda 10–11 qiymatlarini anglatadi",
-    "calculator.info.digits.13": "O'n uchlik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, 0. Bu yerda: 0–9 odatdagi raqamlar, A–C esa mos ravishda 10–12 qiymatlarini anglatadi",
-    "calculator.info.digits.14": "O'n to'rtlik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, 0. Bu yerda: 0–9 odatdagi raqamlar, A–D esa mos ravishda 10–13 qiymatlarini anglatadi",
-    "calculator.info.digits.15": "O'n beshlik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, 0. Bu yerda: 0–9 odatdagi raqamlar, A–E esa mos ravishda 10–14 qiymatlarini anglatadi",
-    "calculator.info.digits.17": "O'n yettilik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, 0. Bu yerda: 0–9 odatdagi raqamlar, A–G esa mos ravishda 10–16 qiymatlarini anglatadi",
-    "calculator.info.digits.18": "O'n sakkizlik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, 0. Bu yerda: 0–9 odatdagi raqamlar, A–H esa mos ravishda 10–17 qiymatlarini anglatadi",
-    "calculator.info.digits.19": "O'n to'qqizlik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, 0. Bu yerda: 0–9 odatdagi raqamlar, A–I esa mos ravishda 10–18 qiymatlarini anglatadi",
-    "calculator.info.digits.20": "Yigirmalik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, J, 0. Bu yerda: 0–9 odatdagi raqamlar, A–J esa mos ravishda 10–19 qiymatlarini anglatadi",
-    "calculator.info.digits.21": "Yigirma birlik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, J, K, 0. Bu yerda: 0–9 odatdagi raqamlar, A–K esa mos ravishda 10–20 qiymatlarini anglatadi",
-    "calculator.info.digits.22": "Yigirma ikkilik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, J, K, L, 0. Bu yerda: 0–9 odatdagi raqamlar, A–L esa mos ravishda 10–21 qiymatlarini anglatadi",
-    "calculator.info.digits.23": "Yigirma uchlik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, J, K, L, M, 0. Bu yerda: 0–9 odatdagi raqamlar, A–M esa mos ravishda 10–22 qiymatlarini anglatadi",
-    "calculator.info.digits.24": "Yigirma to'rtlik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, J, K, L, M, N, 0. Bu yerda: 0–9 odatdagi raqamlar, A–N esa mos ravishda 10–23 qiymatlarini anglatadi",
-    "calculator.info.digits.25": "Yigirma beshlik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, 0. Bu yerda: 0–9 odatdagi raqamlar, A–O esa mos ravishda 10–24 qiymatlarini anglatadi",
-    "calculator.info.digits.26": "Yigirma oltilik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, 0. Bu yerda: 0–9 odatdagi raqamlar, A–P esa mos ravishda 10–25 qiymatlarini anglatadi",
-    "calculator.info.digits.27": "Yigirma yettilik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, 0. Bu yerda: 0–9 odatdagi raqamlar, A–Q esa mos ravishda 10–26 qiymatlarini anglatadi",
-    "calculator.info.digits.28": "Yigirma sakkizlik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, 0. Bu yerda: 0–9 odatdagi raqamlar, A–R esa mos ravishda 10–27 qiymatlarini anglatadi",
-    "calculator.info.digits.29": "Yigirma to'qqizlik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, 0. Bu yerda: 0–9 odatdagi raqamlar, A–S esa mos ravishda 10–28 qiymatlarini anglatadi",
-    "calculator.info.digits.30": "O'ttizlik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, 0. Bu yerda: 0–9 odatdagi raqamlar, A–T esa mos ravishda 10–29 qiymatlarini anglatadi",
-    "calculator.info.digits.31": "O'ttiz birlik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, 0. Bu yerda: 0–9 odatdagi raqamlar, A–U esa mos ravishda 10–30 qiymatlarini anglatadi",
-    "calculator.info.digits.32": "O'ttiz ikkilik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, 0. Bu yerda: 0–9 odatdagi raqamlar, A–V esa mos ravishda 10–31 qiymatlarini anglatadi",
-    "calculator.info.digits.33": "O'ttiz uchlik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, 0. Bu yerda: 0–9 odatdagi raqamlar, A–W esa mos ravishda 10–32 qiymatlarini anglatadi",
-    "calculator.info.digits.34": "O'ttiz to'rtlik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, 0. Bu yerda: 0–9 odatdagi raqamlar, A–X esa mos ravishda 10–33 qiymatlarini anglatadi",
-    "calculator.info.digits.35": "O'ttiz beshlik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, 0. Bu yerda: 0–9 odatdagi raqamlar, A–Y esa mos ravishda 10–34 qiymatlarini anglatadi",
-    "calculator.info.digits.36": "O'ttiz oltilik sanoq sistemasida quyidagi raqamlar ishlatiladi: 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, 0. Bu yerda: 0–9 odatdagi raqamlar, A–Z esa mos ravishda 10–35 qiymatlarini anglatadi",
-
-    "calculator.info.warning.10": "",
-    "calculator.info.warning.2": "Ikkilik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni ikkilik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.8": "Sakkizlik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni sakkizlik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.16": "O'n oltilik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni o'n oltilik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.3": "Uchlik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni uchlik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.4": "To'rtlik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni to'rtlik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.5": "Beshlik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni beshlik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.6": "Oltilik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni oltilik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.7": "Yettilik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni yettilik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.9": "To'qqizlik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni to'qqizlik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.11": "O'n birlik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni o'n birlik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.12": "O'n ikkilik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni o'n ikkilik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.13": "O'n uchlik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni o'n uchlik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.14": "O'n to'rtlik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni o'n to'rtlik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.15": "O'n beshlik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni o'n beshlik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.17": "O'n yettilik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni o'n yettilik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.18": "O'n sakkizlik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni o'n sakkizlik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.19": "O'n to'qqizlik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni o'n to'qqizlik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.20": "Yigirmalik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni yigirmalik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.21": "Yigirma birlik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni yigirma birlik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.22": "Yigirma ikkilik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni yigirma ikkilik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.23": "Yigirma uchlik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni yigirma uchlik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.24": "Yigirma to'rtlik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni yigirma to'rtlik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.25": "Yigirma beshlik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni yigirma beshlik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.26": "Yigirma oltilik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni yigirma oltilik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.27": "Yigirma yettilik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni yigirma yettilik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.28": "Yigirma sakkizlik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni yigirma sakkizlik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.29": "Yigirma to'qqizlik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni yigirma to'qqizlik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.30": "O'ttizlik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni o'ttizlik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.31": "O'ttiz birlik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni o'ttiz birlik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.32": "O'ttiz ikkilik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni o'ttiz ikkilik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.33": "O'ttiz uchlik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni o'ttiz uchlik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.34": "O'ttiz to'rtlik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni o'ttiz to'rtlik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.35": "O'ttiz beshlik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni o'ttiz beshlik sanoq sistemasi bo'yicha bajaradi",
-    "calculator.info.warning.36": "O'ttiz oltilik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni o'ttiz oltilik sanoq sistemasi bo'yicha bajaradi",
->>>>>>> 17bb9f410574f5eb3eb4b9fffd08d02e6bf61b1c
 
     // Code page
     "code.title": "Sanoq Sistemalari Kodi",
@@ -1067,7 +915,6 @@ const translations: Record<Language, Record<string, string>> = {
     "calculator.title": "Калькулятор Систем Счисления",
     "calculator.description": "Выполняйте вычисления в различных системах счисления.",
     "calculator.standard.title": "Стандартный Калькулятор",
-<<<<<<< HEAD
     "calculator.standard.description":
       "Простой и интуитивно понятный интерфейс, предназначенный для повседневных вычислений, легкий и удобный в использовании. Позволяет быстро и точно выполнять основные арифметические операции.",
     "calculator.basic.features": "Основные возможности:",
@@ -1077,9 +924,6 @@ const translations: Record<Language, Record<string, string>> = {
     "calculator.square.root": "Квадрат и корень:",
     "calculator.clear.delete": "Кнопки очистки и удаления:",
     "calculator.decimal.numbers": "Работа с десятичными числами:",
-=======
-    "calculator.standard.description": "Выполняйте основные арифметические операции в различных системах счисления.",
->>>>>>> 17bb9f410574f5eb3eb4b9fffd08d02e6bf61b1c
     "calculator.advanced.title": "Продвинутый Калькулятор",
     "calculator.advanced.description": "Продвинутые математические операции и функции.",
     "calculator.logical.title": "Логический Калькулятор",
@@ -1091,7 +935,6 @@ const translations: Record<Language, Record<string, string>> = {
     "calculator.type.logical": "Логический",
     "calculator.clear": "Очистить",
 
-<<<<<<< HEAD
     // calculator info for Russian (add missing ones)
     "calculator.info.description.10":
       "это позиционная система счисления, естественно используемая людьми, основанная на 10 цифрах. Используется в большинстве калькуляторов, пользовательских интерфейсах и всех областях математики",
@@ -1336,8 +1179,6 @@ const translations: Record<Language, Record<string, string>> = {
     "calculator.info.warning.36":
       "При выборе тридцать шесть системы счисления данный калькулятор выполняет вычисления согласно тридцать шесть системе счисления",
 
-=======
->>>>>>> 17bb9f410574f5eb3eb4b9fffd08d02e6bf61b1c
     // Code page
     "code.title": "Код Систем Счисления",
     "code.description": "Примеры программирования и фрагменты кода для работы с системами счисления.",

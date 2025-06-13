@@ -4,10 +4,7 @@ import { useLanguage } from "@/contexts/language-context"
 import { Button } from "@/components/ui/button"
 import { Check, Globe } from "lucide-react"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-<<<<<<< HEAD
 import { useRouter, usePathname, useParams } from "next/navigation"
-=======
->>>>>>> 17bb9f410574f5eb3eb4b9fffd08d02e6bf61b1c
 
 const languages = [
   { code: "en", name: "English" },
@@ -17,7 +14,6 @@ const languages = [
 
 export default function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage()
-<<<<<<< HEAD
   const router = useRouter()
   const pathname = usePathname()
   const params = useParams()
@@ -33,8 +29,6 @@ export default function LanguageSwitcher() {
     const newPath = `/${newLang}${pathWithoutLang}`
     router.push(newPath)
   }
-=======
->>>>>>> 17bb9f410574f5eb3eb4b9fffd08d02e6bf61b1c
 
   return (
     <DropdownMenu>
@@ -48,11 +42,7 @@ export default function LanguageSwitcher() {
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
-<<<<<<< HEAD
             onClick={() => handleLanguageChange(lang.code)}
-=======
-            onClick={() => setLanguage(lang.code as "en" | "uz" | "ru")}
->>>>>>> 17bb9f410574f5eb3eb4b9fffd08d02e6bf61b1c
             className="flex items-center justify-between"
           >
             {lang.name}

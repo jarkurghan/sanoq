@@ -40,34 +40,6 @@ export default function AboutPage() {
 
           <Card>
             <CardHeader>
-<<<<<<< HEAD
-=======
-              <CardTitle>{t("about.team.title")}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid gap-6 md:grid-cols-2">
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-24 h-24 rounded-full bg-muted mb-4 flex items-center justify-center text-2xl font-bold">
-                    JS
-                  </div>
-                  <h3 className="text-lg font-semibold">John Smith</h3>
-                  <p className="text-sm text-muted-foreground">Lead Developer</p>
-                </div>
-
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-24 h-24 rounded-full bg-muted mb-4 flex items-center justify-center text-2xl font-bold">
-                    AD
-                  </div>
-                  <h3 className="text-lg font-semibold">Alice Davis</h3>
-                  <p className="text-sm text-muted-foreground">Mathematics Specialist</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
->>>>>>> 17bb9f410574f5eb3eb4b9fffd08d02e6bf61b1c
               <CardTitle>{t("about.contact.title")}</CardTitle>
             </CardHeader>
             <CardContent>
