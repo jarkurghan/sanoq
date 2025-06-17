@@ -5,20 +5,20 @@ const locales = ["en", "uz", "ru"]
 const defaultLocale = "uz"
 
 function getLocale(request: NextRequest) {
-  // Check if there is any supported locale in the pathname
+  // Pathname ichida qo'llab-quvvatlanadigan locale bor-yo'qligini tekshiradi
   const pathname = request.nextUrl.pathname
   const pathnameIsMissingLocale = locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
   )
 
-  // Redirect if there is no locale
+  // Agar locale yo'q bo'lsa, yo'naltirish amalga oshiriladi
   if (pathnameIsMissingLocale) {
-    // Get the preferred locale from Accept-Language header
+    // Accept-Language header orqali foydalanuvchining afzal tilini aniqlash
     const acceptLanguage = request.headers.get("accept-language")
     let locale = defaultLocale
 
     if (acceptLanguage) {
-      // Simple locale detection from Accept-Language header
+      // Accept-Language header orqali oddiy locale aniqlash
       for (const supportedLocale of locales) {
         if (acceptLanguage.includes(supportedLocale)) {
           locale = supportedLocale
@@ -36,12 +36,17 @@ function getLocale(request: NextRequest) {
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
-  // Check if the pathname is missing a locale
+  // Istisno: "/uz/publications/binary" uchun lang prefix tekshiruvi o'tkazilmaydi
+  if (pathname.startsWith(`/uz/info/`) || pathname.startsWith(`/en/info/`) || pathname.startsWith(`/ru/info/`)) {
+    return NextResponse.next()
+  }
+
+  // Pathname da locale yo'qligini tekshiradi
   const pathnameIsMissingLocale = locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
   )
 
-  // Redirect if there is no locale
+  // Agar locale yo'q bo'lsa, yo'naltirish amalga oshiriladi
   if (pathnameIsMissingLocale) {
     const locale = getLocale(request)
     return NextResponse.redirect(new URL(`/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`, request.url))
@@ -49,6 +54,6 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // Matcher ignoring `/_next/` and `/api/`
+  // Matcher: `/_next/` va `/api/` ni inkor qiladi
   matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
 }

@@ -5,17 +5,11 @@ import { usePathname, useParams } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { ChevronRight } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
+import { PUBLICATIONS } from "@/lib/publications"
 
 // Static sidebar menus
 const sidebarMenus = {
-  education: [
-    { title: "education.topic.binary", href: "binary" },
-    { title: "education.topic.octal", href: "octal" },
-    { title: "education.topic.decimal", href: "decimal" },
-    { title: "education.topic.hexadecimal", href: "hexadecimal" },
-    { title: "education.topic.conversions", href: "conversions" },
-    { title: "education.topic.history", href: "history" },
-  ],
+  publications: PUBLICATIONS,
   code: [
     { title: "code.topic.binarytodecimal", href: "binary-to-decimal" },
     { title: "code.topic.decimaltobinary", href: "decimal-to-binary" },
@@ -34,8 +28,17 @@ export default function GlobalSidebar() {
 
   // Determine which sidebar to show based on current path
   const getCurrentSidebar = () => {
-    if (pathname.includes("/education")) {
-      return { items: sidebarMenus.education, basePath: `/${lang}/education` }
+    if (pathname.includes("/publications")) {
+      return { items: sidebarMenus.publications, basePath: `/${lang}/publications` }
+    }
+    if (pathname.includes("/ru/info")) {
+      return { items: sidebarMenus.publications, basePath: `/${lang}/publications` }
+    }
+    if (pathname.includes("/uz/info")) {
+      return { items: sidebarMenus.publications, basePath: `/${lang}/publications` }
+    }
+    if (pathname.includes("/en/info")) {
+      return { items: sidebarMenus.publications, basePath: `/${lang}/publications` }
     }
     if (pathname.includes("/code")) {
       return { items: sidebarMenus.code, basePath: `/${lang}/code` }
@@ -61,7 +64,7 @@ export default function GlobalSidebar() {
                 return (
                   <li key={item.href}>
                     <Link
-                      href={`${basePath}/${item.href}`}
+                      href={item.href}
                       className={cn(
                         "flex items-center px-3 py-2 text-sm rounded-md transition-colors hover:bg-accent",
                         isActive ? "bg-accent text-accent-foreground font-medium" : "text-muted-foreground",

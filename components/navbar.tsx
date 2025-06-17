@@ -19,8 +19,8 @@ export default function Navbar() {
 
   const navItems = [
     { name: "nav.conversion", href: `/${lang}`, icon: Home },
-    { name: "nav.education", href: `/${lang}/education`, icon: BookOpen },
     { name: "nav.calculator", href: `/${lang}/calculator`, icon: Calculator },
+    { name: "nav.publications", href: `/${lang}/publications`, icon: BookOpen },
     { name: "nav.code", href: `/${lang}/code`, icon: Code },
     { name: "nav.about", href: `/${lang}/about`, icon: Info },
   ]

@@ -43,4 +43,5 @@ export const CALCULATOR_TYPES = [
 ] as const
 
 export const DEFAULT_NUMBER_SYSTEM = "10"
+export const DEFAULT_TWICE_NUMBER_SYSTEM = "2"
 export const DEFAULT_CALCULATOR_TYPE = "standard"

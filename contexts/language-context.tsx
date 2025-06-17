@@ -50,7 +50,7 @@ const translations: Record<Language, Record<string, string>> = {
   en: {
     // Navigation
     "nav.conversion": "Conversion",
-    "nav.education": "Education",
+    "nav.publications": "Publications",
     "nav.calculator": "Calculator",
     "nav.code": "Code",
     "nav.about": "About Us",
@@ -70,7 +70,7 @@ const translations: Record<Language, Record<string, string>> = {
     "home.whatare.title": "What are Number Systems?",
     "home.whatare.description":
       "Number systems are mathematical systems for expressing numbers. A number system consists of a set of symbols (digits) and rules for using these symbols to represent numbers.",
-    "home.learnmore": "Learn More",
+    "home.learnmore": "Learn",
     "home.calculator.title": "Number System Conversion Calculator",
     "home.calculator.description":
       "Common programming number systems include Binary (Base 2), Decimal (Base 10), Octal (Base 8), and Hexadecimal (Base 16). The number system conversion calculator allows the user to enter a number in any system and convert it to the others. It also functions as a binary bit shift calculator allowing you to change the values by shifting bits right or left or by changing individual bits.",
@@ -116,21 +116,21 @@ const translations: Record<Language, Record<string, string>> = {
     "numbersystem.pentatrigesimal": "Pentatrigesimal (Base 35)",
     "numbersystem.hexatrigesimal": "Hexatrigesimal (Base 36)",
 
-    // Education page
-    "education.title": "Number Systems Education",
-    "education.description": "Learn about different number systems and their applications.",
-    "education.welcome.title": "Welcome to Number Systems Education",
-    "education.welcome.description":
+    // Publications page
+    "publications.title": "Publications",
+    "publications.description": "Learn about different number systems and their applications.",
+    "publications.welcome.title": "Welcome to Number Systems Publications",
+    "publications.welcome.description":
       "This section provides comprehensive information about different number systems, their properties, and how they are used in computing and mathematics.",
-    "education.welcome.select": "Select a topic from the sidebar to learn more about specific number systems.",
+    "publications.welcome.select": "Select a topic from the sidebar to learn more about specific number systems.",
 
-    // Education topics
-    "education.topic.binary": "Binary System",
-    "education.topic.octal": "Octal System",
-    "education.topic.decimal": "Decimal System",
-    "education.topic.hexadecimal": "Hexadecimal System",
-    "education.topic.conversions": "Number System Conversions",
-    "education.topic.history": "History of Number Systems",
+    // Publications topics
+    "publications.topic.binary": "Binary System",
+    "publications.topic.octal": "Octal System",
+    "publications.topic.decimal": "Decimal System",
+    "publications.topic.hexadecimal": "Hexadecimal System",
+    "publications.topic.conversions": "Number System Conversions",
+    "publications.topic.history": "History of Number Systems",
 
     // Calculator page
     "calculator.title": "Number System Calculator",
@@ -417,11 +417,11 @@ const translations: Record<Language, Record<string, string>> = {
       "Our mission is to provide a comprehensive resource for learning about and working with different number systems. We aim to make these concepts accessible to students, programmers, and anyone interested in understanding the mathematical foundations of computing.",
     "about.project.title": "The Project",
     "about.project.description":
-      "This project was created to serve as an all-in-one platform for number system education and utilities. Our features include:",
+      "This project was created to serve as an all-in-one platform for number system publications and utilities. Our features include:",
     "about.project.feature1":
       "Conversion Tool: Convert between binary, octal, decimal, and hexadecimal number systems.",
     "about.project.feature2":
-      "Educational Resources: Comprehensive guides and explanations about different number systems.",
+      "Publicationsal Resources: Comprehensive guides and explanations about different number systems.",
     "about.project.feature3": "Calculator: Perform arithmetic operations in various number systems.",
     "about.project.feature4":
       "Code Examples: Programming examples for working with number systems in different languages.",
@@ -445,7 +445,7 @@ const translations: Record<Language, Record<string, string>> = {
   uz: {
     // Navigation
     "nav.conversion": "Konvertatsiya",
-    "nav.education": "Ta'lim",
+    "nav.publications": "Maqolalar",
     "nav.calculator": "Kalkulyator",
     "nav.code": "Kod",
     "nav.about": "Biz haqimizda",
@@ -465,7 +465,7 @@ const translations: Record<Language, Record<string, string>> = {
     "home.whatare.title": "Sanoq Sistemalari nima?",
     "home.whatare.description":
       "Sanoq sistemalari sonlarni ifodalash uchun matematik sistemalardir. Sanoq sistemasi belgilar (raqamlar) to'plami va bu belgilardan sonlarni ifodalash uchun foydalanish qoidalaridan iborat.",
-    "home.learnmore": "Ko'proq o'rganish",
+    "home.learnmore": "O'qish",
     "home.calculator.title": "Sanoq Sistemalari Konvertatsiya Kalkulyatori",
     "home.calculator.description":
       "Umumiy dasturlash sanoq sistemalari Ikkilik (2-asos), O'nlik (10-asos), Sakkizlik (8-asos) va O'n oltilik (16-asos)ni o'z ichiga oladi. Sanoq sistemalari konvertatsiya kalkulyatori foydalanuvchiga istalgan sistemada raqam kiritish va uni boshqalarga konvertatsiya qilish imkonini beradi. U shuningdek, ikkilik bit siljish kalkulyatori sifatida ham ishlaydi, bu sizga bitlarni o'ngga yoki chapga siljitish yoki alohida bitlarni o'zgartirish orqali qiymatlarni o'zgartirish imkonini beradi.",
@@ -511,22 +511,22 @@ const translations: Record<Language, Record<string, string>> = {
     "numbersystem.pentatrigesimal": "O'ttiz beshlik (35-asos)",
     "numbersystem.hexatrigesimal": "O'ttiz oltilik (36-asos)",
 
-    // Education page
-    "education.title": "Sanoq Sistemalari Ta'limi",
-    "education.description": "Turli sanoq sistemalari va ularning qo'llanilishi haqida o'rganing.",
-    "education.welcome.title": "Sanoq Sistemalari Ta'limiga Xush Kelibsiz",
-    "education.welcome.description":
+    // Publications page
+    "publications.title": "Maqolalar",
+    "publications.description": "Turli sanoq sistemalari va ularning qo'llanilishi haqida o'rganing.",
+    "publications.welcome.title": "Sanoq Sistemalari Ta'limiga Xush Kelibsiz",
+    "publications.welcome.description":
       "Bu bo'lim turli sanoq sistemalari, ularning xususiyatlari va ularning hisoblash va matematikada qanday qo'llanilishi haqida keng ma'lumot beradi.",
-    "education.welcome.select":
+    "publications.welcome.select":
       "Muayyan sanoq sistemalari haqida ko'proq ma'lumot olish uchun yon paneldan mavzuni tanlang.",
 
-    // Education topics
-    "education.topic.binary": "Ikkilik Sistema",
-    "education.topic.octal": "Sakkizlik Sistema",
-    "education.topic.decimal": "O'nlik Sistema",
-    "education.topic.hexadecimal": "O'n oltilik Sistema",
-    "education.topic.conversions": "Sanoq Sistemalari Konvertatsiyasi",
-    "education.topic.history": "Sanoq Sistemalari Tarixi",
+    // Publications topics
+    "publications.topic.binary": "Ikkilik Sistema",
+    "publications.topic.octal": "Sakkizlik Sistema",
+    "publications.topic.decimal": "O'nlik Sistema",
+    "publications.topic.hexadecimal": "O'n oltilik Sistema",
+    "publications.topic.conversions": "Sanoq Sistemalari Konvertatsiyasi",
+    "publications.topic.history": "Sanoq Sistemalari Tarixi",
 
     // Calculator page
     "calculator.title": "Sanoq Sistemalari Kalkulyatori",
@@ -828,7 +828,7 @@ const translations: Record<Language, Record<string, string>> = {
   ru: {
     // Navigation
     "nav.conversion": "Конвертация",
-    "nav.education": "Обучение",
+    "nav.publications": "Статьи",
     "nav.calculator": "Калькулятор",
     "nav.code": "Код",
     "nav.about": "О нас",
@@ -849,7 +849,7 @@ const translations: Record<Language, Record<string, string>> = {
     "home.whatare.title": "Что такое Системы Счисления?",
     "home.whatare.description":
       "Системы счисления - это математические системы для выражения чисел. Система счисления состоит из набора символов (цифр) и правил использования этих символов для представления чисел.",
-    "home.learnmore": "Узнать больше",
+    "home.learnmore": "Узнать",
     "home.calculator.title": "Калькулятор Конвертации Систем Счисления",
     "home.calculator.description":
       "Общие системы счисления в программировании включают Двоичную (Основание 2), Десятичную (Основание 10), Восьмеричную (Основание 8) и Шестнадцатеричную (Основание 16). Калькулятор конвертации систем счисления позволяет пользователю ввести число в любой системе и конвертировать его в другие. Он также функционирует как калькулятор двоичного битового сдвига, позволяя изменять значения путем сдвига битов вправо или влево или изменения отдельных битов.",
@@ -895,21 +895,21 @@ const translations: Record<Language, Record<string, string>> = {
     "numbersystem.pentatrigesimal": "Тридцать пять (Основание 35)",
     "numbersystem.hexatrigesimal": "Тридцать шесть (Основание 36)",
 
-    // Education page
-    "education.title": "Обучение Системам Счисления",
-    "education.description": "Изучите различные системы счисления и их применение.",
-    "education.welcome.title": "Добро пожаловать в Обучение Системам Счисления",
-    "education.welcome.description":
+    // Publications page
+    "publications.title": "Статьи",
+    "publications.description": "Изучите различные системы счисления и их применение.",
+    "publications.welcome.title": "Добро пожаловать в Обучение Системам Счисления",
+    "publications.welcome.description":
       "Этот раздел предоставляет исчерпывающую информацию о различных системах счисления, их свойствах и о том, как они используются в вычислениях и математике.",
-    "education.welcome.select": "Выберите тему из боковой панели, чтобы узнать больше о конкретных системах счисления.",
+    "publications.welcome.select": "Выберите тему из боковой панели, чтобы узнать больше о конкретных системах счисления.",
 
-    // Education topics
-    "education.topic.binary": "Двоичная Система",
-    "education.topic.octal": "Восьмеричная Система",
-    "education.topic.decimal": "Десятичная Система",
-    "education.topic.hexadecimal": "Шестнадцатеричная Система",
-    "education.topic.conversions": "Конвертация Систем Счисления",
-    "education.topic.history": "История Систем Счисления",
+    // Publications topics
+    "publications.topic.binary": "Двоичная Система",
+    "publications.topic.octal": "Восьмеричная Система",
+    "publications.topic.decimal": "Десятичная Система",
+    "publications.topic.hexadecimal": "Шестнадцатеричная Система",
+    "publications.topic.conversions": "Конвертация Систем Счисления",
+    "publications.topic.history": "История Систем Счисления",
 
     // Calculator page
     "calculator.title": "Калькулятор Систем Счисления",
