@@ -19,7 +19,7 @@ export default function BinaryPage() {
 
     return (
         <div className="flex">
-            <div className="flex-1 container py-4 max-w-6xl ml-0 lg:ml-64">
+            <div className="flex-1 container py-4 px-4 sm:px-8 max-w-6xl ml-0 lg:ml-64">
                 <article className="prose max-w-none text-justify">
                     <h1 className="text-2xl font-bold mb-6">Sanoq sistemalari farqi: Son, raqam va qiymat</h1>
                     <p>

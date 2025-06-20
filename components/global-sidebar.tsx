@@ -40,9 +40,9 @@ export default function GlobalSidebar() {
     if (pathname.includes("/en/info")) {
       return { items: sidebarMenus.publications, basePath: `/${lang}/publications` }
     }
-    if (pathname.includes("/code")) {
-      return { items: sidebarMenus.code, basePath: `/${lang}/code` }
-    }
+    // if (pathname.includes("/code")) {
+    //   return { items: sidebarMenus.code, basePath: `/${lang}/code` }
+    // }  
     return null
   }
 

@@ -45,7 +45,7 @@ export const PUBLICATIONS = [
         href: "/en/info/numeral-system",
         lang: "en",
         icon: Calculator,
-        color: "pink",
+        color: "cyan",
     },
     {
         title: "O‘nlik sanoq sistemasi tarixi",
@@ -69,7 +69,7 @@ export const PUBLICATIONS = [
         href: "/uz/info/sanoq-sistemalari",
         lang: "uz",
         icon: Calculator,
-        color: "pink",
+        color: "cyan",
     },
     {
         title: "Система счисления",
@@ -77,7 +77,7 @@ export const PUBLICATIONS = [
         href: "/ru/info/sistema-schisleniya",
         lang: "ru",
         icon: Calculator,
-        color: "pink",
+        color: "cyan",
     },
     {
         title: "List of numeral systems",

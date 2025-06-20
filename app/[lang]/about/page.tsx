@@ -3,6 +3,8 @@
 import { useEffect } from "react";
 import { useLanguage } from "@/contexts/language-context";
 import { useParams } from "next/navigation";
+import { Send, Share2 } from "lucide-react";
+import ShareAppURL from "@/components/share";
 
 export default function AboutPage() {
     const { t, setLanguage } = useLanguage();
@@ -17,7 +19,7 @@ export default function AboutPage() {
 
     return (
         <div className="flex">
-            <div className="flex-1 container px-4 sm:px-8 py-4 max-w-6xl ml-0 lg:ml-64 text-justify">
+            <div className="flex-1 container py-4 px-4 sm:px-8 max-w-6xl ml-0 lg:ml-64 text-justify">
                 <div className="mb-8">
                     <h1 className="text-2xl font-bold mb-4">Ilova haqida</h1>
                     <p className="text-sm text-muted-foreground mb-4">
@@ -76,11 +78,13 @@ export default function AboutPage() {
                                 uchun esa foydali vositadir. Hisoblash, konvertatsiya, o‘rganish va kod yozish barchasi bir joyda jamlangan — sanoq sistemasiga
                                 oid barcha bilimlar bir ilovada yig'ilgan.
                             </p>
-                            <div className="mt-4 rounded-lg border bg-card text-card-foreground shadow-sm w-full sm:w-40 py-4 flex items-center justify-center flex-col gap-2">
-                                <div>share icon</div>
-                                <button className="px-6 py-1 text-white text-base font-medium bg-blue-500 border-none rounded-lg cursor-pointer transition-colors text-center no-underline inline-flex items-center justify-center gap-2">
-                                    Ulashish
-                                </button>
+                            <div className="mt-4 text-card-foreground w-full sm:w-40 py-4 flex items-center justify-center flex-col gap-2">
+                                <Share2 size={30} />
+                                <ShareAppURL>
+                                    <div className="px-6 py-1 text-white text-base font-medium bg-blue-500 border-none rounded-lg cursor-pointer transition-colors text-center no-underline inline-flex items-center justify-center gap-2">
+                                        Ulashish
+                                    </div>
+                                </ShareAppURL>
                             </div>
                         </div>
                     </div>
@@ -104,11 +108,15 @@ export default function AboutPage() {
                                     </ul>
                                     <strong>Biz bilan bog'laning.</strong> Sizning fikringiz biz uchun muhim!
                                 </div>
-                                <div className="mt-4 rounded-lg border bg-card text-card-foreground shadow-sm w-full sm:w-40 py-4 flex items-center justify-center flex-col gap-2">
-                                    <div>contact icon</div>
-                                    <button className="px-6 py-1 text-white text-base font-medium bg-blue-500 border-none rounded-lg cursor-pointer transition-colors text-center no-underline inline-flex items-center justify-center gap-2">
+                                <div className="mt-4 text-card-foreground w-full sm:w-40 py-4 flex items-center justify-center flex-col gap-2">
+                                    <Send size={30} />
+                                    <a
+                                        href="https://t.me/full_full_stack"
+                                        target="_blank"
+                                        className="px-6 py-1 text-white text-base font-medium bg-blue-500 border-none rounded-lg cursor-pointer transition-colors text-center no-underline inline-flex items-center justify-center gap-2"
+                                    >
                                         Bog'lanish
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="w-full border-t bg-background">
       <div className="container py-4 text-center text-xs text-muted-foreground">
         <p>
-          © {new Date().getFullYear()} Number Systems. {t("footer.rights")}
+          © {new Date().getFullYear()} Number Systems. {/* {t("footer.rights")} */}
         </p>
       </div>
     </footer>

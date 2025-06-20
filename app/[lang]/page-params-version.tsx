@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter, useSearchParams, useParams } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { useLanguage } from "@/contexts/language-context";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -8,25 +9,49 @@ import { Button } from "@/components/ui/button";
 import { ArrowRightLeft } from "lucide-react";
 import RightSidebarContent from "@/components/right-sidebar-content";
 import { NUMBER_SYSTEMS } from "@/lib/constants";
-import { useParams } from "next/navigation";
 
 export default function HomePage() {
     const { t, setLanguage } = useLanguage();
     const params = useParams();
     const lang = params.lang as string;
 
-    const [leftValue, setLeftValue] = useState("");
+    const router = useRouter();
+    const searchParams = useSearchParams();
+
+    // Boshlang'ich qiymatlarni query string'dan olamiz
+    const initialFromBase = searchParams.get("fromBase") || "10";
+    const initialToBase = searchParams.get("toBase") || "2";
+    const initialLeftValue = searchParams.get("leftValue") || "";
+
+    const [fromBase, setFromBase] = useState(initialFromBase);
+    const [toBase, setToBase] = useState(initialToBase);
+    const [leftValue, setLeftValue] = useState(initialLeftValue);
     const [rightValue, setRightValue] = useState("");
-    const [fromBase, setFromBase] = useState("10");
-    const [toBase, setToBase] = useState("2");
     const [lastChanged, setLastChanged] = useState<"left" | "right">("left");
 
+    // URL query stringni yangilash
+    const updateQuery = (newFromBase: string, newToBase: string, newLeftValue: string) => {
+        const params = new URLSearchParams();
+        if (newFromBase) params.set("fromBase", newFromBase);
+        if (newToBase) params.set("toBase", newToBase);
+        if (newLeftValue) params.set("leftValue", newLeftValue);
+        router.replace(`?${params.toString()}`, { scroll: false });
+    };
+
+    // Tilni route parametrlari asosida o'rnatish
     useEffect(() => {
         if (lang && ["en", "uz", "ru"].includes(lang)) {
             setLanguage(lang as "en" | "uz" | "ru");
         }
     }, [lang, setLanguage]);
 
+    // leftValue, fromBase, toBase o'zgarganda query stringni yangilash
+    useEffect(() => {
+        updateQuery(fromBase, toBase, leftValue);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [fromBase, toBase, leftValue]);
+
+    // leftValue yoki rightValue o'zgarganda natijani hisoblash
     useEffect(() => {
         if (lastChanged === "left" && leftValue) {
             try {
@@ -34,8 +59,10 @@ export default function HomePage() {
                 if (!isNaN(decimalValue)) {
                     const result = decimalValue.toString(Number.parseInt(toBase));
                     setRightValue(result.toUpperCase());
+                } else {
+                    setRightValue("");
                 }
-            } catch (e) {
+            } catch {
                 setRightValue("");
             }
         } else if (lastChanged === "right" && rightValue) {
@@ -44,13 +71,16 @@ export default function HomePage() {
                 if (!isNaN(decimalValue)) {
                     const result = decimalValue.toString(Number.parseInt(fromBase));
                     setLeftValue(result.toUpperCase());
+                } else {
+                    setLeftValue("");
                 }
-            } catch (e) {
+            } catch {
                 setLeftValue("");
             }
         }
     }, [leftValue, rightValue, fromBase, toBase, lastChanged]);
 
+    // fromBase yoki toBase o'zgarganda natijani hisoblash
     useEffect(() => {
         if (leftValue && lastChanged === "left") {
             try {
@@ -58,8 +88,10 @@ export default function HomePage() {
                 if (!isNaN(decimalValue)) {
                     const result = decimalValue.toString(Number.parseInt(toBase));
                     setRightValue(result.toUpperCase());
+                } else {
+                    setRightValue("");
                 }
-            } catch (e) {
+            } catch {
                 setRightValue("");
             }
         } else if (rightValue && lastChanged === "right") {
@@ -68,8 +100,10 @@ export default function HomePage() {
                 if (!isNaN(decimalValue)) {
                     const result = decimalValue.toString(Number.parseInt(fromBase));
                     setLeftValue(result.toUpperCase());
+                } else {
+                    setLeftValue("");
                 }
-            } catch (e) {
+            } catch {
                 setLeftValue("");
             }
         }
@@ -100,7 +134,7 @@ export default function HomePage() {
 
                 <div className="sm:grid grid-cols-[1fr_auto_1fr] gap-6">
                     <div className="flex flex-col gap-4">
-                        <Select value={fromBase} onValueChange={setFromBase}>
+                        <Select value={fromBase} onValueChange={(val) => { setFromBase(val); }}>
                             <SelectTrigger>
                                 <SelectValue placeholder={t("home.from")} />
                             </SelectTrigger>
@@ -131,7 +165,7 @@ export default function HomePage() {
                         </div>
                     </div>
                     <div className="flex flex-col gap-4">
-                        <Select value={toBase} onValueChange={setToBase}>
+                        <Select value={toBase} onValueChange={(val) => { setToBase(val); }}>
                             <SelectTrigger>
                                 <SelectValue placeholder={t("home.to")} />
                             </SelectTrigger>

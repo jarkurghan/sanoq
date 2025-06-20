@@ -466,7 +466,7 @@ const translations: Record<Language, Record<string, string>> = {
     "home.whatare.description":
       "Sanoq sistemalari sonlarni ifodalash uchun matematik sistemalardir. Sanoq sistemasi belgilar (raqamlar) to'plami va bu belgilardan sonlarni ifodalash uchun foydalanish qoidalaridan iborat.",
     "home.learnmore": "O'qish",
-    "home.calculator.title": "Sanoq Sistemalari Konvertatsiya Kalkulyatori",
+    "home.calculator.title": "Konvertor",
     "home.calculator.description":
       "Umumiy dasturlash sanoq sistemalari Ikkilik (2-asos), O'nlik (10-asos), Sakkizlik (8-asos) va O'n oltilik (16-asos)ni o'z ichiga oladi. Sanoq sistemalari konvertatsiya kalkulyatori foydalanuvchiga istalgan sistemada raqam kiritish va uni boshqalarga konvertatsiya qilish imkonini beradi. U shuningdek, ikkilik bit siljish kalkulyatori sifatida ham ishlaydi, bu sizga bitlarni o'ngga yoki chapga siljitish yoki alohida bitlarni o'zgartirish orqali qiymatlarni o'zgartirish imkonini beradi.",
     "home.placeholder.binary": "Ikkilik raqam kiriting",

@@ -27,7 +27,7 @@ export default function CalculatorPage() {
 
     return (
         <div className="flex">
-            <div className="flex-1 container py-4 max-w-7xl ml-0 lg:ml-64 px-2 sm:px-8 sm:grid grid-cols-[1fr_auto] gap-8 xl:gap-20">
+            <div className="flex-1 container py-4 px-4 sm:px-8 max-w-7xl ml-0 lg:ml-64 sm:grid grid-cols-[1fr_auto] gap-8 xl:gap-20">
                 <CalculatorText />
                 <div className="w-fit max-w-[360px]">
                     <Card>

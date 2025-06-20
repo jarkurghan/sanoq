@@ -64,9 +64,17 @@ export default function CodePage() {
 
   const filteredTopics = codeTopics.filter((topic) => t(topic.title).toLowerCase().includes(searchQuery.toLowerCase()))
 
+return (
+    <div className="flex">
+      <div className="flex-1 container py-4 px-4 sm:px-8 max-w-7xl ml-0 lg:ml-64">
+        <h1 className="text-2xl font-bold mb-6">coming son...</h1>
+              </div>
+              </div>
+)
+
   return (
     <div className="flex">
-      <div className="flex-1 container py-4 max-w-6xl ml-0 lg:ml-64">
+      <div className="flex-1 container py-4 px-4 sm:px-8 max-w-7xl ml-0 lg:ml-64">
         <h1 className="text-2xl font-bold mb-6">{t("code.title")}</h1>
 
         <div className="space-y-6">

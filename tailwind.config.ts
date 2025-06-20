@@ -76,6 +76,14 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+  safelist: [
+  {
+    pattern: /(bg|text)-(slate|gray|zinc|neutral|stone|blue|sky|cyan|teal|indigo|violet|purple|fuchsia|red|orange|amber|yellow|lime|green|emerald|pink|rose)-(100|900)/,
+  },
+  {
+    pattern: /group-hover:(bg|text)-(slate|gray|zinc|neutral|stone|blue|sky|cyan|teal|indigo|violet|purple|fuchsia|red|orange|amber|yellow|lime|green|emerald|pink|rose)-(100|900)/,
+  }
+]
 } satisfies Config
 
 export default config
