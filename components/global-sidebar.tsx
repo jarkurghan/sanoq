@@ -51,13 +51,14 @@ export default function GlobalSidebar() {
   // Show empty sidebar if no items
   const { items = [], basePath = "" } = currentSidebar || {}
 
+if (items.length === 0) return null
+
   return (
     <div className="hidden lg:block fixed left-0 top-14 bottom-16 w-64 z-10">
       {/* Sidebar - only visible on desktop */}
       <div className="h-full bg-background border-r overflow-y-auto">
-        <div className="bg-muted/50 px-4 py-3 font-medium border-b">{items.length > 0 ? t("sidebar.topics") : ""}</div>
+        <div className="bg-muted/50 px-4 py-3 font-medium border-b">{t("sidebar.topics")}</div>
         <nav className="p-2">
-          {items.length > 0 ? (
             <ul className="space-y-1">
               {items.map((item) => {
                 const isActive = pathname === `${basePath}/${item.href}`
@@ -77,9 +78,6 @@ export default function GlobalSidebar() {
                 )
               })}
             </ul>
-          ) : (
-            <div className="text-center text-muted-foreground text-sm py-8">{/* Empty sidebar content */}</div>
-          )}
         </nav>
       </div>
     </div>

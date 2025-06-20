@@ -9,6 +9,7 @@ import { useState } from "react"
 import { useLanguage } from "@/contexts/language-context"
 import LanguageSwitcher from "@/components/language-switcher"
 import ThemeToggle from "@/components/theme-toggle"
+import ShareAppURL from "./share"
 
 export default function Navbar() {
   const pathname = usePathname()
@@ -31,9 +32,9 @@ export default function Navbar() {
         <div className="flex items-center space-x-8">
           <Link href={`/${lang}`} className="flex items-center space-x-2">
             <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-primary-foreground">
-              <Calculator className="h-5 w-5" />
+              <Calculator className="h-6 w-6" />
             </div>
-            <span className="text-xl font-bold">Number Systems</span>
+            <span className="hidden sm:inline-block text-xl font-bold">Number Systems</span>
           </Link>
 
           {/* Desktop navigation */}
@@ -58,6 +59,7 @@ export default function Navbar() {
         </div>
 
         <div className="ml-auto flex items-center space-x-2">
+          <ShareAppURL />
           <ThemeToggle />
           <LanguageSwitcher />
 
@@ -81,7 +83,7 @@ export default function Navbar() {
             <div className="flex items-center justify-between p-4 border-b">
               <Link href={`/${lang}`} className="flex items-center space-x-2" onClick={() => setMobileMenuOpen(false)}>
                 <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-primary-foreground">
-                  <Calculator className="h-5 w-5" />
+                  <Calculator className="h-6 w-6" />
                 </div>
                 <span className="text-xl font-bold">Number Systems</span>
               </Link>
