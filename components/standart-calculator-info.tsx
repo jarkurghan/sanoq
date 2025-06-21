@@ -11,12 +11,7 @@ export default function CalculatorText() {
   const base = searchParams.get("base") || DEFAULT_NUMBER_SYSTEM
 
   return (
-    <div className="hidden sm:flex flex-col gap-4">
-      <div>
-        <h1 className="text-2xl font-bold mb-2">{t("calculator.standard.title")}</h1>
-        <p className="text-sm font-medium text-stone-700 text-justify">{t("calculator.standard.description")}</p>
-      </div>
-
+    <div className="flex flex-col gap-4">
       <div className="text-sm font-medium text-stone-700">
         {t("calculator.basic.features")}
         <ul>

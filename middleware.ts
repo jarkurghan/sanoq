@@ -37,7 +37,7 @@ export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
   // Istisno: "/uz/publications/binary" uchun lang prefix tekshiruvi o'tkazilmaydi
-  if (pathname.startsWith(`/uz/info/`) || pathname.startsWith(`/en/info/`) || pathname.startsWith(`/ru/info/`)) {
+  if (pathname.startsWith(`/uz/info/`) || pathname.startsWith(`/en/info/`) || pathname.startsWith(`/ru/info/`)|| pathname.startsWith(`/images/`)) {
     return NextResponse.next()
   }
 

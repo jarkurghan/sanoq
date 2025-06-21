@@ -28,7 +28,13 @@ export default function CalculatorPage() {
     return (
         <div className="flex">
             <div className="flex-1 container py-4 px-4 sm:px-8 max-w-7xl ml-0 lg:ml-64 sm:grid grid-cols-[1fr_auto] gap-8 xl:gap-20">
-                <CalculatorText />
+                <div>
+                    <h1 className="text-2xl font-bold mb-2">{t("calculator.standard.title")}</h1>
+                    <p className="hidden sm:block text-sm font-medium text-stone-700 text-justify">{t("calculator.standard.description")}</p>
+                    <div className="hidden sm:block">
+                        <CalculatorText />
+                    </div>
+                </div>
                 <div className="w-fit max-w-[360px]">
                     <Card>
                         <CardHeader className="pt-1" />
@@ -36,6 +42,9 @@ export default function CalculatorPage() {
                             <StandartCalculator />
                         </CardContent>
                     </Card>
+                </div>
+                <div className="block sm:hidden px-2 pt-8">
+                    <CalculatorText />
                 </div>
             </div>
 
