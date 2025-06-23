@@ -6,7 +6,7 @@ import Image from "next/image";
 const NumeralSystem = () => {
     return (
         <div className="flex">
-            <div className="flex-1 container py-4 px-4 sm:px-8 max-w-6xl ml-0 lg:ml-64 text-justify">
+            <div className="flex-1 container py-4 px-4 sm:px-8 max-w-6xl ml-0 lg:ml-64 text-justify text-gray-700 dark:text-gray-300">
                 <h1 className="text-2xl font-bold mb-4">Numeral system</h1>
                 <p className="mb-4">
                     A numeral system is a writing system for expressing numbers; that is, a mathematical notation for representing numbers of a given set, using
@@ -14,9 +14,9 @@ const NumeralSystem = () => {
                 </p>
                 <p className="mb-4">
                     The same sequence of symbols may represent different numbers in different numeral systems. For example,{" "}
-                    <code className="bg-gray-100 px-1 py-0.5 rounded">"11"</code> represents the number eleven in the decimal or base-10 numeral system (today,
-                    the most common system globally), the number three in the binary or base-2 numeral system (used in modern computers), and the number two in
-                    the unary numeral system (used in tallying scores).
+                    <code className="[font-family:'Times_New_Roman',serif] px-1 py-0.5 rounded">"11"</code> represents the number eleven in the decimal or
+                    base-10 numeral system (today, the most common system globally), the number three in the binary or base-2 numeral system (used in modern
+                    computers), and the number two in the unary numeral system (used in tallying scores).
                 </p>
                 <p className="mb-4">
                     The number the numeral represents is called its <strong>value</strong>. Additionally, not all number systems can represent the same set of
@@ -95,7 +95,7 @@ const NumeralSystem = () => {
                     The use of these digits is less common in Thailand than it once was, but they are still used alongside Arabic numerals.
                     <sup className="text-gray-400">[4]</sup>
                 </p>
-                <Image src="/images/rod-table.png" className=" mb-4 float-left mr-8 dark:opacity-90 border rounded-lg" alt="rods" width={500} height={300} />
+                <Image src="/images/rod-table.png" className="mb-4 float-left mr-8 dark:opacity-80 border rounded-lg" alt="rods" width={500} height={300} />
                 <p className="mb-4">
                     The <strong>rod numerals</strong>, the written forms of counting rods once used by Chinese and Japanese mathematicians, are a decimal
                     positional system used for performing decimal calculations. Rods were placed on a counting board and slid forwards or backwards to change
@@ -108,7 +108,7 @@ const NumeralSystem = () => {
                     <sup className="text-gray-400">[6]</sup> Later sources introduced conventions for the expression of zero and negative numbers.
                 </p>
                 <p className="mb-4">
-                    The use of a round symbol <code className="bg-gray-100 px-1 py-0.5 rounded dark:bg-background">〇</code> for zero is first attested in the{" "}
+                    The use of a round symbol <code className="px-1 py-0.5 rounded dark:bg-background">〇</code> for zero is first attested in the{" "}
                     <em>Mathematical Treatise in Nine Sections</em> of 1247 AD.
                     <sup className="text-gray-400">[7]</sup> The origin of this symbol is unknown; it may have been produced by modifying a square symbol
                     <sup className="text-gray-400">[8]</sup>. The <strong>Suzhou numerals</strong>, a descendant of rod numerals, are still used today for some
@@ -117,12 +117,12 @@ const NumeralSystem = () => {
                 <h2 className="text-xl font-bold my-4">Main numeral systems</h2>
                 <p className="mb-4">
                     The most commonly used system of numerals is decimal. Indian mathematicians are credited with developing the integer version, the
-                    Hindu–Arabic numeral system. Aryabhata of Kusumapura developed the place-value notation in the 5th century and a century later Brahmagupta
-                    introduced the symbol for zero. The system slowly spread to other surrounding regions like Arabia due to their commercial and military
-                    activities with India. Middle-Eastern mathematicians extended the system to include negative powers of 10 (fractions), as recorded in a
-                    treatise by Syrian mathematician Abu'l-Hasan al-Uqlidisi in 952–953, and the decimal point notation was introduced by Sind ibn Ali, who also
-                    wrote the earliest treatise on Arabic numerals. The Hindu–Arabic numeral system then spread to Europe due to merchants trading, and the
-                    digits used in Europe are called Arabic numerals, as they learned them from the Arabs.
+                    Hindu–Arabic numeral system.<sup className="text-gray-400">[8]</sup> Aryabhata of Kusumapura developed the place-value notation in the 5th
+                    century and a century later Brahmagupta introduced the symbol for zero. The system slowly spread to other surrounding regions like Arabia
+                    due to their commercial and military activities with India. Middle-Eastern mathematicians extended the system to include negative powers of
+                    10 (fractions), as recorded in a treatise by Syrian mathematician Abu'l-Hasan al-Uqlidisi in 952–953, and the decimal point notation was
+                    introduced by Sind ibn Ali, who also wrote the earliest treatise on Arabic numerals. The Hindu–Arabic numeral system then spread to Europe
+                    due to merchants trading, and the digits used in Europe are called Arabic numerals, as they learned them from the Arabs.
                 </p>
                 <p className="mb-4">
                     The simplest numeral system is the unary numeral system, in which every natural number is represented by a corresponding number of symbols.
@@ -143,10 +143,10 @@ const NumeralSystem = () => {
                     the number 304 (the number of these abbreviations is sometimes called the base of the system). This system is used when writing Chinese
                     numerals and other East Asian numerals based on Chinese. The number system of the English language is of this type ("three hundred [and]
                     four"), as are those of other spoken languages, regardless of what written systems they have adopted. However, many languages use mixtures
-                    of bases, and other features, for instance 79 in French is <em>soixante dix-neuf</em> (60 + 10 + 9) and in Welsh is
-                    <em>pedwar ar bymtheg a thrigain</em> (4 + (5 + 10) + (3 × 20)) or (somewhat archaic)
-                    <em>pedwar ugain namyn un</em> (4 × 20 − 1). In English, one could say "four score less one", as in the famous Gettysburg Address
-                    representing "87 years ago" as "four score and seven years ago".
+                    of bases, and other features, for instance 79 in French is <em>soixante dix-neuf</em> (60 + 10 + 9) and in Welsh is{" "}
+                    <em>pedwar ar bymtheg a thrigain</em> (4 + (5 + 10) + (3 × 20)) or (somewhat archaic) <em>pedwar ugain namyn un</em> (4 × 20 − 1). In
+                    English, one could say "four score less one", as in the famous Gettysburg Address representing "87 years ago" as "four score and seven years
+                    ago".
                 </p>
                 <p className="mb-4">
                     More elegant is a positional system, also known as place-value notation. The positional systems are classified by their base or radix, which
@@ -158,6 +158,7 @@ const NumeralSystem = () => {
                 <p className="mb-4">
                     Arithmetic is much easier in positional systems than in the earlier additive ones; furthermore, additive systems need a large number of
                     different symbols for the different powers of 10; a positional system needs only ten different symbols (assuming that it uses base 10).
+                    <sup className="text-gray-400">[10]</sup>
                 </p>
                 <p className="mb-4">
                     The positional decimal system is presently universally used in human writing. The base 1000 is also used (albeit not universally), by
@@ -172,9 +173,10 @@ const NumeralSystem = () => {
                 </p>
                 <p className="mb-4">
                     In certain biological systems, the unary coding system is employed. Unary numerals used in the neural circuits responsible for birdsong
-                    production. The nucleus in the brain of the songbirds that plays a part in both the learning and the production of bird song is the HVC
-                    (high vocal center). The command signals for different notes in the birdsong emanate from different points in the HVC. This coding works as
-                    space coding which is an efficient strategy for biological circuits due to its inherent simplicity and robustness.
+                    production.<sup className="text-gray-400">[11]</sup> The nucleus in the brain of the songbirds that plays a part in both the learning and
+                    the production of bird song is the HVC (high vocal center). The command signals for different notes in the birdsong emanate from different
+                    points in the HVC. This coding works as space coding which is an efficient strategy for biological circuits due to its inherent simplicity
+                    and robustness.
                 </p>
                 <p className="mb-4">
                     The numerals used when writing numbers with digits or symbols can be divided into two types that might be called the arithmetic numerals (0,
@@ -203,56 +205,46 @@ const NumeralSystem = () => {
                 <p className="mb-4">
                     In general, if <em>b</em> is the base, one writes a number in the numeral system of base <em>b</em> by expressing it in the form:
                     <br />
-                    <code className="bg-gray-100 p-1 rounded inline-block">aₙbⁿ + aₙ₋₁bⁿ⁻¹ + aₙ₋₂bⁿ⁻² + ... + a₀b⁰</code>
-                    <br />
-                    and writing the enumerated digits <code className="bg-gray-100 px-1">aₙ aₙ₋₁ ... a₀</code> in descending order. The digits are natural
-                    numbers between 0 and <em>b – 1</em>, inclusive.
+                    <code className="[font-family:'Times_New_Roman',serif] p-1 rounded inline-block">aₙbⁿ + aₙ₋₁bⁿ⁻¹ + aₙ₋₂bⁿ⁻² + ... + a₀b⁰</code> and writing
+                    the enumerated digits <code className="[font-family:'Times_New_Roman',serif] px-1">aₙ aₙ₋₁ ... a₀</code> in descending order. The digits are
+                    natural numbers between 0 and <em>b – 1</em>, inclusive.
                 </p>
                 <p className="mb-4">
                     If a text (such as this one) discusses multiple bases, and if ambiguity exists, the base (itself represented in base 10) is added in
                     subscript to the right of the number, like this:{" "}
-                    <code className="bg-gray-100 px-1">
+                    <code className="[font-family:'Times_New_Roman',serif] px-1">
                         number<sub>base</sub>
                     </code>
                     . Unless specified by context, numbers without subscript are considered to be decimal.
                 </p>
                 <p className="mb-4">
                     By using a dot to divide the digits into two groups, one can also write fractions in the positional system. For example, the base 2 numeral{" "}
-                    <code className="bg-gray-100 px-1">10.11</code> denotes 1×2¹ + 0×2⁰ + 1×2⁻¹ + 1×2⁻² = 2.75.
+                    <code className="[font-family:'Times_New_Roman',serif] px-1">10.11</code> denotes 1×2¹ + 0×2⁰ + 1×2⁻¹ + 1×2⁻² = 2.75.
                 </p>
                 <p className="mb-4">
                     In general, numbers in the base <em>b</em> system are of the form:
                     <br />
-                    <code className="bg-gray-100 p-2 block rounded">
-                        (aₙ aₙ₋₁ ... a₁ a₀ . c₁ c₂ c₃ ...)<sub>b</sub> = ∑<sub>k=0</sub>
-                        <sup>n</sup> a<sub>k</sub>b<sup>k</sup> + ∑<sub>k=1</sub>
-                        <sup>∞</sup> c<sub>k</sub>b<sup>–k</sup>
-                    </code>
+                    <Image src="/images/formula_n1.png" className="dark:bg-slate-300 rounded-lg" alt="f1" width={373} height={50} />
                 </p>
                 <p className="mb-4">
                     The numbers bᵏ and b⁻ᵏ are the <strong>weights</strong> of the corresponding digits. The position <em>k</em> is the{" "}
                     <strong>logarithm</strong> of the corresponding weight <em>w</em>, that is{" "}
-                    <code className="bg-gray-100 px-1">
-                        k = log<sub>b</sub> w
-                    </code>
-                    . The highest used position is close to the <strong>order of magnitude</strong> of the number.
+                    <Image src="/images/formula_n2.png" className="dark:bg-slate-300 rounded-sm inline" alt="f2" width={141} height={23} />. The highest used
+                    position is close to the <strong>order of magnitude</strong> of the number.
                 </p>
                 <p className="mb-4">
                     The number of tally marks required in the unary numeral system for describing the weight would have been <em>w</em>. In the positional
                     system, the number of digits required to describe it is only{" "}
-                    <code className="bg-gray-100 px-1">
-                        k + 1 = log<sub>b</sub> w + 1
-                    </code>
-                    , for <em>k ≥ 0</em>. For example, to describe the weight 1000 the four digits are needed because{" "}
-                    <code className="bg-gray-100 px-1">
+                    <Image src="/images/formula_n3.png" className="dark:bg-slate-300 rounded-sm inline" alt="f3" width={131} height={19} />, for <em>k ≥ 0</em>.
+                    For example, to describe the weight 1000 then four digits are needed because{" "}
+                    <code className="[font-family:'Times_New_Roman',serif] px-1">
                         log<sub>10</sub> 1000 + 1 = 3 + 1
                     </code>
                     . The number of digits required to <em>describe the position</em> is{" "}
-                    <code className="bg-gray-100 px-1">
-                        log<sub>b</sub> k + 1 = log<sub>b</sub> log<sub>b</sub> w + 1
-                    </code>{" "}
+                    <Image src="/images/formula_n4.png" className="dark:bg-slate-300 rounded-sm inline" alt="f4" width={192} height={19} />
                     (in positions 1, 10, 100,... only for simplicity in the decimal example).
                 </p>
+                <Image src="/images/table_n4.png" className="dark:bg-slate-300 rounded-lg mb-2 inline" alt="t4" width={474} height={121} />
                 <p className="mb-4">
                     A number has a terminating or repeating expansion if and only if it is rational; this does not depend on the base. A number that terminates
                     in one base may repeat in another (thus 0.3₁₀ = 0.0100110011001...₂). An irrational number stays aperiodic (with an infinite number of
@@ -260,11 +252,18 @@ const NumeralSystem = () => {
                     11.001001000011111...₂.
                 </p>
                 <p className="mb-4">
-                    Putting overscores, <code>n̅</code>, or dots, <code>ṅ</code>, above the common digits is a convention used to represent repeating rational
-                    expansions. Thus:
+                    Putting overscores,{" "}
+                    <code>
+                        <span className="overline">n</span>
+                    </code>
+                    , or dots, <code>ṅ</code>, above the common digits is a convention used to represent repeating rational expansions. Thus:
                     <br />
-                    <code className="bg-gray-100 px-2 block mt-2">14/11 = 1.272727272727... = 1.27̅</code>
-                    <code className="bg-gray-100 px-2 block mt-1">321.3217878787878... = 321.32178̅</code>
+                    <code className="[font-family:'Times_New_Roman',serif] px-2 block mt-2">
+                        14/11 = 1.272727272727... = 1.<span className="overline">27</span>
+                    </code>
+                    <code className="[font-family:'Times_New_Roman',serif] px-2 block mt-1">
+                        321.3217878787878... = 321.321<span className="overline">78</span>
+                    </code>
                 </p>
                 <p className="mb-4">
                     If b = p is a prime number, one can define base-<em>p</em> numerals whose expansion to the left never stops; these are called the{" "}
@@ -278,8 +277,9 @@ const NumeralSystem = () => {
                 <h2 className="text-xl font-bold my-4">Generalized variable-length integers</h2>
 
                 <p className="mb-4">
-                    More general is using a mixed radix notation (here written little-endian) like <code className="bg-gray-100 px-1">a₀a₁a₂</code> for{" "}
-                    <code className="bg-gray-100 px-1">a₀ + a₁·b₁ + a₂·b₁·b₂</code>, etc.
+                    More general is using a mixed radix notation (here written little-endian) like{" "}
+                    <code className="[font-family:'Times_New_Roman',serif] px-1">a₀a₁a₂</code> for{" "}
+                    <code className="[font-family:'Times_New_Roman',serif] px-1">a₀ + a₁·b₁ + a₂·b₁·b₂</code>, etc.
                 </p>
 
                 <p className="mb-4">
@@ -300,7 +300,7 @@ const NumeralSystem = () => {
                     just one digit). So, in numbers of more than one digit, the first-digit range is only <code>b–9</code> (i.e., 1–35), meaning the weight{" "}
                     <code>b₁</code> is 35 instead of 36. More generally, if <code>tₙ</code> is the threshold for the n-th digit, it is easy to show that:
                     <br />
-                    <code className="bg-gray-100 px-2 block mt-2">bₙ₊₁ = 36 − tₙ</code>
+                    <code className="[font-family:'Times_New_Roman',serif] px-2 block mt-2">bₙ₊₁ = 36 − tₙ</code>
                 </p>
 
                 <p className="mb-4">
@@ -312,15 +312,15 @@ const NumeralSystem = () => {
                 <p className="mb-4">
                     For example:
                     <br />
-                    <code className="bg-gray-100 px-2 block">Weight of 2nd symbol = 36 − t₀ = 35</code>
+                    <code className="[font-family:'Times_New_Roman',serif] px-2 block">Weight of 2nd symbol = 36 − t₀ = 35</code>
                     <br />
-                    <code className="bg-gray-100 px-2 block">Weight of 3rd symbol = 35 × (36 − t₁) = 35 × 34 = 1190</code>
+                    <code className="[font-family:'Times_New_Roman',serif] px-2 block">Weight of 3rd symbol = 35 × (36 − t₁) = 35 × 34 = 1190</code>
                 </p>
 
                 <p className="mb-4">
                     So we have the following sequence of numbers with at most 3 digits:
                     <br />
-                    <code className="bg-gray-100 px-2 block">
+                    <code className="[font-family:'Times_New_Roman',serif] px-2 block tracking-tight">
                         a (0), ba (1), ca (2), ..., 9a (35), bb (36), cb (37), ..., 9b (70), bca (71), ..., 99a (1260), bcb (1261), ..., 99b (2450)
                     </code>
                 </p>
@@ -340,6 +340,67 @@ const NumeralSystem = () => {
                     The case with all threshold values equal to 1 corresponds to <strong>bijective numeration</strong>, where the zeros correspond to separators
                     of numbers with digits which are non-zero.
                 </p>
+                <div className="float-right">© wikipedia, 2025</div>
+                <hr className="mt-12 mb-4" />
+                <h2 className="text-xl font-bold mb-4">References</h2>
+                <ol className="list-decimal list-inside space-y-2">
+                    <li>
+                        O'Connor, J. J. and Robertson, E. F. <em>Arabic Numerals</em>. January 2001.
+                    </li>
+                    <li>
+                        Bill Casselman. "All for Nought". <em>Feature Column</em>. AMS. February 2007.
+                    </li>
+                    <li>
+                        Bradley, Jeremy. "How Arabic Numbers Were Invented". <em>theclassroom.com</em>.
+                    </li>
+                    <li>
+                        "Wissanu rejects dumping Thai numerals". <em>Bangkok Post</em>. 31 May 2022.
+                    </li>
+                    <li>O'Connor, John J.; Robertson, Edmund F. (2004). "Chinese numerals". University of St Andrews.</li>
+                    <li>
+                        Shen Kuo et al. (1999). <em>The Nine Chapters on the Mathematical Art</em>. Oxford University Press.
+                    </li>
+                    <li>
+                        "Mathematics in the Near and Far East". <em>grmath4.phpnet.us</em>.
+                    </li>
+                    <li>
+                        Martzloff, Jean-Claude (2007). <em>A History of Chinese Mathematics</em>.
+                    </li>
+                    <li>
+                        David Eugene Smith; Louis Charles Karpinski (1911). <em>The Hindu–Arabic numerals</em>.
+                    </li>
+                    <li>
+                        Chowdhury, Arnab. <em>Design of an Efficient Multiplier using DBNS</em>. GIAP Journals.
+                    </li>
+                    <li>
+                        Fiete, I. R.; Seung, H. S. (2007). "Neural network models of birdsong..." in <em>New Encyclopedia of Neuroscience</em>.
+                    </li>
+                </ol>
+
+                <h2 className="text-xl font-bold my-6">Sources</h2>
+                <ul className="list-disc list-inside space-y-2">
+                    <li>
+                        Georges Ifrah. <em>The Universal History of Numbers</em>. Wiley, 1999.
+                    </li>
+                    <li>
+                        D. Knuth. <em>The Art of Computer Programming</em>. Addison–Wesley, 3rd Ed.
+                    </li>
+                    <li>
+                        A.L. Kroeber. <em>Handbook of the Indians of California</em>. Smithsonian Institution.
+                    </li>
+                    <li>
+                        J.P. Mallory; D.Q. Adams. <em>Encyclopedia of Indo-European Culture</em>.
+                    </li>
+                    <li>
+                        Hans J. Nissen et al. (1993). <em>Archaic Bookkeeping</em>. University of Chicago Press.
+                    </li>
+                    <li>
+                        Schmandt-Besserat, Denise (1996). <em>How Writing Came About</em>. University of Texas Press.
+                    </li>
+                    <li>
+                        Zaslavsky, Claudia (1999). <em>Africa Counts</em>. Chicago Review Press.
+                    </li>
+                </ul>
             </div>
         </div>
     );

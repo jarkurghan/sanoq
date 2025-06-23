@@ -89,7 +89,7 @@ export default function HomePage() {
 
     return (
         <div className="flex">
-            <div className="flex-1 container py-4 px-4 sm:px-8 max-w-6xl ml-0 lg:ml-64">
+            <div className="flex-1 container py-4 px-4 sm:px-8 max-w-6xl ml-0 lg:ml-64 text-gray-700 dark:text-gray-300">
                 <div className="mb-4">
                     <h1 className="text-2xl font-bold">{t("home.calculator.title")}</h1>
                 </div>

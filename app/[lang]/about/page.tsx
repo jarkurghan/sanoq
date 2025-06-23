@@ -19,15 +19,15 @@ export default function AboutPage() {
 
     return (
         <div className="flex">
-            <div className="flex-1 container py-4 px-4 sm:px-8 max-w-6xl ml-0 lg:ml-64 text-justify">
+            <div className="flex-1 container py-4 px-4 sm:px-8 max-w-6xl ml-0 lg:ml-64 text-justify text-gray-700 dark:text-gray-300">
                 <div className="mb-8">
                     <h1 className="text-2xl font-bold mb-4">Ilova haqida</h1>
-                    <p className="text-sm text-muted-foreground mb-4">
+                    <p className="text-sm mb-4">
                         Ushbu ilova sanoq sistemalari bilan ishlash uchun mo‘ljallangan. Agar siz talaba, dasturchi yoki shunchaki raqamlar olamiga qiziquvchi
                         bo‘lsangiz — bu ilova siz uchun foydali qo‘llanma bo‘la oladi. Ilova orqali siz turli sanoq sistemalari bo‘yicha bilim olishingiz,
                         hisob-kitob qilishingiz va kerakli konvertatsiyalarni bajarishingiz mumkin.
                     </p>
-                    <div className="grid grid-cols-[1fr_auto] gap-x-2 mb-4 text-muted-foreground">
+                    <div className="grid grid-cols-[1fr_auto] gap-x-2 mb-4">
                         <div className="text-lg font-medium">•</div>
                         <h3 className="text-lg font-medium">Konvertatsiya (Bosh sahifa)</h3>
                         <div></div>
@@ -36,7 +36,7 @@ export default function AboutPage() {
                             sakkizlikka va boshqalar. Interfeys sodda va tushunarli bo‘lib, tezkor va aniq natijalar taqdim etadi.
                         </p>
                     </div>
-                    <div className="grid grid-cols-[1fr_auto] gap-x-2 mb-4 text-muted-foreground">
+                    <div className="grid grid-cols-[1fr_auto] gap-x-2 mb-4">
                         <div className="text-lg font-medium">•</div>
                         <h3 className="text-lg font-medium">Ta’lim</h3>
                         <div></div>
@@ -46,7 +46,7 @@ export default function AboutPage() {
                             o‘rganuvchilar uchun foydalidir.
                         </p>
                     </div>
-                    <div className="grid grid-cols-[1fr_auto] gap-x-2 mb-4 text-muted-foreground">
+                    <div className="grid grid-cols-[1fr_auto] gap-x-2 mb-4">
                         <div className="text-lg font-medium">•</div>
                         <h3 className="text-lg font-medium">Kalkulyator</h3>
                         <div></div>
@@ -55,7 +55,7 @@ export default function AboutPage() {
                             sistemasida bajarish imkoniyati mavjud. Sonlarni oldin o‘zgartirib o‘tirmasdan, to‘g‘ridan-to‘g‘ri kerakli natijani olish mumkin.
                         </p>
                     </div>
-                    <div className="grid grid-cols-[1fr_auto] gap-x-2 mb-4 text-muted-foreground">
+                    <div className="grid grid-cols-[1fr_auto] gap-x-2 mb-4">
                         <div className="text-lg font-medium">•</div>
                         <h3 className="text-lg font-medium">Kod</h3>
                         <div></div>
@@ -71,7 +71,7 @@ export default function AboutPage() {
                     <div>
                         <h2 className="text-2xl font-bold mb-4">Ulashing</h2>
                         <div className="sm:grid grid-cols-[1fr_auto] gap-x-4">
-                            <p className="text-sm text-muted-foreground">
+                            <p className="text-sm">
                                 Ilova foydali deb o‘ylasangiz, uni boshqalar bilan ham ulashing. Bu ilova orqali nafaqat siz, balki atrofingizdagi do‘stlar,
                                 kursdoshlar va hamkasblar ham sanoq sistemalarini o‘rganishlari, bilimlarini boyitishlari mumkin. Ilova oddiy interfeys va sodda
                                 izohlar bilan murakkab mavzuni tushunarli shaklda yetkazadi. Ayniqsa, talabalar uchun bu yaxshi qo‘shimcha manba, dasturchilar
@@ -95,7 +95,7 @@ export default function AboutPage() {
                         <div>
                             <h2 className="text-2xl font-bold mb-4">{t("about.contact.title")}</h2>
                             <div className="sm:grid grid-cols-[1fr_auto] gap-x-4">
-                                <div className="space-y-2 text-sm text-muted-foreground">
+                                <div className="space-y-2 text-sm">
                                     <ul>
                                         <li className="mb-1">• Savol yoki takliflaringiz bormi?</li>
                                         <li className="mb-1">

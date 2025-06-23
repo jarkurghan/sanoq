@@ -74,13 +74,13 @@ return (
 
   return (
     <div className="flex">
-      <div className="flex-1 container py-4 px-4 sm:px-8 max-w-7xl ml-0 lg:ml-64">
+      <div className="flex-1 container py-4 px-4 sm:px-8 max-w-7xl ml-0 lg:ml-64 text-gray-700 dark:text-gray-300">
         <h1 className="text-2xl font-bold mb-6">{t("code.title")}</h1>
 
         <div className="space-y-6">
           {/* Search Input */}
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4" />
             <Input
               placeholder="Search code examples..."
               value={searchQuery}
@@ -102,7 +102,7 @@ return (
                     <CardTitle className="text-lg">{t(topic.title)}</CardTitle>
                   </CardHeader>
                   <CardContent className="pt-0">
-                    <p className="text-sm text-muted-foreground mb-4 line-clamp-3">{topic.description}</p>
+                    <p className="text-sm mb-4 line-clamp-3">{topic.description}</p>
                     <Button
                       variant="outline"
                       asChild
@@ -121,8 +121,8 @@ return (
 
           {filteredTopics.length === 0 && (
             <div className="text-center py-12">
-              <Code className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-              <p className="text-sm text-muted-foreground">No code examples found matching your search.</p>
+              <Code className="h-12 w-12 mx-auto mb-4" />
+              <p className="text-sm">No code examples found matching your search.</p>
             </div>
           )}
         </div>

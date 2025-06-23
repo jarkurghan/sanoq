@@ -12,7 +12,7 @@ export default function CalculatorText() {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="text-sm font-medium text-stone-700">
+      <div className="text-sm font-medium">
         {t("calculator.basic.features")}
         <ul>
           <li>
@@ -41,12 +41,12 @@ export default function CalculatorText() {
         </ul>
       </div>
       {base !== "10" && (
-        <div className="text-sm font-medium text-stone-700">
+        <div className="text-sm font-medium">
           <p className="text-justify">{t("calculator.info.warning." + base)}</p>
         </div>
       )}
 
-      <div className="text-sm font-medium text-stone-700">
+      <div className="text-sm font-medium">
         <h2 className="text-lg font-bold mt-4 mb-1">{t("calculator.info.title." + base)}</h2>
         <p className="text-justify">
           {t("calculator.info.title." + base)} — {t("calculator.info.description." + base)}.
