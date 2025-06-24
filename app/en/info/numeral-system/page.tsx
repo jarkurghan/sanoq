@@ -6,7 +6,7 @@ import Image from "next/image";
 const NumeralSystem = () => {
     return (
         <div className="flex">
-            <div className="flex-1 container py-4 px-4 sm:px-8 max-w-6xl ml-0 lg:ml-64 text-justify text-gray-700 dark:text-gray-300">
+            <div className="flex-1 container py-4 px-4 sm:px-8 max-w-6xl ml-0 lg:ml-64 text-justify">
                 <h1 className="text-2xl font-bold mb-4">Numeral system</h1>
                 <p className="mb-4">
                     A numeral system is a writing system for expressing numbers; that is, a mathematical notation for representing numbers of a given set, using
@@ -45,7 +45,7 @@ const NumeralSystem = () => {
                 </p>
                 <Image
                     src="/images/historial_numeric_system.png"
-                    className="dark:bg-slate-300 mb-4 float-right ml-4 rounded-lg p-4"
+                    className="dark:bg-slate-400 mb-4 float-right ml-4 rounded-lg p-4"
                     alt="maya"
                     width={360}
                     height={120}
@@ -83,7 +83,7 @@ const NumeralSystem = () => {
                     data representation.
                 </p>
                 <h2 className="text-xl font-bold my-4">Other historical numeral systems using digits</h2>
-                <Image src="/images/maya.png" className="dark:bg-slate-300 mb-4 float-right ml-4 p-4 border rounded-lg" alt="maya" width={160} height={120} />
+                <Image src="/images/maya.png" className="dark:bg-slate-400 mb-4 float-right ml-4 p-4 border rounded-lg" alt="maya" width={160} height={120} />
                 <p className="mb-4">
                     The exact age of the <strong>Maya numerals</strong> is unclear, but it is possible that it is older than the Hindu–Arabic system. The system
                     was <em>vigesimal</em> (base 20), so it has twenty digits. The Mayas used a shell symbol to represent zero. Numerals were written
@@ -95,7 +95,7 @@ const NumeralSystem = () => {
                     The use of these digits is less common in Thailand than it once was, but they are still used alongside Arabic numerals.
                     <sup className="text-gray-400">[4]</sup>
                 </p>
-                <Image src="/images/rod-table.png" className="mb-4 float-left mr-8 dark:opacity-80 border rounded-lg" alt="rods" width={500} height={300} />
+                <Image src="/images/rod-table.png" className="mb-4 float-left mr-8 dark:opacity-60 border rounded-lg" alt="rods" width={500} height={300} />
                 <p className="mb-4">
                     The <strong>rod numerals</strong>, the written forms of counting rods once used by Chinese and Japanese mathematicians, are a decimal
                     positional system used for performing decimal calculations. Rods were placed on a counting board and slid forwards or backwards to change
@@ -224,27 +224,27 @@ const NumeralSystem = () => {
                 <p className="mb-4">
                     In general, numbers in the base <em>b</em> system are of the form:
                     <br />
-                    <Image src="/images/formula_n1.png" className="dark:bg-slate-300 rounded-lg" alt="f1" width={373} height={50} />
+                    <Image src="/images/formula_n1.png" className="dark:bg-slate-400 rounded-lg" alt="f1" width={373} height={50} />
                 </p>
                 <p className="mb-4">
                     The numbers bᵏ and b⁻ᵏ are the <strong>weights</strong> of the corresponding digits. The position <em>k</em> is the{" "}
                     <strong>logarithm</strong> of the corresponding weight <em>w</em>, that is{" "}
-                    <Image src="/images/formula_n2.png" className="dark:bg-slate-300 rounded-sm inline" alt="f2" width={141} height={23} />. The highest used
+                    <Image src="/images/formula_n2.png" className="dark:bg-slate-400 rounded-sm inline" alt="f2" width={141} height={23} />. The highest used
                     position is close to the <strong>order of magnitude</strong> of the number.
                 </p>
                 <p className="mb-4">
                     The number of tally marks required in the unary numeral system for describing the weight would have been <em>w</em>. In the positional
                     system, the number of digits required to describe it is only{" "}
-                    <Image src="/images/formula_n3.png" className="dark:bg-slate-300 rounded-sm inline" alt="f3" width={131} height={19} />, for <em>k ≥ 0</em>.
+                    <Image src="/images/formula_n3.png" className="dark:bg-slate-400 rounded-sm inline" alt="f3" width={131} height={19} />, for <em>k ≥ 0</em>.
                     For example, to describe the weight 1000 then four digits are needed because{" "}
                     <code className="[font-family:'Times_New_Roman',serif] px-1">
                         log<sub>10</sub> 1000 + 1 = 3 + 1
                     </code>
                     . The number of digits required to <em>describe the position</em> is{" "}
-                    <Image src="/images/formula_n4.png" className="dark:bg-slate-300 rounded-sm inline" alt="f4" width={192} height={19} />
+                    <Image src="/images/formula_n4.png" className="dark:bg-slate-400 rounded-sm inline" alt="f4" width={192} height={19} />
                     (in positions 1, 10, 100,... only for simplicity in the decimal example).
                 </p>
-                <Image src="/images/table_n4.png" className="dark:bg-slate-300 rounded-lg mb-2 inline" alt="t4" width={474} height={121} />
+                <Image src="/images/table_n4.png" className="dark:bg-slate-400 rounded-lg mb-2 inline" alt="t4" width={474} height={121} />
                 <p className="mb-4">
                     A number has a terminating or repeating expansion if and only if it is rational; this does not depend on the base. A number that terminates
                     in one base may repeat in another (thus 0.3₁₀ = 0.0100110011001...₂). An irrational number stays aperiodic (with an infinite number of

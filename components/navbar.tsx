@@ -28,13 +28,12 @@ export default function Navbar() {
 
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <div className="px-4 md:px-8 lg:px-12 w-full flex h-14 items-center">
+            <div className="px-4 sm:px-8 lg:px-12 w-full flex h-14 items-center">
                 <div className="flex items-center space-x-8">
                     <Link href={`/${lang}`} className="flex items-center space-x-2">
-                        <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-primary-foreground">
+                        <div className="flex items-center justify-center w-8 h-8 lg:ml-[175px] rounded-lg bg-primary text-primary-foreground">
                             <Calculator className="h-6 w-6" />
                         </div>
-                        <span className="hidden sm:inline-block text-xl font-bold">Number Systems</span>
                     </Link>
 
                     <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
@@ -46,7 +45,7 @@ export default function Navbar() {
                                     href={item.href}
                                     className={cn(
                                         "flex items-center text-sm font-medium transition-colors hover:text-primary",
-                                        isActive ? "text-primary" : "text-muted-foreground"
+                                        isActive ? "text-primary" : ""
                                     )}
                                 >
                                     <item.icon className="mr-2 h-4 w-4" />
@@ -104,7 +103,7 @@ export default function Navbar() {
                                     onClick={() => setMobileMenuOpen(false)}
                                     className={cn(
                                         "flex items-center rounded-md px-3 py-2 text-base font-medium transition-colors hover:bg-muted hover:text-primary",
-                                        isActive ? "bg-muted text-primary" : "text-muted-foreground"
+                                        isActive ? "bg-muted text-primary" : ""
                                     )}
                                 >
                                     <item.icon className="mr-2 h-5 w-5" />

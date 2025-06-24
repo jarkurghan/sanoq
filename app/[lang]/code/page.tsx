@@ -74,7 +74,7 @@ return (
 
   return (
     <div className="flex">
-      <div className="flex-1 container py-4 px-4 sm:px-8 max-w-7xl ml-0 lg:ml-64 text-gray-700 dark:text-gray-300">
+      <div className="flex-1 container py-4 px-4 sm:px-8 max-w-7xl ml-0 lg:ml-64">
         <h1 className="text-2xl font-bold mb-6">{t("code.title")}</h1>
 
         <div className="space-y-6">

@@ -35,7 +35,7 @@ export default function ShareAppURL({ children }: { children?: React.ReactNode }
                 </DialogHeader>
 
                 <div className="space-y-4">
-                    <div className="text-sm break-all bg-gray-100 rounded p-2">{url}</div>
+                    <div className="text-sm break-all bg-card border rounded p-2">{url}</div>
 
                     <div className="flex gap-2 flex-wrap">
                         <Button variant="outline" asChild>

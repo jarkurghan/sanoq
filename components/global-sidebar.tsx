@@ -68,7 +68,7 @@ if (items.length === 0) return null
                       href={item.href}
                       className={cn(
                         "flex items-center px-3 py-2 text-sm rounded-md transition-colors hover:bg-accent",
-                        isActive ? "bg-accent text-accent-foreground font-medium" : "text-muted-foreground",
+                        isActive ? "bg-accent text-accent-foreground font-medium" : "",
                       )}
                     >
                       <ChevronRight className={cn("mr-2 h-4 w-4 transition-transform", isActive ? "rotate-90" : "")} />

@@ -81,7 +81,8 @@ export const PUBLICATIONS = [
     },
     {
         title: "List of numeral systems",
-        description: "A numeral system is a writing system for expressing numbers; that is, a mathematical notation for representing numbers of a given set, using digits or other symbols in a consistent manner.",
+        description:
+            "A numeral system is a writing system for expressing numbers; that is, a mathematical notation for representing numbers of a given set, using digits or other symbols in a consistent manner.",
         href: "/en/info/list-of-numeral-systems",
         lang: "en",
         icon: History,
@@ -104,3 +105,28 @@ export const PUBLICATIONS = [
         color: "green",
     },
 ] satisfies readonly Publication[];
+
+export const COLORS = [
+    "slate",
+    "gray",
+    "zinc",
+    "neutral",
+    "stone",
+    "blue",
+    "sky",
+    "cyan",
+    "teal",
+    "indigo",
+    "violet",
+    "purple",
+    "fuchsia",
+    "red",
+    "orange",
+    "amber",
+    "yellow",
+    "lime",
+    "green",
+    "emerald",
+    "pink",
+    "rose",
+] satisfies readonly Color[];

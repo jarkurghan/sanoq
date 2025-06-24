@@ -29,7 +29,7 @@ export default function PublicationsPage() {
 
     return (
         <div className="flex">
-            <div className="flex-1 container py-4 px-4 sm:px-8 max-w-7xl ml-0 lg:ml-64 text-gray-700 dark:text-gray-300">
+            <div className="flex-1 container py-4 px-4 sm:px-8 max-w-7xl ml-0 lg:ml-64">
                 <div className="space-y-6">
                     <div className="relative">
                         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4" />
@@ -40,13 +40,15 @@ export default function PublicationsPage() {
                         {filteredTopics.map((topic) => {
                             const Icon = topic.icon;
                             const bgColor = `bg-${topic.color}-100`;
-                            const textColor = `text-${topic.color}-900`;
+                            const iconColor = `text-${topic.color}-900`;
+                            const darkBgColor = `dark:bg-${topic.color}-100/30`;
+                            const darkIconColor = `dark:text-${topic.color}-100/90`;
                             return (
                                 <Card key={topic.href} className="hover:shadow-md transition-shadow cursor-pointer group flex flex-col justify-between">
                                     <CardHeader className="pb-3">
                                         <div className="flex items-center justify-center w-full h-fit">
-                                            <div className={clsx("flex items-center justify-center w-12 h-12 rounded-full mb-3", bgColor)}>
-                                                <Icon className={clsx(`h-6 w-6`, textColor)} />
+                                            <div className={clsx("flex items-center justify-center w-12 h-12 rounded-full mb-3", bgColor, darkBgColor)}>
+                                                <Icon className={clsx(`h-6 w-6`, iconColor, darkIconColor)} />
                                             </div>
                                         </div>
                                         <CardTitle className="text-md text-center">{topic.title}</CardTitle>
@@ -56,7 +58,7 @@ export default function PublicationsPage() {
                                         <Button
                                             variant="outline"
                                             asChild
-                                            className={clsx("w-full transition-colors group-hover:text-white", `group-hover:${bgColor}`)}
+                                            className={clsx("w-full transition-colors")}
                                         >
                                             <Link href={topic.href} className="flex justify-between items-center">
                                                 <span className="text-sm">{t("home.learnmore")}</span>

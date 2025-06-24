@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss"
+import { COLORS } from "./lib/publications"
 
 const config = {
   darkMode: ["class"],
@@ -77,12 +78,10 @@ const config = {
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
   safelist: [
-  {
-    pattern: /(bg|text)-(slate|gray|zinc|neutral|stone|blue|sky|cyan|teal|indigo|violet|purple|fuchsia|red|orange|amber|yellow|lime|green|emerald|pink|rose)-(100|900)/,
-  },
-  {
-    pattern: /group-hover:(bg|text)-(slate|gray|zinc|neutral|stone|blue|sky|cyan|teal|indigo|violet|purple|fuchsia|red|orange|amber|yellow|lime|green|emerald|pink|rose)-(100|900)/,
-  }
+        ...COLORS.map((color) => `bg-${color}-100`),
+        ...COLORS.map((color) => `text-${color}-900`),
+        ...COLORS.map((color) => `dark:bg-${color}-100/30`),
+        ...COLORS.map((color) => `dark:text-${color}-100/90`),
 ]
 } satisfies Config
 

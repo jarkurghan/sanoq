@@ -19,7 +19,7 @@ export default function AboutPage() {
 
     return (
         <div className="flex">
-            <div className="flex-1 container py-4 px-4 sm:px-8 max-w-6xl ml-0 lg:ml-64 text-justify text-gray-700 dark:text-gray-300">
+            <div className="flex-1 container py-4 px-4 sm:px-8 max-w-6xl ml-0 lg:ml-64 text-justify">
                 <div className="mb-8">
                     <h1 className="text-2xl font-bold mb-4">Ilova haqida</h1>
                     <p className="text-sm mb-4">
