@@ -90,11 +90,8 @@ export default function HomePage() {
     return (
         <div className="flex">
             <div className="flex-1 container py-4 px-4 sm:px-8 max-w-6xl ml-0 lg:ml-64">
-                <div className="mb-4">
-                    <h1 className="text-2xl font-bold">{t("home.calculator.title")}</h1>
-                </div>
-
-                <div className="hidden sm:block border-t border-b py-4 mb-6 text-sm">
+                <h1 className="text-2xl font-bold">{t("home.calculator.title")}</h1>
+                <div className="hidden sm:block border-b pt-2 pb-4 mb-6 text-sm">
                     <p>{t("home.calculator.description")}</p>
                 </div>
 
@@ -118,7 +115,7 @@ export default function HomePage() {
                                 setLeftValue(e.target.value);
                                 setLastChanged("left");
                             }}
-                            className="font-mono w-full"
+                            className="font-mono w-full outline-none"
                             placeholder={getPlaceholder(fromBase)}
                         />
                     </div>
@@ -149,11 +146,13 @@ export default function HomePage() {
                                 setRightValue(e.target.value);
                                 setLastChanged("right");
                             }}
-                            className="font-mono w-full"
+                            className="font-mono w-full outline-none"
                             placeholder={getPlaceholder(toBase)}
                         />
                     </div>
                 </div>
+
+                {/* <div className="pt-6 px-2">result</div> */}
             </div>
 
             <div className="hidden lg:block">

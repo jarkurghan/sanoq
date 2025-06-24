@@ -29,16 +29,16 @@ export default function GlobalSidebar() {
   // Determine which sidebar to show based on current path
   const getCurrentSidebar = () => {
     if (pathname.includes("/publications")) {
-      return { items: sidebarMenus.publications, basePath: `/${lang}/publications` }
+      return { items: sidebarMenus.publications.filter(e=>e.lang===lang), basePath: `/${lang}/publications` }
     }
     if (pathname.includes("/ru/info")) {
-      return { items: sidebarMenus.publications, basePath: `/${lang}/publications` }
+      return { items: sidebarMenus.publications.filter(e=>e.lang==="ru"), basePath: `/${lang}/publications` }
     }
     if (pathname.includes("/uz/info")) {
-      return { items: sidebarMenus.publications, basePath: `/${lang}/publications` }
+      return { items: sidebarMenus.publications.filter(e=>e.lang==="ru"), basePath: `/${lang}/publications` }
     }
     if (pathname.includes("/en/info")) {
-      return { items: sidebarMenus.publications, basePath: `/${lang}/publications` }
+      return { items: sidebarMenus.publications.filter(e=>e.lang==="ru"), basePath: `/${lang}/publications` }
     }
     // if (pathname.includes("/code")) {
     //   return { items: sidebarMenus.code, basePath: `/${lang}/code` }

@@ -21,68 +21,44 @@ export default function AboutPage() {
         <div className="flex">
             <div className="flex-1 container py-4 px-4 sm:px-8 max-w-6xl ml-0 lg:ml-64 text-justify">
                 <div className="mb-8">
-                    <h1 className="text-2xl font-bold mb-4">Ilova haqida</h1>
-                    <p className="text-sm mb-4">
-                        Ushbu ilova sanoq sistemalari bilan ishlash uchun mo‘ljallangan. Agar siz talaba, dasturchi yoki shunchaki raqamlar olamiga qiziquvchi
-                        bo‘lsangiz — bu ilova siz uchun foydali qo‘llanma bo‘la oladi. Ilova orqali siz turli sanoq sistemalari bo‘yicha bilim olishingiz,
-                        hisob-kitob qilishingiz va kerakli konvertatsiyalarni bajarishingiz mumkin.
-                    </p>
+                    <h1 className="text-2xl font-bold mb-4">{t("about.title")}</h1>
+                    <p className="text-sm mb-4">{t("about.description")}</p>
                     <div className="grid grid-cols-[1fr_auto] gap-x-2 mb-4">
                         <div className="text-lg font-medium">•</div>
-                        <h3 className="text-lg font-medium">Konvertatsiya (Bosh sahifa)</h3>
+                        <h3 className="text-lg font-medium">{t("nav.conversion")}</h3>
                         <div></div>
-                        <p className="text-sm">
-                            Bu bo‘limda siz sonlarni bir sanoq sistemasidan boshqasiga o‘tkazishingiz mumkin — masalan, ikkilikdan o‘nlikka, o‘n oltilikdan
-                            sakkizlikka va boshqalar. Interfeys sodda va tushunarli bo‘lib, tezkor va aniq natijalar taqdim etadi.
-                        </p>
+                        <p className="text-sm">{t("about.page.conversion.desription")}</p>
                     </div>
                     <div className="grid grid-cols-[1fr_auto] gap-x-2 mb-4">
                         <div className="text-lg font-medium">•</div>
-                        <h3 className="text-lg font-medium">Ta’lim</h3>
+                        <h3 className="text-lg font-medium">{t("nav.calculator")}</h3>
                         <div></div>
-                        <p className="text-sm">
-                            Bu bo‘limda sanoq sistemalari haqida umumiy va chuqurroq ma’lumotlar beriladi: Sanoq sistemasi nima va qanday ishlaydi; O‘nlik,
-                            ikkilik, sakkizlik, o‘n oltilik kabi tizimlar farqi; Amaliyotda qo‘llanishi va tarixiy izohlar. Bu qism ayniqsa o‘quvchilar va
-                            o‘rganuvchilar uchun foydalidir.
-                        </p>
+                        <p className="text-sm">{t("about.page.calculator.desription")}</p>
                     </div>
                     <div className="grid grid-cols-[1fr_auto] gap-x-2 mb-4">
                         <div className="text-lg font-medium">•</div>
-                        <h3 className="text-lg font-medium">Kalkulyator</h3>
+                        <h3 className="text-lg font-medium">{t("nav.publications")}</h3>
                         <div></div>
-                        <p className="text-sm">
-                            Oddiy matematik amallar qo‘shish, ayirish, ko‘paytirish, bo‘lishdan tortib daraja, ratsional sonlar, foizgacha – istalgan sanoq
-                            sistemasida bajarish imkoniyati mavjud. Sonlarni oldin o‘zgartirib o‘tirmasdan, to‘g‘ridan-to‘g‘ri kerakli natijani olish mumkin.
-                        </p>
+                        <p className="text-sm">{t("about.page.publications.desription")}</p>
                     </div>
-                    <div className="grid grid-cols-[1fr_auto] gap-x-2 mb-4">
+                    {/* <div className="grid grid-cols-[1fr_auto] gap-x-2 mb-4">
                         <div className="text-lg font-medium">•</div>
-                        <h3 className="text-lg font-medium">Kod</h3>
+                        <h3 className="text-lg font-medium">{t("nav.code")}</h3>
                         <div></div>
-                        <p className="text-sm">
-                            Bu bo‘limda siz sanoq sistemalariga oid algoritmlar va dasturiy kodlar namunalarini topasiz: Sanoq sistemalari o‘rtasida o‘tkazish
-                            algoritmlari Ikkilik arifmetikaga oid misollar; Mashhur dasturlash tillarida tayyor kodlar. Bu bo‘lim ayniqsa dasturchilar va
-                            o‘rganmoqchi bo‘lgan foydalanuvchilar uchun mo‘ljallangan.
-                        </p>
-                    </div>
+                        <p className="text-sm">{t("about.page.code.desription")}</p>
+                    </div> */}
                 </div>
 
                 <div className="grid gap-8">
                     <div>
-                        <h2 className="text-2xl font-bold mb-4">Ulashing</h2>
+                        <h2 className="text-2xl font-bold mb-4">{t("about.share.title")}</h2>
                         <div className="sm:grid grid-cols-[1fr_auto] gap-x-4">
-                            <p className="text-sm">
-                                Ilova foydali deb o‘ylasangiz, uni boshqalar bilan ham ulashing. Bu ilova orqali nafaqat siz, balki atrofingizdagi do‘stlar,
-                                kursdoshlar va hamkasblar ham sanoq sistemalarini o‘rganishlari, bilimlarini boyitishlari mumkin. Ilova oddiy interfeys va sodda
-                                izohlar bilan murakkab mavzuni tushunarli shaklda yetkazadi. Ayniqsa, talabalar uchun bu yaxshi qo‘shimcha manba, dasturchilar
-                                uchun esa foydali vositadir. Hisoblash, konvertatsiya, o‘rganish va kod yozish barchasi bir joyda jamlangan — sanoq sistemasiga
-                                oid barcha bilimlar bir ilovada yig'ilgan.
-                            </p>
+                            <p className="text-sm">{t("about.share.description")}</p>
                             <div className="mt-4 text-card-foreground w-full sm:w-40 py-4 flex items-center justify-center flex-col gap-2">
                                 <Share2 size={30} />
                                 <ShareAppURL>
                                     <div className="px-6 py-1 text-white text-base font-medium bg-blue-500 border-none rounded-lg cursor-pointer transition-colors text-center no-underline inline-flex items-center justify-center gap-2">
-                                        Ulashish
+                                        {t("about.share.button")}
                                     </div>
                                 </ShareAppURL>
                             </div>
@@ -95,18 +71,16 @@ export default function AboutPage() {
                         <div>
                             <h2 className="text-2xl font-bold mb-4">{t("about.contact.title")}</h2>
                             <div className="sm:grid grid-cols-[1fr_auto] gap-x-4">
-                                <div className="space-y-2 text-sm">
+                                <div className="space-y-2 text-sm mb-4">
                                     <ul>
-                                        <li className="mb-1">• Savol yoki takliflaringiz bormi?</li>
-                                        <li className="mb-1">
-                                            • Ilovaga biror qo'shimcha kiritish taklifingiz bo'lsa yoki ilovada nimanidir tushunarsiz deb hisoblaysizmi?
-                                        </li>
-                                        <li className="mb-1">• Biror mavzuda maqola qoʻshmoqchisiz yoki qoʻshish kerak deb hisoblaysizmi?</li>
-                                        <li className="mb-1">• E'tiroz yoki shikoyatingiz bormi?</li>
-                                        <li className="mb-1">• Ilova ishlashida yoki xabarlar mazmunida biror xatolik yoki tushunarsizlik bo'lsa</li>
-                                        <li className="mb-1">• Ilovaga oid va ilovadan tashqari savollar uchun ham</li>
+                                        <li className="mb-1">• {t("about.contact.description1")}</li>
+                                        <li className="mb-1">• {t("about.contact.description2")}</li>
+                                        <li className="mb-1">• {t("about.contact.description3")}</li>
+                                        <li className="mb-1">• {t("about.contact.description4")}</li>
+                                        <li className="mb-1">• {t("about.contact.description5")}</li>
+                                        <li className="mb-1">• {t("about.contact.description6")}</li>
                                     </ul>
-                                    <strong>Biz bilan bog'laning.</strong> Sizning fikringiz biz uchun muhim!
+                                    <strong>{t("about.contact.description.bold")}</strong> {t("about.contact.description.def")}
                                 </div>
                                 <div className="mt-4 text-card-foreground w-full sm:w-40 py-4 flex items-center justify-center flex-col gap-2">
                                     <Send size={30} />
@@ -115,7 +89,7 @@ export default function AboutPage() {
                                         target="_blank"
                                         className="px-6 py-1 text-white text-base font-medium bg-blue-500 border-none rounded-lg cursor-pointer transition-colors text-center no-underline inline-flex items-center justify-center gap-2"
                                     >
-                                        Bog'lanish
+                                        {t("about.contact.button")}
                                     </a>
                                 </div>
                             </div>

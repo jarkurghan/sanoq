@@ -25,7 +25,9 @@ export default function PublicationsPage() {
     }, [lang, setLanguage]);
 
     const publicationsTopics = PUBLICATIONS;
-    const filteredTopics = publicationsTopics.filter((topic) => t(topic.title).toLowerCase().includes(searchQuery.toLowerCase()));
+    const filteredTopics = publicationsTopics
+        .filter((e) => e.lang === lang)
+        .filter((topic) => t(topic.title).toLowerCase().includes(searchQuery.toLowerCase()));
 
     return (
         <div className="flex">
@@ -33,7 +35,7 @@ export default function PublicationsPage() {
                 <div className="space-y-6">
                     <div className="relative">
                         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4" />
-                        <Input placeholder="Search..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="pl-10" />
+                        <Input placeholder={t("publications.search")} value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="pl-10" />
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
@@ -55,11 +57,7 @@ export default function PublicationsPage() {
                                     </CardHeader>
                                     <CardContent className="pt-0">
                                         <p className="text-sm mb-4 line-clamp-3">{topic.description}</p>
-                                        <Button
-                                            variant="outline"
-                                            asChild
-                                            className={clsx("w-full transition-colors")}
-                                        >
+                                        <Button variant="outline" asChild className={clsx("w-full transition-colors")}>
                                             <Link href={topic.href} className="flex justify-between items-center">
                                                 <span className="text-sm">{t("home.learnmore")}</span>
                                                 <ChevronRight className="h-4 w-4" />

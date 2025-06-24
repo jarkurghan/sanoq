@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname, useParams } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Calculator, Code, Home, Info, BookOpen, Menu, X, Share2 } from "lucide-react";
+import { Calculator, Code, Home, Info, BookOpen, Menu, X, Share2, Binary } from "lucide-react";
 import { useState } from "react";
 import { useLanguage } from "@/contexts/language-context";
 import LanguageSwitcher from "@/components/language-switcher";
@@ -32,7 +32,7 @@ export default function Navbar() {
                 <div className="flex items-center space-x-8">
                     <Link href={`/${lang}`} className="flex items-center space-x-2">
                         <div className="flex items-center justify-center w-8 h-8 lg:ml-[175px] rounded-lg bg-primary text-primary-foreground">
-                            <Calculator className="h-6 w-6" />
+                            <Binary className="h-6 w-6" />
                         </div>
                     </Link>
 
