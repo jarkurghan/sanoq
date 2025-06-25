@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChevronRight, Search, BookOpen } from "lucide-react";
 import { useLanguage } from "@/contexts/language-context";
 import { PUBLICATIONS } from "@/lib/publications";
@@ -11,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import clsx from "clsx";
+import Head from "next/head";
 
 export default function PublicationsPage() {
     const { t, setLanguage } = useLanguage();
@@ -24,12 +24,38 @@ export default function PublicationsPage() {
         }
     }, [lang, setLanguage]);
 
+    const seo = {
+        uz: {
+            title: "Nashrlar | O‘quv materiallari",
+            description: "Siz uchun tanlangan nashrlar, maqolalar va son sistemalari haqida o‘quv materiallari.",
+        },
+        en: {
+            title: "Publications | Learning Materials",
+            description: "Curated publications and educational articles on numeral systems and more.",
+        },
+        ru: {
+            title: "Публикации | Учебные материалы",
+            description: "Подборка публикаций и обучающих материалов по системам счисления и другим темам.",
+        },
+    };
+
+    const seoData = seo[lang as "en" | "uz" | "ru"] || seo["en"];
+
     const publicationsTopics = PUBLICATIONS;
     const filteredTopics = publicationsTopics
         .filter((e) => e.lang === lang)
         .filter((topic) => t(topic.title).toLowerCase().includes(searchQuery.toLowerCase()));
 
     return (
+        <>
+            <Head>
+                <title>{seoData.title}</title>
+                <meta name="description" content={seoData.description} />
+                <meta name="robots" content="index, follow" />
+                <meta property="og:title" content={seoData.title} />
+                <meta property="og:description" content={seoData.description} />
+            </Head>
+
         <div className="flex">
             <div className="flex-1 container py-4 px-4 sm:px-8 max-w-7xl ml-0 lg:ml-64">
                 <div className="space-y-6">
@@ -49,17 +75,17 @@ export default function PublicationsPage() {
                                 <Card key={topic.href} className="hover:shadow-md transition-shadow cursor-pointer group flex flex-col justify-between">
                                     <CardHeader className="pb-3">
                                         <div className="flex items-center justify-center w-full h-fit">
-                                            <div className={clsx("flex items-center justify-center w-12 h-12 rounded-full mb-3", bgColor, darkBgColor)}>
-                                                <Icon className={clsx(`h-6 w-6`, iconColor, darkIconColor)} />
+                                            <div className={clsx("flex items-center justify-center w-12 h-12 rounded-full mb-3", bgColor, darkBgColor )} >
+                                                <Icon className={clsx("h-6 w-6", iconColor, darkIconColor)} />
                                             </div>
                                         </div>
                                         <CardTitle className="text-md text-center">{topic.title}</CardTitle>
                                     </CardHeader>
                                     <CardContent className="pt-0">
                                         <p className="text-sm mb-4 line-clamp-3">{topic.description}</p>
-                                        <Button variant="outline" asChild className={clsx("w-full transition-colors")}>
+                                        <Button variant="outline" asChild className="w-full transition-colors">
                                             <Link href={topic.href} className="flex justify-between items-center">
-                                                <span className="text-sm">{t("home.learnmore")}</span>
+                                                <span className="text-sm">{t("publications.learnmore")}</span>
                                                 <ChevronRight className="h-4 w-4" />
                                             </Link>
                                         </Button>
@@ -72,11 +98,12 @@ export default function PublicationsPage() {
                     {filteredTopics.length === 0 && (
                         <div className="text-center py-12">
                             <BookOpen className="h-12 w-12 mx-auto mb-4" />
-                            <p className="text-sm">No topics found matching your search.</p>
+                            <p className="text-sm">{t("publications.notfound")}</p>
                         </div>
                     )}
                 </div>
             </div>
         </div>
+        </>
     );
 }

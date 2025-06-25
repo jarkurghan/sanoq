@@ -70,7 +70,6 @@ const translations: Record<Language, Record<string, string>> = {
         "home.whatare.title": "What are Number Systems?",
         "home.whatare.description":
             "Number systems are mathematical systems for expressing numbers. A number system consists of a set of symbols (digits) and rules for using these symbols to represent numbers.",
-        "home.learnmore": "Learn",
         "home.calculator.title": "Number System Conversion Calculator",
         "home.calculator.description": "Converting a number from one numeral system to another",
         "home.placeholder.binary": "Enter a binary number",
@@ -123,6 +122,8 @@ const translations: Record<Language, Record<string, string>> = {
         "publications.welcome.description":
             "This section provides comprehensive information about different number systems, their properties, and how they are used in computing and mathematics.",
         "publications.welcome.select": "Select a topic from the sidebar to learn more about specific number systems.",
+        "publications.learnmore": "Learn",
+        "publications.notfound": "No topics found matching your search.",
 
         // Publications topics
         "publications.topic.binary": "Binary System",
@@ -406,6 +407,14 @@ const translations: Record<Language, Record<string, string>> = {
         "footer.contactdesc": "Have questions or suggestions? Feel free to reach out to us.",
         "footer.rights": "All rights reserved.",
 
+        // share
+        "share.title": "Share",
+        "share.description": "Share this page with your friends",
+        "share.telegram": "Telegram",
+        "share.email": "Email",
+        "share.copy": "Copy",
+        "share.copied": "🎉 Copied",
+
         // Sidebar
         "sidebar.topics": "Topics",
         "sidebar.menu": "Menu",
@@ -435,7 +444,6 @@ const translations: Record<Language, Record<string, string>> = {
         "home.whatare.title": "Sanoq Sistemalari nima?",
         "home.whatare.description":
             "Sanoq sistemalari sonlarni ifodalash uchun matematik sistemalardir. Sanoq sistemasi belgilar (raqamlar) to'plami va bu belgilardan sonlarni ifodalash uchun foydalanish qoidalaridan iborat.",
-        "home.learnmore": "O'qish",
         "home.calculator.title": "Konvertor",
         "home.calculator.description": "Sonni bir sanoq sistemasidan boshqa sanoq sistemasiga o'tkazish",
         "home.placeholder.binary": "Ikkilik raqam kiriting",
@@ -488,6 +496,8 @@ const translations: Record<Language, Record<string, string>> = {
         "publications.welcome.description":
             "Bu bo'lim turli sanoq sistemalari, ularning xususiyatlari va ularning hisoblash va matematikada qanday qo'llanilishi haqida keng ma'lumot beradi.",
         "publications.welcome.select": "Muayyan sanoq sistemalari haqida ko'proq ma'lumot olish uchun yon paneldan mavzuni tanlang.",
+        "publications.learnmore": "O'qish",
+        "publications.notfound": "Qidiruv bo‘yicha hech qanday mavzu topilmadi.",
 
         // Publications topics
         "publications.topic.binary": "Ikkilik Sistema",
@@ -753,6 +763,14 @@ const translations: Record<Language, Record<string, string>> = {
         "footer.contactdesc": "Savollar yoki takliflar bormi? Biz bilan bog'lanishdan tortinmang.",
         "footer.rights": "Barcha huquqlar himoyalangan.",
 
+        // share
+        "share.title": "Ulashish",
+        "share.description": "Ushbu sahifani do‘stlaringizga ulashing",
+        "share.telegram": "Telegram",
+        "share.email": "Email",
+        "share.copy": "Nusxalash",
+        "share.copied": "🎉 Nusxalandi",
+
         // Sidebar
         "sidebar.topics": "Mavzular",
         "sidebar.menu": "Menyu",
@@ -782,7 +800,6 @@ const translations: Record<Language, Record<string, string>> = {
         "home.whatare.title": "Что такое Системы Счисления?",
         "home.whatare.description":
             "Системы счисления - это математические системы для выражения чисел. Система счисления состоит из набора символов (цифр) и правил использования этих символов для представления чисел.",
-        "home.learnmore": "Узнать",
         "home.calculator.title": "Калькулятор Конвертации Систем Счисления",
         "home.calculator.description": "Перевод числа из одной системы счисления в другую",
         "home.placeholder.binary": "Введите двоичное число",
@@ -835,6 +852,8 @@ const translations: Record<Language, Record<string, string>> = {
         "publications.welcome.description":
             "Этот раздел предоставляет исчерпывающую информацию о различных системах счисления, их свойствах и о том, как они используются в вычислениях и математике.",
         "publications.welcome.select": "Выберите тему из боковой панели, чтобы узнать больше о конкретных системах счисления.",
+        "publications.learnmore": "Узнать",
+        "publications.notfound": "По вашему запросу темы не найдены.",
 
         // Publications topics
         "publications.topic.binary": "Двоичная Система",
@@ -1118,6 +1137,14 @@ const translations: Record<Language, Record<string, string>> = {
         "footer.contact": "Контакт",
         "footer.contactdesc": "Есть вопросы или предложения? Не стесняйтесь обращаться к нам.",
         "footer.rights": "Все права защищены.",
+
+        // share
+        "share.title": "Поделиться",
+        "share.description": "Поделитесь этой страницей с друзьями",
+        "share.telegram": "Telegram",
+        "share.email": "Электронная почта",
+        "share.copy": "Копировать",
+        "share.copied": "🎉 Скопировано",
 
         // Sidebar
         "sidebar.topics": "Темы",
