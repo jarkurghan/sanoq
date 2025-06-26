@@ -37,7 +37,8 @@ export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
   // Istisno: "/uz/publications/binary" uchun lang prefix tekshiruvi o'tkazilmaydi
-  if (pathname.startsWith(`/uz/info/`) || pathname.startsWith(`/en/info/`) || pathname.startsWith(`/ru/info/`)|| pathname.startsWith(`/images/`)) {
+  const skipPrefixes = ["/uz/info/", "/en/info/", "/ru/info/", "/images/"]
+  if (skipPrefixes.some((prefix) => pathname.startsWith(prefix))) {
     return NextResponse.next()
   }
 
@@ -55,5 +56,5 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   // Matcher: `/_next/` va `/api/` ni inkor qiladi
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml).*)",],
 }
