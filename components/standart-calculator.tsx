@@ -1,14 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { useLanguage } from "@/contexts/language-context";
+import { Button } from "@/components/utils/button";
 import { useSearchParams } from "next/navigation";
 import { DEFAULT_NUMBER_SYSTEM } from "@/lib/constants";
 
 export default function StandartCalculator() {
-    const { t } = useLanguage();
-
     const searchParams = useSearchParams();
     const base = searchParams.get("base") || DEFAULT_NUMBER_SYSTEM;
 

@@ -3,20 +3,23 @@
 import Link from "next/link";
 import { usePathname, useParams } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/utils/button";
 import { Calculator, Code, Home, Info, BookOpen, Menu, X, Share2, Binary } from "lucide-react";
 import { useState } from "react";
-import { useLanguage } from "@/contexts/language-context";
 import LanguageSwitcher from "@/components/language-switcher";
 import ThemeToggle from "@/components/theme-toggle";
 import ShareAppURL from "./share";
+import { getTranslation } from "@/lib/i18n";
 
-export default function Navbar() {
+export default function Navbar({ lang: rawLang }: { lang: string }) {
+    const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "en") as "uz" | "en" | "ru";
+    const t = getTranslation(lang);
+
     const pathname = usePathname();
     const params = useParams();
-    const lang = (params.lang as string) || "uz";
+    // const lang = (params.lang as string) || "uz";
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const { t } = useLanguage();
+    // const { t } = useLanguage();
 
     const navItems = [
         { name: "nav.conversion", href: `/${lang}`, icon: Home },
@@ -43,10 +46,7 @@ export default function Navbar() {
                                 <Link
                                     key={item.href}
                                     href={item.href}
-                                    className={cn(
-                                        "flex items-center text-sm font-medium transition-colors hover:text-primary",
-                                        isActive ? "text-primary" : ""
-                                    )}
+                                    className={cn("flex items-center text-sm font-medium transition-colors hover:text-primary", isActive ? "text-primary" : "")}
                                 >
                                     <item.icon className="mr-2 h-4 w-4" />
                                     {t(item.name)}
@@ -57,7 +57,7 @@ export default function Navbar() {
                 </div>
 
                 <div className="ml-auto flex items-center space-x-2">
-                    <ShareAppURL>
+                    <ShareAppURL lang={lang}>
                         <div>
                             <Share2 className="h-4 w-4" />
                             <span className="sr-only">Share this page</span>
@@ -82,7 +82,7 @@ export default function Navbar() {
                             </div>
                         </Link>
                         <div className="ml-auto flex items-center space-x-2">
-                            <ShareAppURL />
+                            <ShareAppURL lang={lang} />
                             <ThemeToggle />
                             <LanguageSwitcher />
 

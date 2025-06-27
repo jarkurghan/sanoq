@@ -1,20 +1,13 @@
 "use client";
 
-import { useEffect } from "react";
-import { useLanguage } from "@/contexts/language-context";
-import { useParams, useRouter } from "next/navigation";
+import { use, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
-export default function AboutPage() {
-    const { t, setLanguage } = useLanguage();
-    const params = useParams();
+export default function InfoPage({ params }: { params: Promise<{ lang: string }> }) {
+    const { lang: rawLang } = use(params);
+    const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "en") as "uz" | "en" | "ru";
+
     const router = useRouter();
-    const lang = params.lang as string;
-
-    useEffect(() => {
-        if (lang && ["en", "uz", "ru"].includes(lang)) {
-            setLanguage(lang as "en" | "uz" | "ru");
-        }
-    }, [lang, setLanguage]);
 
     useEffect(() => {
         if (lang) {

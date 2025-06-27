@@ -1,21 +1,14 @@
 "use client";
 
-import { useEffect } from "react";
-import { useLanguage } from "@/contexts/language-context";
-import { useParams } from "next/navigation";
 import { Send, Share2 } from "lucide-react";
 import ShareAppURL from "@/components/share";
+import { getTranslation } from "@/lib/i18n";
+import { use } from "react";
 
-export default function AboutPage() {
-    const { t, setLanguage } = useLanguage();
-    const params = useParams();
-    const lang = params.lang as string;
-
-    useEffect(() => {
-        if (lang && ["en", "uz", "ru"].includes(lang)) {
-            setLanguage(lang as "en" | "uz" | "ru");
-        }
-    }, [lang, setLanguage]);
+export default function AboutPage({ params }: { params: Promise<{ lang: string }> }) {
+    const { lang: rawLang } = use(params);
+    const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "en") as "uz" | "en" | "ru";
+    const t = getTranslation(lang);
 
     return (
         <div className="flex">
@@ -56,7 +49,7 @@ export default function AboutPage() {
                             <p className="text-sm">{t("about.share.description")}</p>
                             <div className="mt-4 text-card-foreground w-full sm:w-40 py-4 flex items-center justify-center flex-col gap-2">
                                 <Share2 size={30} />
-                                <ShareAppURL>
+                                <ShareAppURL lang={lang}>
                                     <div className="px-6 py-1 text-white text-base font-medium bg-blue-500 border-none rounded-lg cursor-pointer transition-colors text-center no-underline inline-flex items-center justify-center gap-2">
                                         {t("about.share.button")}
                                     </div>

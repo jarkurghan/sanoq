@@ -1,27 +1,21 @@
 "use client";
 
-import { useEffect } from "react";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { useLanguage } from "@/contexts/language-context";
-import { useSearchParams, useParams } from "next/navigation";
+import { Card, CardContent, CardHeader } from "@/components/utils/card";
+import { useSearchParams } from "next/navigation";
 import { DEFAULT_NUMBER_SYSTEM } from "@/lib/constants";
 import { DEFAULT_CALCULATOR_TYPE } from "@/lib/constants";
 import StandartCalculator from "@/components/standart-calculator";
 import CalculatorText from "@/components/standart-calculator-info";
 import CalculatorRightSidebar from "@/components/calculator-right-sidebar";
+import { getTranslation } from "@/lib/i18n";
+import { use } from "react";
 
-export default function CalculatorPage() {
-    const { t, setLanguage } = useLanguage();
+export default function CalculatorPage({ params }: { params: Promise<{ lang: string }> }) {
+    const { lang: rawLang } = use(params);
+    const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "en") as "uz" | "en" | "ru";
+    const t = getTranslation(lang);
+
     const searchParams = useSearchParams();
-    const params = useParams();
-    const lang = params.lang as string;
-
-    useEffect(() => {
-        if (lang && ["en", "uz", "ru"].includes(lang)) {
-            setLanguage(lang as "en" | "uz" | "ru");
-        }
-    }, [lang, setLanguage]);
-
     const base = searchParams.get("base") || DEFAULT_NUMBER_SYSTEM;
     const type = searchParams.get("type") || DEFAULT_CALCULATOR_TYPE;
 
@@ -32,7 +26,7 @@ export default function CalculatorPage() {
                     <h1 className="text-2xl font-bold mb-2">{t("calculator.standard.title")}</h1>
                     <p className="hidden sm:block text-sm font-medium text-justify">{t("calculator.standard.description")}</p>
                     <div className="hidden sm:block">
-                        <CalculatorText />
+                        <CalculatorText lang={lang} />
                     </div>
                 </div>
                 <div className="w-fit max-w-[360px]">
@@ -44,12 +38,12 @@ export default function CalculatorPage() {
                     </Card>
                 </div>
                 <div className="block sm:hidden px-2 pt-8">
-                    <CalculatorText />
+                    <CalculatorText lang={lang} />
                 </div>
             </div>
 
             <div className="hidden lg:block">
-                <CalculatorRightSidebar />
+                <CalculatorRightSidebar lang={lang} />
             </div>
         </div>
     );

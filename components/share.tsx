@@ -1,15 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Dialog, DialogHeader, DialogDescription } from "@/components/ui/dialog";
-import { DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogHeader, DialogDescription } from "@/components/utils/dialog";
+import { DialogContent, DialogTitle, DialogTrigger } from "@/components/utils/dialog";
 import { usePathname, useSearchParams } from "next/navigation";
 import { ClipboardCopy, Mail, Send } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useLanguage } from "@/contexts/language-context";
+import { Button } from "@/components/utils/button";
+import { getTranslation } from "@/lib/i18n";
 
-export default function ShareAppURL({ children }: { children?: React.ReactNode }) {
-    const { t } = useLanguage();
+export default function ShareAppURL({ children, lang: rawLang }: { children?: React.ReactNode; lang: string }) {
+    const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "en") as "uz" | "en" | "ru";
+    const t = getTranslation(lang);
     const pathname = usePathname();
     const searchParams = useSearchParams();
     const [url, setUrl] = useState("https://sanoq.uz");

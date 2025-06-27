@@ -4,24 +4,62 @@ import React from "react";
 import Head from "next/head";
 
 const OnlikSanoqSistemasiTarixi = () => {
+    const articleJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: "O‘nlik sanoq sistemasi tarixi",
+        description: "O‘nlik sanoq sistemasi tarixi, hind olimlari hissasi, al-Xorazmiy va nol raqami haqida tushunchalar",
+        author: {
+            "@type": "Person",
+            name: "Najmiddin Nazirov",
+        },
+        datePublished: "2025-06-24",
+        image: "https://sanoq.uz/images/sanoq.uz.png",
+        publisher: {
+            "@type": "Organization",
+            name: "Sanoq Sistemalari",
+            logo: {
+                "@type": "ImageObject",
+                url: "https://sanoq.uz/images/sanoq.uz.png",
+            },
+        },
+        mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": "https://sanoq.uz/uz/info/onlik-sanoq-sistemasi-tarixi",
+        },
+    };
+
     return (
         <>
             <Head>
                 <title>O‘nlik sanoq sistemasi tarixi | Sanoq Sistemalari</title>
-                <meta
-                    name="description"
-                    content="O‘nlik sanoq sistemasi tarixi, hind olimlari hissasi, al-Xorazmiy va nol raqami haqida tushunchalar."
-                />
+                <meta name="description" content="O‘nlik sanoq sistemasi tarixi, hind olimlari hissasi, al-Xorazmiy va nol raqami haqida tushunchalar." />
                 <meta name="keywords" content="o‘nlik sanoq sistemasi, sanoq sistemalari, tarix, nol raqami, al-Xorazmiy, hind raqamlari, pozitsion sistema" />
+
+                <meta name="robots" content="index,follow" />
+                <meta name="googlebot" content="index,follow" />
+                <meta name="google" content="notranslate" key="notranslate" />
+
+                <link rel="canonical" href="https://sanoq.uz/uz/info/onlik-sanoq-sistemasi-tarixi" key="canonical" />
+
+                {/* <meta name="google" content="nositelinkssearchbox" key="sitelinks" /> */}
+
                 <meta property="og:title" content="O‘nlik sanoq sistemasi tarixi" />
+                <meta property="og:description" content="O‘nlik sanoq sistemasi tarixi, hind olimlari hissasi, al-Xorazmiy va nol raqami haqida tushunchalar" />
+                <meta property="og:type" content="article" />
+                <meta property="og:image" content="https://sanoq.uz/images/sanoq.uz.png" />
+                <meta property="og:url" content="https://sanoq.uz/uz/info/onlik-sanoq-sistemasi-tarixi" />
                 <meta
                     property="og:description"
                     content="O‘nlik sanoq sistemasi qanday paydo bo‘lgan? Nega 10 asosli? Al-Xorazmiy va hind olimlarining hissasi haqida o‘qing."
                 />
-                <meta property="og:type" content="article" />
-                <meta property="og:url" content="https://sanoq.uz/uz/info/onlik-sanoq-sistemasi-tarixi" />
-                {/* <meta property="og:image" content="https://sanoq.uz/uz/info/onlik-sanoq-sistemasi-tarixi" /> */}
-                <meta name="robots" content="index, follow" />
+
+                {/* <link rel="alternate" hrefLang="uz" href="https://mysite.com/uz/about" />
+        <link rel="alternate" hrefLang="en" href="https://mysite.com/en/about" />
+        <link rel="alternate" hrefLang="ru" href="https://mysite.com/ru/about" />
+        <link rel="alternate" hrefLang="x-default" href="https://mysite.com/uz/about" /> */}
+
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} key="article-jsonld" />
             </Head>
 
             <main className="flex">

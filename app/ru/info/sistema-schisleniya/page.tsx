@@ -1,22 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
-import RightSidebarContent from "@/components/right-sidebar-content";
-import { useLanguage } from "@/contexts/language-context";
-import { useParams } from "next/navigation";
-
 export default function BinaryPage() {
-    const { setLanguage } = useLanguage();
-    const params = useParams();
-    const lang = params.lang as string;
-
-    // Set language based on route parameter
-    useEffect(() => {
-        if (lang && ["en", "uz", "ru"].includes(lang)) {
-            setLanguage(lang as "en" | "uz" | "ru");
-        }
-    }, [lang, setLanguage]);
-
     return (
         <div className="flex">
             <div className="flex-1 container py-4 px-4 sm:px-8 max-w-6xl ml-0 lg:ml-64">

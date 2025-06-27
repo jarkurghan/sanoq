@@ -3,123 +3,123 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 220 60% 98%;           /* Yengil ko'k-oq */
-    --foreground: 222 47% 11%;           /* To'q ko'k */
-    --card: 0 0% 100%;                   /* Oq */
-    --card-foreground: 222 47% 11%;      /* To'q ko'k */
-    --popover: 0 0% 100%;                /* Oq */
-    --popover-foreground: 222 47% 11%;   /* To'q ko'k */
-    --primary: 221 83% 53%;              /* Ko'k */
-    --primary-foreground: 0 0% 100%;     /* Oq */
-    --secondary: 210 40% 96%;            /* Yengil kulrang */
-    --secondary-foreground: 222 47% 11%; /* To'q ko'k */
-    --muted: 210 16% 93%;                /* Yengil kulrang */
-    --muted-foreground: 215 16% 46%;     /* O'rtacha kulrang */
-    --accent: 215 80% 85%;               /* Yengil binafsha */
-    --accent-foreground: 222 47% 11%;    /* To'q ko'k */
-    --destructive: 0 72% 60%;            /* Qizil */
-    --destructive-foreground: 0 0% 100%; /* Oq */
-    --border: 220 16% 85%;               /* Yengil kulrang */
-    --input: 220 16% 85%;                /* Yengil kulrang */
-    --ring: 221 83% 53%;                 /* Ko'k */
-    --radius: 0.5rem;
-  }
+    :root {
+        --background: 220 60% 98%; /* Yengil ko'k-oq */
+        --foreground: 222 47% 11%; /* To'q ko'k */
+        --card: 0 0% 100%; /* Oq */
+        --card-foreground: 222 47% 11%; /* To'q ko'k */
+        --popover: 0 0% 100%; /* Oq */
+        --popover-foreground: 222 47% 11%; /* To'q ko'k */
+        --primary: 221 83% 53%; /* Ko'k */
+        --primary-foreground: 0 0% 100%; /* Oq */
+        --secondary: 210 40% 96%; /* Yengil kulrang */
+        --secondary-foreground: 222 47% 11%; /* To'q ko'k */
+        --muted: 210 16% 93%; /* Yengil kulrang */
+        --muted-foreground: 215 16% 46%; /* O'rtacha kulrang */
+        --accent: 215 80% 85%; /* Yengil binafsha */
+        --accent-foreground: 222 47% 11%; /* To'q ko'k */
+        --destructive: 0 72% 60%; /* Qizil */
+        --destructive-foreground: 0 0% 100%; /* Oq */
+        --border: 220 16% 85%; /* Yengil kulrang */
+        --input: 220 16% 85%; /* Yengil kulrang */
+        --ring: 221 83% 53%; /* Ko'k */
+        --radius: 0.5rem;
+    }
 
-  .dark {
-    --background: 222 47% 8%;            /* To'q ko'k */
-    --foreground: 220 60% 98%;           /* Yengil ko'k-oq */
-    --card: 222 47% 11%;                 /* To'q ko'k */
-    --card-foreground: 214 32% 84%;      /* Yengil ko'k-oq */
-    --popover: 222 47% 13%;              /* To'q ko'k */
-    --popover-foreground: 220 60% 98%;   /* Yengil ko'k-oq */
-    --primary: 211 94% 68%;              /* Yorqin ko'k */
-    --primary-foreground: 222 47% 11%;   /* To'q ko'k */
-    --secondary: 222 20% 18%;            /* To'q kulrang */
-    --secondary-foreground: 220 60% 98%; /* Yengil ko'k-oq */
-    --muted: 222 20% 18%;                /* To'q kulrang */
-    --muted-foreground: 215 16% 65%;     /* O'rtacha kulrang */
-    --accent: 215 80% 40%;               /* Binafsha */
-    --accent-foreground: 220 60% 98%;    /* Yengil ko'k-oq */
-    --destructive: 0 72% 45%;            /* To'q qizil */
-    --destructive-foreground: 0 0% 100%; /* Oq */
-    --border: 222 20% 18%;               /* To'q kulrang */
-    --input: 222 20% 18%;                /* To'q kulrang */
-    --ring: 221 83% 66%;                 /* Yorqin ko'k */
-  }
+    .dark {
+        --background: 222 47% 8%; /* To'q ko'k */
+        --foreground: 220 60% 98%; /* Yengil ko'k-oq */
+        --card: 222 47% 11%; /* To'q ko'k */
+        --card-foreground: 214 32% 84%; /* Yengil ko'k-oq */
+        --popover: 222 47% 13%; /* To'q ko'k */
+        --popover-foreground: 220 60% 98%; /* Yengil ko'k-oq */
+        --primary: 211 94% 68%; /* Yorqin ko'k */
+        --primary-foreground: 222 47% 11%; /* To'q ko'k */
+        --secondary: 222 20% 18%; /* To'q kulrang */
+        --secondary-foreground: 220 60% 98%; /* Yengil ko'k-oq */
+        --muted: 222 20% 18%; /* To'q kulrang */
+        --muted-foreground: 215 16% 65%; /* O'rtacha kulrang */
+        --accent: 215 80% 40%; /* Binafsha */
+        --accent-foreground: 220 60% 98%; /* Yengil ko'k-oq */
+        --destructive: 0 72% 45%; /* To'q qizil */
+        --destructive-foreground: 0 0% 100%; /* Oq */
+        --border: 222 20% 18%; /* To'q kulrang */
+        --input: 222 20% 18%; /* To'q kulrang */
+        --ring: 221 83% 66%; /* Yorqin ko'k */
+    }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
 
-  .dark .prose {
-    color: hsl(var(--foreground));
-  }
+    .dark .prose {
+        color: hsl(var(--foreground));
+    }
 
-  .dark .prose h1,
-  .dark .prose h2,
-  .dark .prose h3,
-  .dark .prose h4,
-  .dark .prose h5,
-  .dark .prose h6,
-  .dark .prose strong,
-  .dark .prose code,
-  .dark .prose th {
-    color: hsl(var(--foreground));
-  }
+    .dark .prose h1,
+    .dark .prose h2,
+    .dark .prose h3,
+    .dark .prose h4,
+    .dark .prose h5,
+    .dark .prose h6,
+    .dark .prose strong,
+    .dark .prose code,
+    .dark .prose th {
+        color: hsl(var(--foreground));
+    }
 
-  .dark .prose a {
-    color: hsl(var(--primary));
-  }
+    .dark .prose a {
+        color: hsl(var(--primary));
+    }
 
-  .dark .prose blockquote {
-    color: hsl(var(--muted-foreground));
-    border-color: hsl(var(--border));
-  }
+    .dark .prose blockquote {
+        color: hsl(var(--muted-foreground));
+        border-color: hsl(var(--border));
+    }
 
-  .dark .prose code {
-    background-color: hsl(var(--muted));
-  }
+    .dark .prose code {
+        background-color: hsl(var(--muted));
+    }
 
-  .dark .prose pre {
-    background-color: hsl(var(--muted));
-    color: hsl(var(--foreground));
-  }
+    .dark .prose pre {
+        background-color: hsl(var(--muted));
+        color: hsl(var(--foreground));
+    }
 
-  .dark .prose hr {
-    border-color: hsl(var(--border));
-  }
+    .dark .prose hr {
+        border-color: hsl(var(--border));
+    }
 
-  .dark .prose table {
-    border-color: hsl(var(--border));
-  }
+    .dark .prose table {
+        border-color: hsl(var(--border));
+    }
 
-  .dark .prose thead {
-    border-bottom-color: hsl(var(--border));
-  }
+    .dark .prose thead {
+        border-bottom-color: hsl(var(--border));
+    }
 
-  .dark .prose tbody tr {
-    border-bottom-color: hsl(var(--border));
-  }
-  body {
-    @apply text-slate-800;
-  }
+    .dark .prose tbody tr {
+        border-bottom-color: hsl(var(--border));
+    }
+    body {
+        @apply text-slate-800;
+    }
 
-  .dark body {
-    @apply text-slate-400;
-  }
+    .dark body {
+        @apply text-slate-400;
+    }
 }
 
 @layer utilities {
-  .line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
+    .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
 }
