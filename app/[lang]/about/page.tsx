@@ -4,8 +4,13 @@ import { Send, Share2 } from "lucide-react";
 import ShareAppURL from "@/components/share";
 import { getTranslation } from "@/lib/i18n";
 import { use } from "react";
+import { Language } from "@/types/language";
 
-export default function AboutPage({ params }: { params: Promise<{ lang: string }> }) {
+type Props = {
+    params: Promise<{ lang: Language }>;
+};
+
+export default function AboutPage({ params }: Props) {
     const { lang: rawLang } = use(params);
     const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "en") as "uz" | "en" | "ru";
     const t = getTranslation(lang);

@@ -8,9 +8,77 @@ import StandartCalculator from "@/components/standart-calculator";
 import CalculatorText from "@/components/standart-calculator-info";
 import CalculatorRightSidebar from "@/components/calculator-right-sidebar";
 import { getTranslation } from "@/lib/i18n";
+import { Language } from "@/types/language";
+import { Metadata } from "next";
 import { use } from "react";
 
-export default function CalculatorPage({ params }: { params: Promise<{ lang: string }> }) {
+type Props = {
+    params: Promise<{ lang: Language }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { lang } = await params;
+    const t = getTranslation(lang);
+
+    return {
+        title: t("calculator.title"),
+        description: t("calculator.description"),
+        keywords: ["sanoq sistemasi", "sanoq konvertori", "decimal to binary", "binary to hex", "o‘nlik sanoq tizimi", "ikkinlik tizimi"],
+
+        authors: [{ name: "Najmiddin Nazirov", url: "https://sanoq.uz/about" }],
+        creator: "Najmiddin Nazirov",
+
+        robots: {
+            index: true,
+            follow: true,
+            nocache: false,
+            googleBot: {
+                index: true,
+                follow: true,
+                "max-video-preview": -1,
+                "max-image-preview": "large",
+                "max-snippet": -1,
+            },
+        },
+
+        openGraph: {
+            title: t("calculator.title"),
+            description: t("calculator.description"),
+            url: `https://sanoq.uz/${lang}/calculator`,
+            siteName: "Sanoq sistemalari",
+            images: [
+                {
+                    url: "https://sanoq.uz/sanoq.uz.png",
+                    width: 1000,
+                    height: 749,
+                    alt: "Sanoq sistemalari kalkulyatori",
+                },
+            ],
+            locale: lang,
+            type: "website",
+        },
+
+        twitter: {
+            card: "summary_large_image",
+            title: t("calculator.title"),
+            description: t("calculator.description"),
+            images: ["https://sanoq.uz/sanoq.uz.png"],
+            creator: "@jarkurghan",
+        },
+
+        metadataBase: new URL("https://sanoq.uz"),
+        alternates: {
+            canonical: `https://sanoq.uz/${lang}/calculator`,
+            languages: {
+                uz: "https://sanoq.uz/uz/calculator",
+                en: "https://sanoq.uz/en/calculator",
+                ru: "https://sanoq.uz/ru/calculator",
+            },
+        },
+    };
+}
+
+export default function CalculatorPage({ params }: Props) {
     const { lang: rawLang } = use(params);
     const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "en") as "uz" | "en" | "ru";
     const t = getTranslation(lang);

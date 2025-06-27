@@ -2,8 +2,13 @@
 
 import { use, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { Language } from "@/types/language";
 
-export default function InfoPage({ params }: { params: Promise<{ lang: string }> }) {
+type Props = {
+    params: Promise<{ lang: Language }>;
+};
+
+export default function InfoPage({ params }: Props) {
     const { lang: rawLang } = use(params);
     const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "en") as "uz" | "en" | "ru";
 

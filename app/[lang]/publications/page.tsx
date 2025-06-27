@@ -10,8 +10,13 @@ import Link from "next/link";
 import clsx from "clsx";
 import Head from "next/head";
 import { getTranslation } from "@/lib/i18n";
+import { Language } from "@/types/language";
 
-export default function PublicationsPage({ params }: { params: Promise<{ lang: string }> }) {
+type Props = {
+    params: Promise<{ lang: Language }>;
+};
+
+export default function PublicationsPage({ params }: Props) {
     const { lang: rawLang } = use(params);
     const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "en") as "uz" | "en" | "ru";
     const t = getTranslation(lang);

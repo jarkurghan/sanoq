@@ -8,8 +8,13 @@ import { Button } from "@/components/utils/button";
 import { ChevronRight, Search, Code, Binary, Hash, Zap, Plus, Wrench } from "lucide-react";
 import RightSidebarContent from "@/components/right-sidebar-content";
 import { getTranslation } from "@/lib/i18n";
+import { Language } from "@/types/language";
 
-export default function CodePage({ params }: { params: Promise<{ lang: string }> }) {
+type Props = {
+    params: Promise<{ lang: Language }>;
+};
+
+export default function CodePage({ params }: Props) {
     const { lang: rawLang } = use(params);
     const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "en") as "uz" | "en" | "ru";
     const t = getTranslation(lang);
