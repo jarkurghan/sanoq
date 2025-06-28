@@ -64,7 +64,7 @@ export default function Navbar({ lang: rawLang }: { lang: string }) {
                         </div>
                     </ShareAppURL>
                     <ThemeToggle />
-                    <LanguageSwitcher />
+                    <LanguageSwitcher lang={lang}/>
 
                     <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
                         {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -84,7 +84,7 @@ export default function Navbar({ lang: rawLang }: { lang: string }) {
                         <div className="ml-auto flex items-center space-x-2">
                             <ShareAppURL lang={lang} />
                             <ThemeToggle />
-                            <LanguageSwitcher />
+                            <LanguageSwitcher lang={lang}/>
 
                             <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(false)}>
                                 <X className="h-6 w-6" />
