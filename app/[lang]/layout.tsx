@@ -1,6 +1,6 @@
 import type React from "react";
 import { Inter } from "next/font/google";
-import "@/app/globals.css";
+import "@/styles/globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import GlobalSidebar from "@/components/global-sidebar";
