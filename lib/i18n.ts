@@ -12,24 +12,11 @@ const translations: Record<Language, Record<string, string>> = {
         // Home page
         "home.title": "Number System Converter",
         "home.description": "Convert between binary, octal, decimal, and hexadecimal number systems.",
-        "home.conversion.title": "Conversion Tool",
-        "home.conversion.description": "Enter a value and select the number systems to convert between.",
         "home.from": "From",
         "home.to": "To",
         "home.input": "Input Value",
         "home.result": "Result",
-        "home.convert": "Convert",
         "home.swap": "Swap",
-        "home.copy": "Copy",
-        "home.whatare.title": "What are Number Systems?",
-        "home.whatare.description":
-            "Number systems are mathematical systems for expressing numbers. A number system consists of a set of symbols (digits) and rules for using these symbols to represent numbers.",
-        "home.calculator.title": "Number System Conversion Calculator",
-        "home.calculator.description": "Converting a number from one numeral system to another",
-        "home.placeholder.binary": "Enter a binary number",
-        "home.placeholder.octal": "Enter an octal number",
-        "home.placeholder.decimal": "Enter a decimal number",
-        "home.placeholder.hexadecimal": "Enter a hexadecimal number",
 
         // Number systems
         "numbersystem.binary": "Binary (Base 2)",
@@ -69,23 +56,9 @@ const translations: Record<Language, Record<string, string>> = {
         "numbersystem.hexatrigesimal": "Hexatrigesimal (Base 36)",
 
         // Publications page
-        "publications.title": "Publications",
         "publications.search": "Search...",
-        "publications.description": "Learn about different number systems and their applications.",
-        "publications.welcome.title": "Welcome to Number Systems Publications",
-        "publications.welcome.description":
-            "This section provides comprehensive information about different number systems, their properties, and how they are used in computing and mathematics.",
-        "publications.welcome.select": "Select a topic from the sidebar to learn more about specific number systems.",
         "publications.learnmore": "Learn",
         "publications.notfound": "No topics found matching your search.",
-
-        // Publications topics
-        "publications.topic.binary": "Binary System",
-        "publications.topic.octal": "Octal System",
-        "publications.topic.decimal": "Decimal System",
-        "publications.topic.hexadecimal": "Hexadecimal System",
-        "publications.topic.conversions": "Number System Conversions",
-        "publications.topic.history": "History of Number Systems",
 
         // Calculator page
         "calculator.title": "Number System Calculator",
@@ -100,16 +73,11 @@ const translations: Record<Language, Record<string, string>> = {
         "calculator.square.root": "Square and root:",
         "calculator.clear.delete": "Clear and delete buttons:",
         "calculator.decimal.numbers": "Working with decimal numbers:",
-        "calculator.advanced.title": "Advanced Calculator",
-        "calculator.advanced.description": "Advanced mathematical operations and functions.",
-        "calculator.logical.title": "Logical Calculator",
-        "calculator.logical.description": "Bitwise and logical operations for number systems.",
         "calculator.numbersystem": "Number System",
         "calculator.type": "Calculator Type",
         "calculator.type.standard": "Standard",
         "calculator.type.advanced": "Advanced",
         "calculator.type.logical": "Logical",
-        "calculator.clear": "Clear",
 
         // calculator info
         "calculator.info.description.10":
@@ -319,19 +287,6 @@ const translations: Record<Language, Record<string, string>> = {
         // Code page
         "code.title": "Number Systems Code",
         "code.description": "Programming examples and code snippets for working with number systems.",
-        "code.welcome.title": "Programming with Number Systems",
-        "code.welcome.description":
-            "This section provides code examples and explanations for working with different number systems in various programming languages.",
-        "code.welcome.select": "Select a topic from the sidebar to view code examples and explanations.",
-
-        // Code topics
-        "code.topic.binarytodecimal": "Binary to Decimal Conversion",
-        "code.topic.decimaltobinary": "Decimal to Binary Conversion",
-        "code.topic.hexadecimal": "Hexadecimal Conversion",
-        "code.topic.bitwise": "Bitwise Operations",
-        "code.topic.binaryaddition": "Binary Addition",
-        "code.topic.utilities": "Number System Utilities",
-        "code.viewcode": "View Code",
 
         // About page
         "about.title": "About the app",
@@ -361,10 +316,6 @@ const translations: Record<Language, Record<string, string>> = {
         "about.contact.button": "Contact",
 
         // Footer
-        "footer.description": "Learn, convert, and calculate with different number systems.",
-        "footer.quicklinks": "Quick Links",
-        "footer.contact": "Contact",
-        "footer.contactdesc": "Have questions or suggestions? Feel free to reach out to us.",
         "footer.rights": "All rights reserved.",
 
         // share
@@ -377,8 +328,6 @@ const translations: Record<Language, Record<string, string>> = {
 
         // Sidebar
         "sidebar.topics": "Topics",
-        "sidebar.menu": "Menu",
-        "sidebar.close": "Close",
     },
 
     uz: {
@@ -392,24 +341,11 @@ const translations: Record<Language, Record<string, string>> = {
         // Home page
         "home.title": "Sanoq Sistemalari Konvertori",
         "home.description": "Ikkilik, sakkizlik, o'nlik va o'n oltilik sanoq sistemalari orasida konvertatsiya qiling.",
-        "home.conversion.title": "Konversiya Vositasi",
-        "home.conversion.description": "Qiymat kiriting va konvertatsiya qilish uchun sanoq sistemalarini tanlang.",
         "home.from": "Qaysi sistemadan",
         "home.to": "Qaysi sistemaga",
-        "home.input": "Kiruvchi qiymat",
+        "home.input": "Sonni kiriting",
         "home.result": "Natija",
-        "home.convert": "Konversiya",
         "home.swap": "Almashtirish",
-        "home.copy": "Nusxalash",
-        "home.whatare.title": "Sanoq Sistemalari nima?",
-        "home.whatare.description":
-            "Sanoq sistemalari sonlarni ifodalash uchun matematik sistemalardir. Sanoq sistemasi belgilar (raqamlar) to'plami va bu belgilardan sonlarni ifodalash uchun foydalanish qoidalaridan iborat.",
-        "home.calculator.title": "Konvertor",
-        "home.calculator.description": "Sonni bir sanoq sistemasidan boshqa sanoq sistemasiga o'tkazish",
-        "home.placeholder.binary": "Ikkilik raqam kiriting",
-        "home.placeholder.octal": "Sakkizlik raqam kiriting",
-        "home.placeholder.decimal": "O'nlik raqam kiriting",
-        "home.placeholder.hexadecimal": "O'n oltilik raqam kiriting",
 
         // Number systems
         "numbersystem.binary": "Ikkilik (2-asos)",
@@ -449,23 +385,9 @@ const translations: Record<Language, Record<string, string>> = {
         "numbersystem.hexatrigesimal": "O'ttiz oltilik (36-asos)",
 
         // Publications page
-        "publications.title": "Maqolalar",
         "publications.search": "Qidirish...",
-        "publications.description": "Turli sanoq sistemalari va ularning qo'llanilishi haqida o'rganing.",
-        "publications.welcome.title": "Sanoq Sistemalari Ta'limiga Xush Kelibsiz",
-        "publications.welcome.description":
-            "Bu bo'lim turli sanoq sistemalari, ularning xususiyatlari va ularning hisoblash va matematikada qanday qo'llanilishi haqida keng ma'lumot beradi.",
-        "publications.welcome.select": "Muayyan sanoq sistemalari haqida ko'proq ma'lumot olish uchun yon paneldan mavzuni tanlang.",
         "publications.learnmore": "O'qish",
         "publications.notfound": "Qidiruv bo‘yicha hech qanday mavzu topilmadi.",
-
-        // Publications topics
-        "publications.topic.binary": "Ikkilik Sistema",
-        "publications.topic.octal": "Sakkizlik Sistema",
-        "publications.topic.decimal": "O'nlik Sistema",
-        "publications.topic.hexadecimal": "O'n oltilik Sistema",
-        "publications.topic.conversions": "Sanoq Sistemalari Konvertatsiyasi",
-        "publications.topic.history": "Sanoq Sistemalari Tarixi",
 
         // Calculator page
         "calculator.title": "Sanoq Sistemalari Kalkulyatori",
@@ -479,16 +401,11 @@ const translations: Record<Language, Record<string, string>> = {
         "calculator.square.root": "Kvadrat va ildiz:",
         "calculator.clear.delete": "Tozalash va o'chirish tugmalari:",
         "calculator.decimal.numbers": "O'nlik sonlar bilan ishlash:",
-        "calculator.advanced.title": "Ilg'or Kalkulyator",
-        "calculator.advanced.description": "Ilg'or matematik amallar va funksiyalar.",
-        "calculator.logical.title": "Mantiqiy Kalkulyator",
-        "calculator.logical.description": "Sanoq sistemalari uchun bitli va mantiqiy amallar.",
         "calculator.numbersystem": "Sanoq Sistemasi",
         "calculator.type": "Kalkulyator Turi",
         "calculator.type.standard": "Standart",
         "calculator.type.advanced": "Ilg'or",
         "calculator.type.logical": "Mantiqiy",
-        "calculator.clear": "Tozalash",
 
         // calculator info
         "calculator.info.description.10":
@@ -681,19 +598,6 @@ const translations: Record<Language, Record<string, string>> = {
         // Code page
         "code.title": "Sanoq Sistemalari Kodi",
         "code.description": "Sanoq sistemalari bilan ishlash uchun dasturlash misollari va kod parchalar.",
-        "code.welcome.title": "Sanoq Sistemalari bilan Dasturlash",
-        "code.welcome.description":
-            "Bu bo'lim turli dasturlash tillarida turli sanoq sistemalari bilan ishlash uchun kod misollarini va tushuntirishlarni taqdim etadi.",
-        "code.welcome.select": "Kod misollarini va tushuntirishlarni ko'rish uchun yon paneldan mavzuni tanlang.",
-
-        // Code topics
-        "code.topic.binarytodecimal": "Ikkilikdan O'nlikka Konversiya",
-        "code.topic.decimaltobinary": "O'nlikdan Ikkilikka Konversiya",
-        "code.topic.hexadecimal": "O'n oltilik Konversiya",
-        "code.topic.bitwise": "Bit Operatsiyalari",
-        "code.topic.binaryaddition": "Ikkilik Qo'shish",
-        "code.topic.utilities": "Sanoq Sistemalari Utilitlari",
-        "code.viewcode": "Kodni Ko'rish",
 
         // About page
         "about.title": "Ilova haqida",
@@ -723,10 +627,6 @@ const translations: Record<Language, Record<string, string>> = {
         "about.contact.button": "Bog'lanish",
 
         // Footer
-        "footer.description": "Turli sanoq sistemalarini o'rganing, konvertatsiya qiling va hisoblang.",
-        "footer.quicklinks": "Tezkor Havolalar",
-        "footer.contact": "Aloqa",
-        "footer.contactdesc": "Savollar yoki takliflar bormi? Biz bilan bog'lanishdan tortinmang.",
         "footer.rights": "Barcha huquqlar himoyalangan.",
 
         // share
@@ -739,8 +639,6 @@ const translations: Record<Language, Record<string, string>> = {
 
         // Sidebar
         "sidebar.topics": "Mavzular",
-        "sidebar.menu": "Menyu",
-        "sidebar.close": "Yopish",
     },
 
     ru: {
@@ -754,24 +652,11 @@ const translations: Record<Language, Record<string, string>> = {
         // Home page
         "home.title": "Конвертер Систем Счисления",
         "home.description": "Конвертируйте между двоичной, восьмеричной, десятичной и шестнадцатеричной системами счисления.",
-        "home.conversion.title": "Инструмент Конвертации",
-        "home.conversion.description": "Введите значение и выберите системы счисления для конвертации.",
         "home.from": "Из",
         "home.to": "В",
         "home.input": "Входное значение",
         "home.result": "Результат",
-        "home.convert": "Конвертировать",
         "home.swap": "Поменять",
-        "home.copy": "Копировать",
-        "home.whatare.title": "Что такое Системы Счисления?",
-        "home.whatare.description":
-            "Системы счисления - это математические системы для выражения чисел. Система счисления состоит из набора символов (цифр) и правил использования этих символов для представления чисел.",
-        "home.calculator.title": "Калькулятор Конвертации Систем Счисления",
-        "home.calculator.description": "Перевод числа из одной системы счисления в другую",
-        "home.placeholder.binary": "Введите двоичное число",
-        "home.placeholder.octal": "Введите восьмеричное число",
-        "home.placeholder.decimal": "Введите десятичное число",
-        "home.placeholder.hexadecimal": "Введите шестнадцатеричное число",
 
         // Number systems
         "numbersystem.binary": "Двоичная (Основание 2)",
@@ -811,23 +696,9 @@ const translations: Record<Language, Record<string, string>> = {
         "numbersystem.hexatrigesimal": "Тридцать шесть (Основание 36)",
 
         // Publications page
-        "publications.title": "Статьи",
         "publications.search": "Поиск...",
-        "publications.description": "Изучите различные системы счисления и их применение.",
-        "publications.welcome.title": "Добро пожаловать в Обучение Системам Счисления",
-        "publications.welcome.description":
-            "Этот раздел предоставляет исчерпывающую информацию о различных системах счисления, их свойствах и о том, как они используются в вычислениях и математике.",
-        "publications.welcome.select": "Выберите тему из боковой панели, чтобы узнать больше о конкретных системах счисления.",
         "publications.learnmore": "Узнать",
         "publications.notfound": "По вашему запросу темы не найдены.",
-
-        // Publications topics
-        "publications.topic.binary": "Двоичная Система",
-        "publications.topic.octal": "Восьмеричная Система",
-        "publications.topic.decimal": "Десятичная Система",
-        "publications.topic.hexadecimal": "Шестнадцатеричная Система",
-        "publications.topic.conversions": "Конвертация Систем Счисления",
-        "publications.topic.history": "История Систем Счисления",
 
         // Calculator page
         "calculator.title": "Калькулятор Систем Счисления",
@@ -842,16 +713,11 @@ const translations: Record<Language, Record<string, string>> = {
         "calculator.square.root": "Квадрат и корень:",
         "calculator.clear.delete": "Кнопки очистки и удаления:",
         "calculator.decimal.numbers": "Работа с десятичными числами:",
-        "calculator.advanced.title": "Продвинутый Калькулятор",
-        "calculator.advanced.description": "Продвинутые математические операции и функции.",
-        "calculator.logical.title": "Логический Калькулятор",
-        "calculator.logical.description": "Побитовые и логические операции для систем счисления.",
         "calculator.numbersystem": "Система Счисления",
         "calculator.type": "Тип Калькулятора",
         "calculator.type.standard": "Стандартный",
         "calculator.type.advanced": "Продвинутый",
         "calculator.type.logical": "Логический",
-        "calculator.clear": "Очистить",
 
         // calculator info for Russian (add missing ones)
         "calculator.info.description.10":
@@ -1062,19 +928,6 @@ const translations: Record<Language, Record<string, string>> = {
         // Code page
         "code.title": "Код Систем Счисления",
         "code.description": "Примеры программирования и фрагменты кода для работы с системами счисления.",
-        "code.welcome.title": "Программирование с Системами Счисления",
-        "code.welcome.description":
-            "Этот раздел предоставляет примеры кода и объяснения для работы с различными системами счисления на различных языках программирования.",
-        "code.welcome.select": "Выберите тему из боковой панели, чтобы просмотреть примеры кода и объяснения.",
-
-        // Code topics
-        "code.topic.binarytodecimal": "Конвертация из Двоичной в Десятичную",
-        "code.topic.decimaltobinary": "Конвертация из Десятичной в Двоичную",
-        "code.topic.hexadecimal": "Шестнадцатеричная Конвертация",
-        "code.topic.bitwise": "Побитовые Операции",
-        "code.topic.binaryaddition": "Двоичное Сложение",
-        "code.topic.utilities": "Утилиты Систем Счисления",
-        "code.viewcode": "Просмотреть Код",
 
         // About page
         "about.title": "О приложении",
@@ -1104,10 +957,6 @@ const translations: Record<Language, Record<string, string>> = {
         "about.contact.button": "Связь",
 
         // Footer
-        "footer.description": "Изучайте, конвертируйте и вычисляйте с различными системами счисления.",
-        "footer.quicklinks": "Быстрые Ссылки",
-        "footer.contact": "Контакт",
-        "footer.contactdesc": "Есть вопросы или предложения? Не стесняйтесь обращаться к нам.",
         "footer.rights": "Все права защищены.",
 
         // share
@@ -1120,8 +969,6 @@ const translations: Record<Language, Record<string, string>> = {
 
         // Sidebar
         "sidebar.topics": "Темы",
-        "sidebar.menu": "Меню",
-        "sidebar.close": "Закрыть",
     },
 };
 

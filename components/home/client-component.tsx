@@ -92,7 +92,7 @@ export default function HomeComponent({ lang }: Props) {
                         setLastChanged("left");
                     }}
                     className="font-mono w-full outline-none"
-                    placeholder={getPlaceholder(fromBase)}
+                    placeholder={t("home.input")}
                 />
             </div>
 
@@ -127,7 +127,7 @@ export default function HomeComponent({ lang }: Props) {
                         setLastChanged("right");
                     }}
                     className="font-mono w-full outline-none"
-                    placeholder={getPlaceholder(toBase)}
+                    placeholder={t("home.result")}
                 />
             </div>
         </div>
