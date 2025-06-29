@@ -1,0 +1,54 @@
+<svg width="370" height="160" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .red { fill: plum; }
+    .navy { fill: navy; }
+    .lightseagreen { fill: lightseagreen; }
+    .slateblue { fill: slateblue; }
+    .darkmagenta { fill: darkmagenta; }
+    .text {
+      font: bold 20px Arial, sans-serif;
+      dominant-baseline: middle;
+      text-anchor: middle;
+    }
+  </style>
+
+  <!-- Yengil fon rangi (wheat) -->
+  <rect x="0" y="0" width="100%" height="100%" fill="wheat" />
+
+  <g transform="translate(20, 0)">
+    <!-- 1-qator -->
+    <text class="text red" x="60" y="20">4</text>
+    <text class="text navy" x="100" y="20">I</text>
+    <text class="text navy" x="140" y="20">L</text>
+    <text class="text navy" x="180" y="20">M</text>
+    <text class="text" x="220" y="20">.</text>
+    <text class="text lightseagreen" x="260" y="20">6</text>
+    <text class="text" x="300" y="20">E</text>
+
+    <!-- 2-qator -->
+    <text class="text slateblue" x="20" y="62">S</text>
+    <text class="text lightseagreen" x="60" y="62">6</text>
+    <text class="text" x="100" y="62">5</text>
+    <text class="text slateblue" x="140" y="62">3</text>
+    <text class="text red" x="180" y="62">4</text>
+    <text class="text red" x="220" y="62">.</text>
+    <text class="text navy" x="260" y="62">O</text>
+    <text class="text navy" x="300" y="62">L</text>
+
+    <!-- 3-qator -->
+    <text class="text darkmagenta" x="20" y="104">S</text>
+    <text class="text darkmagenta" x="60" y="104">A</text>
+    <text class="text darkmagenta" x="100" y="104">N</text>
+    <text class="text darkmagenta" x="140" y="104">O</text>
+    <text class="text darkmagenta" x="180" y="104">Q</text>
+    <text class="text darkmagenta" x="220" y="104">.</text>
+    <text class="text darkmagenta" x="260" y="104">U</text>
+    <text class="text darkmagenta" x="300" y="104">Z</text>
+
+    <!-- Ikkinchi va uchinchi qator orasidagi chiziq -->
+    <line x1="0" y1="84" x2="320" y2="84" stroke="darkslategray" stroke-width="3"/>
+
+    <!-- "+" belgisi pastroqda -->
+    <text x="-5" y="40" font-size="22" fill="brown">+</text>
+  </g>
+</svg>
