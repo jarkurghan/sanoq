@@ -16,7 +16,7 @@ type Props = {
 
 export default function CodePage({ params }: Props) {
     const { lang: rawLang } = use(params);
-    const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "en") as "uz" | "en" | "ru";
+    const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "uz") as Language;
     const t = getTranslation(lang);
 
     const [searchQuery, setSearchQuery] = useState("");

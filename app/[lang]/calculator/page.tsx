@@ -1,9 +1,4 @@
-"use client";
-
-import { Card, CardContent, CardHeader } from "@/components/utils/card";
-import { useSearchParams } from "next/navigation";
-import { DEFAULT_NUMBER_SYSTEM } from "@/lib/constants";
-import { DEFAULT_CALCULATOR_TYPE } from "@/lib/constants";
+import { Card, CardContent, CardHeader } from "@/components/utils/card"
 import StandartCalculator from "@/components/standart-calculator";
 import CalculatorText from "@/components/standart-calculator-info";
 import CalculatorRightSidebar from "@/components/calculator-right-sidebar";
@@ -80,12 +75,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default function CalculatorPage({ params }: Props) {
     const { lang: rawLang } = use(params);
-    const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "en") as "uz" | "en" | "ru";
+    const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "uz") as Language;
     const t = getTranslation(lang);
-
-    const searchParams = useSearchParams();
-    const base = searchParams.get("base") || DEFAULT_NUMBER_SYSTEM;
-    const type = searchParams.get("type") || DEFAULT_CALCULATOR_TYPE;
 
     return (
         <div className="flex">

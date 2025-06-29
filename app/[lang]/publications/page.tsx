@@ -1,6 +1,4 @@
-"use client";
-
-import { useState, useEffect, use } from "react";
+import { useState, use } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/utils/card";
 import { ChevronRight, Search, BookOpen } from "lucide-react";
 import { PUBLICATIONS } from "@/lib/publications";
@@ -8,7 +6,6 @@ import { Input } from "@/components/utils/input";
 import { Button } from "@/components/utils/button";
 import Link from "next/link";
 import clsx from "clsx";
-import Head from "next/head";
 import { getTranslation } from "@/lib/i18n";
 import { Language } from "@/types/language";
 
@@ -18,27 +15,11 @@ type Props = {
 
 export default function PublicationsPage({ params }: Props) {
     const { lang: rawLang } = use(params);
-    const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "en") as "uz" | "en" | "ru";
+    const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "uz") as Language;
     const t = getTranslation(lang);
 
     const [searchQuery, setSearchQuery] = useState("");
 
-    const seo = {
-        uz: {
-            title: "Nashrlar | O‘quv materiallari",
-            description: "Siz uchun tanlangan nashrlar, maqolalar va son sistemalari haqida o‘quv materiallari.",
-        },
-        en: {
-            title: "Publications | Learning Materials",
-            description: "Curated publications and educational articles on numeral systems and more.",
-        },
-        ru: {
-            title: "Публикации | Учебные материалы",
-            description: "Подборка публикаций и обучающих материалов по системам счисления и другим темам.",
-        },
-    };
-
-    const seoData = seo[lang as "en" | "uz" | "ru"] || seo["en"];
 
     const publicationsTopics = PUBLICATIONS;
     const filteredTopics = publicationsTopics
@@ -46,14 +27,7 @@ export default function PublicationsPage({ params }: Props) {
         .filter((topic) => t(topic.title).toLowerCase().includes(searchQuery.toLowerCase()));
 
     return (
-        <>
-            <Head>
-                <title>{seoData.title}</title>
-                <meta name="description" content={seoData.description} />
-                <meta name="robots" content="index, follow" />
-                <meta property="og:title" content={seoData.title} />
-                <meta property="og:description" content={seoData.description} />
-            </Head>
+    
 
             <div className="flex">
                 <div className="flex-1 container py-4 px-4 sm:px-8 max-w-7xl ml-0 lg:ml-64">
@@ -108,6 +82,5 @@ export default function PublicationsPage({ params }: Props) {
                     </div>
                 </div>
             </div>
-        </>
     );
 }

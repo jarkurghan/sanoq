@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { getTranslation } from "@/lib/i18n";
 
 export default function CalculatorRightSidebar({ lang: rawLang }: { lang: string }) {
-    const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "en") as "uz" | "en" | "ru";
+    const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "uz") as Language;
     const t = getTranslation(lang);
 
     const router = useRouter();

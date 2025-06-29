@@ -9,7 +9,7 @@ import { Button } from "@/components/utils/button";
 import { getTranslation } from "@/lib/i18n";
 
 export default function ShareAppURL({ children, lang: rawLang }: { children?: React.ReactNode; lang: string }) {
-    const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "en") as "uz" | "en" | "ru";
+    const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "uz") as Language;
     const t = getTranslation(lang);
     const pathname = usePathname();
     const searchParams = useSearchParams();

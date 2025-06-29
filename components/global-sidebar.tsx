@@ -21,7 +21,7 @@ const sidebarMenus = {
 };
 
 export default function GlobalSidebar({ lang: rawLang }: { lang: string }) {
-    const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "en") as "uz" | "en" | "ru";
+    const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "uz") as Language;
     const t = getTranslation(lang);
     const pathname = usePathname();
     const params = useParams();

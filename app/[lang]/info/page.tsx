@@ -1,7 +1,5 @@
-"use client";
-
-import { use, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { use } from "react";
+import { redirect } from "next/navigation";
 import { Language } from "@/types/language";
 
 type Props = {
@@ -10,15 +8,7 @@ type Props = {
 
 export default function InfoPage({ params }: Props) {
     const { lang: rawLang } = use(params);
-    const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "en") as "uz" | "en" | "ru";
+    const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "uz") as Language;
 
-    const router = useRouter();
-
-    useEffect(() => {
-        if (lang) {
-            router.replace(`/${lang}/publications`);
-        }
-    }, [lang, router]);
-
-    return null;
+    redirect(`/${lang}/publications`);
 }

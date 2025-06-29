@@ -1,56 +1,49 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { Language } from "./types/language";
 
-const locales = ["en", "uz", "ru"];
-const defaultLocale = "uz";
-
-function getLocale(request: NextRequest) {
-    // Pathname ichida qo'llab-quvvatlanadigan locale bor-yo'qligini tekshiradi
-    const pathname = request.nextUrl.pathname;
-    const pathnameIsMissingLocale = locales.every((locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`);
-
-    // Agar locale yo'q bo'lsa, yo'naltirish amalga oshiriladi
-    if (pathnameIsMissingLocale) {
-        // Accept-Language header orqali foydalanuvchining afzal tilini aniqlash
-        const acceptLanguage = request.headers.get("accept-language");
-        let locale = defaultLocale;
-
-        if (acceptLanguage) {
-            // Accept-Language header orqali oddiy locale aniqlash
-            for (const supportedLocale of locales) {
-                if (acceptLanguage.includes(supportedLocale)) {
-                    locale = supportedLocale;
-                    break;
-                }
-            }
-        }
-
-        return locale;
-    }
-
-    return null;
-}
+const languages: Language[] = ["uz", "en", "ru"];
+const defaultLang: Language = "uz";
 
 export function middleware(request: NextRequest) {
+    const response = NextResponse.next();
     const pathname = request.nextUrl.pathname;
 
-    // Istisno: "/uz/publications/binary" uchun lang prefix tekshiruvi o'tkazilmaydi
-    const skipPrefixes = ["/uz/info/", "/en/info/", "/ru/info/", "/images/"];
-    if (skipPrefixes.some((prefix) => pathname.startsWith(prefix))) {
-        return NextResponse.next();
+    // Pathname language yo'qligini tekshiradi
+    const pathnameIsMissingLanguage = languages.every((language) => !pathname.startsWith(`/${language}/`) && pathname !== `/${language}`);
+
+    if (!pathnameIsMissingLanguage) {
+        // URL da til bor: uni cookie ga yozamiz
+        const currentLang = languages.find((language) => pathname === `/${language}` || pathname.startsWith(`/${language}/`)) as Language;
+        response.cookies.set("language", currentLang, { path: "/", maxAge: 60 * 60 * 24 * 30, httpOnly: false, secure: process.env.NODE_ENV === "production", sameSite: "lax", });
+        return response;
     }
 
-    // Pathname da locale yo'qligini tekshiradi
-    const pathnameIsMissingLocale = locales.every((locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`);
+    // Istisno: "/[lang]/info/..." va "/images/..." uchun lang prefix tekshiruvi o'tkazilmaydi
+    const skipPrefixes = ["/uz/info/", "/en/info/", "/ru/info/", "/images/"];
+    if (skipPrefixes.some((prefix) => pathname.startsWith(prefix))) return response;
 
-    // Agar locale yo'q bo'lsa, yo'naltirish amalga oshiriladi
-    if (pathnameIsMissingLocale) {
-        const locale = getLocale(request);
-        return NextResponse.redirect(new URL(`/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`, request.url));
+
+    // Agar language yo'q bo'lsa, redirect qilish
+    if (pathnameIsMissingLanguage) {
+        // til yo'q bo'lganda eng afzal til topiladi:
+
+        // 1. cookie
+        const cookieLang = request.cookies.get("language")?.value as Language;
+        if (cookieLang && languages.includes(cookieLang as Language)) {
+            return NextResponse.redirect(new URL(`/${cookieLang}${pathname}`, request.url));
+        }
+
+        // 2. foydalanuvchining afzal tili: Accept-Language header orqali
+        const acceptLanguage = request.headers.get("accept-language");
+        const supportedLang = languages.find(l => acceptLanguage?.includes(l));
+        if (supportedLang) return NextResponse.redirect(new URL(`/${supportedLang}${pathname}`, request.url));
+
+        // 3. default o'zbek tili
+        return NextResponse.redirect(new URL(`/${defaultLang}${pathname}`, request.url));
     }
 }
 
 export const config = {
-    // Matcher: `/_next/` va `/api/` ni inkor qiladi
     matcher: ["/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml).*)"],
 };

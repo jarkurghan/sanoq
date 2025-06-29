@@ -1,3 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /about
+Disallow: /ru/about
+Disallow: /uz/about
+Disallow: /en/about
 Sitemap: https://sanoq.uz/sitemap.xml
