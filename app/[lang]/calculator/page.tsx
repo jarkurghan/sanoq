@@ -16,9 +16,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const t = getTranslation(lang);
 
     return {
-        title: t("calculator.title"),
-        description: t("calculator.description"),
-        keywords: ["sanoq sistemasi", "sanoq konvertori", "decimal to binary", "binary to hex", "o‘nlik sanoq tizimi", "ikkinlik tizimi"],
+        title: t("calculator.seo.title"),
+        description: t("calculator.seo.description"),
+        keywords: t("calculator.seo.keywords"),
 
         authors: [{ name: "Najmiddin Nazirov", url: "https://sanoq.uz/about" }],
         creator: "Najmiddin Nazirov",
@@ -37,16 +37,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         },
 
         openGraph: {
-            title: t("calculator.title"),
-            description: t("calculator.description"),
-            url: `https://sanoq.uz/${lang}/calculator`,
-            siteName: "Sanoq sistemalari",
+            title: t("calculator.seo.title"),
+            description: t("calculator.seo.description"),
+            url: "https://sanoq.uz",
+            siteName: "sanoq.uz",
             images: [
                 {
                     url: "https://sanoq.uz/sanoq.uz.png",
                     width: 1000,
                     height: 749,
-                    alt: "Sanoq sistemalari kalkulyatori",
+                    alt: "sanoq.uz",
                 },
             ],
             locale: lang,
@@ -55,9 +55,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
         twitter: {
             card: "summary_large_image",
-            title: t("calculator.title"),
-            description: t("calculator.description"),
-            images: ["https://sanoq.uz/sanoq.uz.png"],
+            title: t("calculator.seo.title"),
+            description: t("calculator.seo.description"),
+            images: [{ url: "https://sanoq.uz/sanoq.uz.png", alt: "sanoq.uz" }],
             creator: "@jarkurghan",
         },
 
@@ -69,6 +69,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                 en: "https://sanoq.uz/en/calculator",
                 ru: "https://sanoq.uz/ru/calculator",
             },
+        },
+
+        other: {
+            "application-name": "sanoq.uz",
+            "apple-mobile-web-app-title": "sanoq.uz",
         },
     };
 }

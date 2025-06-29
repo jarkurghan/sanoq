@@ -14,9 +14,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const t = getTranslation(lang);
 
     return {
-        title: t("home.title"),
-        description: t("home.description"),
-        keywords: ["sanoq sistemasi", "converter", "binary", "decimal", "uzbek"],
+        title: t("home.seo.title"),
+        description: t("home.seo.description"),
+        keywords: t("home.seo.keywords"),
 
         authors: [{ name: "Najmiddin Nazirov", url: "https://sanoq.uz/about" }],
         creator: "Najmiddin Nazirov",
@@ -35,16 +35,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         },
 
         openGraph: {
-            title: t("home.title"),
-            description: t("home.description"),
+            title: t("home.seo.title"),
+            description: t("home.seo.description"),
             url: "https://sanoq.uz",
-            siteName: "Sanoq sistemalari",
+            siteName: "sanoq.uz",
             images: [
                 {
                     url: "https://sanoq.uz/sanoq.uz.png",
                     width: 1000,
                     height: 749,
-                    alt: "Sanoq sistemalari",
+                    alt: "sanoq.uz",
                 },
             ],
             locale: lang,
@@ -53,9 +53,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
         twitter: {
             card: "summary_large_image",
-            title: t("home.title"),
-            description: t("home.description"),
-            images: ["https://sanoq.uz/sanoq.uz.png"],
+            title: t("home.seo.title"),
+            description: t("home.seo.description"),
+            images: [{ url: "https://sanoq.uz/sanoq.uz.png", alt: "sanoq.uz" }],
             creator: "@jarkurghan",
         },
 
@@ -67,6 +67,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                 en: "https://sanoq.uz/en",
                 ru: "https://sanoq.uz/ru",
             },
+        },
+
+        other: {
+            "application-name": "sanoq.uz",
+            "apple-mobile-web-app-title": "sanoq.uz",
         },
     };
 }

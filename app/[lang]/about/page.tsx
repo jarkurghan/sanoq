@@ -1,14 +1,76 @@
-"use client";
-
 import { Send, Share2 } from "lucide-react";
 import ShareAppURL from "@/components/share";
 import { getTranslation } from "@/lib/i18n";
 import { use } from "react";
 import { Language } from "@/types/language";
+import type { Metadata } from "next";
 
 type Props = {
     params: Promise<{ lang: Language }>;
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { lang } = await params;
+    const t = getTranslation(lang);
+
+    return {
+        title: t("about.title"),
+        description: t("about.description"),
+
+        authors: [{ name: "Najmiddin Nazirov", url: "https://sanoq.uz/about" }],
+        creator: "Najmiddin Nazirov",
+
+        robots: {
+            index: false,
+            follow: false,
+            nocache: false,
+            googleBot: {
+                index: false,
+                follow: false,
+            },
+        },
+
+        openGraph: {
+            title: t("about.title"),
+            description: t("about.description"),
+            url: "https://sanoq.uz",
+            siteName: "sanoq.uz",
+            images: [
+                {
+                    url: "https://sanoq.uz/sanoq.uz.png",
+                    width: 1000,
+                    height: 749,
+                    alt: "sanoq.uz",
+                },
+            ],
+            locale: lang,
+            type: "website",
+        },
+
+        twitter: {
+            card: "summary_large_image",
+            title: t("about.title"),
+            description: t("about.description"),
+            images: [{ url: "https://sanoq.uz/sanoq.uz.png", alt: "sanoq.uz" }],
+            creator: "@jarkurghan",
+        },
+
+        metadataBase: new URL("https://sanoq.uz"),
+        alternates: {
+            canonical: `https://sanoq.uz/${lang}/publications`,
+            languages: {
+                uz: "https://sanoq.uz/uz/publications",
+                en: "https://sanoq.uz/en/publications",
+                ru: "https://sanoq.uz/ru/publications",
+            },
+        },
+
+        other: {
+            "application-name": "sanoq.uz",
+            "apple-mobile-web-app-title": "sanoq.uz",
+        },
+    };
+}
 
 export default function AboutPage({ params }: Props) {
     const { lang: rawLang } = use(params);

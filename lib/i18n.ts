@@ -18,6 +18,10 @@ const translations: Record<Language, Record<string, string>> = {
         "home.result": "Result",
         "home.swap": "Swap",
 
+        "home.seo.title": "Numeral system converter",
+        "home.seo.description": "Numeral system converter: quickly and easily convert numbers between different numeral systems.",
+        "home.seo.keywords": "numeral systems, converter, number conversion, online calculator, base conversion",
+
         // Number systems
         "numbersystem.binary": "Binary (Base 2)",
         "numbersystem.octal": "Octal (Base 8)",
@@ -59,6 +63,10 @@ const translations: Record<Language, Record<string, string>> = {
         "publications.search": "Search...",
         "publications.learnmore": "Learn",
         "publications.notfound": "No topics found matching your search.",
+
+        "publications.seo.title": "Articles — Read and explore topics on numeral systems",
+        "publications.seo.description": "Discover informative articles on numeral systems including binary, decimal, hexadecimal, and more — learn how numbers are represented and used in math and computing.",
+        "publications.seo.keywords": "numeral systems, articles, decimal system, binary system, hexadecimal system, mathematics, digits, positional notation, number history, computation",
 
         // Calculator page
         "calculator.title": "Number System Calculator",
@@ -284,6 +292,10 @@ const translations: Record<Language, Record<string, string>> = {
         "calculator.info.warning.36":
             "When hexatrigesimal number system is selected, this calculator performs calculations according to the hexatrigesimal number system",
 
+        "calculator.seo.title": "Standard Calculator – Perform Calculations in Binary, Octal, Decimal, and Hexadecimal",
+        "calculator.seo.description": "Online calculator for numeral systems: perform calculations in any numeral system.",
+        "calculator.seo.keywords": "calculator, numeral systems, binary, octal, decimal, hexadecimal, number conversion, base converter, online calculator",
+
         // Code page
         "code.title": "Number Systems Code",
         "code.description": "Programming examples and code snippets for working with number systems.",
@@ -347,6 +359,10 @@ const translations: Record<Language, Record<string, string>> = {
         "home.result": "Natija",
         "home.swap": "Almashtirish",
 
+        "home.seo.title": "Sanoq sistemalari konvertori",
+        "home.seo.description": "Sanoq sistemalari konvertori: Turli sanoq sistemalari orasida tez va oson konversiya",
+        "home.seo.keywords": "sanoq sistemalari, konvertor, sanoq sistemasi aylantirish, raqam konvertori, onlayn kalkulyator",
+
         // Number systems
         "numbersystem.binary": "Ikkilik (2-asos)",
         "numbersystem.octal": "Sakkizlik (8-asos)",
@@ -388,6 +404,10 @@ const translations: Record<Language, Record<string, string>> = {
         "publications.search": "Qidirish...",
         "publications.learnmore": "O'qish",
         "publications.notfound": "Qidiruv bo‘yicha hech qanday mavzu topilmadi.",
+
+        "publications.seo.title": "Maqolalar — Sanoq sistemalari mavzusidagi maqolalarni o‘qing va o‘rganing",
+        "publications.seo.description": "Sanoq sistemalari bo‘yicha eng so‘nggi va foydali maqolalarni o‘qing. Ikkilik, o‘nlik, o‘n oltilik tizimlar va boshqa matematik tushunchalar haqida bilim oling.",
+        "publications.seo.keywords": "sanoq sistemalari, maqolalar, o‘nlik sistema, ikkilik sistema, o‘n oltilik sanoq, matematika, raqamlar, pozitsion sistema, raqamlar tarixi, hisoblash",
 
         // Calculator page
         "calculator.title": "Sanoq Sistemalari Kalkulyatori",
@@ -595,6 +615,10 @@ const translations: Record<Language, Record<string, string>> = {
         "calculator.info.warning.36":
             "O'ttiz oltilik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni o'ttiz oltilik sanoq sistemasi bo'yicha bajaradi",
 
+        "calculator.seo.title": "Standart kalkulyator - hisob-kitoblarni turli sanoq sistemalarida bajaring",
+        "calculator.seo.description": "Sanoq sistemalari uchun onlayn kalkulyator: istalgan sanoq sistemasida hisob-kitoblarni bajaring.",
+        "calculator.seo.keywords": "kalkulyator, sanoq sistemasi, ikkilik, o‘nlik, o‘n oltilik, hisoblash, matematik kalkulyator, onlayn kalkulyator",
+
         // Code page
         "code.title": "Sanoq Sistemalari Kodi",
         "code.description": "Sanoq sistemalari bilan ishlash uchun dasturlash misollari va kod parchalar.",
@@ -658,6 +682,10 @@ const translations: Record<Language, Record<string, string>> = {
         "home.result": "Результат",
         "home.swap": "Поменять",
 
+        "home.seo.title": "Конвертер систем счисления",
+        "home.seo.description": "Конвертер систем счисления: быстро и легко переводите числа между различными системами счисления.",
+        "home.seo.keywords": "системы счисления, конвертер, перевод чисел, онлайн калькулятор, системы счисления перевод",
+
         // Number systems
         "numbersystem.binary": "Двоичная (Основание 2)",
         "numbersystem.octal": "Восьмеричная (Основание 8)",
@@ -699,6 +727,10 @@ const translations: Record<Language, Record<string, string>> = {
         "publications.search": "Поиск...",
         "publications.learnmore": "Узнать",
         "publications.notfound": "По вашему запросу темы не найдены.",
+
+        "publications.seo.title": "Статьи — Читайте и изучайте материалы по системам счисления",
+        "publications.seo.description": "Читайте полезные статьи о системах счисления: двоичная, десятичная, шестнадцатеричная и другие числовые системы, применяемые в математике и информатике.",
+        "publications.seo.keywords": "системы счисления, статьи, десятичная система, двоичная система, шестнадцатеричная система, математика, цифры, позиционная система, история чисел, вычисления",
 
         // Calculator page
         "calculator.title": "Калькулятор Систем Счисления",
@@ -924,6 +956,10 @@ const translations: Record<Language, Record<string, string>> = {
             "При выборе тридцать пять системы счисления данный калькулятор выполняет вычисления согласно тридцать пять системе счисления",
         "calculator.info.warning.36":
             "При выборе тридцать шесть системы счисления данный калькулятор выполняет вычисления согласно тридцать шесть системе счисления",
+
+        "calculator.seo.title": "Стандартный калькулятор — вычисления в двоичной, восьмеричной, десятичной и шестнадцатеричной системах",
+        "calculator.seo.description": "Онлайн-калькулятор для систем счисления: выполняйте вычисления в любой системе счисления.",
+        "calculator.seo.keywords": "калькулятор, система счисления, двоичная, восьмеричная, десятичная, шестнадцатеричная, конвертация чисел, онлайн калькулятор",
 
         // Code page
         "code.title": "Код Систем Счисления",
