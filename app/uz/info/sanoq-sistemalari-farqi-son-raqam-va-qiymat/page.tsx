@@ -26,7 +26,7 @@ export function generateMetadata(): Metadata {
             description: "Sanoq sistemalarini tushunishda son, raqam va qiymat tushunchalarining farqlari haqida batafsil ma'lumot.",
             url: "https://sanoq.uz/uz/info/sanoq-sistemalari-farqi-son-raqam-va-qiymat",
             siteName: "sanoq.uz",
-            images: [{ url: "https://sanoq.uz/sanoq.uz.png", width: 1000, height: 749, alt: "sanoq.uz", },],
+            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", width: 1000, height: 749, alt: "sanoq.uz", },],
             locale: "uz",
             type: "article",
         },
@@ -34,7 +34,7 @@ export function generateMetadata(): Metadata {
             card: "summary_large_image",
             title: "Sanoq sistemalari farqi: Son, raqam va qiymat - Sanoq sistemalari",
             description: "Sanoq sistemalarini tushunishda son, raqam va qiymat tushunchalarining farqlari haqida batafsil ma'lumot",
-            images: [{ url: "https://sanoq.uz/sanoq.uz.png", alt: "sanoq.uz" }],
+            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", alt: "sanoq.uz" }],
             creator: "@jarkurghan",
         },
 

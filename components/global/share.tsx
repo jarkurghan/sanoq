@@ -7,6 +7,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { ClipboardCopy, Mail, Send } from "lucide-react";
 import { Button } from "@/components/utils/button";
 import { getTranslation } from "@/lib/i18n";
+import { Language } from "@/types/language";
 
 export default function ShareAppURL({ children, lang: rawLang }: { children?: React.ReactNode; lang: string }) {
     const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "uz") as Language;

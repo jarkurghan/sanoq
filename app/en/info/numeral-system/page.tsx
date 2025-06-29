@@ -29,7 +29,7 @@ export function generateMetadata(): Metadata {
             description: "Explore the fascinating world of numeral systems including their history, variants, and significance in math and computing.",
             url: "https://sanoq.uz/en/info/numeral-system",
             siteName: "sanoq.uz",
-            images: [{ url: "https://sanoq.uz/sanoq.uz.png", width: 1000, height: 749, alt: "sanoq.uz" }],
+            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", width: 1000, height: 749, alt: "sanoq.uz" }],
             locale: "en",
             type: "article",
         },
@@ -37,7 +37,7 @@ export function generateMetadata(): Metadata {
             card: "summary_large_image",
             title: "Numeral system — Overview, History, and Types",
             description: "Detailed article on numeral systems and their impact on math, science, and technology.",
-            images: [{ url: "https://sanoq.uz/sanoq.uz.png", alt: "sanoq.uz" }],
+            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", alt: "sanoq.uz" }],
             creator: "@jarkurghan",
         },
 

@@ -28,7 +28,7 @@ export function generateMetadata(): Metadata {
             description: "O‘nlik sanoq sistemasining tarixi, uning nima ekanligi, nega aynan 10 asosli ekanligi, va nol raqamining inqilobiy kashfiyoti haqida batafsil ma’lumot.",
             url: "https://sanoq.uz/uz/info/onlik-sanoq-sistemasi-tarixi",
             siteName: "sanoq.uz",
-            images: [{ url: "https://sanoq.uz/sanoq.uz.png", width: 1000, height: 749, alt: "sanoq.uz" }],
+            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", width: 1000, height: 749, alt: "sanoq.uz" }],
             locale: "uz",
             type: "article",
         },
@@ -36,7 +36,7 @@ export function generateMetadata(): Metadata {
             card: "summary_large_image",
             title: "O‘nlik sanoq sistemasi tarixi - Sanoq sistemalari",
             description: "O‘nlik sanoq sistemasining tarixi, uning nima ekanligi, nega aynan 10 asosli ekanligi, va nol raqamining inqilobiy kashfiyoti haqida batafsil ma’lumot.",
-            images: [{ url: "https://sanoq.uz/sanoq.uz.png", alt: "sanoq.uz" }],
+            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", alt: "sanoq.uz" }],
             creator: "@jarkurghan",
         },
 

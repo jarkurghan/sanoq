@@ -1,5 +1,5 @@
 import HomeComponent from "@/components/home/client-component";
-import RightSidebarContent from "@/components/right-sidebar-content";
+import RightSidebarContent from "@/components/global/right-sidebar";
 import { getTranslation } from "@/lib/i18n";
 import { Language } from "@/types/language";
 import { Metadata } from "next";
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             siteName: "sanoq.uz",
             images: [
                 {
-                    url: "https://sanoq.uz/sanoq.uz.png",
+                    url: "https://sanoq.uz/images/sanoq.uz.png",
                     width: 1000,
                     height: 749,
                     alt: "sanoq.uz",
@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             card: "summary_large_image",
             title: t("home.seo.title"),
             description: t("home.seo.description"),
-            images: [{ url: "https://sanoq.uz/sanoq.uz.png", alt: "sanoq.uz" }],
+            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", alt: "sanoq.uz" }],
             creator: "@jarkurghan",
         },
 

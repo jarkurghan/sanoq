@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, CardContent } from "@/components/utils/card";
-import RightSidebarContent from "@/components/right-sidebar-content";
+import RightSidebarContent from "@/components/global/right-sidebar";
 
 export default function BinaryToDecimalPage() {
     return (

@@ -1,25 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/utils/button";
 import { Calculator, Code, Home, Info, BookOpen, Menu, X, Share2, Binary } from "lucide-react";
 import { useState } from "react";
-import LanguageSwitcher from "@/components/language-switcher";
-import ThemeToggle from "@/components/theme-toggle";
+import LanguageSwitcher from "@/components/global/language-switcher";
+import ThemeToggle from "@/components/global/theme-toggle";
 import ShareAppURL from "./share";
 import { getTranslation } from "@/lib/i18n";
+import { Language } from "@/types/language";
 
 export default function Navbar({ lang: rawLang }: { lang: string }) {
     const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "uz") as Language;
     const t = getTranslation(lang);
 
     const pathname = usePathname();
-    const params = useParams();
-    // const lang = (params.lang as string) || "uz";
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    // const { t } = useLanguage();
 
     const navItems = [
         { name: "nav.conversion", href: `/${lang}`, icon: Home },
@@ -64,7 +62,7 @@ export default function Navbar({ lang: rawLang }: { lang: string }) {
                         </div>
                     </ShareAppURL>
                     <ThemeToggle />
-                    <LanguageSwitcher lang={lang}/>
+                    <LanguageSwitcher lang={lang} />
 
                     <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
                         {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -84,7 +82,7 @@ export default function Navbar({ lang: rawLang }: { lang: string }) {
                         <div className="ml-auto flex items-center space-x-2">
                             <ShareAppURL lang={lang} />
                             <ThemeToggle />
-                            <LanguageSwitcher lang={lang}/>
+                            <LanguageSwitcher lang={lang} />
 
                             <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(false)}>
                                 <X className="h-6 w-6" />

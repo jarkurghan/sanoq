@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { ChevronRight } from "lucide-react";
 import { PUBLICATIONS } from "@/lib/publications";
 import { getTranslation } from "@/lib/i18n";
+import { Language } from "@/types/language";
 
 // Static sidebar menus
 const sidebarMenus = {

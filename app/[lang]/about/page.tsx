@@ -1,9 +1,9 @@
+import ShareAppURL from "@/components/global/share";
 import { Send, Share2 } from "lucide-react";
-import ShareAppURL from "@/components/share";
 import { getTranslation } from "@/lib/i18n";
-import { use } from "react";
 import { Language } from "@/types/language";
 import type { Metadata } from "next";
+import { use } from "react";
 
 type Props = {
     params: Promise<{ lang: Language }>;
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             siteName: "sanoq.uz",
             images: [
                 {
-                    url: "https://sanoq.uz/sanoq.uz.png",
+                    url: "https://sanoq.uz/images/sanoq.uz.png",
                     width: 1000,
                     height: 749,
                     alt: "sanoq.uz",
@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             card: "summary_large_image",
             title: t("about.title"),
             description: t("about.description"),
-            images: [{ url: "https://sanoq.uz/sanoq.uz.png", alt: "sanoq.uz" }],
+            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", alt: "sanoq.uz" }],
             creator: "@jarkurghan",
         },
 
@@ -81,8 +81,10 @@ export default function AboutPage({ params }: Props) {
         <div className="flex">
             <div className="flex-1 container py-4 px-4 sm:px-8 max-w-6xl ml-0 lg:ml-64 text-justify">
                 <div className="mb-8">
-                    <h1 className="text-2xl font-bold mb-4">{t("about.title")}</h1>
-                    <p className="text-sm mb-4">{t("about.description")}</p>
+                    <header>
+                        <h1 className="text-2xl font-bold mb-4">{t("about.title")}</h1>
+                        <p className="text-sm mb-4">{t("about.description")}</p>
+                    </header>
                     <div className="grid grid-cols-[1fr_auto] gap-x-2 mb-4">
                         <div className="text-lg font-medium">•</div>
                         <h3 className="text-lg font-medium">{t("nav.conversion")}</h3>
