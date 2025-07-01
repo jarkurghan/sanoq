@@ -1,36 +1,25 @@
 "use client";
 
-import { useState, useEffect, Fragment } from "react";
+import { useState } from "react";
+import { useEffect } from "react";
+import { Fragment } from "react";
+import { useRef } from "react";
 import { Input } from "@/components/utils/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/utils/select";
+import { Select } from "@/components/utils/select";
+import { SelectContent } from "@/components/utils/select";
+import { SelectItem } from "@/components/utils/select";
+import { SelectTrigger } from "@/components/utils/select";
+import { SelectValue } from "@/components/utils/select";
 import { Button } from "@/components/utils/button";
 import { ArrowRightLeft } from "lucide-react";
 import { NUMBER_SYSTEMS } from "@/lib/constants";
 import { getTranslation } from "@/lib/i18n";
 import TypingText from "@/components/home/typer";
-import * as math from "mathjs";
 import Solution from "./solution";
 
 type Props = {
     lang: "uz" | "en" | "ru";
 };
-
-function floatToBinary(num: number, maxFractionBits: number = 20): string {
-    const integerPart: number = Math.floor(num);
-    let fractionalPart: number = num - integerPart;
-
-    const integerBinary: string = integerPart.toString(2);
-    let fractionalBinary: string = "";
-
-    while (fractionalPart > 0 && fractionalBinary.length < maxFractionBits) {
-        fractionalPart *= 2;
-        const bit: number = Math.floor(fractionalPart);
-        fractionalBinary += bit;
-        fractionalPart -= bit;
-    }
-
-    return fractionalBinary ? integerBinary + "." + fractionalBinary : integerBinary;
-}
 
 export default function HomeComponent({ lang }: Props) {
     const t = getTranslation(lang);
@@ -39,87 +28,13 @@ export default function HomeComponent({ lang }: Props) {
     const [rightValue, setRightValue] = useState("");
     const [fromBase, setFromBase] = useState("10");
     const [toBase, setToBase] = useState("2");
-    const [tables, setTables] = useState<{ base?: string; value: string; sup?: string }[]>([]);
 
     useEffect(() => {
         try {
-            const isFractional = leftValue.includes(".");
-            const dotIndex = leftValue.indexOf(".");
-            const lengthOfLeftValue = leftValue.length;
-            const lengthOfWholePart = isFractional ? dotIndex : lengthOfLeftValue;
-
-            let sum = 0;
-
-            const steps: { base?: string; value: string; sup?: string }[] = [{ base: fromBase, value: leftValue }, { value: "=" }];
-            const steps2: { base?: string; value: string; sup?: string }[] = [{ value: "=" }];
-            const steps3: { base?: string; value: string; sup?: string }[] = [{ value: "=" }];
-            const steps4: { base?: string; value: string; sup?: string }[] = [{ value: "=" }];
-            for (let i = lengthOfWholePart - 1, j = 0; i >= 0; i--, j++) {
-                steps.push({ value: leftValue[j] });
-                steps.push({ value: "*" });
-                steps.push({ value: fromBase, sup: String(i) });
-                if (i > 0) steps.push({ value: "+" });
-
-                steps2.push({ value: leftValue[j] });
-                steps2.push({ value: "*" });
-                steps2.push({ value: String(math.pow(Number(fromBase), i)) });
-                if (i > 0) steps2.push({ value: "+" });
-
-                const value = math.multiply(Number(leftValue[j]), math.pow(Number(fromBase), i));
-                sum = Number(math.add(sum, value));
-
-                steps3.push({ value: String(value) });
-                if (i > 0) steps3.push({ value: "+" });
-
-                if (value !== 0) {
-                    steps4.push({ value: String(value) });
-                    steps4.push({ value: "+" });
-                }
+            const decimalValue = Number.parseInt(leftValue, Number.parseInt(fromBase));
+            if (!isNaN(decimalValue)) {
+                setRightValue(decimalValue.toString(Number.parseInt(toBase)).toUpperCase());
             }
-
-            steps4.pop();
-
-            if (isFractional) {
-                for (let j = dotIndex + 1; j < lengthOfLeftValue; j++) {
-                    steps.push({ value: "+" });
-                    steps.push({ value: leftValue[j] });
-                    steps.push({ value: "*" });
-                    steps.push({ value: fromBase, sup: String(dotIndex - j) });
-
-                    steps2.push({ value: "+" });
-                    steps2.push({ value: leftValue[j] });
-                    steps2.push({ value: "*" });
-                    steps2.push({ value: String(math.pow(parseFloat(fromBase), dotIndex - j)) });
-
-                    const value = math.multiply(Number(leftValue[j]), Number(math.pow(parseFloat(fromBase), dotIndex - j)));
-                    sum = math.add(sum, value);
-
-                    steps3.push({ value: "+" });
-                    steps3.push({ value: String(value) });
-
-                    if (value !== 0) {
-                        steps4.push({ value: "+" });
-                        steps4.push({ value: String(value) });
-                    }
-                }
-            }
-
-            // const decimalValue = Number.parseInt(leftValue, Number.parseInt(fromBase));
-            // if (!isNaN(decimalValue)) {
-            //     setRightValue(decimalValue.toString(Number.parseInt(toBase)).toUpperCase());
-            // }
-
-            steps.push(...steps2);
-            steps.push(...steps3);
-            if (steps3.length !== steps4.length) steps.push(...steps4);
-
-            steps.push({ value: "=" });
-            steps.push({ value: String(sum), base: "10" });
-
-            const x = floatToBinary(sum);
-
-            setRightValue(String(x));
-            setTables(steps);
         } catch {
             setRightValue("");
         }
@@ -138,6 +53,30 @@ export default function HomeComponent({ lang }: Props) {
         setLeftValue(rightValue);
         setRightValue(leftValue);
     };
+
+    /* for solution --------------------------------------- */
+    const [solutionLeftValue, setSolutionLeftValue] = useState("");
+    const [solutionFromBase, setSolutionFromBase] = useState(10);
+    const [solutionToBase, setSolutionToBase] = useState(2);
+    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+    useEffect(() => {
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+        }
+
+        timeoutRef.current = setTimeout(() => {
+            setSolutionLeftValue(leftValue);
+            setSolutionFromBase(Number(fromBase));
+            setSolutionToBase(Number(toBase));
+        }, 3000);
+
+        return () => {
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+            }
+        };
+    }, [leftValue, fromBase, toBase]);
 
     return (
         <Fragment>
@@ -192,15 +131,15 @@ export default function HomeComponent({ lang }: Props) {
                 </div>
             </div>
             <div className="mt-8">
-                <div>
+                {/* <div>
                     {tables.map((table, i) => (
                         <span key={i}>
                             {table.value}
                             {table.sup && <sup>{table.sup}</sup>} {table.base && <sub>{table.base}</sub>}{" "}
                         </span>
                     ))}
-                </div>
-                <Solution />
+                </div> */}
+                <Solution inputNumber={solutionLeftValue} fromBase={solutionFromBase} toBase={solutionToBase} />
                 {/* <TypingText speed={70}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                     veniam, quis nostrud exercitation ullamco laboris. Nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
