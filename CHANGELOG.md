@@ -6,6 +6,7 @@ Barcha versiya o‘zgarishlari shu yerda qayd etiladi.
 
 **Yangi:**  
 • Converter uchun yechim qo‘shildi.
+• Google natijalarida favicon chiqishi uchun `<link rel="icon">` tegi `<head>` ga qo‘shildi.
 
 **O‘zgartirildi:**  
 • RightValue olib tashlandi. Endi faqat chap tarafga son kiritiladi, o‘ng tarafda natija avtomatik ko‘rsatiladi.
