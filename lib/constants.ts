@@ -45,3 +45,7 @@ export const CALCULATOR_TYPES = [
 export const DEFAULT_NUMBER_SYSTEM = "10";
 export const DEFAULT_TWICE_NUMBER_SYSTEM = "2";
 export const DEFAULT_CALCULATOR_TYPE = "standard";
+
+export const subscripts = ["₀", "₁", "₂", "₃", "₄", "₅", "₆", "₇", "₈", "₉", "₁₀", "₁₁", "₁₂", "₁₃", "₁₄", "₁₅", "₁₆", "₁₇", "₁₈", "₁₉", "₂₀", "₂₁", "₂₂", "₂₃", "₂₄", "₂₅", "₂₆", "₂₇", "₂₈", "₂₉", "₃₀", "₃₁", "₃₂", "₃₃", "₃₄", "₃₅", "₃₆"]
+export const superscripts = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹", "¹⁰", "¹¹", "¹²", "¹³", "¹⁴", "¹⁵", "¹⁶", "¹⁷", "¹⁸", "¹⁹", "²⁰", "²¹", "²²", "²³", "²⁴", "²⁵", "²⁶", "²⁷", "²⁸", "²⁹", "³⁰", "³¹", "³²", "³³", "³⁴", "³⁵", "³⁶"]
+export const supMinus = "⁻";

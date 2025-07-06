@@ -23,6 +23,7 @@ type Props = {
 
 export default function HomeComponent({ lang }: Props) {
     const t = getTranslation(lang);
+    // to-do: maximum kars qism 10ta;
 
     const [leftValue, setLeftValue] = useState("");
     const [rightValue, setRightValue] = useState("");

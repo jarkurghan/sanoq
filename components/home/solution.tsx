@@ -1,113 +1,48 @@
 "use client";
 
 import React from "react";
-import { useEffect } from "react";
 import { useState } from "react";
+import { useEffect } from "react";
+import { Props } from "@/types/converter";
+import { FractionalPart } from "@/types/converter";
+import { CONVERTER_SOLUTION_FRACTIONAL_PART } from "@/lib/default-values";
 import * as math from "mathjs";
-
-type Props = {
-    inputNumber: string;
-    fromBase: number;
-    toBase: number;
-};
-
-type Step = {
-    base?: number;
-    value: string;
-    sup?: number;
-};
 
 export default function ConvertSolution({ inputNumber, fromBase, toBase }: Props) {
     const [isHidden, setIsHidden] = useState(true);
-    const [isHiddenPart1, setIsHiddenPart1] = useState(true);
-    const [isHiddenPart2, setIsHiddenPart2] = useState(true);
+    const [isHiddenWholePart, setIsHiddenWholePart] = useState(true);
+    const [isHiddenFractionalPart, setIsHiddenFractionalPart] = useState(true);
 
     const [isFractional, setIsFractional] = useState(false);
     const [isNegative, setIsNegative] = useState(false);
 
+    const [inputWholePart, setInputWholePart] = useState("");
+    const [inputFractionalPart, setInputFractionalPart] = useState("");
+
+    const [decWholePart, setDecWholePart] = useState("");
+    const [decFractionalPart, setDecFractionalPart] = useState(CONVERTER_SOLUTION_FRACTIONAL_PART);
+
+    const [toWholePart, toDecWholePart] = useState("");
+    const [toFractionalPart, toDecFractionalPart] = useState(CONVERTER_SOLUTION_FRACTIONAL_PART);
+
     useEffect(() => {
-        try {
-            const isFractional = inputNumber.includes(".");
-            const dotIndex = inputNumber.indexOf(".");
-            const lengthOfInputNumber = inputNumber.length;
-            const lengthOfWholePart = isFractional ? dotIndex : lengthOfInputNumber;
-
-            let sum = 0;
-
-            const steps: Step[] = [{ base: fromBase, value: inputNumber }, { value: "=" }];
-            const steps2: Step[] = [{ value: "=" }];
-            const steps3: Step[] = [{ value: "=" }];
-            const steps4: Step[] = [{ value: "=" }];
-            for (let i = lengthOfWholePart - 1, j = 0; i >= 0; i--, j++) {
-                steps.push({ value: inputNumber[j] });
-                steps.push({ value: "*" });
-                steps.push({ value: String(fromBase), sup: i });
-                if (i > 0) steps.push({ value: "+" });
-
-                steps2.push({ value: inputNumber[j] });
-                steps2.push({ value: "*" });
-                steps2.push({ value: String(math.pow(Number(fromBase), i)) });
-                if (i > 0) steps2.push({ value: "+" });
-
-                const value = math.multiply(Number(inputNumber[j]), math.pow(Number(fromBase), i));
-                sum = Number(math.add(sum, value));
-
-                steps3.push({ value: String(value) });
-                if (i > 0) steps3.push({ value: "+" });
-
-                if (value !== 0) {
-                    steps4.push({ value: String(value) });
-                    steps4.push({ value: "+" });
-                }
-            }
-
-            steps4.pop();
-
-            if (isFractional) {
-                for (let j = dotIndex + 1; j < lengthOfInputNumber; j++) {
-                    steps.push({ value: "+" });
-                    steps.push({ value: inputNumber[j] });
-                    steps.push({ value: "*" });
-                    steps.push({ value: String(fromBase), sup: dotIndex - j });
-
-                    steps2.push({ value: "+" });
-                    steps2.push({ value: inputNumber[j] });
-                    steps2.push({ value: "*" });
-                    steps2.push({ value: String(math.pow(fromBase, dotIndex - j)) });
-
-                    const value = math.multiply(Number(inputNumber[j]), Number(math.pow(fromBase, dotIndex - j)));
-                    sum = math.add(sum, value);
-
-                    steps3.push({ value: "+" });
-                    steps3.push({ value: String(value) });
-
-                    if (value !== 0) {
-                        steps4.push({ value: "+" });
-                        steps4.push({ value: String(value) });
-                    }
-                }
-            }
-
-            // const decimalValue = Number.parseInt(inputNumber, Number.parseInt(fromBase));
-            // if (!isNaN(decimalValue)) {
-            //     setRightValue(decimalValue.toString(Number.parseInt(toBase)).toUpperCase());
-            // }
-
-            steps.push(...steps2);
-            steps.push(...steps3);
-            if (steps3.length !== steps4.length) steps.push(...steps4);
-
-            steps.push({ value: "=" });
-            steps.push({ value: String(sum), base: 10 });
-
-            // const x = floatToBinary(sum);
-
-            // setRightValue(String(x));
-            // setTables(steps);
-        } catch (error) {
-            console.log(error);
-            setIsHidden(true);
+        const checkNumber = true;
+        if (!checkNumber) {
+            setIsHidden(false);
+            return;
         }
+        const num = inputNumber.toUpperCase();
+
+        const checkNegative = num[0] !== "-";
+        const checkFractional = num.includes(".");
+        const wholePart = num.split(".")[0];
+        const fractionalPart = num.split(".")[1] || "";
+
+        const decWholePart = num.split(".")[0];
+        const decFractionalPart = num.split(".")[1] || "";
+
+        const toWholePart = num.split(".")[0];
+        const toFractionalPart = num.split(".")[1] || "";
     }, [inputNumber, fromBase, toBase]);
 
     return (
