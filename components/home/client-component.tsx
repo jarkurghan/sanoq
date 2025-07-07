@@ -12,10 +12,10 @@ import { SelectTrigger } from "@/components/utils/select";
 import { SelectValue } from "@/components/utils/select";
 import { Button } from "@/components/utils/button";
 import { ArrowRightLeft } from "lucide-react";
-import { NUMBER_SYSTEMS } from "@/lib/constants";
-import { getTranslation } from "@/lib/i18n";
+import { getTranslation } from "@/lib/translater/i18n";
 import TypingText from "@/components/home/typer";
 import Solution from "./solution";
+import { NUMBER_SYSTEMS } from "@/lib/constants/numeral-system";
 
 type Props = {
     lang: "uz" | "en" | "ru";

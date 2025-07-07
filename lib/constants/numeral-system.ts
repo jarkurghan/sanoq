@@ -36,16 +36,46 @@ export const NUMBER_SYSTEMS = [
     { value: "36", label: "numbersystem.hexatrigesimal", name: "Hexatrigesimal (Base 36)" },
 ] as const;
 
-export const CALCULATOR_TYPES = [
-    { value: "standard", label: "calculator.type.standard", name: "Standard Calculator" },
-    // { value: "advanced", label: "calculator.type.advanced", name: "Advanced Calculator" },
-    // { value: "logical", label: "calculator.type.logical", name: "Logical Calculator" },
-] as const;
-
 export const DEFAULT_NUMBER_SYSTEM = "10";
 export const DEFAULT_TWICE_NUMBER_SYSTEM = "2";
-export const DEFAULT_CALCULATOR_TYPE = "standard";
 
-export const subscripts = ["₀", "₁", "₂", "₃", "₄", "₅", "₆", "₇", "₈", "₉", "₁₀", "₁₁", "₁₂", "₁₃", "₁₄", "₁₅", "₁₆", "₁₇", "₁₈", "₁₉", "₂₀", "₂₁", "₂₂", "₂₃", "₂₄", "₂₅", "₂₆", "₂₇", "₂₈", "₂₉", "₃₀", "₃₁", "₃₂", "₃₃", "₃₄", "₃₅", "₃₆"]
-export const superscripts = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹", "¹⁰", "¹¹", "¹²", "¹³", "¹⁴", "¹⁵", "¹⁶", "¹⁷", "¹⁸", "¹⁹", "²⁰", "²¹", "²²", "²³", "²⁴", "²⁵", "²⁶", "²⁷", "²⁸", "²⁹", "³⁰", "³¹", "³²", "³³", "³⁴", "³⁵", "³⁶"]
-export const supMinus = "⁻";
+export const NUMERAL_VALUE_DICTIONARY: Record<string, number> = {
+    "0": 0,
+    "1": 1,
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "6": 6,
+    "7": 7,
+    "8": 8,
+    "9": 9,
+    A: 10,
+    B: 11,
+    C: 12,
+    D: 13,
+    E: 14,
+    F: 15,
+    G: 16,
+    H: 17,
+    I: 18,
+    J: 19,
+    K: 20,
+    L: 21,
+    M: 22,
+    N: 23,
+    O: 24,
+    P: 25,
+    Q: 26,
+    R: 27,
+    S: 28,
+    T: 29,
+    U: 30,
+    V: 31,
+    W: 32,
+    X: 33,
+    Y: 34,
+    Z: 35,
+};
+
+export const DIGITS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";

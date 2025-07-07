@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader } from "@/components/utils/card"
 import StandartCalculator from "@/components/calculator/standart-calculator";
 import CalculatorText from "@/components/calculator/standart-calculator-info";
 import CalculatorRightSidebar from "@/components/calculator/calculator-right-sidebar";
-import { getTranslation } from "@/lib/i18n";
+import { getTranslation } from "@/lib/translater/i18n";
 import { Language } from "@/types/language";
 import { Metadata } from "next";
 import { use } from "react";

@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { usePathname, useParams } from "next/navigation";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/classname";
 import { ChevronRight } from "lucide-react";
-import { PUBLICATIONS } from "@/lib/publications";
-import { getTranslation } from "@/lib/i18n";
+import { PUBLICATIONS } from "@/lib/constants/publications";
+import { getTranslation } from "@/lib/translater/i18n";
 import { Language } from "@/types/language";
 
 // Static sidebar menus

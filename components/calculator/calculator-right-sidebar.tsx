@@ -1,10 +1,11 @@
 "use client";
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/utils/select";
-import { NUMBER_SYSTEMS, CALCULATOR_TYPES } from "@/lib/constants";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { getTranslation } from "@/lib/i18n";
+import { getTranslation } from "@/lib/translater/i18n";
+import { CALCULATOR_TYPES } from "@/lib/constants/calculator";
+import { NUMBER_SYSTEMS } from "@/lib/constants/numeral-system";
 
 export default function CalculatorRightSidebar({ lang: rawLang }: { lang: string }) {
     const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "uz") as Language;

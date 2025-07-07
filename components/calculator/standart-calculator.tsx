@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/utils/button";
 import { useSearchParams } from "next/navigation";
-import { DEFAULT_NUMBER_SYSTEM } from "@/lib/constants";
+import { DEFAULT_NUMBER_SYSTEM } from "@/lib/constants/numeral-system";
 
 export default function StandartCalculator() {
     const searchParams = useSearchParams();

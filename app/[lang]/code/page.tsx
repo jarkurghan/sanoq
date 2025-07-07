@@ -7,7 +7,7 @@ import { Input } from "@/components/utils/input";
 import { Button } from "@/components/utils/button";
 import { ChevronRight, Search, Code, Binary, Hash, Zap, Plus, Wrench } from "lucide-react";
 import RightSidebarContent from "@/components/global/right-sidebar";
-import { getTranslation } from "@/lib/i18n";
+import { getTranslation } from "@/lib/translater/i18n";
 import { Language } from "@/types/language";
 
 type Props = {

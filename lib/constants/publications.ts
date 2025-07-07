@@ -1,41 +1,7 @@
-import { Calculator, Hash, History } from "lucide-react";
-import { LucideProps } from "lucide-react";
-import type { ForwardRefExoticComponent, RefAttributes } from "react";
-
-type IconType = ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>;
-
-type Lang = "uz" | "en" | "ru";
-type Color =
-    | "slate"
-    | "gray"
-    | "zinc"
-    | "neutral"
-    | "stone"
-    | "blue"
-    | "sky"
-    | "cyan"
-    | "teal"
-    | "indigo"
-    | "violet"
-    | "purple"
-    | "fuchsia"
-    | "red"
-    | "orange"
-    | "amber"
-    | "yellow"
-    | "lime"
-    | "green"
-    | "emerald"
-    | "pink"
-    | "rose";
-
-type Publication = {
-    title: string;
-    description: string;
-    lang: Lang;
-    icon: IconType;
-    color: Color;
-} & ({ lang: "uz"; href: `/uz/info/${string}` } | { lang: "en"; href: `/en/info/${string}` } | { lang: "ru"; href: `/ru/info/${string}` });
+import { Publication } from "@/types/publication";
+import { Calculator } from "lucide-react";
+import { History } from "lucide-react";
+import { Hash } from "lucide-react";
 
 export const PUBLICATIONS = [
     {
@@ -105,28 +71,3 @@ export const PUBLICATIONS = [
     //     color: "green",
     // },
 ] satisfies readonly Publication[];
-
-export const COLORS = [
-    "slate",
-    "gray",
-    "zinc",
-    "neutral",
-    "stone",
-    "blue",
-    "sky",
-    "cyan",
-    "teal",
-    "indigo",
-    "violet",
-    "purple",
-    "fuchsia",
-    "red",
-    "orange",
-    "amber",
-    "yellow",
-    "lime",
-    "green",
-    "emerald",
-    "pink",
-    "rose",
-] satisfies readonly Color[];

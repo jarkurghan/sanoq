@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/classname";
 import { Button } from "@/components/utils/button";
 import { Calculator, Code, Home, Info, BookOpen, Menu, X, Share2, Binary } from "lucide-react";
 import { useState } from "react";
 import LanguageSwitcher from "@/components/global/language-switcher";
 import ThemeToggle from "@/components/global/theme-toggle";
 import ShareAppURL from "./share";
-import { getTranslation } from "@/lib/i18n";
+import { getTranslation } from "@/lib/translater/i18n";
 import { Language } from "@/types/language";
 
 export default function Navbar({ lang: rawLang }: { lang: string }) {

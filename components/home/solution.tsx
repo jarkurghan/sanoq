@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Props } from "@/types/converter";
 import { FractionalPart } from "@/types/converter";
-import { CONVERTER_SOLUTION_FRACTIONAL_PART } from "@/lib/default-values";
+import { CONVERTER_SOLUTION_FRACTIONAL_PART } from "@/lib/default-values/fractional-part";
 import * as math from "mathjs";
 
 export default function ConvertSolution({ inputNumber, fromBase, toBase }: Props) {

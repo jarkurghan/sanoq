@@ -1,7 +1,7 @@
 "use client";
 
-import { DEFAULT_NUMBER_SYSTEM } from "@/lib/constants";
-import { getTranslation } from "@/lib/i18n";
+import { DEFAULT_NUMBER_SYSTEM } from "@/lib/constants/numeral-system";
+import { getTranslation } from "@/lib/translater/i18n";
 import { useSearchParams } from "next/navigation";
 
 export default function CalculatorText({ lang: rawLang }: { lang: string }) {

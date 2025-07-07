@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { Input } from "@/components/utils/input";
 import { Button } from "@/components/utils/button";
-import { getTranslation } from "@/lib/i18n";
-import { PUBLICATIONS } from "@/lib/publications";
+import { getTranslation } from "@/lib/translater/i18n";
+import { PUBLICATIONS } from "@/lib/constants/publications";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/utils/card";
 import { ChevronRight, Search, BookOpen } from "lucide-react";
 import Link from "next/link";

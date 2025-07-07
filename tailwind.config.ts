@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import { COLORS } from "./lib/publications";
+import { COLORS } from "./lib/constants/colors";
 
 const config = {
     darkMode: ["class"],

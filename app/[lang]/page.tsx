@@ -1,6 +1,6 @@
 import HomeComponent from "@/components/home/client-component";
 import RightSidebarContent from "@/components/global/right-sidebar";
-import { getTranslation } from "@/lib/i18n";
+import { getTranslation } from "@/lib/translater/i18n";
 import { Language } from "@/types/language";
 import { Metadata } from "next";
 import { use } from "react";

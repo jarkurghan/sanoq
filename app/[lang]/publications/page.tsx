@@ -1,5 +1,5 @@
 import { use } from "react";
-import { getTranslation } from "@/lib/i18n";
+import { getTranslation } from "@/lib/translater/i18n";
 import { Language } from "@/types/language";
 import type { Metadata } from "next";
 import PublicsComponent from "@/components/publications/client-component";
