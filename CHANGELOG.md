@@ -13,6 +13,7 @@ Barcha versiya o‘zgarishlari shu yerda qayd etiladi.
 
 **Tuzatildi:**  
 • Natijani hisoblash logikasi yaxshilandi va aniqlashtirildi.
+• Maqolalar sahifasiga header va chap sidebar qo'shildi
 
 ---
 
