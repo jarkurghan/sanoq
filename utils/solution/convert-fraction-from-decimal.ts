@@ -1,44 +1,49 @@
+import { DIGITS } from "@/lib/constants/numeral-system";
 import { FractionalPart } from "@/types/converter";
+import { FractionalPartOnToBase } from "@/types/converter";
 
-export function convertFractionFromDecimal(
-    fraction: FractionalPart,
-    numerator: bigint,
-    denominator: bigint,
-    base: number,
-    maxDigits: number = 100
-): { base: number; value: string } {
-    if (fraction.period.isPeriod === false) {
-    } else if (fraction.period.length < 15) {
-    } else {
-    }
-    const digits: string[] = [];
-    const seen = new Map<bigint, number>();
+const MAX_STACK_LIMIT = 300;
+
+export function convertFractionFromDecimal(fraction: FractionalPart, base: number): FractionalPartOnToBase {
+    const numerator = BigInt(fraction.numerator);
+    const denominator = BigInt(fraction.denominator);
+    const bigBase = BigInt(base);
+
+    const seen = new Map();
     let remainder = numerator % denominator;
-    let index = 0;
-    let periodStart = -1;
+    let result = "";
 
-    while (remainder !== 0n && index < maxDigits) {
-        if (seen.has(remainder)) {
-            periodStart = seen.get(remainder)!;
-            break;
-        }
-        seen.set(remainder, index);
-        remainder *= BigInt(base);
-        const digit = remainder / denominator;
-        digits.push(digit.toString(base).toUpperCase());
-        remainder %= denominator;
-        index++;
+    const steps: { denominator: number; numerator: number; result: number; remainder: number; multiplicand: number }[] = [];
+    const denominatorNumber = Number(denominator);
+
+    while (!seen.has(remainder)) {
+        if (result.length >= MAX_STACK_LIMIT) return { period: { isPeriod: null }, value: "." + result.slice(0, 15), steps, exact: false };
+
+        const digit = (remainder * bigBase) / denominator;
+        result += DIGITS[Number(digit)];
+        const newRemainder = (remainder * bigBase) % denominator;
+
+        seen.set(remainder, result.length);
+        steps.push({
+            denominator: denominatorNumber,
+            numerator: Number(remainder),
+            result: Number(newRemainder),
+            remainder: Number(digit),
+            multiplicand: base,
+        });
+
+        if (newRemainder === 0n) break;
+
+        remainder = newRemainder;
     }
 
-    let value = "0.";
+    const firstIndex = seen.get(remainder);
+    const periodLength = result.length - firstIndex;
+    const value = `.${result.slice(0, firstIndex - 1)}(${result.slice(firstIndex - 1)})`;
 
-    if (periodStart >= 0) {
-        const nonRepeat = digits.slice(0, periodStart).join("");
-        const repeat = digits.slice(periodStart).join("");
-        value += `${nonRepeat}(${repeat})`;
-    } else {
-        value += digits.join("");
-    }
+    if (periodLength > 15) return { period: { isPeriod: true, length: periodLength }, value: `.${result.slice(0, 15)}`, steps, exact: false };
 
-    return { base, value };
+    if (periodLength === 0) return { period: { isPeriod: false }, value: "." + result, steps, exact: true };
+
+    return { period: { isPeriod: true, length: periodLength }, value, steps, exact: true };
 }

@@ -1,4 +1,4 @@
-export const subscripts = [
+export const SUBSCRIPTS = [
     "₀",
     "₁",
     "₂",

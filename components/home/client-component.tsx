@@ -16,12 +16,9 @@ import { getTranslation } from "@/lib/translater/i18n";
 import TypingText from "@/components/home/typer";
 import Solution from "./solution";
 import { NUMBER_SYSTEMS } from "@/lib/constants/numeral-system";
+import { Language } from "@/types/language";
 
-type Props = {
-    lang: "uz" | "en" | "ru";
-};
-
-export default function HomeComponent({ lang }: Props) {
+export default function HomeComponent({ lang }: { lang: Language }) {
     const t = getTranslation(lang);
     // to-do: maximum kars qism 10ta;
 
@@ -140,7 +137,7 @@ export default function HomeComponent({ lang }: Props) {
                         </span>
                     ))}
                 </div> */}
-                <Solution inputNumber={solutionLeftValue} fromBase={solutionFromBase} toBase={solutionToBase} />
+                <Solution inputNumber={solutionLeftValue} fromBase={solutionFromBase} toBase={solutionToBase} lang={lang} />
                 {/* <TypingText speed={70}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                     veniam, quis nostrud exercitation ullamco laboris. Nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in

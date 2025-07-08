@@ -22,20 +22,20 @@ function findNonRepeatingLength(denominator: bigint): number {
 
 function getPeriodikValue(numerator: bigint, denominator: bigint, period: Period): string {
     if (period.isPeriod === false) {
-        return math.fraction(numerator, denominator).toString();
+        return math.fraction(numerator, denominator).toString().slice(1);
     } else if (period.length < 15) {
         const noPeriod = findNonRepeatingLength(denominator);
 
         const frac = math.fraction(numerator, denominator);
         const decimalStr = math.number(frac).toFixed(noPeriod + period.length);
 
-        const nonPeriodPart = decimalStr.slice(0, noPeriod + 2);
+        const nonPeriodPart = decimalStr.slice(1, noPeriod + 2);
         const periodPart = decimalStr.slice(noPeriod + 2, noPeriod + 2 + period.length);
 
         return `${nonPeriodPart}(${periodPart})`;
     } else {
         const frac = math.fraction(numerator, denominator);
-        return math.number(frac).toFixed(10);
+        return math.number(frac).toFixed(10).slice(1);
     }
 }
 
@@ -75,7 +75,7 @@ export function convertFractionToDecimal(fraction: string, base: number): Fracti
     const oneTimeDenominator = bigBase ** bigLen;
     const divisor = gcd(oneTimeNumerator, oneTimeDenominator);
 
-    const numerator = oneTimeDenominator / divisor;
+    const numerator = oneTimeNumerator / divisor;
     const denominator = oneTimeDenominator / divisor;
     const period = findRepeatingDecimalPeriod(denominator);
     const value = getPeriodikValue(numerator, denominator, period);

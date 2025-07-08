@@ -3,15 +3,40 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Props } from "@/types/converter";
-import { FractionalPart } from "@/types/converter";
 import { CONVERTER_SOLUTION_FRACTIONAL_PART } from "@/lib/default-values/fractional-part";
-import * as math from "mathjs";
+import { CONVERTER_SOLUTION_FRACTIONAL_PART_ON_TO_BASE } from "@/lib/default-values/fractional-part";
+import { CONVERTER_SOLUTION_WHOLE_PART_ON_TO_BASE } from "@/lib/default-values/whole-part";
+import { NUMERAL_VALUE_DICTIONARY } from "@/lib/constants/numeral-system";
+import { SUPERSCRIPTMINUS } from "@/lib/constants/exponent";
+import { SUPERSCRIPTS } from "@/lib/constants/exponent";
+import { SUBSCRIPTS } from "@/lib/constants";
+import { Language } from "@/types/language";
+import { getTranslation } from "@/lib/translater/i18n";
+import { convertToDecimal } from "@/utils/solution/convert-to-decimal";
+import { convertFractionToDecimal } from "@/utils/solution/convert-fraction-to-decimal";
+import { convertFromDecimal } from "@/utils/solution/convert-from-decimal";
+import { convertFractionFromDecimal } from "@/utils/solution/convert-fraction-from-decimal";
+import { checkNumberFromBase } from "@/utils/solution/check-number-from-base";
+import { InlineMath } from "react-katex";
+import { create, all } from "mathjs";
 
-export default function ConvertSolution({ inputNumber, fromBase, toBase }: Props) {
+const math = create(all);
+
+export type Props = {
+    inputNumber: string;
+    fromBase: number;
+    toBase: number;
+    lang: Language;
+};
+
+export default function ConvertSolution({ inputNumber, fromBase, toBase, lang }: Props) {
+    const t = getTranslation(lang);
     const [isHidden, setIsHidden] = useState(true);
     const [isHiddenWholePart, setIsHiddenWholePart] = useState(true);
     const [isHiddenFractionalPart, setIsHiddenFractionalPart] = useState(true);
+    const [isHiddenStep1, setIsHiddenStep1] = useState(true);
+    const [isHiddenStep2, setIsHiddenStep2] = useState(true);
+    const [part, setPart] = useState({ whole: false, fraction: false, negative: false, count: 0 });
 
     const [isFractional, setIsFractional] = useState(false);
     const [isNegative, setIsNegative] = useState(false);
@@ -22,109 +47,296 @@ export default function ConvertSolution({ inputNumber, fromBase, toBase }: Props
     const [decWholePart, setDecWholePart] = useState("");
     const [decFractionalPart, setDecFractionalPart] = useState(CONVERTER_SOLUTION_FRACTIONAL_PART);
 
-    const [toWholePart, toDecWholePart] = useState("");
-    const [toFractionalPart, toDecFractionalPart] = useState(CONVERTER_SOLUTION_FRACTIONAL_PART);
+    const [toWholePart, toDecWholePart] = useState(CONVERTER_SOLUTION_WHOLE_PART_ON_TO_BASE);
+    const [toFractionalPart, setToFractionalPart] = useState(CONVERTER_SOLUTION_FRACTIONAL_PART_ON_TO_BASE);
 
     useEffect(() => {
-        const checkNumber = true;
-        if (!checkNumber) {
+        const checkNumber = checkNumberFromBase(inputNumber, fromBase);
+        if (!checkNumber || !Boolean(inputNumber)) {
             setIsHidden(false);
             return;
         }
-        const num = inputNumber.toUpperCase();
 
-        const checkNegative = num[0] !== "-";
-        const checkFractional = num.includes(".");
+        const checkNegative = inputNumber[0] === "-";
+        const checkFractional = inputNumber.includes(".");
+        const num = checkNegative ? inputNumber.slice(1).toUpperCase() : inputNumber.toUpperCase();
+
         const wholePart = num.split(".")[0];
         const fractionalPart = num.split(".")[1] || "";
 
-        const decWholePart = num.split(".")[0];
-        const decFractionalPart = num.split(".")[1] || "";
+        const decWholePart = convertToDecimal(wholePart, fromBase);
+        const decFractionalPart = convertFractionToDecimal(fractionalPart, fromBase);
 
-        const toWholePart = num.split(".")[0];
-        const toFractionalPart = num.split(".")[1] || "";
+        const toWholePart = convertFromDecimal(decWholePart, toBase);
+        const toFractionalPart = convertFractionFromDecimal(decFractionalPart, toBase);
+
+        setIsNegative(checkNegative);
+        setIsFractional(checkFractional);
+
+        setInputWholePart(wholePart);
+        setInputFractionalPart(fractionalPart);
+        setDecWholePart(String(decWholePart));
+        setDecFractionalPart(decFractionalPart);
+        toDecWholePart(toWholePart);
+        setToFractionalPart(toFractionalPart);
+
+        setPart({
+            whole: Boolean(wholePart),
+            fraction: Boolean(fractionalPart),
+            negative: checkNegative,
+            count: Number(Boolean(wholePart)) + Number(Boolean(fractionalPart)) + Number(checkNegative),
+        });
+        setIsHiddenStep1(fromBase === 10);
+        setIsHiddenStep2(toBase === 10);
+        setIsHiddenWholePart(!Boolean(wholePart));
+        setIsHiddenFractionalPart(!Boolean(fractionalPart));
+        setIsHidden(false);
     }, [inputNumber, fromBase, toBase]);
 
     return (
-        <div className="mx-auto pt-10 text-gray-800 leading-relaxed">
-            <h2 className="text-xl font-bold mt-6 mb-4">1234.9 sonini o'ttiz oltilik sanoq sistemasidan ikkilik sanoq sistemasiga o'tkazish</h2>
+        <React.Fragment>
+            {!isHidden && (
+                <div className="mx-auto pt-10 text-gray-800 leading-relaxed">
+                    <h2 className="text-xl font-bold mt-6 mb-4">
+                        {inputNumber.toUpperCase()} sonini {t("calculator.info.title." + fromBase).toLowerCase()}dan{" "}
+                        {t("calculator.info.title." + toBase).toLowerCase()}ga o'tkazish
+                    </h2>
 
-            {/* agar o'nlikdan bo'lmasa */}
-            <p className="mb-4">
-                <strong>1-qadam: 36 lik sondan 10 likka o'tkazamiz</strong>
-            </p>
-            <p className="font-medium">
-                Butun qismi: <code className="bg-gray-100 px-1 rounded">1234₃₆</code>
-            </p>
+                    {part.count > 1 && (
+                        <p className="mb-4">
+                            Avval sonni {part.count} qismga bo'lib olamiz:
+                            {part.negative && (
+                                <span className="block">
+                                    ishora:
+                                    <code className="bg-gray-100 p-1 rounded">-</code>
+                                </span>
+                            )}
+                            {part.whole && (
+                                <span className="block">
+                                    butun qismi:
+                                    <code className="bg-gray-100 p-1 rounded">{inputWholePart}</code>
+                                </span>
+                            )}
+                            {part.fraction && (
+                                <span className="block">
+                                    kasr qismi:
+                                    <code className="bg-gray-100 p-1 rounded">{inputFractionalPart}</code>
+                                </span>
+                            )}
+                        </p>
+                    )}
+                    {!isHiddenStep1 && (
+                        <React.Fragment>
+                            {!isHiddenWholePart && (
+                                <React.Fragment>
+                                    <p className="mb-4">
+                                        <strong>
+                                            {!isHiddenStep2 && "1-qadam: "}
+                                            {t("calculator.info.title." + fromBase).toLowerCase()}dan {t("calculator.info.title.10").toLowerCase()}
+                                            ga o'tkazamiz
+                                        </strong>
+                                    </p>
 
-            <p className="mb-4">Har bir raqam 36 lik sanoq sistemasida quyidagicha:</p>
-            <pre className="bg-gray-100 p-4 rounded-md text-sm font-mono mt-2 whitespace-pre-wrap">
-                {`1 × 36³ + 2 × 36² + 3 × 36¹ + 4 × 36⁰
-= 1 × 46656 + 2 × 1296 + 3 × 36 + 4 × 1
-= 46656 + 2592 + 108 + 4
-= 49360`}
-            </pre>
+                                    <p className="font-medium">
+                                        Butun qismi:{" "}
+                                        <code className="bg-gray-100 px-1 rounded">
+                                            {inputWholePart}
+                                            {SUBSCRIPTS[fromBase]}
+                                        </code>
+                                    </p>
 
-            <p className="font-medium mt-8 mb-2">
-                Kasr qismi: <code className="bg-gray-100 px-1 rounded">.9₃₆</code>
-            </p>
+                                    <p className="mb-4">Har bir raqam {t("calculator.info.title." + fromBase).toLowerCase()}da quyidagicha:</p>
+                                    <pre className="bg-gray-100 p-4 rounded-md text-sm font-mono mt-2 whitespace-pre-wrap">
+                                        <span className="block">
+                                            {inputWholePart
+                                                .split("")
+                                                .map(
+                                                    (raqam, i) =>
+                                                        `${NUMERAL_VALUE_DICTIONARY[raqam]} × ${fromBase}${SUPERSCRIPTS[inputWholePart.length - 1 - i]}`
+                                                )
+                                                .join(" + ")}
+                                        </span>
+                                        <span className="block">
+                                            ={" "}
+                                            {inputWholePart
+                                                .split("")
+                                                .map((raqam, i) => `${NUMERAL_VALUE_DICTIONARY[raqam]} × ${math.pow(fromBase, inputWholePart.length - 1 - i)}`)
+                                                .join(" + ")}
+                                        </span>
+                                        <span className="block">
+                                            ={" "}
+                                            {inputWholePart
+                                                .split("")
+                                                .map(
+                                                    (raqam, i) =>
+                                                        `${math.multiply(
+                                                            Number(NUMERAL_VALUE_DICTIONARY[raqam]),
+                                                            math.pow(fromBase, inputWholePart.length - 1 - i)
+                                                        )}`
+                                                )
+                                                .join(" + ")}
+                                        </span>
+                                        <span className="block">= {decWholePart}</span>
+                                    </pre>
+                                </React.Fragment>
+                            )}
 
-            <p className="mb-4">
-                Bu <code className="bg-gray-100 px-1 rounded">.9</code> raqami 36-likda ifodalanayotgan bo‘lsa, u:
-            </p>
+                            {!isHiddenFractionalPart && (
+                                <React.Fragment>
+                                    {!isHiddenWholePart && (
+                                        <p className="font-medium mt-8 mb-2">
+                                            Kasr qismi:{" "}
+                                            <code className="bg-gray-100 px-1 rounded">
+                                                0.{inputFractionalPart}
+                                                {SUBSCRIPTS[fromBase]}
+                                            </code>
+                                        </p>
+                                    )}
 
-            <pre className="bg-gray-100 p-4 rounded-md text-sm font-mono mt-2">{`9 × 36⁻¹ = 9 / 36 = 0.25`}</pre>
+                                    <p className="mb-4">Bu 36-likda ifodalanayotgan bo‘lsa:</p>
+                                    <pre className="bg-gray-100 p-4 rounded-md text-sm font-mono mt-2 whitespace-pre-wrap">
+                                        <span className="block">
+                                            {inputFractionalPart
+                                                .split("")
+                                                .map((raqam, i) => `${NUMERAL_VALUE_DICTIONARY[raqam]} × ${fromBase}${SUPERSCRIPTMINUS}${SUPERSCRIPTS[i + 1]}`)
+                                                .join(" + ")}
+                                        </span>
+                                        <span className="block py-1">
+                                            ={" "}
+                                            {inputFractionalPart.split("").map((raqam, i) => (
+                                                <span key={i}>
+                                                    <InlineMath math={`\\frac{${NUMERAL_VALUE_DICTIONARY[raqam]}}{${fromBase}${SUPERSCRIPTS[i + 1]}}`} />
+                                                    {i !== inputFractionalPart.length - 1 && " + "}
+                                                </span>
+                                            ))}
+                                        </span>
+                                        <span className="block py-1">
+                                            ={" "}
+                                            {inputFractionalPart.split("").map((raqam, i) => (
+                                                <span key={i}>
+                                                    <InlineMath math={`\\frac{${NUMERAL_VALUE_DICTIONARY[raqam]}}{${math.pow(fromBase, i + 1)}}`} />
+                                                    {i !== inputFractionalPart.length - 1 && " + "}
+                                                </span>
+                                            ))}
+                                        </span>
+                                        <span className="block py-1">
+                                            = <InlineMath math={`\\frac{${decFractionalPart.numerator}}{${decFractionalPart.denominator}}`} />
+                                        </span>
+                                        <span className="block">= 0{decFractionalPart.value}</span>
+                                    </pre>
+                                </React.Fragment>
+                            )}
+                            <p className="font-medium mt-8">
+                                Demak,{" "}
+                                <code className="bg-gray-100 px-1 rounded">
+                                    {inputWholePart}.{inputFractionalPart}
+                                    {SUBSCRIPTS[fromBase]} = {decWholePart}
+                                    {decFractionalPart.value}
+                                    {SUBSCRIPTS[10]}
+                                </code>
+                            </p>
+                        </React.Fragment>
+                    )}
 
-            <p className="font-medium mt-8">
-                Demak, <code className="bg-gray-100 px-1 rounded">1234.9₃₆ = 49360.25₁₀</code>
-            </p>
+                    {!isHiddenStep2 && (
+                        <React.Fragment>
+                            <p className="mb-4 mt-8">
+                                <strong>
+                                    {!isHiddenStep1 && "2-qadam: "}
+                                    {t("calculator.info.title.10").toLowerCase()}dan {t("calculator.info.title." + toBase).toLowerCase()}ga o'tkazamiz
+                                </strong>
+                            </p>
 
-            {/* agar o'nlikdan bo'lmasa */}
-            <p className="mb-4">
-                <strong>2-qadam: 10 likdan 3 likka o'tkazamiz</strong>
-            </p>
-            <p className="font-medium">
-                Butun qismi: <code className="bg-gray-100 px-1 rounded">49360₁₀</code>
-            </p>
+                            {!isHiddenWholePart && (
+                                <React.Fragment>
+                                    {!isHiddenFractionalPart && (
+                                        <p className="font-medium">
+                                            Butun qismi:{" "}
+                                            <code className="bg-gray-100 px-1 rounded">
+                                                {decWholePart}
+                                                {SUBSCRIPTS[10]}
+                                            </code>
+                                        </p>
+                                    )}
 
-            <p className="mb-4">10 lik sonni 3 likka o‘tkazish uchun bo‘lib chiqamiz:</p>
-            <pre className="bg-gray-100 p-4 rounded-md text-sm font-mono mt-2 whitespace-pre-wrap">
-                {`49360 ÷ 3 = 16453 qoldiq 1
-16453 ÷ 3 = 5484 qoldiq 1  
-5484 ÷ 3 = 1828 qoldiq 0  
-1828 ÷ 3 = 609  qoldiq 1  
-609 ÷ 3 = 203   qoldiq 0  
-203 ÷ 3 = 67    qoldiq 2  
-67 ÷ 3 = 22     qoldiq 1  
-22 ÷ 3 = 7      qoldiq 1  
-7 ÷ 3 = 2       qoldiq 1  
-2 ÷ 3 = 0       qoldiq 2  `}
-            </pre>
-            <p className="font-medium">
-                Yuqoridan pastga qarab yozamiz:
-                <code className="block bg-gray-100 px-1 rounded">49360₁₀ = 2111210121₃</code>
-            </p>
+                                    <p className="mb-4">
+                                        {t("calculator.info.title.10").toLowerCase()}dagi sonni {t("calculator.info.title." + toBase).toLowerCase()}ga o‘tkazish
+                                        uchun bo‘lib chiqamiz:
+                                    </p>
+                                    <pre className="bg-gray-100 p-4 rounded-md text-sm font-mono mt-2 whitespace-pre-wrap">
+                                        {toWholePart.steps
+                                            .map((step) => `${step.dividend} ÷ ${step.divisor} = ${step.quotient}     qoldiq ${step.remainder}`)
+                                            .join("\n")}
+                                    </pre>
+                                    <p className="font-medium mt-2">
+                                        Pastdan yuqoriga qarab yozamiz:
+                                        <code className="bg-gray-100 p-1 rounded">
+                                            {decWholePart}
+                                            {SUBSCRIPTS[10]} = {toWholePart.value}
+                                            {SUBSCRIPTS[toBase]}
+                                        </code>
+                                    </p>
+                                </React.Fragment>
+                            )}
 
-            <p className="font-medium mt-8 mb-2">
-                Kasr qismi: <code className="bg-gray-100 px-1 rounded">0.25₁₀</code>
-            </p>
+                            {!isHiddenFractionalPart && (
+                                <React.Fragment>
+                                    <p className="font-medium mt-8 mb-2">
+                                        Kasr qismi:{" "}
+                                        <code className="bg-gray-100 px-1 py-2 rounded">
+                                            0{decFractionalPart.value}
+                                            {SUBSCRIPTS[10]} = <InlineMath math={`\\frac{${decFractionalPart.numerator}}{${decFractionalPart.denominator}}`} />
+                                        </code>
+                                    </p>
 
-            <p className="mb-4">Kasrni 3 likka aylantirish uchun:</p>
+                                    <p className="mb-4">Kasrni {t("calculator.info.title." + toBase).toLowerCase()}ga aylantirish uchun:</p>
 
-            <pre className="bg-gray-100 p-4 rounded-md text-sm font-mono mt-2">{`0.25 × 3 = 0.75 → 0
-0.75 × 3 = 2.25 → 2
-0.25 × 3 = 0.75 → 0
-0.75 × 3 = 2.25 → 2
-...`}</pre>
-            <p className="font-medium">
-                Bu 0, 2, 0, 2, 0, 2, ... ko‘rinishida <strong>davriy</strong> ketadi:
-                <code className="block bg-gray-100 px-1 rounded">0.202020...</code>
-            </p>
+                                    <pre className="bg-gray-100 p-4 rounded-md text-sm font-mono mt-2">
+                                        {toFractionalPart.steps.map((step, i) => (
+                                            <span className="block py-1" key={i}>
+                                                <span className="inline-block w-80">
+                                                    <InlineMath math={`\\frac{${step.numerator}}{${step.denominator}}`} /> × {step.multiplicand} ={" "}
+                                                    {step.remainder !== 0 && step.remainder}
+                                                    <InlineMath math={`\\frac{${step.result}}{${step.denominator}}`} /> = {step.remainder} +{" "}
+                                                    <InlineMath math={`\\frac{${step.result}}{${step.denominator}}`} />
+                                                </span>
+                                                {step.remainder}
+                                            </span>
+                                        ))}
+                                        {toFractionalPart.period.isPeriod !== false && <span className="font-bold p-1">...</span>}
+                                    </pre>
+                                    <p className="font-medium mt-2">
+                                        {toFractionalPart.period.isPeriod !== false && (
+                                            <span>
+                                                Bu jarayon davriy davom etadi. Davr davomiyligi{" "}
+                                                {toFractionalPart.period.isPeriod === true ? toFractionalPart.period.length : "ancha katta"}:
+                                            </span>
+                                        )}
+                                        <code className="block bg-gray-100 px-1 rounded">
+                                            0{toFractionalPart.value}
+                                            {!toFractionalPart.exact && "..."}
+                                        </code>
+                                    </p>
+                                </React.Fragment>
+                            )}
+                        </React.Fragment>
+                    )}
 
-            <p className="font-medium mt-8 mb-2">
-                Yakuniy natija: <code className="bg-gray-100 px-1 rounded">1234.9₃₆ = 2111210121.202020...₃</code> yoki{" "}
-                <code className="bg-gray-100 px-1 rounded">1234.9₃₆ = 2111210121.(20)₃</code>
-            </p>
-        </div>
+                    <p className="font-medium mt-8 mb-2">
+                        <strong className="block">Yakuniy natija:</strong>
+                        <code className="bg-gray-100 p-1 rounded">
+                            {isNegative && "-"}
+                            {inputWholePart}
+                            {isFractional && "."}
+                            {inputFractionalPart}
+                            {SUBSCRIPTS[fromBase]} {toFractionalPart.exact ? "=" : "≈"} {isNegative && "-"}
+                            {toWholePart.value}
+                            {isFractional && toFractionalPart.value}
+                            {SUBSCRIPTS[toBase]}
+                        </code>
+                    </p>
+                </div>
+            )}
+        </React.Fragment>
     );
 }

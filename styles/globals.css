@@ -123,3 +123,11 @@
         overflow: hidden;
     }
 }
+
+.katex {
+    font-family: "Your-Custom-Font", KaTeX_Main, "Times New Roman", serif !important;
+}
+
+.katex-display {
+    font-family: "Your-Custom-Font", KaTeX_Main, "Times New Roman", serif !important;
+}

@@ -1,14 +1,32 @@
-export type Props = {
-    inputNumber: string;
-    fromBase: number;
-    toBase: number;
-};
-
 export type Period = { isPeriod: true; length: number } | { isPeriod: false; length?: undefined };
+export type PeriodToBase = { isPeriod: true; length: number } | { isPeriod: false | null; length?: undefined };
 
 export type FractionalPart = {
-    numerator: number | BigInt;
-    denominator: number | BigInt;
+    numerator: number | bigint;
+    denominator: number | bigint;
     period: Period;
     value: string;
-}
+};
+
+export type FractionalPartOnToBase = {
+    period: PeriodToBase;
+    value: string;
+    steps: {
+        denominator: number;
+        numerator: number;
+        remainder: number;
+        multiplicand: number;
+        result: number;
+    }[];
+    exact: boolean;
+};
+
+export type WholePartOnToBase = {
+    value: string;
+    steps: {
+        dividend: number;
+        divisor: number;
+        quotient: number;
+        remainder: number;
+    }[];
+};

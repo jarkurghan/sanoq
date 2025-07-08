@@ -1,0 +1,9 @@
+.katex {
+    font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji, KaTeX_Main, "Times New Roman",
+        serif !important;
+}
+
+.katex-display {
+    font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji, KaTeX_Main, "Times New Roman",
+        serif !important;
+}
