@@ -11,4 +11,5 @@ export const CONVERTER_SOLUTION_FRACTIONAL_PART_ON_TO_BASE: FractionalPartOnToBa
     period: { isPeriod: false },
     value: "0",
     steps: [],
+    exact: true,
 };

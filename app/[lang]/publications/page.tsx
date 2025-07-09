@@ -75,7 +75,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
-
 export default function PublicationsPage({ params }: Props) {
     const { lang: rawLang } = use(params);
     const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "uz") as Language;

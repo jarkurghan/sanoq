@@ -65,8 +65,10 @@ const translations: Record<Language, Record<string, string>> = {
         "publications.notfound": "No topics found matching your search.",
 
         "publications.seo.title": "Articles — Read and explore topics on numeral systems",
-        "publications.seo.description": "Discover informative articles on numeral systems including binary, decimal, hexadecimal, and more — learn how numbers are represented and used in math and computing.",
-        "publications.seo.keywords": "numeral systems, articles, decimal system, binary system, hexadecimal system, mathematics, digits, positional notation, number history, computation",
+        "publications.seo.description":
+            "Discover informative articles on numeral systems including binary, decimal, hexadecimal, and more — learn how numbers are represented and used in math and computing.",
+        "publications.seo.keywords":
+            "numeral systems, articles, decimal system, binary system, hexadecimal system, mathematics, digits, positional notation, number history, computation",
 
         // Calculator page
         "calculator.title": "Number System Calculator",
@@ -406,8 +408,10 @@ const translations: Record<Language, Record<string, string>> = {
         "publications.notfound": "Qidiruv bo‘yicha hech qanday mavzu topilmadi.",
 
         "publications.seo.title": "Maqolalar — Sanoq sistemalari mavzusidagi maqolalarni o‘qing va o‘rganing",
-        "publications.seo.description": "Sanoq sistemalari bo‘yicha eng so‘nggi va foydali maqolalarni o‘qing. Ikkilik, o‘nlik, o‘n oltilik tizimlar va boshqa matematik tushunchalar haqida bilim oling.",
-        "publications.seo.keywords": "sanoq sistemalari, maqolalar, o‘nlik sistema, ikkilik sistema, o‘n oltilik sanoq, matematika, raqamlar, pozitsion sistema, raqamlar tarixi, hisoblash",
+        "publications.seo.description":
+            "Sanoq sistemalari bo‘yicha eng so‘nggi va foydali maqolalarni o‘qing. Ikkilik, o‘nlik, o‘n oltilik tizimlar va boshqa matematik tushunchalar haqida bilim oling.",
+        "publications.seo.keywords":
+            "sanoq sistemalari, maqolalar, o‘nlik sistema, ikkilik sistema, o‘n oltilik sanoq, matematika, raqamlar, pozitsion sistema, raqamlar tarixi, hisoblash",
 
         // Calculator page
         "calculator.title": "Sanoq Sistemalari Kalkulyatori",
@@ -729,8 +733,10 @@ const translations: Record<Language, Record<string, string>> = {
         "publications.notfound": "По вашему запросу темы не найдены.",
 
         "publications.seo.title": "Статьи — Читайте и изучайте материалы по системам счисления",
-        "publications.seo.description": "Читайте полезные статьи о системах счисления: двоичная, десятичная, шестнадцатеричная и другие числовые системы, применяемые в математике и информатике.",
-        "publications.seo.keywords": "системы счисления, статьи, десятичная система, двоичная система, шестнадцатеричная система, математика, цифры, позиционная система, история чисел, вычисления",
+        "publications.seo.description":
+            "Читайте полезные статьи о системах счисления: двоичная, десятичная, шестнадцатеричная и другие числовые системы, применяемые в математике и информатике.",
+        "publications.seo.keywords":
+            "системы счисления, статьи, десятичная система, двоичная система, шестнадцатеричная система, математика, цифры, позиционная система, история чисел, вычисления",
 
         // Calculator page
         "calculator.title": "Калькулятор Систем Счисления",
@@ -959,7 +965,8 @@ const translations: Record<Language, Record<string, string>> = {
 
         "calculator.seo.title": "Стандартный калькулятор — вычисления в двоичной, восьмеричной, десятичной и шестнадцатеричной системах",
         "calculator.seo.description": "Онлайн-калькулятор для систем счисления: выполняйте вычисления в любой системе счисления.",
-        "calculator.seo.keywords": "калькулятор, система счисления, двоичная, восьмеричная, десятичная, шестнадцатеричная, конвертация чисел, онлайн калькулятор",
+        "calculator.seo.keywords":
+            "калькулятор, система счисления, двоичная, восьмеричная, десятичная, шестнадцатеричная, конвертация чисел, онлайн калькулятор",
 
         // Code page
         "code.title": "Код Систем Счисления",

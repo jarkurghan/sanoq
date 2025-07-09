@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader } from "@/components/utils/card"
+import { Card, CardContent, CardHeader } from "@/components/utils/card";
 import StandartCalculator from "@/components/calculator/standart-calculator";
 import CalculatorText from "@/components/calculator/standart-calculator-info";
 import CalculatorRightSidebar from "@/components/calculator/calculator-right-sidebar";

@@ -17,7 +17,7 @@ export function convertFractionFromDecimal(fraction: FractionalPart, base: numbe
     const denominatorNumber = Number(denominator);
 
     while (!seen.has(remainder)) {
-        if (result.length >= MAX_STACK_LIMIT) return { period: { isPeriod: null }, value: "." + result.slice(0, 15), steps, exact: false };
+        if (result.length >= MAX_STACK_LIMIT) return { period: { isPeriod: null }, value: "." + result.slice(0, 15), steps: steps.slice(0, 15), exact: false };
 
         const digit = (remainder * bigBase) / denominator;
         result += DIGITS[Number(digit)];
@@ -41,7 +41,8 @@ export function convertFractionFromDecimal(fraction: FractionalPart, base: numbe
     const periodLength = result.length - firstIndex;
     const value = `.${result.slice(0, firstIndex - 1)}(${result.slice(firstIndex - 1)})`;
 
-    if (periodLength > 15) return { period: { isPeriod: true, length: periodLength }, value: `.${result.slice(0, 15)}`, steps, exact: false };
+    if (periodLength > 15)
+        return { period: { isPeriod: true, length: periodLength }, value: `.${result.slice(0, 15)}`, steps: steps.slice(0, 15), exact: false };
 
     if (periodLength === 0) return { period: { isPeriod: false }, value: "." + result, steps, exact: true };
 

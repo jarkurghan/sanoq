@@ -4,7 +4,8 @@ import type { Metadata } from "next";
 export function generateMetadata(): Metadata {
     return {
         title: "O‘nlik sanoq sistemasi tarixi - Sanoq sistemalari",
-        description: "O‘nlik sanoq sistemasining tarixi, uning nima ekanligi, nega aynan 10 asosli ekanligi, va nol raqamining inqilobiy kashfiyoti haqida batafsil ma’lumot.",
+        description:
+            "O‘nlik sanoq sistemasining tarixi, uning nima ekanligi, nega aynan 10 asosli ekanligi, va nol raqamining inqilobiy kashfiyoti haqida batafsil ma’lumot.",
         keywords: ["o'nlik sanoq sistemi", "sanoq sistemasi", "tarix", "matematika", "pozitsion sistema", "nol raqami", "al-Xorazmiy"],
 
         authors: [{ name: "Najmiddin Nazirov", url: "https://sanoq.uz/about" }],
@@ -25,7 +26,8 @@ export function generateMetadata(): Metadata {
 
         openGraph: {
             title: "O‘nlik sanoq sistemasi tarixi - Sanoq sistemalari",
-            description: "O‘nlik sanoq sistemasining tarixi, uning nima ekanligi, nega aynan 10 asosli ekanligi, va nol raqamining inqilobiy kashfiyoti haqida batafsil ma’lumot.",
+            description:
+                "O‘nlik sanoq sistemasining tarixi, uning nima ekanligi, nega aynan 10 asosli ekanligi, va nol raqamining inqilobiy kashfiyoti haqida batafsil ma’lumot.",
             url: "https://sanoq.uz/uz/info/onlik-sanoq-sistemasi-tarixi",
             siteName: "sanoq.uz",
             images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", width: 1000, height: 749, alt: "sanoq.uz" }],
@@ -35,7 +37,8 @@ export function generateMetadata(): Metadata {
         twitter: {
             card: "summary_large_image",
             title: "O‘nlik sanoq sistemasi tarixi - Sanoq sistemalari",
-            description: "O‘nlik sanoq sistemasining tarixi, uning nima ekanligi, nega aynan 10 asosli ekanligi, va nol raqamining inqilobiy kashfiyoti haqida batafsil ma’lumot.",
+            description:
+                "O‘nlik sanoq sistemasining tarixi, uning nima ekanligi, nega aynan 10 asosli ekanligi, va nol raqamining inqilobiy kashfiyoti haqida batafsil ma’lumot.",
             images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", alt: "sanoq.uz" }],
             creator: "@jarkurghan",
         },
@@ -43,7 +46,7 @@ export function generateMetadata(): Metadata {
         metadataBase: new URL("https://sanoq.uz"),
         alternates: {
             canonical: "https://sanoq.uz/uz/info/onlik-sanoq-sistemasi-tarixi",
-            languages: { uz: "https://sanoq.uz/uz/info/onlik-sanoq-sistemasi-tarixi", },
+            languages: { uz: "https://sanoq.uz/uz/info/onlik-sanoq-sistemasi-tarixi" },
         },
     };
 }
@@ -59,8 +62,8 @@ const OnlikSanoqSistemasiTarixi = () => {
                 <section>
                     <h2 className="text-xl font-bold mt-6 mb-4">O‘nlik sanoq sistemasi nima?</h2>
                     <p className="mb-4">
-                        O‘nlik sanoq sistemasi — bu 10 ta raqam: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 orqali sonlarni ifodalash usulidir. Bu sistema pozitsion
-                        sistema bo‘lib, raqamlar o‘z o‘rniga qarab (birliklar, o‘nliklar, yuzliklar...) turli qiymatga ega bo‘ladi.
+                        O‘nlik sanoq sistemasi — bu 10 ta raqam: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 orqali sonlarni ifodalash usulidir. Bu sistema pozitsion sistema
+                        bo‘lib, raqamlar o‘z o‘rniga qarab (birliklar, o‘nliklar, yuzliklar...) turli qiymatga ega bo‘ladi.
                     </p>
                     <p className="mb-4">
                         Boshqa tarafdan qarasa o'nlik sanoq sistemasiga qisqa qilib shunday ta'rif berish mumkin:{" "}
@@ -81,10 +84,9 @@ const OnlikSanoqSistemasiTarixi = () => {
                     </ul>
                     <p className="mb-4">
                         Odamlar sanash uchun tabiiy ravishda barmoqlarni eng qulay variant deb bilishadi, bu esa o'z-o'zidan 10 asosli sanoq sistemasini eng
-                        asosiy sanoq sistemasi qiladi. O‘nlik sistema biologik sabab tufayli eng qulay sistema sifatida shakllangan. Albatta, boshqa
-                        pozitsion sanoq sistemalari ham o'nlik sanoq sistemasi o'rnini bosishi mumkin edi, masalan, 9 asosli, 5 asosli yoki 20 asosli
-                        sistemalar shular jumlasidan. Lekin o‘nlik sanoq sistemasi insoniyat tomonidan eng keng tarqalgan va qabul qilingan sanoq
-                        sistemasidir.
+                        asosiy sanoq sistemasi qiladi. O‘nlik sistema biologik sabab tufayli eng qulay sistema sifatida shakllangan. Albatta, boshqa pozitsion
+                        sanoq sistemalari ham o'nlik sanoq sistemasi o'rnini bosishi mumkin edi, masalan, 9 asosli, 5 asosli yoki 20 asosli sistemalar shular
+                        jumlasidan. Lekin o‘nlik sanoq sistemasi insoniyat tomonidan eng keng tarqalgan va qabul qilingan sanoq sistemasidir.
                     </p>
                 </section>
 
@@ -101,8 +103,8 @@ const OnlikSanoqSistemasiTarixi = () => {
                         <li>
                             <b>Islom olami orqali tarqalishi</b>
                             <br />
-                            Hindistonliklardan keyin bu sistemani al-Xorazmiy va al-Kindiy qabul qilgan va uni rivojlantirgan. Al-Xorazmiy o‘zining
-                            arifmetik asarlarida hind raqamlarini ishlatgan va “hisob al-hindiy” (hind hisobi) deb nomlangan sistemani fanga tanitgan.
+                            Hindistonliklardan keyin bu sistemani al-Xorazmiy va al-Kindiy qabul qilgan va uni rivojlantirgan. Al-Xorazmiy o‘zining arifmetik
+                            asarlarida hind raqamlarini ishlatgan va “hisob al-hindiy” (hind hisobi) deb nomlangan sistemani fanga tanitgan.
                         </li>
                     </ul>
                 </section>
@@ -133,12 +135,12 @@ const OnlikSanoqSistemasiTarixi = () => {
                     </p>
                     <p className="mb-4">
                         O‘nlik sanoq sistemasi bu — matematik mantiqning hayotiy ifodasi, tafakkurga yaqin, inson tabiatiga mos yechimdir. Va shu sababli, u
-                        asrlar davomida o‘z mavqeini saqlab kelmoqda. Har qanday zamonaviy hisob-kitobning yuragi aynan mana shu sistemada uradi. O‘nlik —
-                        bu insoniyat bilan birga tug‘ilgan va u bilan birga yashayotgan sistemadir.
+                        asrlar davomida o‘z mavqeini saqlab kelmoqda. Har qanday zamonaviy hisob-kitobning yuragi aynan mana shu sistemada uradi. O‘nlik — bu
+                        insoniyat bilan birga tug‘ilgan va u bilan birga yashayotgan sistemadir.
                     </p>
                     <p className="mb-4">
-                        Shunday ekan, o‘nlik sanoq tizimi — bu faqat matematik tushuncha emas, bu butun insoniyat tafakkurining umumiy tili, hisob va
-                        tartibning eng aniq, eng barqaror ifodasidir.
+                        Shunday ekan, o‘nlik sanoq tizimi — bu faqat matematik tushuncha emas, bu butun insoniyat tafakkurining umumiy tili, hisob va tartibning
+                        eng aniq, eng barqaror ifodasidir.
                     </p>
                 </section>
             </article>

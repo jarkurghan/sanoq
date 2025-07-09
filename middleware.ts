@@ -15,14 +15,19 @@ export function middleware(request: NextRequest) {
     if (!pathnameIsMissingLanguage) {
         // URL da til bor: uni cookie ga yozamiz
         const currentLang = languages.find((language) => pathname === `/${language}` || pathname.startsWith(`/${language}/`)) as Language;
-        response.cookies.set("language", currentLang, { path: "/", maxAge: 60 * 60 * 24 * 30, httpOnly: false, secure: process.env.NODE_ENV === "production", sameSite: "lax", });
+        response.cookies.set("language", currentLang, {
+            path: "/",
+            maxAge: 60 * 60 * 24 * 30,
+            httpOnly: false,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "lax",
+        });
         return response;
     }
 
     // Istisno: "/[lang]/info/..." va "/images/..." uchun lang prefix tekshiruvi o'tkazilmaydi
     const skipPrefixes = ["/uz/info/", "/en/info/", "/ru/info/", "/images/"];
     if (skipPrefixes.some((prefix) => pathname.startsWith(prefix))) return response;
-
 
     // Agar language yo'q bo'lsa, redirect qilish
     if (pathnameIsMissingLanguage) {
@@ -36,7 +41,7 @@ export function middleware(request: NextRequest) {
 
         // 2. foydalanuvchining afzal tili: Accept-Language header orqali
         const acceptLanguage = request.headers.get("accept-language");
-        const supportedLang = languages.find(l => acceptLanguage?.includes(l));
+        const supportedLang = languages.find((l) => acceptLanguage?.includes(l));
         if (supportedLang) return NextResponse.redirect(new URL(`/${supportedLang}${pathname}`, request.url));
 
         // 3. default o'zbek tili

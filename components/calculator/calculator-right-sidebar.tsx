@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { getTranslation } from "@/lib/translater/i18n";
 import { CALCULATOR_TYPES } from "@/lib/constants/calculator";
 import { NUMBER_SYSTEMS } from "@/lib/constants/numeral-system";
+import { Language } from "@/types/language";
 
 export default function CalculatorRightSidebar({ lang: rawLang }: { lang: string }) {
     const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "uz") as Language;

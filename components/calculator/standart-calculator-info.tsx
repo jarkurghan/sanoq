@@ -2,6 +2,7 @@
 
 import { DEFAULT_NUMBER_SYSTEM } from "@/lib/constants/numeral-system";
 import { getTranslation } from "@/lib/translater/i18n";
+import { Language } from "@/types/language";
 import { useSearchParams } from "next/navigation";
 
 export default function CalculatorText({ lang: rawLang }: { lang: string }) {

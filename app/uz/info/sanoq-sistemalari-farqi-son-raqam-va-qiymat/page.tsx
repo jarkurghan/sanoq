@@ -26,7 +26,7 @@ export function generateMetadata(): Metadata {
             description: "Sanoq sistemalarini tushunishda son, raqam va qiymat tushunchalarining farqlari haqida batafsil ma'lumot.",
             url: "https://sanoq.uz/uz/info/sanoq-sistemalari-farqi-son-raqam-va-qiymat",
             siteName: "sanoq.uz",
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", width: 1000, height: 749, alt: "sanoq.uz", },],
+            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", width: 1000, height: 749, alt: "sanoq.uz" }],
             locale: "uz",
             type: "article",
         },
@@ -46,7 +46,6 @@ export function generateMetadata(): Metadata {
     };
 }
 
-
 export default function SanoqSistemalarFarqiSonRaqamVaQiymat() {
     return (
         <main className="flex">
@@ -55,36 +54,36 @@ export default function SanoqSistemalarFarqiSonRaqamVaQiymat() {
                     <h1 className="text-2xl font-bold mb-6">Sanoq sistemalari farqi: Son, raqam va qiymat</h1>
                 </header>
                 <p className="mb-4">
-                    Sanoq sistemalarini o‘rganishga kirishishdan oldin, eng avvalo <strong>son</strong>, <strong>raqam</strong> va <strong>qiymat</strong>{" "}
-                    kabi asosiy tushunchalarni to‘g‘ri anglab olish zarur. Ushbu tushunchalar ko‘pincha chalkashtirib yuboriladi, biroq ularning har biri
-                    o‘ziga xos va sanoq sistemalarini to‘g‘ri tushunishda muhim ahamiyatga ega. Biroq ularni farqini tushunib olish pozitsion sanoq
-                    sistemalarini o‘rganishda muhimdir. Ushbu maqolada biz bu uch tushunchani batafsil ko‘rib chiqamiz va ularning farqlarini tushuntiramiz.
+                    Sanoq sistemalarini o‘rganishga kirishishdan oldin, eng avvalo <strong>son</strong>, <strong>raqam</strong> va <strong>qiymat</strong> kabi
+                    asosiy tushunchalarni to‘g‘ri anglab olish zarur. Ushbu tushunchalar ko‘pincha chalkashtirib yuboriladi, biroq ularning har biri o‘ziga xos
+                    va sanoq sistemalarini to‘g‘ri tushunishda muhim ahamiyatga ega. Biroq ularni farqini tushunib olish pozitsion sanoq sistemalarini
+                    o‘rganishda muhimdir. Ushbu maqolada biz bu uch tushunchani batafsil ko‘rib chiqamiz va ularning farqlarini tushuntiramiz.
                 </p>
 
                 <section>
                     <h2 className="text-xl font-bold mt-6 mb-4">Son nima?</h2>
                     <p className="mb-4">
-                        <strong>Son</strong> — bu qiymatni, tartibni yoki holatni ifodalovchi matematik tushuncha. Masalan, “7” soni yetti dona ob’yektni
-                        yoki yettinchi tartibdagi elementni ifodalashi mumkin. Son — bu abstrakt tushuncha bo‘lib, uni yozish yoki ifodalash uchun biz
-                        raqamlardan foydalanamiz.
+                        <strong>Son</strong> — bu qiymatni, tartibni yoki holatni ifodalovchi matematik tushuncha. Masalan, “7” soni yetti dona ob’yektni yoki
+                        yettinchi tartibdagi elementni ifodalashi mumkin. Son — bu abstrakt tushuncha bo‘lib, uni yozish yoki ifodalash uchun biz raqamlardan
+                        foydalanamiz.
                     </p>
                 </section>
 
                 <section>
                     <h2 className="text-xl font-bold mt-6 mb-4">Raqam nima?</h2>
                     <p className="mb-4">
-                        <strong>Raqam</strong> — bu sonni yozishda ishlatiladigan belgidir. Masalan, o‘nlik sanoq sistemasida 10 ta raqam bor: 0, 1, 2, 3,
-                        4, 5, 6, 7, 8, 9. Sonlar bir yoki bir nechta raqamlarning ketma-ketligidan tashkil topadi. Masalan, 23 soni — ikki raqamdan (2 va 3)
-                        tashkil topgan.
+                        <strong>Raqam</strong> — bu sonni yozishda ishlatiladigan belgidir. Masalan, o‘nlik sanoq sistemasida 10 ta raqam bor: 0, 1, 2, 3, 4, 5,
+                        6, 7, 8, 9. Sonlar bir yoki bir nechta raqamlarning ketma-ketligidan tashkil topadi. Masalan, 23 soni — ikki raqamdan (2 va 3) tashkil
+                        topgan.
                     </p>
                 </section>
 
                 <section>
                     <h2 className="text-xl font-bold mt-6 mb-4">Qiymat nima?</h2>
                     <p className="mb-4">
-                        <strong>Qiymat</strong> — bu son bilan ifodalangan narsalarning aniq soni yoki hajmidir. Masalan, “5” soni beshta olmani bildiradi —
-                        bu qiymat. Son — bu abstrakt tushuncha bo‘lsa, qiymat — bu real hayotdagi o‘lchash, sanash yoki hisoblash natijasida olingan
-                        natijadir. Qiymat moddiy yoki aniq ko‘rinadigan narsalarga taalluqli bo‘ladi.
+                        <strong>Qiymat</strong> — bu son bilan ifodalangan narsalarning aniq soni yoki hajmidir. Masalan, “5” soni beshta olmani bildiradi — bu
+                        qiymat. Son — bu abstrakt tushuncha bo‘lsa, qiymat — bu real hayotdagi o‘lchash, sanash yoki hisoblash natijasida olingan natijadir.
+                        Qiymat moddiy yoki aniq ko‘rinadigan narsalarga taalluqli bo‘ladi.
                     </p>
                 </section>
 
@@ -102,8 +101,8 @@ export default function SanoqSistemalarFarqiSonRaqamVaQiymat() {
                         </li>
                     </ul>
                     <p className="mb-4">
-                        Sanoq sistemalarini o‘rganishda bu uch tushunchani aniq ajratib olish muhim, chunki turli sanoq sistemalarida bir xil son turli
-                        raqamlar bilan yozilishi mumkin, ammo ifodalayotgan qiymat bir xil qoladi.
+                        Sanoq sistemalarini o‘rganishda bu uch tushunchani aniq ajratib olish muhim, chunki turli sanoq sistemalarida bir xil son turli raqamlar
+                        bilan yozilishi mumkin, ammo ifodalayotgan qiymat bir xil qoladi.
                     </p>
                 </section>
             </article>
