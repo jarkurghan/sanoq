@@ -11,6 +11,7 @@ import ThemeToggle from "@/components/global/theme-toggle";
 import ShareAppURL from "./share";
 import { getTranslation } from "@/lib/translater/i18n";
 import { Language } from "@/types/language";
+import Image from "next/image";
 
 export default function Navbar({ lang: rawLang }: { lang: string }) {
     const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "uz") as Language;
@@ -32,8 +33,8 @@ export default function Navbar({ lang: rawLang }: { lang: string }) {
             <div className="px-4 sm:px-8 lg:px-12 w-full flex h-14 items-center">
                 <div className="flex items-center space-x-8">
                     <Link href={`/${lang}`} className="flex items-center space-x-2">
-                        <div className="flex items-center justify-center w-8 h-8 lg:ml-[175px] rounded-lg bg-primary text-primary-foreground">
-                            <Binary className="h-6 w-6" />
+                        <div className="flex items-center justify-center w-8 h-8 lg:ml-[175px] rounded-lg border-2 border-blue-300">
+                            <Image src="favicon.ico" alt="logo" className="h-6 w-6" width={64} height={64} />
                         </div>
                     </Link>
 

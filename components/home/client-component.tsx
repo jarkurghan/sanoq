@@ -14,36 +14,24 @@ import { Button } from "@/components/utils/button";
 import { ArrowRightLeft } from "lucide-react";
 import { getTranslation } from "@/lib/translater/i18n";
 import TypingText from "@/components/home/typer";
-import Solution from "./solution";
+import SolutionUz from "./solution-uz";
+import SolutionRu from "./solution-ru";
+import SolutionEn from "./solution-en";
+import { DEFAULT_NUMBER_SYSTEM } from "@/lib/constants/numeral-system";
+import { DEFAULT_TWICE_NUMBER_SYSTEM } from "@/lib/constants/numeral-system";
 import { NUMBER_SYSTEMS } from "@/lib/constants/numeral-system";
 import { Language } from "@/types/language";
 
 export default function HomeComponent({ lang }: { lang: Language }) {
     const t = getTranslation(lang);
     // to-do: maximum kars qism 10ta;
+    //        yoki sanoq sistemasiga qarab
 
+    const [waiting, setWaiting] = useState(false);
     const [leftValue, setLeftValue] = useState("");
     const [rightValue, setRightValue] = useState("");
-    const [fromBase, setFromBase] = useState("10");
-    const [toBase, setToBase] = useState("2");
-
-    useEffect(() => {
-        try {
-            const decimalValue = Number.parseInt(leftValue, Number.parseInt(fromBase));
-            if (!isNaN(decimalValue)) {
-                setRightValue(decimalValue.toString(Number.parseInt(toBase)).toUpperCase());
-            }
-        } catch {
-            setRightValue("");
-        }
-    }, [leftValue, rightValue, fromBase, toBase]);
-
-    useEffect(() => {
-        const decimalValue = Number.parseInt(leftValue, Number.parseInt(fromBase));
-        if (!isNaN(decimalValue)) {
-            setRightValue(decimalValue.toString(Number.parseInt(toBase)).toUpperCase());
-        }
-    }, [fromBase, toBase]);
+    const [fromBase, setFromBase] = useState(DEFAULT_NUMBER_SYSTEM);
+    const [toBase, setToBase] = useState(DEFAULT_TWICE_NUMBER_SYSTEM);
 
     const swapBases = () => {
         setFromBase(toBase);
@@ -52,13 +40,17 @@ export default function HomeComponent({ lang }: { lang: Language }) {
         setRightValue(leftValue);
     };
 
-    /* for solution --------------------------------------- */
+    const [isHiddenSolution, setIsHiddenSolution] = useState(true);
     const [solutionLeftValue, setSolutionLeftValue] = useState("");
-    const [solutionFromBase, setSolutionFromBase] = useState(10);
-    const [solutionToBase, setSolutionToBase] = useState(2);
+    const [solutionFromBase, setSolutionFromBase] = useState(Number(DEFAULT_NUMBER_SYSTEM));
+    const [solutionToBase, setSolutionToBase] = useState(Number(DEFAULT_TWICE_NUMBER_SYSTEM));
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
     useEffect(() => {
+        setRightValue("");
+        setIsHiddenSolution(true);
+        setWaiting(Boolean(leftValue));
+
         if (timeoutRef.current) {
             clearTimeout(timeoutRef.current);
         }
@@ -104,7 +96,7 @@ export default function HomeComponent({ lang }: { lang: Language }) {
                 {/* Swap button */}
                 <div className="flex flex-col md:flex-row gap-4 my-4">
                     <div className="flex items-center justify-center md:w-auto md:mx-4">
-                        <Button variant="outline" size="icon" onClick={swapBases} className="rounded-full" title={t("home.swap")}>
+                        <Button variant="outline" size="icon" onClick={swapBases} disabled className="rounded-full" title={t("home.swap")}>
                             <ArrowRightLeft className="h-4 w-4" />
                             <span className="sr-only">{t("home.swap")}</span>
                         </Button>
@@ -129,21 +121,43 @@ export default function HomeComponent({ lang }: { lang: Language }) {
                 </div>
             </div>
             <div className="mt-8">
-                {/* <div>
-                    {tables.map((table, i) => (
-                        <span key={i}>
-                            {table.value}
-                            {table.sup && <sup>{table.sup}</sup>} {table.base && <sub>{table.base}</sub>}{" "}
-                        </span>
-                    ))}
-                </div> */}
-                <Solution inputNumber={solutionLeftValue} fromBase={solutionFromBase} toBase={solutionToBase} lang={lang} />
-                {/* <TypingText speed={70}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                    veniam, quis nostrud exercitation ullamco laboris. Nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                    voluptate velit esse. Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. Sunt in culpa qui officia
-                    deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio sagittis, ut faucibus libero imperdiet.
-                </TypingText> */}
+                {lang === "en" ? (
+                    <SolutionEn
+                        lang={lang}
+                        inputNumber={solutionLeftValue}
+                        fromBase={solutionFromBase}
+                        toBase={solutionToBase}
+                        setResult={setRightValue}
+                        waiting={waiting}
+                        setWaiting={setWaiting}
+                        isHidden={isHiddenSolution}
+                        setIsHidden={setIsHiddenSolution}
+                    />
+                ) : lang === "ru" ? (
+                    <SolutionRu
+                        lang={lang}
+                        inputNumber={solutionLeftValue}
+                        fromBase={solutionFromBase}
+                        toBase={solutionToBase}
+                        setResult={setRightValue}
+                        waiting={waiting}
+                        setWaiting={setWaiting}
+                        isHidden={isHiddenSolution}
+                        setIsHidden={setIsHiddenSolution}
+                    />
+                ) : (
+                    <SolutionUz
+                        lang={lang}
+                        inputNumber={solutionLeftValue}
+                        fromBase={solutionFromBase}
+                        toBase={solutionToBase}
+                        setResult={setRightValue}
+                        waiting={waiting}
+                        setWaiting={setWaiting}
+                        isHidden={isHiddenSolution}
+                        setIsHidden={setIsHiddenSolution}
+                    />
+                )}
             </div>
         </Fragment>
     );

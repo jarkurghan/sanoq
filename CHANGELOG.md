@@ -2,7 +2,7 @@
 
 Barcha versiya o‘zgarishlari shu yerda qayd etiladi.
 
-### v1.0.1 — 2025-07-05
+### v1.1.0 — 2025-07-05
 
 **Yangi:**  
 • Converter uchun yechim qo‘shildi.
@@ -10,9 +10,10 @@ Barcha versiya o‘zgarishlari shu yerda qayd etiladi.
 
 **O‘zgartirildi:**  
 • RightValue olib tashlandi. Endi faqat chap tarafga son kiritiladi, o‘ng tarafda natija avtomatik ko‘rsatiladi.
+• Navbardagi logo almashtirildi.
 
 **Tuzatildi:**  
-• Natijani hisoblash logikasi yaxshilandi va aniqlashtirildi.
+• Converter logikasi yaxshilandi va aniqlashtirildi.
 • Maqolalar sahifasiga header va chap sidebar qo'shildi
 
 ---

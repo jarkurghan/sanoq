@@ -6,6 +6,7 @@ export type FractionalPart = {
     denominator: number | bigint;
     period: Period;
     value: string;
+    exact: boolean;
 };
 
 export type FractionalPartOnToBase = {

@@ -79,6 +79,7 @@ export function convertFractionToDecimal(fraction: string, base: number): Fracti
     const denominator = oneTimeDenominator / divisor;
     const period = findRepeatingDecimalPeriod(denominator);
     const value = getPeriodikValue(numerator, denominator, period);
+    const exact = period.isPeriod === false || value.includes("(");
 
-    return { numerator, denominator, period, value };
+    return { numerator, denominator, period, value, exact };
 }
