@@ -2,14 +2,23 @@
 
 Barcha versiya o‘zgarishlari shu yerda qayd etiladi.
 
-### v1.1.0 — 2025-07-05
+### v1.1.1 — 2025-07-13
+
+**Tuzatildi:**  
+• Sahifalar eni responsive qilindi;
+• Kalkulyatorda hisob kitob yaxshilandi;
+• Rus tilidagi xatolar tuzatildi;
+
+---
+
+### v1.1.0 — 2025-07-12
 
 **Yangi:**  
 • Converter uchun yechim qo‘shildi.
 • Google natijalarida favicon chiqishi uchun `<link rel="icon">` tegi `<head>` ga qo‘shildi.
 
 **O‘zgartirildi:**  
-• RightValue olib tashlandi. Endi faqat chap tarafga son kiritiladi, o‘ng tarafda natija avtomatik ko‘rsatiladi.
+• Converterda RightValue olib tashlandi. Endi faqat chap tarafga son kiritiladi, o‘ng tarafda natija avtomatik ko‘rsatiladi.
 • Navbardagi logo almashtirildi.
 
 **Tuzatildi:**  

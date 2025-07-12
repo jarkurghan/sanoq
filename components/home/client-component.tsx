@@ -13,14 +13,13 @@ import { SelectValue } from "@/components/utils/select";
 import { Button } from "@/components/utils/button";
 import { ArrowRightLeft } from "lucide-react";
 import { getTranslation } from "@/lib/translater/i18n";
-import TypingText from "@/components/home/typer";
-import SolutionUz from "./solution-uz";
-import SolutionRu from "./solution-ru";
-import SolutionEn from "./solution-en";
 import { DEFAULT_NUMBER_SYSTEM } from "@/lib/constants/numeral-system";
 import { DEFAULT_TWICE_NUMBER_SYSTEM } from "@/lib/constants/numeral-system";
 import { NUMBER_SYSTEMS } from "@/lib/constants/numeral-system";
 import { Language } from "@/types/language";
+import SolutionUz from "./solution-uz";
+import SolutionRu from "./solution-ru";
+import SolutionEn from "./solution-en";
 
 export default function HomeComponent({ lang }: { lang: Language }) {
     const t = getTranslation(lang);
