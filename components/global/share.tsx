@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Dialog, DialogHeader, DialogDescription } from "@/components/utils/dialog";
 import { DialogContent, DialogTitle, DialogTrigger } from "@/components/utils/dialog";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { ClipboardCopy, Mail, Send } from "lucide-react";
 import { Button } from "@/components/utils/button";
 import { getTranslation } from "@/lib/translater/i18n";
@@ -13,15 +13,13 @@ export default function ShareAppURL({ children, lang: rawLang }: { children?: Re
     const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "uz") as Language;
     const t = getTranslation(lang);
     const pathname = usePathname();
-    const searchParams = useSearchParams();
     const [url, setUrl] = useState("https://sanoq.uz");
     const [isCopied, setIsCopied] = useState(false);
 
     useEffect(() => {
-        const params = searchParams.toString() ? `?${searchParams.toString()}` : "";
-        const fullUrl = `${window.location.origin}${pathname}${params}`;
+        const fullUrl = `${window.location.origin}${pathname}`;
         setUrl(fullUrl);
-    }, [pathname, searchParams]);
+    }, [pathname]);
 
     const copyToClipboard = () => {
         navigator.clipboard.writeText(url);
