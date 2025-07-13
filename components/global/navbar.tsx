@@ -34,7 +34,7 @@ export default function Navbar({ lang: rawLang }: { lang: string }) {
                 <div className="flex items-center space-x-8">
                     <Link href={`/${lang}`} className="flex items-center space-x-2">
                         <div className="flex items-center justify-center w-8 h-8 lg:ml-[175px] rounded-lg border-2 border-blue-300">
-                            <Image src="favicon.ico" alt="logo" className="h-6 w-6" width={64} height={64} />
+                            <Image src="/favicon.ico" alt="logo" width={24} height={24} />
                         </div>
                     </Link>
 
