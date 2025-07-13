@@ -10,9 +10,9 @@ export function middleware(request: NextRequest) {
     const pathname = request.nextUrl.pathname;
 
     // Pathname language yo'qligini tekshiradi
-    const pathnameIsMissingLanguage = languages.every((language) => !pathname.startsWith(`/${language}/`) && pathname !== `/${language}`);
+    const isMissingLanguage = languages.every((language) => !pathname.startsWith(`/${language}/`) && pathname !== `/${language}`);
 
-    if (!pathnameIsMissingLanguage) {
+    if (!isMissingLanguage) {
         // URL da til bor: uni cookie ga yozamiz
         const currentLang = languages.find((language) => pathname === `/${language}` || pathname.startsWith(`/${language}/`)) as Language;
         response.cookies.set("language", currentLang, {
@@ -25,12 +25,8 @@ export function middleware(request: NextRequest) {
         return response;
     }
 
-    // Istisno: "/[lang]/info/..." va "/images/..." uchun lang prefix tekshiruvi o'tkazilmaydi
-    const skipPrefixes = ["/uz/info/", "/en/info/", "/ru/info/", "/images/"];
-    if (skipPrefixes.some((prefix) => pathname.startsWith(prefix))) return response;
-
     // Agar language yo'q bo'lsa, redirect qilish
-    if (pathnameIsMissingLanguage) {
+    if (isMissingLanguage) {
         // til yo'q bo'lganda eng afzal til topiladi:
 
         // 1. cookie
@@ -50,5 +46,11 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-    matcher: ["/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml).*)"],
+    matcher: [
+        '/:lang(en|uz|ru)?',
+        '/:lang(en|uz|ru)?/calculator',
+        '/:lang(en|uz|ru)?/publications',
+        '/:lang(en|uz|ru)?/about',
+        '/:lang(en|uz|ru)?/info/:path*'
+    ],
 };
