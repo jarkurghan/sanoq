@@ -131,3 +131,7 @@
 .katex-display {
     font-family: "Your-Custom-Font", KaTeX_Main, "Times New Roman", serif !important;
 }
+
+.katex-html[aria-hidden="true"] {
+    display: none !important;
+}
