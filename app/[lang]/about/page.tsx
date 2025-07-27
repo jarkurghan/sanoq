@@ -81,7 +81,6 @@ export default function AboutPage({ params }: Props) {
     return (
         <div className="flex">
             <Container className="flex-1 prose prose-lg prose-sm text-justify">
-                {/* <div className="flex-1 container py-4 px-4 sm:px-8 max-w-6xl ml-0 lg:ml-64 text-justify"> */}
                 <div>
                     <header>
                         <h1>{t("about.title")}</h1>
@@ -112,12 +111,14 @@ export default function AboutPage({ params }: Props) {
                 <div>
                     <div>
                         <h2>{t("about.share.title")}</h2>
-                        <div>
+                        <div className="sm:grid grid-cols-[1fr_auto] gap-x-8">
                             <p>{t("about.share.description")}</p>
-                            <div>
+                            <div className="text-card-foreground w-full sm:w-40 py-4 flex items-center justify-end flex-col gap-2">
                                 <Share2 size={30} />
                                 <ShareAppURL lang={lang}>
-                                    <div>{t("about.share.button")}</div>
+                                    <div className="px-6 py-1 text-white text-base font-medium bg-blue-500 border-none rounded-lg cursor-pointer transition-colors text-center no-underline inline-flex items-center justify-center gap-2">
+                                        {t("about.share.button")}
+                                    </div>
                                 </ShareAppURL>
                             </div>
                         </div>
@@ -128,7 +129,7 @@ export default function AboutPage({ params }: Props) {
                     <div>
                         <div>
                             <h2>{t("about.contact.title")}</h2>
-                            <div>
+                            <div className="sm:grid grid-cols-[1fr_auto] gap-x-8">
                                 <div>
                                     <ul>
                                         <li>{t("about.contact.description1")}</li>
@@ -140,9 +141,13 @@ export default function AboutPage({ params }: Props) {
                                     </ul>
                                     <strong>{t("about.contact.description.bold")}</strong> {t("about.contact.description.def")}
                                 </div>
-                                <div>
+                                <div className="text-card-foreground w-full sm:w-40 py-4 flex items-center justify-end flex-col gap-2">
                                     <Send size={30} />
-                                    <a href="https://t.me/full_full_stack" target="_blank">
+                                    <a
+                                        href="https://t.me/full_full_stack"
+                                        target="_blank"
+                                        className="px-6 py-1 text-white text-base font-medium bg-blue-500 border-none rounded-lg cursor-pointer transition-colors text-center no-underline inline-flex items-center justify-center gap-2"
+                                    >
                                         {t("about.contact.button")}
                                     </a>
                                 </div>
