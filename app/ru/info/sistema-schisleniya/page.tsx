@@ -1,27 +1,29 @@
 "use client";
 
+import Container from "@/components/common/container";
+
 export default function BinaryPage() {
     return (
         <div className="flex">
-            <div className="flex-1 container py-4 px-4 sm:px-8 max-w-6xl ml-0 lg:ml-64">
-                <article className="prose max-w-none">
-                    <h1 className="text-2xl font-bold mb-6">Binary Number System</h1>
+            <article className="flex-1 text-justify">
+                <Container className="prose prose-lg prose-sm">
+                    <h1>Binary Number System</h1>
 
                     <h2>What is the Binary System?</h2>
-                    <p className="text-sm">
+                    <p >
                         The binary number system is a base-2 number system that uses only two digits: 0 and 1. It is the foundation of all digital computing and
                         electronic systems.
                     </p>
 
                     <h2>Why is Binary Important?</h2>
-                    <p className="text-sm">
+                    <p >
                         Binary is fundamental to computing because electronic components can easily represent two states: on (1) and off (0). This makes binary
                         the natural language of computers.
                     </p>
 
                     <h2>Binary Counting</h2>
-                    <p className="text-sm">In binary, each position represents a power of 2, starting from the rightmost digit:</p>
-                    <ul className="text-sm">
+                    <p >In binary, each position represents a power of 2, starting from the rightmost digit:</p>
+                    <ul >
                         <li>Rightmost digit: 2^0 = 1</li>
                         <li>Second from right: 2^1 = 2</li>
                         <li>Third from right: 2^2 = 4</li>
@@ -115,8 +117,8 @@ export default function BinaryPage() {
                         <li>Machine code and low-level programming</li>
                         <li>Digital signal processing</li>
                     </ul>
-                </article>
-            </div>
+                </Container>
+            </article>
         </div>
     );
 }
