@@ -45,7 +45,7 @@ export default function Navbar({ lang: rawLang }: { lang: string }) {
                                 <Link
                                     key={item.href}
                                     href={item.href}
-                                    className={cn("flex items-center text-sm font-medium transition-colors hover:text-primary", isActive ? "text-primary" : "")}
+                                    className={cn("flex items-center font-medium transition-colors hover:text-primary", isActive ? "text-primary" : "")}
                                 >
                                     <item.icon className="mr-2 h-4 w-4" />
                                     {t(item.name)}
