@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/utils/classname";
 import { Button } from "@/components/utils/button";
-import { Calculator, Code, Home, Info, BookOpen, Menu, X, Share2, Binary } from "lucide-react";
+import { Calculator, Code, Home, Info, BookOpen, Menu, X, Share2, Binary, Settings2 } from "lucide-react";
 import { useState } from "react";
 import LanguageSwitcher from "@/components/global/language-switcher";
 import ThemeToggle from "@/components/global/theme-toggle";
@@ -12,11 +12,13 @@ import ShareAppURL from "./share";
 import { getTranslation } from "@/lib/translater/i18n";
 import { Language } from "@/types/language";
 import Image from "next/image";
+import CalculatorSettings from "../calculator/settings";
 
 export default function Navbar({ lang: rawLang }: { lang: string }) {
     const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "uz") as Language;
     const t = getTranslation(lang);
 
+    // hozircha client side bo'lsin...
     const pathname = usePathname();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -38,7 +40,7 @@ export default function Navbar({ lang: rawLang }: { lang: string }) {
                         </div>
                     </Link>
 
-                    <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
+                    <nav className="hidden md:flex items-center space-x-4 lg:space-x-8">
                         {navItems.map((item) => {
                             const isActive = pathname === item.href;
                             return (
@@ -56,6 +58,12 @@ export default function Navbar({ lang: rawLang }: { lang: string }) {
                 </div>
 
                 <div className="ml-auto flex items-center space-x-2">
+                    <CalculatorSettings lang={lang}>
+                        <div>
+                            <Settings2 className="h-4 w-4" />
+                            <span className="sr-only">Settings</span>
+                        </div>
+                    </CalculatorSettings>
                     <ShareAppURL lang={lang}>
                         <div>
                             <Share2 className="h-4 w-4" />

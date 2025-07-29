@@ -3,6 +3,7 @@ import { getTranslation } from "@/lib/translater/i18n";
 import { Language } from "@/types/language";
 import type { Metadata } from "next";
 import PublicsComponent from "@/components/publications/client-component";
+import Content from "@/components/common/content";
 
 type Props = {
     params: Promise<{ lang: Language }>;
@@ -82,12 +83,14 @@ export default function PublicationsPage({ params }: Props) {
 
     return (
         <div className="flex">
-            <div className="flex-1 container py-4 px-4 sm:px-8 max-w-7xl ml-0 lg:ml-64">
-                <header className="hidden">
-                    <h1>{t("publications.seo.title")}</h1>
-                    <p>{t("publications.seo.description")}</p>
-                </header>
-                <PublicsComponent lang={lang} />
+            <div className="flex-1">
+                <Content className="prose prose-lg prose-sm">
+                    <header className="hidden">
+                        <h1>{t("publications.seo.title")}</h1>
+                        <p>{t("publications.seo.description")}</p>
+                    </header>
+                    <PublicsComponent lang={lang} />
+                </Content>
             </div>
         </div>
     );

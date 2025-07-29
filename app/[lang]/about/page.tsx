@@ -5,6 +5,7 @@ import { Language } from "@/types/language";
 import type { Metadata } from "next";
 import { use } from "react";
 import Container from "@/components/common/container";
+import Content from "@/components/common/content";
 
 type Props = {
     params: Promise<{ lang: Language }>;
@@ -80,7 +81,7 @@ export default function AboutPage({ params }: Props) {
 
     return (
         <div className="flex">
-            <Container className="flex-1 prose prose-lg prose-sm text-justify">
+            <Content className="flex-1 prose prose-lg prose-sm text-justify">
                 <div>
                     <header>
                         <h1>{t("about.title")}</h1>
@@ -155,7 +156,7 @@ export default function AboutPage({ params }: Props) {
                         </div>
                     </div>
                 </div>
-            </Container>
+            </Content>
         </div>
     );
 }

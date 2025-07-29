@@ -13,39 +13,35 @@ export default function CalculatorText({ lang: rawLang }: { lang: string }) {
     const base = searchParams.get("base") || DEFAULT_NUMBER_SYSTEM;
 
     return (
-        <div className="flex flex-col gap-4">
-            <div className="text-sm font-medium">
+        <div className="flex flex-col">
+            <div>
                 {t("calculator.basic.features")}
                 <ul>
                     <li>
-                        • {t("calculator.arithmetic")} <span className="text-primary">+</span>, <span className="text-primary">-</span>,{" "}
+                        {t("calculator.arithmetic")} <span className="text-primary">+</span>, <span className="text-primary">-</span>,{" "}
                         <span className="text-primary">×</span>, <span className="text-primary">÷</span>
                     </li>
                     <li>
-                        • {t("calculator.sign.change")} <span className="text-primary">±</span>, <span className="text-primary">1/x</span>
+                        {t("calculator.sign.change")} <span className="text-primary">±</span>, <span className="text-primary">1/x</span>
                     </li>
                     <li>
-                        • {t("calculator.percentage")} <span className="text-primary">%</span>
+                        {t("calculator.percentage")} <span className="text-primary">%</span>
                     </li>
                     <li>
-                        • {t("calculator.square.root")} <span className="text-primary">x²</span>, <span className="text-primary">√x</span>
+                        {t("calculator.square.root")} <span className="text-primary">x²</span>, <span className="text-primary">√x</span>
                     </li>
                     <li>
-                        • {t("calculator.clear.delete")} <span className="text-primary">Clear</span>, <span className="text-primary">⌫</span>{" "}
+                        {t("calculator.clear.delete")} <span className="text-primary">Clear</span>, <span className="text-primary">⌫</span>{" "}
                     </li>
                     <li>
-                        • {t("calculator.decimal.numbers")} <span className="text-primary">.</span>
+                        {t("calculator.decimal.numbers")} <span className="text-primary">.</span>
                     </li>
                 </ul>
             </div>
-            {base !== "10" && (
-                <div className="text-sm font-medium">
-                    <p className="text-justify">{t("calculator.info.warning." + base)}</p>
-                </div>
-            )}
+            {base !== "10" && <p className="text-justify">{t("calculator.info.warning." + base)}</p>}
 
-            <div className="text-sm font-medium">
-                <h2 className="text-lg font-bold mt-4 mb-1">{t("calculator.info.title." + base)}</h2>
+            <div>
+                <h2>{t("calculator.info.title." + base)}</h2>
                 <p className="text-justify">
                     {t("calculator.info.title." + base)} — {t("calculator.info.description." + base)}.
                 </p>

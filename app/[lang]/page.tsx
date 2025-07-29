@@ -1,5 +1,5 @@
+import Content from "@/components/common/content";
 import HomeComponent from "@/components/home/client-component";
-import RightSidebarContent from "@/components/global/right-sidebar";
 import { getTranslation } from "@/lib/translater/i18n";
 import { Language } from "@/types/language";
 import { Metadata } from "next";
@@ -82,19 +82,16 @@ export default function HomePage({ params }: Props) {
 
     return (
         <div className="flex">
-            <div className="flex-1 container py-4 px-4 sm:px-8 max-w-6xl ml-0 lg:ml-64">
-                <header>
-                    <h1 className="text-2xl font-bold">{t("home.title")}</h1>
-                    <div className="hidden sm:block border-b pt-2 pb-4 mb-6 text-sm">
+            <div className="flex-1 text-justify">
+                <Content className="prose prose-lg prose-sm">
+                    <header>
+                        <h1>{t("home.title")}</h1>
+                        {/* <div className="hidden sm:block border-b pt-2 pb-4 mb-6 text-sm"> */}
                         <p>{t("home.description")}</p>
-                    </div>
-                </header>
-
-                <HomeComponent lang={lang} />
-            </div>
-
-            <div className="hidden lg:block">
-                <RightSidebarContent />
+                        {/* </div> */}
+                    </header>
+                    <HomeComponent lang={lang} />
+                </Content>
             </div>
         </div>
     );

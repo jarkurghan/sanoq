@@ -1,7 +1,7 @@
 import type React from "react";
 import Navbar from "@/components/global/navbar";
 import Footer from "@/components/global/footer";
-import Sidebar from "@/components/global/left-sidebar";
+// import Sidebar from "@/components/global/left-sidebar";
 import { Language } from "@/types/language";
 
 type Props = {

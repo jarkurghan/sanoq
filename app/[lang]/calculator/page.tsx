@@ -6,6 +6,7 @@ import { getTranslation } from "@/lib/translater/i18n";
 import { Language } from "@/types/language";
 import { Metadata } from "next";
 import { use } from "react";
+import Content from "@/components/common/content";
 
 type Props = {
     params: Promise<{ lang: Language }>;
@@ -85,26 +86,28 @@ export default function CalculatorPage({ params }: Props) {
 
     return (
         <div className="flex">
-            <div className="flex-1 container py-4 px-4 sm:px-8 max-w-7xl ml-0 lg:ml-64 sm:grid grid-cols-[1fr_auto] gap-8 xl:gap-20">
-                <header>
-                    <h1 className="text-2xl font-bold mb-2">{t("calculator.standard.title")}</h1>
-                    <p className="hidden sm:block text-sm font-medium text-justify">{t("calculator.standard.description")}</p>
-                    <div className="hidden sm:block">
+            <Content className="prose prose-lg prose-sm flex-1">
+                <div className="sm:grid grid-cols-[1fr_auto] gap-8 xl:gap-20">
+                    <header>
+                        <h1>{t("calculator.standard.title")}</h1>
+                        <p className="hidden sm:block text-justify">{t("calculator.standard.description")}</p>
+                        <div className="hidden sm:block">
+                            <CalculatorText lang={lang} />
+                        </div>
+                    </header>
+                    <div className="w-fit max-w-[360px]">
+                        <Card>
+                            <CardHeader className="pt-1" />
+                            <CardContent>
+                                <StandartCalculator />
+                            </CardContent>
+                        </Card>
+                    </div>
+                    <div className="block sm:hidden px-2 pt-8">
                         <CalculatorText lang={lang} />
                     </div>
-                </header>
-                <div className="w-fit max-w-[360px]">
-                    <Card>
-                        <CardHeader className="pt-1" />
-                        <CardContent>
-                            <StandartCalculator />
-                        </CardContent>
-                    </Card>
                 </div>
-                <div className="block sm:hidden px-2 pt-8">
-                    <CalculatorText lang={lang} />
-                </div>
-            </div>
+            </Content>
 
             <div className="hidden lg:block">
                 <CalculatorRightSidebar lang={lang} />
