@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 220 60% 98%;
+        --foreground: 222 47% 11%;
+        --card: 0 0% 100%;
+        --card-foreground: 222 47% 11%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222 47% 11%;
+        --primary: 221 83% 53%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 210 40% 96%;
+        --secondary-foreground: 222 47% 11%;
+        --muted: 210 16% 93%;
+        --muted-foreground: 215 16% 46%;
+        --accent: 215 80% 85%;
+        --accent-foreground: 222 47% 11%;
+        --destructive: 0 72% 60%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 220 16% 85%;
+        --input: 220 16% 85%;
+        --ring: 221 83% 53%;
+        --radius: 0.5rem;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+
+    .dark {
+        --background: 222 47% 8%;
+        --foreground: 217 19% 65%;
+        --card: 222 47% 11%;
+        --card-foreground: 214 32% 84%;
+        --popover: 222 47% 13%;
+        --popover-foreground: 220 60% 98%;
+        --primary: 211 94% 68%;
+        --primary-foreground: 222 47% 11%;
+        --secondary: 222 20% 18%;
+        --secondary-foreground: 220 60% 98%;
+        --muted: 222 20% 18%;
+        --muted-foreground: 215 16% 65%;
+        --accent: 215 80% 40%;
+        --accent-foreground: 220 60% 98%;
+        --destructive: 0 72% 45%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 222 20% 18%;
+        --input: 222 20% 18%;
+        --ring: 221 83% 66%;
+    }
+
+    .dark body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    .dark .prose,
+    .dark .prose h1,
+    .dark .prose h2,
+    .dark .prose h3,
+    .dark .prose h4,
+    .dark .prose h5,
+    .dark .prose h6,
+    .dark .prose strong,
+    .dark .prose code,
+    .dark .prose th {
+        color: hsl(var(--foreground));
+    }
+
+    .dark .prose a {
+        color: hsl(var(--primary));
+    }
+
+    .dark .prose blockquote {
+        color: hsl(var(--muted-foreground));
+        border-color: hsl(var(--border));
+    }
+
+    .dark .prose code {
+        background-color: hsl(var(--muted));
+    }
+
+    .dark .prose pre {
+        background-color: hsl(var(--muted));
+        color: hsl(var(--foreground));
+    }
+
+    .dark .prose hr {
+        border-color: hsl(var(--border));
+    }
+
+    .dark .prose table {
+        border-color: hsl(var(--border));
+    }
+
+    .dark .prose thead {
+        border-bottom-color: hsl(var(--border));
+    }
+
+    .dark .prose tbody tr {
+        border-bottom-color: hsl(var(--border));
+    }
+
+    body {
+        @apply text-slate-800;
+    }
+
+    .dark body {
+        @apply text-slate-400;
+    }
+}
+
+@layer utilities {
+    .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
+.katex,
+.katex-display {
+    font-family: "Your-Custom-Font", KaTeX_Main, "Times New Roman", serif !important;
+}
+
+.katex-html[aria-hidden="true"] {
+    display: none !important;
+}
