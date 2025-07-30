@@ -30,6 +30,8 @@ export default function Navbar({ lang: rawLang }: { lang: string }) {
         { name: "nav.about", href: `/${lang}/about`, icon: Info },
     ];
 
+    const isOnCalculatorPage = `/${lang}/calculator` === pathname;
+
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="px-4 sm:px-8 lg:px-12 w-full flex h-14 items-center">
@@ -58,12 +60,14 @@ export default function Navbar({ lang: rawLang }: { lang: string }) {
                 </div>
 
                 <div className="ml-auto flex items-center space-x-2">
-                    <CalculatorSettings lang={lang}>
-                        <div>
-                            <Settings2 className="h-4 w-4" />
-                            <span className="sr-only">Settings</span>
-                        </div>
-                    </CalculatorSettings>
+                    {isOnCalculatorPage && (
+                        <CalculatorSettings lang={lang}>
+                            <div>
+                                <Settings2 className="h-4 w-4" />
+                                <span className="sr-only">Settings</span>
+                            </div>
+                        </CalculatorSettings>
+                    )}
                     <ShareAppURL lang={lang}>
                         <div>
                             <Share2 className="h-4 w-4" />

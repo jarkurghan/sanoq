@@ -1,7 +1,6 @@
 import { Card, CardContent, CardHeader } from "@/components/utils/card";
 import StandartCalculator from "@/components/calculator/standart-calculator";
 import CalculatorText from "@/components/calculator/standart-calculator-info";
-import CalculatorRightSidebar from "@/components/calculator/calculator-right-sidebar";
 import { getTranslation } from "@/lib/translater/i18n";
 import { Language } from "@/types/language";
 import { Metadata } from "next";
@@ -108,10 +107,6 @@ export default function CalculatorPage({ params }: Props) {
                     </div>
                 </div>
             </Content>
-
-            <div className="hidden lg:block">
-                <CalculatorRightSidebar lang={lang} />
-            </div>
         </div>
     );
 }
