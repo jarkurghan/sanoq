@@ -1006,7 +1006,7 @@ const translations: Record<Language, Record<string, string>> = {
         "share.title": "Поделиться",
         "share.description": "Поделитесь этой страницей с друзьями",
         "share.telegram": "Telegram",
-        "share.email": "Электронная почта",
+        "share.email": "Эл. почта",
         "share.copy": "Копировать",
         "share.copied": "🎉 Скопировано",
 

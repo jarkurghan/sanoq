@@ -1,16 +1,9 @@
-"use client";
-
-import { DEFAULT_NUMBER_SYSTEM } from "@/lib/constants/numeral-system";
 import { getTranslation } from "@/lib/translater/i18n";
+import { Base } from "@/types/base";
 import { Language } from "@/types/language";
-import { useSearchParams } from "next/navigation";
 
-export default function CalculatorText({ lang: rawLang }: { lang: string }) {
-    const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "uz") as Language;
+export default function CalculatorText({ lang, base }: { lang: Language; base: Base }) {
     const t = getTranslation(lang);
-
-    const searchParams = useSearchParams();
-    const base = searchParams.get("base") || DEFAULT_NUMBER_SYSTEM;
 
     return (
         <div className="flex flex-col">
@@ -38,7 +31,7 @@ export default function CalculatorText({ lang: rawLang }: { lang: string }) {
                     </li>
                 </ul>
             </div>
-            {base !== "10" && <p className="text-justify">{t("calculator.info.warning." + base)}</p>}
+            {base !== 10 && <p className="text-justify">{t("calculator.info.warning." + base)}</p>}
 
             <div>
                 <h2>{t("calculator.info.title." + base)}</h2>

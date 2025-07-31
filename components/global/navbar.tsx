@@ -14,8 +14,7 @@ import { Language } from "@/types/language";
 import Image from "next/image";
 import CalculatorSettings from "../calculator/settings";
 
-export default function Navbar({ lang: rawLang }: { lang: string }) {
-    const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "uz") as Language;
+export default function Navbar({ lang }: { lang: Language }) {
     const t = getTranslation(lang);
 
     // hozircha client side bo'lsin...
@@ -30,7 +29,7 @@ export default function Navbar({ lang: rawLang }: { lang: string }) {
         { name: "nav.about", href: `/${lang}/about`, icon: Info },
     ];
 
-    const isOnCalculatorPage = `/${lang}/calculator` === pathname;
+    const isOnCalculatorPage = pathname.startsWith(`/${lang}/calculator`);
 
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">

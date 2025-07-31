@@ -1,18 +1,19 @@
 import { Card, CardContent, CardHeader } from "@/components/utils/card";
 import StandartCalculator from "@/components/calculator/standart-calculator";
 import CalculatorText from "@/components/calculator/standart-calculator-info";
+import Content from "@/components/common/content";
 import { getTranslation } from "@/lib/translater/i18n";
 import { Language } from "@/types/language";
+import { Base } from "@/types/base";
 import { Metadata } from "next";
 import { use } from "react";
-import Content from "@/components/common/content";
 
 type Props = {
-    params: Promise<{ lang: Language }>;
+    params: Promise<{ lang: Language; base: Base }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const { lang } = await params;
+    const { lang, base } = await params;
     const t = getTranslation(lang);
 
     return {
@@ -79,8 +80,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default function CalculatorPage({ params }: Props) {
-    const { lang: rawLang } = use(params);
-    const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "uz") as Language;
+    const { lang, base } = use(params);
     const t = getTranslation(lang);
 
     return (
@@ -91,19 +91,19 @@ export default function CalculatorPage({ params }: Props) {
                         <h1>{t("calculator.standard.title")}</h1>
                         <p className="hidden sm:block text-justify">{t("calculator.standard.description")}</p>
                         <div className="hidden sm:block">
-                            <CalculatorText lang={lang} />
+                            <CalculatorText lang={lang} base={base} />
                         </div>
                     </header>
                     <div className="w-fit max-w-[360px]">
                         <Card>
                             <CardHeader className="pt-1" />
                             <CardContent>
-                                <StandartCalculator />
+                                <StandartCalculator base={base} />
                             </CardContent>
                         </Card>
                     </div>
                     <div className="block sm:hidden px-2 pt-8">
-                        <CalculatorText lang={lang} />
+                        <CalculatorText lang={lang} base={base} />
                     </div>
                 </div>
             </Content>

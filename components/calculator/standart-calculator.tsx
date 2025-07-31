@@ -2,13 +2,9 @@
 
 import { useState } from "react";
 import { Button } from "@/components/utils/button";
-import { useSearchParams } from "next/navigation";
-import { DEFAULT_NUMBER_SYSTEM } from "@/lib/constants/numeral-system";
+import { Base } from "@/types/base";
 
-export default function StandartCalculator() {
-    const searchParams = useSearchParams();
-    const base = searchParams.get("base") || DEFAULT_NUMBER_SYSTEM;
-
+export default function StandartCalculator({ base }: { base: Base }) {
     const [display, setDisplay] = useState("0");
     const [topDisplay, setTopDisplay] = useState("");
     const [firstOperand, setFirstOperand] = useState<string | null>(null);
@@ -62,8 +58,8 @@ export default function StandartCalculator() {
     };
 
     const calculate = (firstOperand: string, secondOperand: string, operator: string) => {
-        const first = parseBaseFloat(firstOperand, Number.parseInt(base));
-        const second = parseBaseFloat(secondOperand, Number.parseInt(base));
+        const first = parseBaseFloat(firstOperand, base);
+        const second = parseBaseFloat(secondOperand, base);
 
         let result: number;
 
@@ -99,7 +95,7 @@ export default function StandartCalculator() {
                 return secondOperand;
         }
 
-        return result.toString(Number.parseInt(base)).toUpperCase();
+        return result.toString(base).toUpperCase();
     };
 
     const handleEquals = () => {
@@ -124,15 +120,14 @@ export default function StandartCalculator() {
     };
 
     const getAvailableDigits = () => {
-        const baseNum = Number.parseInt(base);
         const digits = [];
 
-        for (let i = 1; i < Math.min(baseNum, 10); i++) {
+        for (let i = 1; i < Math.min(base, 10); i++) {
             digits.push(i.toString());
         }
 
-        if (baseNum > 10) {
-            for (let i = 10; i < baseNum; i++) {
+        if (base > 10) {
+            for (let i = 10; i < base; i++) {
                 digits.push(String.fromCharCode(65 + i - 10)); // A, B, C, etc.
             }
         }
@@ -150,16 +145,14 @@ export default function StandartCalculator() {
 
     const handleSignChange = () => {
         if (display !== "0") {
-            const baseNum = Number.parseInt(base);
-            const decimalValue = Number.parseInt(display, baseNum);
+            const decimalValue = Number.parseInt(display, base);
             const negatedValue = -decimalValue;
-            setDisplay(negatedValue.toString(baseNum).toUpperCase());
+            setDisplay(negatedValue.toString(base).toUpperCase());
         }
     };
 
     const handleReciprocal = () => {
-        const baseNum = Number.parseInt(base);
-        const decimalValue = parseBaseFloat(display, baseNum);
+        const decimalValue = parseBaseFloat(display, base);
 
         if (decimalValue === 0) {
             // setDisplay("Error")
@@ -168,28 +161,25 @@ export default function StandartCalculator() {
 
         const reciprocalValue = 1 / decimalValue;
         setTopDisplay(`1/${display} = `);
-        setDisplay(reciprocalValue.toString(baseNum).toUpperCase());
+        setDisplay(reciprocalValue.toString(base).toUpperCase());
     };
 
     const handlePercentage = () => {
-        const baseNum = Number.parseInt(base);
-        const decimalValue = parseBaseFloat(display, baseNum);
+        const decimalValue = parseBaseFloat(display, base);
         const percentValue = decimalValue / 100;
         setTopDisplay(`%${display} = `);
-        setDisplay(percentValue.toString(baseNum).toUpperCase());
+        setDisplay(percentValue.toString(base).toUpperCase());
     };
 
     const handleSquare = () => {
-        const baseNum = Number.parseInt(base);
-        const decimalValue = parseBaseFloat(display, baseNum);
+        const decimalValue = parseBaseFloat(display, base);
         const squaredValue = decimalValue * decimalValue;
         setTopDisplay(`${display}² = `);
-        setDisplay(squaredValue.toString(baseNum).toUpperCase());
+        setDisplay(squaredValue.toString(base).toUpperCase());
     };
 
     const handleSquareRoot = () => {
-        const baseNum = Number.parseInt(base);
-        const decimalValue = parseBaseFloat(display, baseNum);
+        const decimalValue = parseBaseFloat(display, base);
 
         if (decimalValue < 0) {
             // setDisplay("Error")
@@ -198,7 +188,7 @@ export default function StandartCalculator() {
 
         const sqrtValue = Math.sqrt(decimalValue);
         setTopDisplay(`√${display} = `);
-        setDisplay(sqrtValue.toString(baseNum).toUpperCase());
+        setDisplay(sqrtValue.toString(base).toUpperCase());
     };
 
     const inputDecimal = () => {
@@ -266,15 +256,15 @@ export default function StandartCalculator() {
                         {digit}
                     </Button>
                 ))}
-                {Number.parseInt(base) % 4 === 0 && (
+                {base % 4 === 0 && (
                     <Button variant="outline" onClick={inputDecimal} className={"col-span-1"}>
                         {"."}
                     </Button>
                 )}
-                <Button variant="outline" onClick={() => inputDigit("0")} className={"col-span-" + (4 - (Number.parseInt(base) % 4))}>
+                <Button variant="outline" onClick={() => inputDigit("0")} className={"col-span-" + (4 - (base % 4))}>
                     {"0"}
                 </Button>
-                {Number.parseInt(base) % 4 !== 0 && (
+                {base % 4 !== 0 && (
                     <Button variant="outline" onClick={inputDecimal} className={"col-span-1"}>
                         {"."}
                     </Button>

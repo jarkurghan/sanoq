@@ -13,26 +13,21 @@ const nextConfig = {
     async redirects() {
         return [
             {
-                source: '/info',
-                destination: '/publications',
+                source: "/:lang/calculator",
+                destination: "/:lang/calculator/10",
                 permanent: true,
             },
             {
-                source: '/uz/info',
-                destination: '/uz/publications',
+                source: "/info",
+                destination: "/publications",
                 permanent: true,
             },
             {
-                source: '/en/info',
-                destination: '/en/publications',
+                source: "/:lang/info",
+                destination: "/:lang/publications",
                 permanent: true,
             },
-            {
-                source: '/ru/info',
-                destination: '/ru/publications',
-                permanent: true,
-            },
-        ]
+        ];
     },
 };
 
