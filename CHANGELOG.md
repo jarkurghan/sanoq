@@ -7,19 +7,23 @@ Barcha versiya o‘zgarishlari shu yerda qayd etiladi.
 **O‘zgartirildi:**   
 - Design butunlay qayta qurildi
     - Sidebar Left olib tashlandi
+    - Sidebar Right navbarga o'tkazildi tashlandi
     - Komponentlar reuseble
         - Container
+        - Content
     - CSS maqola janriga yaqinroq
         - font size kattaroq
         - content o'rtada
-    - O'zgarmas umumiy CSS stylelar
-        - div
-        - p
-        - span
-        - a
+        - margin, padding, gap va boshqa bo'shliqlar
 
 **Tuzatildi:**  
+- Konvertor - hisob-kitobdagi xatolar tuzatildi
+- Kalkulator - hisob-kitobdagi xatolar tuzatildi
 - Konvertordagi kasr sonni chiqarishdagi xato tuzatildi
+
+**Yangi:**  
+- Konvertor - Klaviatura orqali yozish funksiyasi qo'shildi
+- Kalkulator - Klaviatura orqali yozish funksiyasi qo'shildi
 
 ---
 
