@@ -1,6 +1,6 @@
 import { getTranslation } from "@/lib/translater/i18n";
-import { Base } from "@/types/base";
 import { Language } from "@/types/language";
+import { Base } from "@/types/base";
 
 export default function CalculatorText({ lang, base }: { lang: Language; base: Base }) {
     const t = getTranslation(lang);

@@ -1,10 +1,28 @@
 "use client";
 
 import { useState } from "react";
+import { useEffect } from "react";
 import { Button } from "@/components/utils/button";
 import { Base } from "@/types/base";
 
 export default function StandartCalculator({ base }: { base: Base }) {
+    // to-do: klaviatura bilan ishlaganda "eski qiymat" muammosi
+    // hal qilish yo'li:
+    //     const handlePercentage = () => {
+    //         setDisplay((prevDisplay) => {
+    //             const value = parseFloat(prevDisplay);
+    //             const result = (value / 100).toString();
+    //             setTopDisplay((prevTop) => {
+    //                 if (waitingForSecondOperand) {
+    //                     return `%${result} = `;
+    //                 } else {
+    //                     return prevTop;
+    //                 }
+    //             });
+    //             return result;
+    //         });
+    //     };
+
     const [display, setDisplay] = useState("0");
     const [topDisplay, setTopDisplay] = useState("");
     const [firstOperand, setFirstOperand] = useState<string | null>(null);
@@ -19,7 +37,7 @@ export default function StandartCalculator({ base }: { base: Base }) {
             setDisplay(digit);
             setWaitingForSecondOperand(false);
         } else {
-            setDisplay(display === "0" ? digit : display + digit);
+            setDisplay((prev) => (prev === "0" ? digit : prev + digit));
         }
     };
 
@@ -104,7 +122,7 @@ export default function StandartCalculator({ base }: { base: Base }) {
         const inputValue = display;
         const result = calculate(firstOperand, inputValue, operator);
 
-        setTopDisplay(topDisplay + inputValue + "=");
+        setTopDisplay((prev) => prev + inputValue + "=");
         setDisplay(result);
         setFirstOperand(null);
         setOperator(null);
@@ -129,7 +147,7 @@ export default function StandartCalculator({ base }: { base: Base }) {
 
         if (baseNum > 10) {
             for (let i = 10; i < baseNum; i++) {
-                digits.push(String.fromCharCode(65 + i - 10)); // A, B, C, etc.
+                digits.push(String.fromCharCode(65 + i - 10));
             }
         }
 
@@ -137,11 +155,13 @@ export default function StandartCalculator({ base }: { base: Base }) {
     };
 
     const handleDelete = () => {
-        if (display.length > 1) {
-            setDisplay(display.slice(0, -1));
-        } else {
-            setDisplay("0");
-        }
+        setDisplay((prev) => {
+            if (prev.length > 1) {
+                return prev.slice(0, -1);
+            } else {
+                return "0";
+            }
+        });
     };
 
     const handleSignChange = () => {
@@ -210,6 +230,25 @@ export default function StandartCalculator({ base }: { base: Base }) {
     };
 
     const digits = getAvailableDigits();
+
+    useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+            const key = event.key.toUpperCase();
+            console.log(key);
+
+            if (digits.includes(key) || key === "0") inputDigit(key);
+            else if (/^[/*-+]$/i.test(key)) performOperation(key);
+            else if (key === "=" || key === "ENTER") handleEquals();
+            else if (key === "BACKSPACE") handleDelete();
+            else if (key === ".") inputDecimal();
+            else if (key === "%") handlePercentage();
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+        };
+    }, []);
 
     return (
         <div className="space-y-4">
