@@ -31,7 +31,7 @@ export default function CalculatorText({ lang, base }: { lang: Language; base: B
                     </li>
                 </ul>
             </div>
-            {base !== 10 && <p className="text-justify">{t("calculator.info.warning." + base)}</p>}
+            {base !== "10" && <p className="text-justify">{t("calculator.info.warning." + base)}</p>}
 
             <div>
                 <h2>{t("calculator.info.title." + base)}</h2>
