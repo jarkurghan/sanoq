@@ -6,56 +6,36 @@ import { Button } from "@/components/utils/button";
 import { Base } from "@/types/base";
 
 export default function StandartCalculator({ base }: { base: Base }) {
-    // to-do: klaviatura bilan ishlaganda "eski qiymat" muammosi
-    // hal qilish yo'li:
-    //     const handlePercentage = () => {
-    //         setDisplay((prevDisplay) => {
-    //             const value = parseFloat(prevDisplay);
-    //             const result = (value / 100).toString();
-    //             setTopDisplay((prevTop) => {
-    //                 if (waitingForSecondOperand) {
-    //                     return `%${result} = `;
-    //                 } else {
-    //                     return prevTop;
-    //                 }
-    //             });
-    //             return result;
-    //         });
-    //     };
-
-    const [display, setDisplay] = useState("0");
-    const [topDisplay, setTopDisplay] = useState("");
-    const [firstOperand, setFirstOperand] = useState<string | null>(null);
-    const [operator, setOperator] = useState<string | null>(null);
-    const [waitingForSecondOperand, setWaitingForSecondOperand] = useState(false);
+    type CalcState = { display: string; topDisplay: string; firstOperand: string | null; operator: string | null; waitingForSecondOperand: boolean };
+    const [state, setState] = useState<CalcState>({ display: "0", topDisplay: "", firstOperand: null, operator: null, waitingForSecondOperand: false });
 
     const inputDigit = (digit: string) => {
-        if (topDisplay.endsWith("=")) {
-            clearDisplay();
-        }
-        if (waitingForSecondOperand) {
-            setDisplay(digit);
-            setWaitingForSecondOperand(false);
-        } else {
-            setDisplay((prev) => (prev === "0" ? digit : prev + digit));
-        }
+        setState((prev) => {
+            if (prev.topDisplay.endsWith("=")) return { display: digit, topDisplay: "", firstOperand: null, operator: null, waitingForSecondOperand: false };
+            else if (prev.waitingForSecondOperand) return { ...prev, display: digit, waitingForSecondOperand: false };
+            else return { ...prev, display: prev.display === "0" ? digit : prev.display + digit };
+        });
+    };
+
+    const inputDecimal = () => {
+        setState((prev) => {
+            if (prev.waitingForSecondOperand) return { ...prev, display: "0.", waitingForSecondOperand: false };
+            else if (!prev.display.includes(".")) return { ...prev, display: prev.display + "." };
+            else return prev;
+        });
     };
 
     const performOperation = (nextOperator: string) => {
-        const inputValue = display;
-
-        if (firstOperand === null) {
-            setFirstOperand(inputValue);
-            setTopDisplay(`${inputValue}${nextOperator}`);
-        } else if (operator) {
-            const result = calculate(firstOperand, inputValue, operator);
-            setTopDisplay(`${result}${nextOperator}`);
-            setDisplay(result);
-            setFirstOperand(result);
-        }
-
-        setWaitingForSecondOperand(true);
-        setOperator(nextOperator);
+        setState((prev) => {
+            const { firstOperand, display, operator } = prev;
+            if (firstOperand === null) {
+                return { ...prev, firstOperand: display, operator: nextOperator, topDisplay: `${display}${nextOperator}`, waitingForSecondOperand: true };
+            } else if (operator) {
+                const result = calculate(firstOperand, display, operator);
+                const topDisplay = `${result}${nextOperator}`;
+                return { ...prev, display: result, firstOperand: result, operator: nextOperator, topDisplay, waitingForSecondOperand: true };
+            } else return { ...prev, operator: nextOperator, waitingForSecondOperand: true };
+        });
     };
 
     const parseBaseFloat = (input: string, base: number): number => {
@@ -92,7 +72,7 @@ export default function StandartCalculator({ base }: { base: Base }) {
                 result = first * second;
                 break;
             case "/":
-                result = Math.floor(first / second);
+                result = first / second;
                 break;
             case "AND":
                 result = first & second;
@@ -117,24 +97,17 @@ export default function StandartCalculator({ base }: { base: Base }) {
     };
 
     const handleEquals = () => {
-        if (!firstOperand || !operator) return;
+        setState((prev) => {
+            const { firstOperand, operator, display, topDisplay } = prev;
+            if (!firstOperand || !operator) return prev;
 
-        const inputValue = display;
-        const result = calculate(firstOperand, inputValue, operator);
-
-        setTopDisplay((prev) => prev + inputValue + "=");
-        setDisplay(result);
-        setFirstOperand(null);
-        setOperator(null);
-        setWaitingForSecondOperand(false);
+            const result = calculate(firstOperand, display, operator);
+            return { display: result, topDisplay: topDisplay + display + "=", firstOperand: null, operator: null, waitingForSecondOperand: false };
+        });
     };
 
     const clearDisplay = () => {
-        setTopDisplay("");
-        setDisplay("0");
-        setFirstOperand(null);
-        setOperator(null);
-        setWaitingForSecondOperand(false);
+        setState({ display: "0", topDisplay: "", firstOperand: null, operator: null, waitingForSecondOperand: false });
     };
 
     const getAvailableDigits = () => {
@@ -155,78 +128,60 @@ export default function StandartCalculator({ base }: { base: Base }) {
     };
 
     const handleDelete = () => {
-        setDisplay((prev) => {
-            if (prev.length > 1) {
-                return prev.slice(0, -1);
-            } else {
-                return "0";
-            }
+        setState((prev) => {
+            const { display } = prev;
+            if (display.length > 1) return { ...prev, display: display.slice(0, -1) };
+            else return { ...prev, display: "0" };
         });
     };
 
     const handleSignChange = () => {
-        if (display !== "0") {
+        setState((prev) => {
+            const { display } = prev;
+            if (display === "0") return prev;
             const baseNum = Number.parseInt(base);
             const decimalValue = Number.parseInt(display, baseNum);
             const negatedValue = -decimalValue;
-            setDisplay(negatedValue.toString(baseNum).toUpperCase());
-        }
+            return { ...prev, display: negatedValue.toString(baseNum).toUpperCase() };
+        });
     };
 
     const handleReciprocal = () => {
-        const baseNum = Number.parseInt(base);
-        const decimalValue = parseBaseFloat(display, baseNum);
-
-        if (decimalValue === 0) {
-            // setDisplay("Error")
-            return;
-        }
-
-        const reciprocalValue = 1 / decimalValue;
-        setTopDisplay(`1/${display} = `);
-        setDisplay(reciprocalValue.toString(baseNum).toUpperCase());
+        setState((prev) => {
+            const baseNum = Number.parseInt(base);
+            const decimalValue = parseBaseFloat(prev.display, baseNum);
+            if (decimalValue === 0) return prev;
+            const reciprocalValue = 1 / decimalValue;
+            return { ...prev, topDisplay: `1/${prev.display} = `, display: reciprocalValue.toString(baseNum).toUpperCase() };
+        });
     };
 
     const handlePercentage = () => {
-        const baseNum = Number.parseInt(base);
-        const decimalValue = parseBaseFloat(display, baseNum);
-        const percentValue = decimalValue / 100;
-        setTopDisplay(`%${display} = `);
-        setDisplay(percentValue.toString(baseNum).toUpperCase());
+        setState((prev) => {
+            const baseNum = Number.parseInt(base);
+            const decimalValue = parseBaseFloat(prev.display, baseNum);
+            const percentValue = decimalValue / 100;
+            return { ...prev, topDisplay: `%${prev.display} = `, display: percentValue.toString(baseNum).toUpperCase() };
+        });
     };
 
     const handleSquare = () => {
-        const baseNum = Number.parseInt(base);
-        const decimalValue = parseBaseFloat(display, baseNum);
-        const squaredValue = decimalValue * decimalValue;
-        setTopDisplay(`${display}² = `);
-        setDisplay(squaredValue.toString(baseNum).toUpperCase());
+        setState((prev) => {
+            const baseNum = Number.parseInt(base);
+            const decimalValue = parseBaseFloat(prev.display, baseNum);
+            const squaredValue = decimalValue * decimalValue;
+            return { ...prev, topDisplay: `${prev.display}² = `, display: squaredValue.toString(baseNum).toUpperCase() };
+        });
     };
 
     const handleSquareRoot = () => {
-        const baseNum = Number.parseInt(base);
-        const decimalValue = parseBaseFloat(display, baseNum);
-
-        if (decimalValue < 0) {
-            // setDisplay("Error")
-            return;
-        }
-
-        const sqrtValue = Math.sqrt(decimalValue);
-        setTopDisplay(`√${display} = `);
-        setDisplay(sqrtValue.toString(baseNum).toUpperCase());
-    };
-
-    const inputDecimal = () => {
-        if (waitingForSecondOperand) {
-            setDisplay("0.");
-            setWaitingForSecondOperand(false);
-            return;
-        }
-
-        if (!display.includes(".")) {
-            setDisplay(display + ".");
-        }
+        setState((prev) => {
+            const baseNum = Number.parseInt(base);
+            const decimalValue = parseBaseFloat(prev.display, baseNum);
+            if (decimalValue < 0) return prev;
+            const sqrtValue = Math.sqrt(decimalValue);
+            return { ...prev, topDisplay: `√${prev.display} = `, display: sqrtValue.toString(baseNum).toUpperCase() };
+        });
     };
 
     const digits = getAvailableDigits();
@@ -253,8 +208,8 @@ export default function StandartCalculator({ base }: { base: Base }) {
     return (
         <div className="space-y-4">
             <div className="flex flex-col items-end font-mono h-16 bg-muted/50 border rounded-md overflow-x-auto px-4 py-1">
-                <div className="text-sm text-gray-500">{topDisplay !== "" ? topDisplay : <>&nbsp;</>}</div>
-                <div className="text-2xl">{display}</div>
+                <div className="text-sm text-gray-500">{state.topDisplay !== "" ? state.topDisplay : <>&nbsp;</>}</div>
+                <div className="text-2xl">{state.display}</div>
             </div>
 
             <div className="grid grid-cols-4 gap-2">
