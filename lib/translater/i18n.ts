@@ -294,9 +294,150 @@ const translations: Record<Language, Record<string, string>> = {
         "calculator.info.warning.36":
             "When hexatrigesimal number system is selected, this calculator performs calculations according to the hexatrigesimal number system",
 
-        "calculator.seo.title": "Standard Calculator – Perform Calculations in Binary, Octal, Decimal, and Hexadecimal",
-        "calculator.seo.description": "Online calculator for numeral systems: perform calculations in any numeral system.",
-        "calculator.seo.keywords": "calculator, numeral systems, binary, octal, decimal, hexadecimal, number conversion, base converter, online calculator",
+        "calculator.seo.title.2": "Binary Calculator — Fast 0 and 1 Arithmetic Online",
+        "calculator.seo.description.2":
+            "Online binary numeral system calculator for performing all arithmetic operations — addition, subtraction, multiplication, division — directly in binary. Perfect for programming, electronics, computer science, and learning purposes.",
+        "calculator.seo.keywords.2":
+            "binary calculator, binary arithmetic, online binary calculator, base 2 calculator, 0 and 1 calculator, binary math, programmer calculator, electronics calculator, computer science calculator, fast binary calculations",
+        "calculator.seo.title.3": "Ternary Calculator — Online Base 3 Arithmetic with 0, 1, 2",
+        "calculator.seo.description.3":
+            "Online ternary numeral system calculator for performing all arithmetic operations — addition, subtraction, multiplication, division — directly in base 3. Supports integers, fractions, and negative numbers. Ideal for programming, mathematics, and learning.",
+        "calculator.seo.keywords.3":
+            "ternary calculator, base 3 calculator, ternary arithmetic, online base 3 calculator, 0 1 2 calculator, programming calculator, math calculator, computer science calculator, base three calculations, ternary math",
+        "calculator.seo.title.4": "Quartal System Calculator — Arithmetic and Scientific Functions",
+        "calculator.seo.description.4":
+            "With this online quartal (base 4) calculator, perform all arithmetic operations such as addition, subtraction, multiplication, and division in the 4-base system. Fully supports integers, fractions, and negative numbers. Convenient and fast usage in the base 4 system.",
+        "calculator.seo.keywords.4":
+            "quartal system, quartal calculator, base 4 calculator, 4-base calculator, quartal arithmetic, online quartal calculator, calculator for programmers",
+        "calculator.seo.title.5": "Base 5 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.5":
+            "Perform addition, subtraction, multiplication, division, and advanced arithmetic operations in base 5 using this online base 5 calculator. Supports integers, fractions, and negative numbers. Perfect for programmers and students.",
+        "calculator.seo.keywords.5": "base 5 calculator, online base 5 calculator, base 5 arithmetic, base 5 number system, programmer calculator",
+        "calculator.seo.title.6": "Base 6 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.6":
+            "Perform addition, subtraction, multiplication, division, and complex calculations in base 6 using this online base 6 calculator. Supports integers, fractions, and negative numbers. Convenient for programmers and students.",
+        "calculator.seo.keywords.6": "base 6 calculator, online base 6 calculator, base 6 arithmetic, base 6 number system, programmer calculator",
+        "calculator.seo.title.7": "Base 7 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.7":
+            "Use this online base 7 calculator to perform addition, subtraction, multiplication, division, and other arithmetic operations in base 7. Supports integers, fractions, and negative numbers. Perfect for programmers, students, and math enthusiasts.",
+        "calculator.seo.keywords.7": "base 7 calculator, online base 7 calculator, base 7 arithmetic, base 7 number system, programmer calculator",
+        "calculator.seo.title.8": "Octal System Calculator — Arithmetic and Scientific Functions",
+        "calculator.seo.description.8":
+            "With this online octal (base 8) calculator, perform all arithmetic operations such as addition, subtraction, multiplication, and division in the 8-base system. Fully supports integers, fractions, and negative numbers. Convenient and fast usage in the base 8 system.",
+        "calculator.seo.keywords.8":
+            "octal system, octal calculator, base 8 calculator, 8-base calculator, octal arithmetic, online octal calculator, calculator for programmers",
+        "calculator.seo.title.9": "Base 9 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.9":
+            "Perform addition, subtraction, multiplication, division, and complex calculations in base 9 using this online base 9 calculator. Supports integers, fractions, and negative numbers. Perfect for programmers, students, and math enthusiasts.",
+        "calculator.seo.keywords.9": "base 9 calculator, online base 9 calculator, base 9 arithmetic, base 9 number system, programmer calculator",
+        "calculator.seo.title.10": "Online Calculator — Arithmetic and Scientific Functions",
+        "calculator.seo.description.10":
+            "This online calculator allows you to perform arithmetic operations +, -, ×, ÷, change signs with ± and 1/x, calculate percentages with %, find squares and roots with x² and √x. Clear and ⌫ buttons make correcting mistakes easy. Fully supports integers, fractions, and negative numbers.",
+        "calculator.seo.keywords.10":
+            "online calculator, arithmetic functions, scientific functions, addition, subtraction, multiplication, division, ±, 1/x, %, x², √x, Clear, ⌫, integers, fractions, negative numbers",
+        "calculator.seo.title.11": "Base 11 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.11":
+            "Use this online base 11 calculator to perform addition, subtraction, multiplication, division, and other arithmetic operations in base 11. Supports integers, fractions, and negative numbers. Convenient for programmers and students.",
+        "calculator.seo.keywords.11": "base 11 calculator, online base 11 calculator, base 11 arithmetic, base 11 number system, programmer calculator",
+        "calculator.seo.title.12": "Base 12 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.12":
+            "Perform addition, subtraction, multiplication, and division in base 12. Fully supports integers, fractions, and negative numbers.",
+        "calculator.seo.keywords.12": "base 12 calculator, online base 12 calculator, base 12 arithmetic, base 12 number system, programmer calculator",
+        "calculator.seo.title.13": "Base 13 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.13":
+            "Use this online base 13 calculator to perform addition, subtraction, multiplication, and division. Supports integers, fractions, and negative numbers.",
+        "calculator.seo.keywords.13": "base 13 calculator, online base 13 calculator, base 13 arithmetic, base 13 number system, programmer calculator",
+        "calculator.seo.title.14": "Base 14 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.14":
+            "Perform addition, subtraction, multiplication, and division in base 14 with full support for integers, fractions, and negative numbers.",
+        "calculator.seo.keywords.14": "base 14 calculator, online base 14 calculator, base 14 arithmetic, base 14 number system, programmer calculator",
+        "calculator.seo.title.15": "Base 15 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.15":
+            "Perform addition, subtraction, multiplication, and division in base 15 using this online base 15 calculator. Full support for integers, fractions, and negative numbers.",
+        "calculator.seo.keywords.15": "base 15 calculator, online base 15 calculator, base 15 arithmetic, base 15 number system, programmer calculator",
+        "calculator.seo.title.16": "Hexadecimal System Calculator — Arithmetic and Scientific Functions",
+        "calculator.seo.description.16":
+            "With this online hexadecimal (base 16) calculator, perform all arithmetic operations such as addition, subtraction, multiplication, and division in the 16-base system. Fully supports integers, fractions, and negative numbers. Convenient and fast usage in the hexadecimal system.",
+        "calculator.seo.keywords.16":
+            "hexadecimal system, hexadecimal calculator, base 16 calculator, 16-base calculator, hexadecimal arithmetic, online hexadecimal calculator, calculator for programmers",
+        "calculator.seo.title.17": "Base 17 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.17":
+            "Perform addition, subtraction, multiplication, and division in base 17 using this online base 17 calculator. Full support for integers, fractions, and negative numbers.",
+        "calculator.seo.keywords.17": "base 17 calculator, online base 17 calculator, base 17 arithmetic, base 17 number system, programmer calculator",
+        "calculator.seo.title.18": "Base 18 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.18":
+            "Perform addition, subtraction, multiplication, and division in base 18 using this online base 18 calculator. Full support for integers, fractions, and negative numbers.",
+        "calculator.seo.keywords.18": "base 18 calculator, online base 18 calculator, base 18 arithmetic, base 18 number system, programmer calculator",
+        "calculator.seo.title.19": "Base 19 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.19":
+            "Quickly perform addition, subtraction, multiplication, and division in base 19. Supports integers, fractions, and negative numbers.",
+        "calculator.seo.keywords.19": "base 19 calculator, online base 19 calculator, base 19 arithmetic, base 19 number system, programmer calculator",
+        "calculator.seo.title.20": "Base 20 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.20":
+            "Perform addition, subtraction, multiplication, division, and complex calculations in base 20 with this online calculator. Supports integers, fractions, and negative numbers.",
+        "calculator.seo.keywords.20": "base 20 calculator, online base 20 calculator, base 20 arithmetic, base 20 number system, programmer calculator",
+        "calculator.seo.title.21": "Base 21 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.21":
+            "Use this online base 21 calculator to perform addition, subtraction, multiplication, and division. Supports integers, fractions, and negative numbers.",
+        "calculator.seo.keywords.21": "base 21 calculator, online base 21 calculator, base 21 arithmetic, base 21 number system, programmer calculator",
+        "calculator.seo.title.22": "Base 22 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.22":
+            "Perform arithmetic and scientific calculations quickly and easily in base 22 with this online calculator. Supports integers, fractions, and negative numbers.",
+        "calculator.seo.keywords.22": "base 22 calculator, online base 22 calculator, base 22 arithmetic, base 22 number system, programmer calculator",
+        "calculator.seo.title.23": "Base 23 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.23":
+            "Perform addition, subtraction, multiplication, division, and complex calculations in base 23 with this online calculator. Supports integers, fractions, and negative numbers.",
+        "calculator.seo.keywords.23": "base 23 calculator, online base 23 calculator, base 23 arithmetic, base 23 number system, programmer calculator",
+        "calculator.seo.title.24": "Base 24 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.24":
+            "Use this online base 24 calculator to perform arithmetic and scientific calculations. Supports integers, fractions, and negative numbers.",
+        "calculator.seo.keywords.24": "base 24 calculator, online base 24 calculator, base 24 arithmetic, base 24 number system, programmer calculator",
+        "calculator.seo.title.25": "Base 25 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.25":
+            "Perform addition, subtraction, multiplication, division, and complex calculations in base 25 using this online calculator. Supports integers, fractions, and negative numbers.",
+        "calculator.seo.keywords.25": "base 25 calculator, online base 25 calculator, base 25 arithmetic, base 25 number system, programmer calculator",
+        "calculator.seo.title.26": "Base 26 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.26":
+            "Perform arithmetic and scientific calculations in base 26, including addition, subtraction, multiplication, and division. Supports integers, fractions, and negative numbers.",
+        "calculator.seo.keywords.26": "base 26 calculator, online base 26 calculator, base 26 arithmetic, base 26 number system, programmer calculator",
+        "calculator.seo.title.27": "Base 27 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.27":
+            "Use this online base 27 calculator for quick and accurate addition, subtraction, multiplication, and division in base 27. Supports integers, fractions, and negative numbers.",
+        "calculator.seo.keywords.27": "base 27 calculator, online base 27 calculator, base 27 arithmetic, base 27 number system, programmer calculator",
+        "calculator.seo.title.28": "Base 28 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.28":
+            "Perform all arithmetic operations in base 28 using this online calculator. Supports integers, fractions, and negative numbers.",
+        "calculator.seo.keywords.28": "base 28 calculator, online base 28 calculator, base 28 arithmetic, base 28 number system, programmer calculator",
+        "calculator.seo.title.29": "Base 29 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.29":
+            "Use this online base 29 calculator for addition, subtraction, multiplication, division, and other advanced operations. Supports integers, fractions, and negative numbers.",
+        "calculator.seo.keywords.29": "base 29 calculator, online base 29 calculator, base 29 arithmetic, base 29 number system, programmer calculator",
+        "calculator.seo.title.30": "Base 30 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.30":
+            "Perform addition, subtraction, multiplication, division, and complex calculations in base 30 using this online calculator. Supports integers, fractions, and negative numbers.",
+        "calculator.seo.keywords.30": "base 30 calculator, online base 30 calculator, base 30 arithmetic, base 30 number system, programmer calculator",
+        "calculator.seo.title.31": "Base 31 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.31":
+            "Use this online base 31 calculator to perform addition, subtraction, multiplication, and division in base 31. Supports integers, fractions, and negative numbers.",
+        "calculator.seo.keywords.31": "base 31 calculator, online base 31 calculator, base 31 arithmetic, base 31 number system, programmer calculator",
+        "calculator.seo.title.32": "Base 32 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.32":
+            "Quickly perform addition, subtraction, multiplication, and division in base 32 with this online calculator. Supports integers, fractions, and negative numbers.",
+        "calculator.seo.keywords.32": "base 32 calculator, online base 32 calculator, base 32 arithmetic, base 32 number system, programmer calculator",
+        "calculator.seo.title.33": "Base 33 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.33": "Perform all arithmetic operations and advanced calculations in base 33 using this online calculator.",
+        "calculator.seo.keywords.33": "base 33 calculator, online base 33 calculator, base 33 arithmetic, base 33 number system, programmer calculator",
+        "calculator.seo.title.34": "Base 34 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.34":
+            "Perform addition, subtraction, multiplication, and division in base 34 with full support for integers, fractions, and negative numbers.",
+        "calculator.seo.keywords.34": "base 34 calculator, online base 34 calculator, base 34 arithmetic, base 34 number system, programmer calculator",
+        "calculator.seo.title.35": "Base 35 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.35": "Use this online base 35 calculator for all arithmetic operations and advanced computations.",
+        "calculator.seo.keywords.35": "base 35 calculator, online base 35 calculator, base 35 arithmetic, base 35 number system, programmer calculator",
+        "calculator.seo.title.36": "Base 36 Calculator - Arithmetic and Scientific Operations",
+        "calculator.seo.description.36":
+            "Perform addition, subtraction, multiplication, division, and work with integers, fractions, and negative numbers in base 36.",
+        "calculator.seo.keywords.36": "base 36 calculator, online base 36 calculator, base 36 arithmetic, base 36 number system, programmer calculator",
 
         // Code page
         "code.title": "Number Systems Code",
@@ -307,9 +448,9 @@ const translations: Record<Language, Record<string, string>> = {
         "about.description":
             "This app is designed for working with numeral systems. Whether you are a student, a developer, or simply someone interested in the world of numbers — this app can be a helpful guide for you. Through the app, you can learn about different numeral systems, perform calculations, and carry out the necessary conversions.",
         "about.page.conversion.desription":
-            "In this section, you can convert numbers from one numeral system to another — for example, from binary to decimal, from hexadecimal to octal, and so on. The interface is simple and intuitive, providing fast and accurate results",
+            "In this section, you can easily and accurately convert numbers from any numeral system with a base between 2 and 36 into any other numeral system within the same range. The tool supports not only integers but also fractional numbers and negative values. The conversion process doesn’t just provide the result — it explains each step in detail, helping you understand the underlying logic. The results are precise and reliable, making this tool useful for education, programming, mathematics, and everyday calculations. A user-friendly interface and clear explanations make it easier to grasp the concepts. Instead of memorizing complex conversion algorithms, you can now understand them in real time and apply them in practice.",
         "about.page.calculator.desription":
-            "It is possible to perform basic mathematical operations — addition, subtraction, multiplication, division, exponentiation, working with rational numbers and percentages — in any numeral system. You can get the required result directly, without converting the numbers beforehand",
+            "This section offers all the functions of a standard calculator, but with one important difference: you can choose any numeral system with a base from 2 to 36. All arithmetic operations — addition, subtraction, multiplication, division, and other calculations — are performed in the selected numeral system. This enables you not only to obtain results but also to observe the logic of calculations in that system in practice. The calculator supports integers, fractional numbers, and negative values.",
         "about.page.publications.desription":
             "This section provides both general and in-depth information about numeral systems: what a numeral system is and how it works; the differences between decimal, binary, octal, and hexadecimal systems; practical applications and historical background. This part is especially useful for students and learners",
         "about.page.code.desription":
@@ -339,6 +480,11 @@ const translations: Record<Language, Record<string, string>> = {
         "share.email": "Email",
         "share.copy": "Copy",
         "share.copied": "🎉 Copied",
+
+        // settings calculator
+        "calculator.settings.title": "Calculator Settings",
+        "calculator.settings.label": "Numaral System",
+        "calculator.settings.placeholder": "Select",
 
         // Sidebar
         "sidebar.topics": "Topics",
@@ -619,9 +765,177 @@ const translations: Record<Language, Record<string, string>> = {
         "calculator.info.warning.36":
             "O'ttiz oltilik sanoq sistemasi tanlangan holatda ushbu kalkulyator hisob kitoblarni o'ttiz oltilik sanoq sistemasi bo'yicha bajaradi",
 
-        "calculator.seo.title": "Standart kalkulyator - hisob-kitoblarni turli sanoq sistemalarida bajaring",
-        "calculator.seo.description": "Sanoq sistemalari uchun onlayn kalkulyator: istalgan sanoq sistemasida hisob-kitoblarni bajaring.",
-        "calculator.seo.keywords": "kalkulyator, sanoq sistemasi, ikkilik, o‘nlik, o‘n oltilik, hisoblash, matematik kalkulyator, onlayn kalkulyator",
+        "calculator.seo.title.2": "Ikkilik sanoq sistemasi kalkulyatori — arifmetik va ilmiy amallar",
+        "calculator.seo.description.2":
+            "Onlayn ikkilik sanoq sistemasi kalkulyatori yordamida 0 va 1 raqamlari bilan barcha arifmetik amallarni — qo‘shish, ayirish, ko‘paytirish, bo‘lish — to‘g‘ridan-to‘g‘ri ikkilik tizimda bajaring. Dasturlash, elektronika, kompyuter fanlari va ta’lim uchun qulay vosita.",
+        "calculator.seo.keywords.2":
+            "ikkilik sanoq sistemasi, binary kalkulyator, ikkilik tizim kalkulyatori, ikkilik hisoblash, 0 va 1 kalkulyator, binary arithmetic, onlayn ikkilik kalkulyator, kompyuter fanlari kalkulyator, elektronika hisoblash, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.3": "Uchlik sanoq sistemasi kalkulyatori — arifmetik va ilmiy amallar",
+        "calculator.seo.description.3":
+            "Onlayn uchlik sanoq sistemasi kalkulyatori yordamida barcha arifmetik amallarni — qo‘shish, ayirish, ko‘paytirish, bo‘lish — to‘g‘ridan-to‘g‘ri uchlik tizimda bajaring. Butun, kasr va manfiy sonlarni qo‘llab-quvvatlaydi. Dasturlash, matematika va ta’lim uchun qulay vosita.",
+        "calculator.seo.keywords.3":
+            "uchlik sanoq sistemasi, ternary kalkulyator, uchlik tizim kalkulyatori, 0 1 2 kalkulyator, uchlik arifmetika, onlayn ternary kalkulyator, kompyuter fanlari kalkulyator, dasturchilar uchun kalkulyator, base 3 calculator, uchlik hisoblash",
+        "calculator.seo.title.4": "To‘rtlik sanoq sistemasi kalkulyatori — arifmetik va ilmiy amallar",
+        "calculator.seo.description.4":
+            "Onlayn to‘rtlik (quartal) sanoq sistemasi kalkulyatori yordamida qo‘shish, ayirish, ko‘paytirish, bo‘lish kabi barcha arifmetik amallarni 4-lik tizimda bajaring. Butun, kasr va manfiy sonlar bilan ishlash to‘liq qo‘llab-quvvatlanadi. 4-lik tizimni qulay va tez ishlatish imkonini beradi.",
+        "calculator.seo.keywords.4":
+            "to‘rtlik sanoq sistemi, quartal kalkulyator, 4-lik tizim kalkulyatori, base 4 calculator, to‘rtlik arifmetika, onlayn quartal kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.5": "Beshlik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.5":
+            "Onlayn 5-lik (base 5) sanoq sistemasi kalkulyatori yordamida qo‘shish, ayirish, ko‘paytirish, bo‘lish va murakkab arifmetik amallarni 5-lik tizimda bajarish mumkin. Butun, kasr va manfiy sonlarni qo‘llab-quvvatlaydi. Dasturchilar va talabalar uchun ideal.",
+        "calculator.seo.keywords.5": "5-lik sanoq sistemi, base 5 kalkulyator, 5-lik arifmetika, onlayn 5-lik kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.6": "Oltilik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.6":
+            "Onlayn 6-lik (base 6) sanoq sistemasi kalkulyatori qo‘shish, ayirish, ko‘paytirish, bo‘lish va murakkab hisob-kitoblarni 6-lik tizimda bajarish imkonini beradi. Butun, kasr va manfiy sonlar bilan ishlash to‘liq qo‘llab-quvvatlanadi. Dasturchilar va talabalar uchun qulay vosita.",
+        "calculator.seo.keywords.6": "6-lik sanoq sistemi, base 6 kalkulyator, 6-lik arifmetika, onlayn base 6 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.7": "Yettilik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.7":
+            "Onlayn 7-lik (base 7) sanoq sistemasi kalkulyatori yordamida qo‘shish, ayirish, ko‘paytirish, bo‘lish va boshqa arifmetik amallarni 7-lik tizimda bajarish mumkin. Butun, kasr va manfiy sonlarni qo‘llab-quvvatlaydi. Dasturchilar, talabalar va matematika ixlosmandlari uchun ajoyib vosita.",
+        "calculator.seo.keywords.7": "7-lik sanoq sistemi, base 7 kalkulyator, 7-lik arifmetika, onlayn base 7 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.8": "Sakkizlik sanoq sistemasi kalkulyatori — arifmetik va ilmiy amallar",
+        "calculator.seo.description.8":
+            "Onlayn sakkizlik (octal) sanoq sistemasi kalkulyatori yordamida qo‘shish, ayirish, ko‘paytirish, bo‘lish kabi barcha arifmetik amallarni 8-lik tizimda bajaring. Butun, kasr va manfiy sonlar bilan ishlash to‘liq qo‘llab-quvvatlanadi. 8-lik tizimni qulay va tez ishlatish imkonini beradi.",
+        "calculator.seo.keywords.8":
+            "sakkizlik sanoq sistemi, octal kalkulyator, 8-lik tizim kalkulyatori, base 8 calculator, sakkizlik arifmetika, onlayn octal kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.9": "To'qqizlik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.9":
+            "Onlayn 9-lik (base 9) sanoq sistemasi kalkulyatori yordamida qo‘shish, ayirish, ko‘paytirish, bo‘lish va murakkab hisob-kitoblarni 9-lik tizimda bajarish mumkin. Butun, kasr va manfiy sonlar to‘liq qo‘llab-quvvatlanadi. Dasturchilar, talabalar va matematika ixlosmandlari uchun ideal.",
+        "calculator.seo.keywords.9": "9-lik sanoq sistemi, base 9 kalkulyator, 9-lik arifmetika, onlayn base 9 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.10": "Onlayn kalkulyator — arifmetik va ilmiy amallar",
+        "calculator.seo.description.10":
+            "Ushbu onlayn kalkulyator orqali +, -, ×, ÷ kabi arifmetik amallarni bajarishingiz, ± va 1/x bilan ishora o‘zgartirishingiz, % bilan foizni hisoblashingiz, x² va √x bilan kvadrat va ildizni topishingiz mumkin. Clear va ⌫ tugmalari yordamida xatolarni tuzatish oson. Butun, kasr va manfiy sonlar bilan ishlash to‘liq qo‘llab-quvvatlanadi.",
+        "calculator.seo.keywords.10":
+            "onlayn kalkulyator, arifmetik amallar, ilmiy amallar, qo‘shish, ayirish, ko‘paytirish, bo‘lish, ±, 1/x, %, x², √x, Clear, ⌫, butun sonlar, kasr sonlar, manfiy sonlar",
+        "calculator.seo.title.11": "O‘n birlik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.11":
+            "Onlayn 11-lik (base 11) sanoq sistemasi kalkulyatori yordamida qo‘shish, ayirish, ko‘paytirish, bo‘lish va boshqa murakkab arifmetik amallarni 11-lik tizimda bajarish mumkin. Butun, kasr va manfiy sonlarni to‘liq qo‘llab-quvvatlaydi. Dasturchilar va talabalar uchun qulay vosita.",
+        "calculator.seo.keywords.11":
+            "11-lik sanoq sistemi, base 11 kalkulyator, 11-lik arifmetika, onlayn base 11 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.12": "O'n ikkilik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.12":
+            "Onlayn 12-lik (base 12) sanoq tizimi kalkulyatori yordamida qo‘shish, ayirish, ko‘paytirish, bo‘lish kabi arifmetik amallarni bajarish mumkin. Butun, kasr va manfiy sonlar qo‘llab-quvvatlanadi.",
+        "calculator.seo.keywords.12":
+            "12-lik sanoq sistemi, base 12 kalkulyator, 12-lik arifmetika, onlayn base 12 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.13": "O'n uchlik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.13":
+            "Onlayn 13-lik (base 13) sanoq tizimi kalkulyatori yordamida tez va aniq arifmetik amallarni bajarish mumkin. Butun, kasr va manfiy sonlar qo‘llab-quvvatlanadi.",
+        "calculator.seo.keywords.13":
+            "13-lik sanoq sistemi, base 13 kalkulyator, 13-lik arifmetika, onlayn base 13 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.14": "O'n to'rtlik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.14":
+            "Onlayn 14-lik (base 14) sanoq tizimi kalkulyatori yordamida qo‘shish, ayirish, ko‘paytirish, bo‘lish kabi amallarni bajarish mumkin. Butun, kasr va manfiy sonlar qo‘llab-quvvatlanadi.",
+        "calculator.seo.keywords.14":
+            "14-lik sanoq sistemi, base 14 kalkulyator, 14-lik arifmetika, onlayn base 14 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.15": "O‘n beshlik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.15":
+            "Onlayn o‘n beshlik (base 15) sanoq sistemasi kalkulyatori yordamida qo‘shish, ayirish, ko‘paytirish, bo‘lish kabi barcha arifmetik amallarni 15-lik tizimda bajaring. Butun, kasr va manfiy sonlar bilan ishlash to‘liq qo‘llab-quvvatlanadi.",
+        "calculator.seo.keywords.15":
+            "o‘n beshlik sanoq sistemasi, base 15 kalkulyator, 15-lik tizim kalkulyatori, onlayn base 15 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.16": "O‘n oltilik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.16":
+            "Onlayn o‘n oltilik (hexadecimal) sanoq sistemasi kalkulyatori yordamida qo‘shish, ayirish, ko‘paytirish, bo‘lish kabi barcha arifmetik amallarni 16-lik tizimda bajaring. Butun, kasr va manfiy sonlar bilan ishlash to‘liq qo‘llab-quvvatlanadi. 16-lik (hexadecimal) tizimni qulay va tez ishlatish imkonini beradi.",
+        "calculator.seo.keywords.16":
+            "o‘n oltilik sanoq sistemasi, hexadecimal kalkulyator, 16-lik tizim kalkulyatori, base 16 calculator, o‘n oltilik arifmetika, onlayn hexadecimal kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.17": "O‘n yettilik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.17":
+            "Onlayn o‘n yettilik (base 17) sanoq sistemasi kalkulyatori yordamida qo‘shish, ayirish, ko‘paytirish, bo‘lish kabi barcha arifmetik amallarni 17-lik tizimda bajaring. Butun, kasr va manfiy sonlar bilan ishlash to‘liq qo‘llab-quvvatlanadi.",
+        "calculator.seo.keywords.17":
+            "o‘n yettilik sanoq sistemasi, base 17 kalkulyator, 17-lik tizim kalkulyatori, onlayn base 17 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.18": "O‘n sakkizlik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.18":
+            "Onlayn o‘n sakkizlik (base 18) sanoq sistemasi kalkulyatori yordamida qo‘shish, ayirish, ko‘paytirish, bo‘lish kabi barcha arifmetik amallarni 18-lik tizimda bajaring. Butun, kasr va manfiy sonlar bilan ishlash to‘liq qo‘llab-quvvatlanadi.",
+        "calculator.seo.keywords.18":
+            "o‘n sakkizlik sanoq sistemasi, base 18 kalkulyator, 18-lik tizim kalkulyatori, onlayn base 18 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.19": "O'n to'qqizlik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.19":
+            "Onlayn 19-lik (base 19) sanoq tizimi kalkulyatori yordamida barcha arifmetik amallarni tez va aniq bajarish mumkin. Butun, kasr va manfiy sonlar qo‘llab-quvvatlanadi.",
+        "calculator.seo.keywords.19":
+            "19-lik sanoq sistemi, base 19 kalkulyator, 19-lik arifmetika, onlayn base 19 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.20": "Yigirmalik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.20":
+            "Onlayn 20-lik (base 20) sanoq tizimi kalkulyatori yordamida qo‘shish, ayirish, ko‘paytirish, bo‘lish va murakkab hisob-kitoblarni bajarish mumkin. Butun, kasr va manfiy sonlar bilan ishlash to‘liq qo‘llab-quvvatlanadi.",
+        "calculator.seo.keywords.20":
+            "20-lik sanoq sistemi, base 20 kalkulyator, 20-lik arifmetika, onlayn base 20 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.21": "Yigirma birlik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.21":
+            "21-lik (base 21) tizimida qo‘shish, ayirish, ko‘paytirish va bo‘lish amallarini bajarish uchun onlayn kalkulyator. Butun, kasr va manfiy sonlar qo‘llab-quvvatlanadi.",
+        "calculator.seo.keywords.21":
+            "21-lik sanoq sistemi, base 21 kalkulyator, 21-lik arifmetika, onlayn base 21 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.22": "Yigirma ikkilik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.22":
+            "Onlayn 22-lik (base 22) sanoq tizimi kalkulyatori orqali arifmetik va ilmiy hisob-kitoblarni tez va oson bajarish mumkin. Butun, kasr va manfiy sonlar qo‘llab-quvvatlanadi.",
+        "calculator.seo.keywords.22":
+            "22-lik sanoq sistemi, base 22 kalkulyator, 22-lik arifmetika, onlayn base 22 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.23": "Yigirma uchlik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.23":
+            "Onlayn 23-lik (base 23) sanoq tizimi kalkulyatori yordamida qo‘shish, ayirish, ko‘paytirish, bo‘lish va murakkab hisob-kitoblarni bajarish mumkin. Butun, kasr va manfiy sonlar bilan ishlash to‘liq qo‘llab-quvvatlanadi.",
+        "calculator.seo.keywords.23":
+            "23-lik sanoq sistemi, base 23 kalkulyator, 23-lik arifmetika, onlayn base 23 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.24": "Yigirma to'rtlik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.24":
+            "24-lik (base 24) tizimida arifmetik va ilmiy amallarni bajarish uchun onlayn kalkulyator. Butun, kasr va manfiy sonlar to‘liq qo‘llab-quvvatlanadi.",
+        "calculator.seo.keywords.24":
+            "24-lik sanoq sistemi, base 24 kalkulyator, 24-lik arifmetika, onlayn base 24 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.25": "Yigirma beshlik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.25":
+            "Onlayn 25-lik (base 25) sanoq tizimi kalkulyatori orqali qo‘shish, ayirish, ko‘paytirish, bo‘lish va murakkab hisob-kitoblarni bajarish mumkin. Butun, kasr va manfiy sonlar bilan ishlash imkoniyati mavjud.",
+        "calculator.seo.keywords.25":
+            "25-lik sanoq sistemi, base 25 kalkulyator, 25-lik arifmetika, onlayn base 25 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.26": "Yigirma oltilik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.26":
+            "Onlayn 26-lik (base 26) sanoq tizimi kalkulyatori yordamida qo‘shish, ayirish, ko‘paytirish, bo‘lish va murakkab hisob-kitoblarni tez va aniq bajarish mumkin. Butun, kasr va manfiy sonlar qo‘llab-quvvatlanadi.",
+        "calculator.seo.keywords.26":
+            "26-lik sanoq sistemi, base 26 kalkulyator, 26-lik arifmetika, onlayn base 26 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.27": "Yigirma yettilik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.27":
+            "Onlayn 27-lik (base 27) sanoq tizimi kalkulyatori orqali qo‘shish, ayirish, ko‘paytirish, bo‘lish va murakkab hisob-kitoblarni qulay va tez bajarish mumkin. Butun, kasr va manfiy sonlarni to‘liq qo‘llab-quvvatlaydi.",
+        "calculator.seo.keywords.27":
+            "27-lik sanoq sistemi, base 27 kalkulyator, 27-lik arifmetika, onlayn base 27 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.28": "Yigirma sakkizlik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.28":
+            "Onlayn 28-lik (base 28) sanoq tizimi kalkulyatori yordamida barcha arifmetik amallarni bajarish mumkin: qo‘shish, ayirish, ko‘paytirish, bo‘lish. Butun, kasr va manfiy sonlar bilan ishlash to‘liq qo‘llab-quvvatlanadi.",
+        "calculator.seo.keywords.28":
+            "28-lik sanoq sistemi, base 28 kalkulyator, 28-lik arifmetika, onlayn base 28 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.29": "Yigirma to'qqizlik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.29":
+            "Onlayn 29-lik (base 29) sanoq tizimi kalkulyatori yordamida qo‘shish, ayirish, ko‘paytirish, bo‘lish va boshqa murakkab amallarni aniq va tez bajarish mumkin. Butun, kasr va manfiy sonlar qo‘llab-quvvatlanadi.",
+        "calculator.seo.keywords.29":
+            "29-lik sanoq sistemi, base 29 kalkulyator, 29-lik arifmetika, onlayn base 29 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.30": "O'ttizlik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.30":
+            "Onlayn 30-lik (base 30) sanoq tizimi kalkulyatori yordamida qo‘shish, ayirish, ko‘paytirish, bo‘lish va boshqa murakkab arifmetik amallarni bajarish mumkin. Butun, kasr va manfiy sonlar qo‘llab-quvvatlanadi.",
+        "calculator.seo.keywords.30":
+            "30-lik sanoq sistemi, base 30 kalkulyator, 30-lik arifmetika, onlayn base 30 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.31": "O'ttiz birlik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.31":
+            "Onlayn 31-lik (base 31) sanoq tizimi kalkulyatori orqali barcha arifmetik amallarni bajarish mumkin: qo‘shish, ayirish, ko‘paytirish, bo‘lish. Butun, kasr va manfiy sonlar qo‘llab-quvvatlanadi.",
+        "calculator.seo.keywords.31":
+            "31-lik sanoq sistemi, base 31 kalkulyator, 31-lik arifmetika, onlayn base 31 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.32": "O'ttiz ikkilik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.32":
+            "Onlayn 32-lik (base 32) sanoq tizimi kalkulyatori yordamida tez va aniq arifmetik amallarni bajarish mumkin. Butun, kasr va manfiy sonlarni to‘liq qo‘llab-quvvatlaydi.",
+        "calculator.seo.keywords.32":
+            "32-lik sanoq sistemi, base 32 kalkulyator, 32-lik arifmetika, onlayn base 32 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.33": "O'ttiz uchlik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.33":
+            "Onlayn 33-lik (base 33) sanoq tizimi kalkulyatori orqali qo‘shish, ayirish, ko‘paytirish, bo‘lish va boshqa murakkab amallarni bajarish mumkin.",
+        "calculator.seo.keywords.33":
+            "33-lik sanoq sistemi, base 33 kalkulyator, 33-lik arifmetika, onlayn base 33 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.34": "O'ttiz to'rtlik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.34":
+            "Onlayn 34-lik (base 34) sanoq tizimi kalkulyatori yordamida barcha arifmetik amallarni bajarish mumkin. Butun, kasr va manfiy sonlar bilan ishlash imkoniyati mavjud.",
+        "calculator.seo.keywords.34":
+            "34-lik sanoq sistemi, base 34 kalkulyator, 34-lik arifmetika, onlayn base 34 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.35": "O'ttiz beshlik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.35":
+            "Onlayn 35-lik (base 35) sanoq tizimi kalkulyatori yordamida qo‘shish, ayirish, ko‘paytirish, bo‘lish va murakkab amallarni bajarish mumkin.",
+        "calculator.seo.keywords.35":
+            "35-lik sanoq sistemi, base 35 kalkulyator, 35-lik arifmetika, onlayn base 35 kalkulyator, dasturchilar uchun kalkulyator",
+        "calculator.seo.title.36": "O'ttiz oltilik sanoq sistemasi kalkulyatori - arifmetik va ilmiy amallar",
+        "calculator.seo.description.36":
+            "Onlayn 36-lik (base 36) sanoq tizimi kalkulyatori yordamida barcha arifmetik amallarni bajarish mumkin. Butun, kasr va manfiy sonlar qo‘llab-quvvatlanadi.",
+        "calculator.seo.keywords.36":
+            "36-lik sanoq sistemi, base 36 kalkulyator, 36-lik arifmetika, onlayn base 36 kalkulyator, dasturchilar uchun kalkulyator",
 
         // Code page
         "code.title": "Sanoq Sistemalari Kodi",
@@ -632,9 +946,9 @@ const translations: Record<Language, Record<string, string>> = {
         "about.description":
             "Ushbu ilova sanoq sistemalari bilan ishlash uchun mo‘ljallangan. Agar siz talaba, dasturchi yoki shunchaki raqamlar olamiga qiziquvchi bo‘lsangiz — bu ilova siz uchun foydali qo‘llanma bo‘la oladi. Ilova orqali siz turli sanoq sistemalari bo‘yicha bilim olishingiz, hisob-kitob qilishingiz va kerakli konvertatsiyalarni bajarishingiz mumkin.",
         "about.page.conversion.desription":
-            "Bu bo‘limda siz sonlarni bir sanoq sistemasidan boshqasiga o‘tkazishingiz mumkin — masalan, ikkilikdan o‘nlikka, o‘n oltilikdan sakkizlikka va boshqalar. Interfeys sodda va tushunarli bo‘lib, tezkor va aniq natijalar taqdim etadi.",
+            "Bu bo‘lim orqali siz 2 dan 36 gacha bo‘lgan istalgan sanoq sistemasidan boshqa istalgan sanoq sistemasiga sonlarni oson va aniq tarzda o‘tkazishingiz mumkin. Faqat butun sonlar emas, balki kasr sonlar va manfiy qiymatlar ham to‘liq qo‘llab-quvvatlanadi. Konversiya jarayoni nafaqat natija beradi, balki har bir qadamni tushunarli qilib izohlaydi, shu orqali siz jarayon mantiqini o‘rganishingiz mumkin. Natijalar aniq va ishonchli bo‘lib, siz ta’lim, dasturlash, matematika yoki kundalik hisob-kitoblarda foydalana olasiz. Qulay interfeys va tushuntirishlar. Siz endi murakkab konvertatsiyalarni yodlab qolish o‘rniga, ularni real vaqt rejimida tushunishingiz va amalda qo‘llashingiz mumkin.",
         "about.page.calculator.desription":
-            "Oddiy matematik amallar qo‘shish, ayirish, ko‘paytirish, bo‘lishdan tortib daraja, ratsional sonlar, foizgacha – istalgan sanoq sistemasida bajarish imkoniyati mavjud. Sonlarni oldin o‘zgartirib o‘tirmasdan, to‘g‘ridan-to‘g‘ri kerakli natijani olish mumkin.",
+            "Bu bo‘lim odatiy standart kalkulyatorning barcha imkoniyatlarini taqdim etadi, biroq bitta farq bilan: siz 2 dan 36 gacha bo‘lgan istalgan sanoq sistemasini tanlashingiz mumkin. Barcha arifmetik amallar — qo‘shish, ayirish, ko‘paytirish, bo‘lish va boshqa hisob-kitoblar — tanlangan sanoq sistemasida amalga oshiriladi. Bu sizga nafaqat natijalarni olish, balki o‘sha sanoq sistemasida hisoblash mantiqini amalda ko‘rish imkonini beradi. Kalkulyator butun, kasr va manfiy sonlarni qo‘llab-quvvatlaydi.",
         "about.page.publications.desription":
             "Bu bo‘limda sanoq sistemalari haqida umumiy va chuqurroq ma’lumotlar beriladi: Sanoq sistemasi nima va qanday ishlaydi; O‘nlik, ikkilik, sakkizlik, o‘n oltilik kabi tizimlar farqi; Amaliyotda qo‘llanishi va tarixiy izohlar. Bu qism ayniqsa o‘quvchilar va o‘rganuvchilar uchun foydalidir.",
         "about.page.code.desription":
@@ -664,6 +978,11 @@ const translations: Record<Language, Record<string, string>> = {
         "share.email": "Email",
         "share.copy": "Nusxalash",
         "share.copied": "🎉 Nusxalandi",
+
+        // settings calculator
+        "calculator.settings.title": "Kalkulyator sozlamalari",
+        "calculator.settings.label": "Sanoq sistemasi",
+        "calculator.settings.placeholder": "Tanlang",
 
         // Sidebar
         "sidebar.topics": "Mavzular",
@@ -963,10 +1282,154 @@ const translations: Record<Language, Record<string, string>> = {
         "calculator.info.warning.36":
             "При выборе тридцать шесть системы счисления данный калькулятор выполняет вычисления согласно тридцать шесть системе счисления",
 
-        "calculator.seo.title": "Стандартный калькулятор — вычисления в двоичной, восьмеричной, десятичной и шестнадцатеричной системах",
-        "calculator.seo.description": "Онлайн-калькулятор для систем счисления: выполняйте вычисления в любой системе счисления.",
-        "calculator.seo.keywords":
-            "калькулятор, система счисления, двоичная, восьмеричная, десятичная, шестнадцатеричная, конвертация чисел, онлайн калькулятор",
+        "calculator.seo.title.2": "Калькулятор двоичной системы — арифметические и научные операции",
+        "calculator.seo.description.2":
+            "Онлайн-калькулятор двоичной системы счисления для выполнения всех арифметических операций — сложение, вычитание, умножение, деление — прямо в двоичной системе. Идеален для программирования, электроники, компьютерных наук и обучения.",
+        "calculator.seo.keywords.2":
+            "двоичная система счисления, двоичный калькулятор, binary calculator, двоичная арифметика, онлайн калькулятор 0 и 1, калькулятор для программистов, калькулятор для электроники, компьютерная арифметика, быстрые расчёты двоичная",
+        "calculator.seo.title.3": "Калькулятор троичной системы — арифметические и научные операции",
+        "calculator.seo.description.3":
+            "Онлайн-калькулятор троичной системы счисления для выполнения всех арифметических операций — сложение, вычитание, умножение, деление — прямо в троичной системе. Поддерживает целые, дробные и отрицательные числа. Подходит для программирования, математики и обучения.",
+        "calculator.seo.keywords.3":
+            "троичная система счисления, троичный калькулятор, ternary calculator, троичная арифметика, онлайн калькулятор 0 1 2, калькулятор для программистов, калькулятор base 3, математика онлайн, компьютерная арифметика, расчёты в троичной системе",
+        "calculator.seo.title.4": "Калькулятор четверичной системы — арифметические и научные операции",
+        "calculator.seo.description.4":
+            "С помощью онлайн-калькулятора четверичной (quartal) системы выполняйте все арифметические операции +, -, ×, ÷ в 4-ричной системе. Полная поддержка целых, дробных и отрицательных чисел. Удобная и быстрая работа в 4-ричной системе.",
+        "calculator.seo.keywords.4":
+            "четверичная система, quartal калькулятор, калькулятор base 4, base 4 calculator, четверичная арифметика, онлайн quartal калькулятор, калькулятор для программистов",
+        "calculator.seo.title.5": "Калькулятор пятеричной системы - арифметика и научные операции",
+        "calculator.seo.description.5":
+            "Онлайн калькулятор пятеричной (base 5) системы позволяет выполнять сложение, вычитание, умножение, деление и другие арифметические операции в системе base 5. Поддержка целых, дробных и отрицательных чисел. Идеально для программистов и студентов.",
+        "calculator.seo.keywords.5": "пятеричная система, калькулятор base 5, арифметика base 5, онлайн калькулятор 5, калькулятор для программистов",
+        "calculator.seo.title.6": "Калькулятор шестиричной системы - арифметика и научные операции",
+        "calculator.seo.description.6":
+            "Онлайн калькулятор шестиричной (base 6) системы позволяет выполнять сложение, вычитание, умножение, деление и сложные вычисления в системе base 6. Полная поддержка целых, дробных и отрицательных чисел. Удобно для программистов и студентов.",
+        "calculator.seo.keywords.6": "шестиричная система, калькулятор base 6, арифметика base 6, онлайн калькулятор 6, калькулятор для программистов",
+        "calculator.seo.title.7": "Калькулятор семеричной системы - арифметика и научные операции",
+        "calculator.seo.description.7":
+            "Онлайн калькулятор семеричной (base 7) системы позволяет выполнять сложение, вычитание, умножение, деление и другие арифметические операции в системе base 7. Поддержка целых, дробных и отрицательных чисел. Отлично подходит для программистов, студентов и любителей математики.",
+        "calculator.seo.keywords.7": "семеричная система, калькулятор base 7, арифметика base 7, онлайн калькулятор 7, калькулятор для программистов",
+        "calculator.seo.title.8": "Калькулятор восьмеричной системы — арифметические и научные операции",
+        "calculator.seo.description.8":
+            "С помощью онлайн-калькулятора восьмеричной (octal) системы выполняйте все арифметические операции +, -, ×, ÷ в 8-ричной системе. Полная поддержка целых, дробных и отрицательных чисел. Удобная и быстрая работа в 8-ричной системе.",
+        "calculator.seo.keywords.8":
+            "восьмеричная система, octal калькулятор, калькулятор base 8, base 8 calculator, восьмеричная арифметика, онлайн octal калькулятор, калькулятор для программистов",
+        "calculator.seo.title.9": "Калькулятор девятеричной системы - арифметика и научные операции",
+        "calculator.seo.description.9":
+            "Онлайн калькулятор девятеричной (base 9) системы позволяет выполнять сложение, вычитание, умножение, деление и сложные вычисления в системе base 9. Полная поддержка целых, дробных и отрицательных чисел. Отлично подходит для программистов, студентов и любителей математики.",
+        "calculator.seo.keywords.9": "девятеричная система, калькулятор base 9, арифметика base 9, онлайн калькулятор 9, калькулятор для программистов",
+        "calculator.seo.title.10": "Онлайн-калькулятор — арифметические и научные операции",
+        "calculator.seo.description.10":
+            "С помощью этого онлайн-калькулятора вы можете выполнять арифметические операции +, -, ×, ÷, менять знак числа с помощью ± и 1/x, рассчитывать процент с %, находить квадрат и корень с x² и √x. Кнопки Clear и ⌫ помогут легко исправлять ошибки. Полная поддержка целых, дробных и отрицательных чисел.",
+        "calculator.seo.keywords.10":
+            "онлайн калькулятор, арифметические операции, научные операции, сложение, вычитание, умножение, деление, ±, 1/x, %, x², √x, Clear, ⌫, целые числа, дробные числа, отрицательные числа",
+        "calculator.seo.title.11": "Калькулятор одиннадцатеричной системы - арифметика и научные операции",
+        "calculator.seo.description.11":
+            "Онлайн калькулятор одиннадцатеричной (base 11) системы позволяет выполнять сложение, вычитание, умножение, деление и другие арифметические операции в системе base 11. Поддержка целых, дробных и отрицательных чисел. Удобно для программистов и студентов.",
+        "calculator.seo.keywords.11":
+            "одиннадцатеричная система, калькулятор base 11, арифметика base 11, онлайн калькулятор 11, калькулятор для программистов",
+        "calculator.seo.title.12": "Калькулятор двенадцатеричной системы - арифметика и научные операции",
+        "calculator.seo.description.12":
+            "Онлайн калькулятор системы base 12 позволяет выполнять сложение, вычитание, умножение и деление, а также работать с отрицательными и дробными числами.",
+        "calculator.seo.keywords.12": "двенадцатеричная система, калькулятор base 12, арифметика base 12, онлайн калькулятор 12, калькулятор для программистов",
+        "calculator.seo.title.13": "Калькулятор тринадцатеричной системы - арифметика и научные операции",
+        "calculator.seo.description.13":
+            "Онлайн калькулятор системы base 13 выполняет сложение, вычитание, умножение и деление с поддержкой отрицательных и дробных чисел.",
+        "calculator.seo.keywords.13": "тринадцатеричная система, калькулятор base 13, арифметика base 13, онлайн калькулятор 13, калькулятор для программистов",
+        "calculator.seo.title.14": "Калькулятор четырнадцатеричной системы - арифметика и научные операции",
+        "calculator.seo.description.14":
+            "Онлайн калькулятор системы base 14 позволяет быстро и удобно выполнять сложение, вычитание, умножение и деление. Поддержка дробных и отрицательных чисел.",
+        "calculator.seo.keywords.14":
+            "четырнадцатеричная система, калькулятор base 14, арифметика base 14, онлайн калькулятор 14, калькулятор для программистов",
+        "calculator.seo.title.15": "Калькулятор пятнадцатеричной системы - арифметические и научные операции",
+        "calculator.seo.description.15":
+            "Онлайн калькулятор пятнадцатеричной (base 15) системы позволяет выполнять сложение, вычитание, умножение и деление в 15-й системе счисления. Полная поддержка целых, дробных и отрицательных чисел.",
+        "calculator.seo.keywords.15": "пятнадцатеричная система, калькулятор base 15, онлайн калькулятор 15, арифметика base 15, калькулятор для программистов",
+        "calculator.seo.title.16": "Калькулятор шестнадцатеричной системы — арифметические и научные операции",
+        "calculator.seo.description.16":
+            "С помощью онлайн-калькулятора шестнадцатеричной (hexadecimal) системы выполняйте все арифметические операции +, -, ×, ÷ в 16-ричной системе. Полная поддержка целых, дробных и отрицательных чисел. Удобная и быстрая работа в шестнадцатеричной (hexadecimal) системе.",
+        "calculator.seo.keywords.16":
+            "шестнадцатеричная система, hexadecimal калькулятор, калькулятор base 16, base 16 calculator, шестнадцатеричная арифметика, онлайн hexadecimal калькулятор, калькулятор для программистов",
+        "calculator.seo.title.17": "Калькулятор семнадцатеричной системы - арифметические и научные операции",
+        "calculator.seo.description.17":
+            "Онлайн калькулятор семнадцатеричной (base 17) системы позволяет выполнять сложение, вычитание, умножение и деление в 17-й системе счисления. Полная поддержка целых, дробных и отрицательных чисел.",
+        "calculator.seo.keywords.17": "семнадцатеричная система, калькулятор base 17, онлайн калькулятор 17, арифметика base 17, калькулятор для программистов",
+        "calculator.seo.title.18": "Калькулятор восемнадцатеричной системы - арифметические и научные операции",
+        "calculator.seo.description.18":
+            "Онлайн калькулятор восемнадцатеричной (base 18) системы позволяет выполнять сложение, вычитание, умножение и деление в 18-й системе счисления. Полная поддержка целых, дробных и отрицательных чисел.",
+        "calculator.seo.keywords.18":
+            "восемнадцатеричная система, калькулятор base 18, онлайн калькулятор 18, арифметика base 18, калькулятор для программистов",
+        "calculator.seo.title.19": "Калькулятор девятнадцатеричной системы - арифметика и научные операции",
+        "calculator.seo.description.19":
+            "Онлайн калькулятор системы base 19 выполняет сложение, вычитание, умножение и деление, а также работу с дробными и отрицательными числами.",
+        "calculator.seo.keywords.19":
+            "девятнадцатеричная система, калькулятор base 19, арифметика base 19, онлайн калькулятор 19, калькулятор для программистов",
+        "calculator.seo.title.20": "Калькулятор двадцатеричной системы - арифметика и научные операции",
+        "calculator.seo.description.20":
+            "Онлайн калькулятор двадцатеричной (base 20) системы позволяет выполнять сложение, вычитание, умножение, деление и сложные вычисления. Полная поддержка целых, дробных и отрицательных чисел.",
+        "calculator.seo.keywords.20": "двадцатеричная система, калькулятор base 20, арифметика base 20, онлайн калькулятор 20, калькулятор для программистов",
+        "calculator.seo.title.21": "Калькулятор двадцать одной системы - арифметика и научные операции",
+        "calculator.seo.description.21":
+            "Онлайн калькулятор системы base 21 позволяет выполнять сложение, вычитание, умножение и деление. Поддержка целых, дробных и отрицательных чисел.",
+        "calculator.seo.keywords.21": "система base 21, калькулятор base 21, арифметика base 21, онлайн калькулятор 21, калькулятор для программистов",
+        "calculator.seo.title.22": "Калькулятор двадцать двух системы - арифметика и научные операции",
+        "calculator.seo.description.22":
+            "Онлайн калькулятор системы base 22 позволяет быстро и легко выполнять арифметические и научные вычисления. Поддержка целых, дробных и отрицательных чисел.",
+        "calculator.seo.keywords.22": "система base 22, калькулятор base 22, арифметика base 22, онлайн калькулятор 22, калькулятор для программистов",
+        "calculator.seo.title.23": "Калькулятор двадцать трёх системы - арифметика и научные операции",
+        "calculator.seo.description.23":
+            "Онлайн калькулятор системы base 23 позволяет выполнять сложение, вычитание, умножение, деление и сложные вычисления. Полная поддержка целых, дробных и отрицательных чисел.",
+        "calculator.seo.keywords.23": "система base 23, калькулятор base 23, арифметика base 23, онлайн калькулятор 23, калькулятор для программистов",
+        "calculator.seo.title.24": "Калькулятор двадцать четырёх системы - арифметика и научные операции",
+        "calculator.seo.description.24":
+            "Онлайн калькулятор системы base 24 позволяет выполнять арифметические и научные вычисления. Поддержка целых, дробных и отрицательных чисел.",
+        "calculator.seo.keywords.24": "система base 24, калькулятор base 24, арифметика base 24, онлайн калькулятор 24, калькулятор для программистов",
+        "calculator.seo.title.25": "Калькулятор двадцать пять системы - арифметика и научные операции",
+        "calculator.seo.description.25":
+            "Онлайн калькулятор системы base 25 позволяет выполнять сложение, вычитание, умножение, деление и сложные вычисления. Полная поддержка целых, дробных и отрицательных чисел.",
+        "calculator.seo.keywords.25": "система base 25, калькулятор base 25, арифметика base 25, онлайн калькулятор 25, калькулятор для программистов",
+        "calculator.seo.title.26": "Калькулятор двадцать шесть системы - арифметика и научные операции",
+        "calculator.seo.description.26":
+            "Онлайн калькулятор системы base 26 позволяет выполнять арифметические и научные вычисления, включая сложение, вычитание, умножение и деление. Полная поддержка целых, дробных и отрицательных чисел.",
+        "calculator.seo.keywords.26": "система base 26, калькулятор base 26, арифметика base 26, онлайн калькулятор 26, калькулятор для программистов",
+        "calculator.seo.title.27": "Калькулятор двадцать семь системы - арифметика и научные операции",
+        "calculator.seo.description.27":
+            "Онлайн калькулятор системы base 27 позволяет легко выполнять сложение, вычитание, умножение, деление и другие арифметические операции. Поддержка целых, дробных и отрицательных чисел.",
+        "calculator.seo.keywords.27": "система base 27, калькулятор base 27, арифметика base 27, онлайн калькулятор 27, калькулятор для программистов",
+        "calculator.seo.title.28": "Калькулятор двадцать восемь системы - арифметика и научные операции",
+        "calculator.seo.description.28":
+            "Онлайн калькулятор системы base 28 позволяет выполнять все арифметические операции, включая сложение, вычитание, умножение и деление. Полная поддержка целых, дробных и отрицательных чисел.",
+        "calculator.seo.keywords.28": "система base 28, калькулятор base 28, арифметика base 28, онлайн калькулятор 28, калькулятор для программистов",
+        "calculator.seo.title.29": "Калькулятор двадцать девять системы - арифметика и научные операции",
+        "calculator.seo.description.29":
+            "Онлайн калькулятор системы base 29 позволяет выполнять сложение, вычитание, умножение, деление и другие сложные вычисления. Поддержка целых, дробных и отрицательных чисел.",
+        "calculator.seo.keywords.29": "система base 29, калькулятор base 29, арифметика base 29, онлайн калькулятор 29, калькулятор для программистов",
+        "calculator.seo.title.30": "Калькулятор тридцатеричной системы - арифметика и научные операции",
+        "calculator.seo.description.30":
+            "Онлайн калькулятор системы base 30 позволяет выполнять сложение, вычитание, умножение, деление и сложные вычисления. Полная поддержка целых, дробных и отрицательных чисел.",
+        "calculator.seo.keywords.30": "тридцатеричная система, калькулятор base 30, арифметика base 30, онлайн калькулятор 30, калькулятор для программистов",
+        "calculator.seo.title.31": "Калькулятор тридцать одной системы - арифметика и научные операции",
+        "calculator.seo.description.31":
+            "Онлайн калькулятор системы base 31 позволяет выполнять сложение, вычитание, умножение и деление в тридцать первой системе счисления. Поддержка целых, дробных и отрицательных чисел.",
+        "calculator.seo.keywords.31": "система base 31, калькулятор base 31, арифметика base 31, онлайн калькулятор 31, калькулятор для программистов",
+        "calculator.seo.title.32": "Калькулятор тридцать двух системы - арифметика и научные операции",
+        "calculator.seo.description.32":
+            "Онлайн калькулятор системы base 32 позволяет быстро выполнять сложение, вычитание, умножение и деление. Поддержка целых, дробных и отрицательных чисел.",
+        "calculator.seo.keywords.32": "система base 32, калькулятор base 32, арифметика base 32, онлайн калькулятор 32, калькулятор для программистов",
+        "calculator.seo.title.33": "Калькулятор тридцать трёх системы - арифметика и научные операции",
+        "calculator.seo.description.33": "Онлайн калькулятор системы base 33 позволяет выполнять все основные арифметические операции и сложные вычисления.",
+        "calculator.seo.keywords.33": "система base 33, калькулятор base 33, арифметика base 33, онлайн калькулятор 33, калькулятор для программистов",
+        "calculator.seo.title.34": "Калькулятор тридцать четырёх системы - арифметика и научные операции",
+        "calculator.seo.description.34":
+            "Онлайн калькулятор системы base 34 позволяет выполнять сложение, вычитание, умножение и деление, включая поддержку отрицательных и дробных чисел.",
+        "calculator.seo.keywords.34": "система base 34, калькулятор base 34, арифметика base 34, онлайн калькулятор 34, калькулятор для программистов",
+        "calculator.seo.title.35": "Калькулятор тридцать пяти системы - арифметика и научные операции",
+        "calculator.seo.description.35": "Онлайн калькулятор системы base 35 позволяет выполнять все виды арифметических операций и сложных вычислений.",
+        "calculator.seo.keywords.35": "система base 35, калькулятор base 35, арифметика base 35, онлайн калькулятор 35, калькулятор для программистов",
+        "calculator.seo.title.36": "Калькулятор тридцать шести системы - арифметика и научные операции",
+        "calculator.seo.description.36":
+            "Онлайн калькулятор системы base 36 поддерживает сложение, вычитание, умножение, деление и работу с дробными и отрицательными числами.",
+        "calculator.seo.keywords.36": "система base 36, калькулятор base 36, арифметика base 36, онлайн калькулятор 36, калькулятор для программистов",
 
         // Code page
         "code.title": "Код Систем Счисления",
@@ -977,9 +1440,9 @@ const translations: Record<Language, Record<string, string>> = {
         "about.description":
             "Это приложение предназначено для работы с системами счисления. Если вы студент, разработчик или просто интересуетесь миром чисел — это приложение станет для вас полезным помощником. С его помощью вы сможете изучать различные системы счисления, выполнять вычисления и необходимые преобразования.",
         "about.page.conversion.desription":
-            "В этом разделе вы можете преобразовывать числа из одной системы счисления в другую — например, из двоичной в десятичную, из шестнадцатеричной в восьмеричную и другие. Интерфейс простой и понятный, результаты предоставляются быстро и точно.",
+            "В этом разделе вы сможете легко и точно преобразовывать числа из любой системы счисления с основанием от 2 до 36 в любую другую систему в этом же диапазоне. Поддерживаются не только целые числа, но и дробные, а также отрицательные значения. Процесс конверсии не просто выдает результат, но и пошагово поясняет каждый этап, что позволяет понять саму логику преобразования. Результаты точны и надежны, что делает инструмент полезным для обучения, программирования, математики и повседневных расчетов. Удобный интерфейс и подробные пояснения помогут вам быстрее освоить материал. Теперь вам не нужно заучивать сложные алгоритмы конверсии — вы сможете понимать их в реальном времени и применять на практике.",
         "about.page.calculator.desription":
-            "Доступны операции от простых математических действий — сложения, вычитания, умножения, деления — до возведения в степень, работы с рациональными числами и процентами, всё в любой системе счисления. Нет необходимости сначала преобразовывать числа — вы получаете нужный результат сразу.",
+            "Этот раздел предоставляет все возможности обычного стандартного калькулятора, но с одним важным отличием: вы можете выбрать любую систему счисления с основанием от 2 до 36. Все арифметические операции — сложение, вычитание, умножение, деление и другие вычисления — выполняются в выбранной системе счисления. Это позволяет не только получать результаты, но и на практике видеть логику вычислений в данной системе. Калькулятор поддерживает целые, дробные и отрицательные числа.",
         "about.page.publications.desription":
             "В этом разделе представлена общая и более глубокая информация о системах счисления: что такое система счисления и как она работает; различия между десятичной, двоичной, восьмеричной и шестнадцатеричной системами; практическое применение и исторический контекст. Этот раздел особенно полезен для учащихся и изучающих",
         "about.page.code.desription":
@@ -1009,6 +1472,11 @@ const translations: Record<Language, Record<string, string>> = {
         "share.email": "Эл. почта",
         "share.copy": "Копировать",
         "share.copied": "🎉 Скопировано",
+
+        // settings calculator
+        "calculator.settings.title": "Настройки калькулятора",
+        "calculator.settings.label": "Система счисления",
+        "calculator.settings.placeholder": "Выбрать",
 
         // Sidebar
         "sidebar.topics": "Темы",

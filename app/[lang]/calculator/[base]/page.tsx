@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader } from "@/components/utils/card";
 import StandartCalculator from "@/components/calculator/standart-calculator";
 import CalculatorText from "@/components/calculator/standart-calculator-info";
 import Content from "@/components/common/content";
+import { LINGUISTIC_NAME_TO_NUMERAL_NAME } from "@/lib/constants/numeral-system";
 import { getTranslation } from "@/lib/translater/i18n";
 import { Language } from "@/types/language";
 import { Base } from "@/types/base";
@@ -14,12 +15,14 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { lang, base } = await params;
+    const baseNum = LINGUISTIC_NAME_TO_NUMERAL_NAME[base] || "10";
+
     const t = getTranslation(lang);
 
     return {
-        title: t("calculator.seo.title"),
-        description: t("calculator.seo.description"),
-        keywords: t("calculator.seo.keywords"),
+        title: t("calculator.seo.title." + baseNum),
+        description: t("calculator.seo.description." + baseNum),
+        keywords: t("calculator.seo.keywords." + baseNum),
 
         authors: [{ name: "Najmiddin Nazirov", url: "https://sanoq.uz/about" }],
         creator: "Najmiddin Nazirov",
@@ -38,8 +41,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         },
 
         openGraph: {
-            title: t("calculator.seo.title"),
-            description: t("calculator.seo.description"),
+            title: t("calculator.seo.title." + baseNum),
+            description: t("calculator.seo.description." + baseNum),
             url: "https://sanoq.uz",
             siteName: "sanoq.uz",
             images: [
@@ -56,19 +59,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
         twitter: {
             card: "summary_large_image",
-            title: t("calculator.seo.title"),
-            description: t("calculator.seo.description"),
+            title: t("calculator.seo.title." + baseNum),
+            description: t("calculator.seo.description." + baseNum),
             images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", alt: "sanoq.uz" }],
             creator: "@jarkurghan",
         },
 
         metadataBase: new URL("https://sanoq.uz"),
         alternates: {
-            canonical: `https://sanoq.uz/${lang}/calculator`,
+            canonical: `https://sanoq.uz/${lang}/calculator/${baseNum}`,
             languages: {
-                uz: "https://sanoq.uz/uz/calculator",
-                en: "https://sanoq.uz/en/calculator",
-                ru: "https://sanoq.uz/ru/calculator",
+                uz: "https://sanoq.uz/uz/calculator/" + baseNum,
+                en: "https://sanoq.uz/en/calculator/" + baseNum,
+                ru: "https://sanoq.uz/ru/calculator/" + baseNum,
             },
         },
 
@@ -80,7 +83,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default function CalculatorPage({ params }: Props) {
-    const { lang, base } = use(params);
+    const { lang, base: baseStr } = use(params);
+    const base = LINGUISTIC_NAME_TO_NUMERAL_NAME[baseStr] || "10";
     const t = getTranslation(lang);
 
     return (

@@ -189,7 +189,6 @@ export default function StandartCalculator({ base }: { base: Base }) {
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
             const key = event.key.toUpperCase();
-            console.log(key);
 
             if (digits.includes(key) || key === "0") inputDigit(key);
             else if (/^[/*-+]$/i.test(key)) performOperation(key);
