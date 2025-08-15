@@ -1,11 +1,8 @@
-"use client";
-
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { cn } from "@/utils/classname";
 import { Button } from "@/components/utils/button";
 import { Calculator, Code, Home, Info, BookOpen, Menu, X, Share2, Binary, Settings2 } from "lucide-react";
-import { useState } from "react";
+// import { useState } from "react";
 import LanguageSwitcher from "@/components/global/language-switcher";
 import ThemeToggle from "@/components/global/theme-toggle";
 import ShareAppURL from "./share";
@@ -14,12 +11,12 @@ import { Language } from "@/types/language";
 import Image from "next/image";
 import CalculatorSettings from "../calculator/settings";
 
-export default function Navbar({ lang }: { lang: Language }) {
+export default async function Navbar({ lang, pathname }: { lang: Language; pathname: string }) {
     const t = getTranslation(lang);
+    // to-do: mobile menu xapa
+    // to-do: pathname faqat birinchi martada ishlaydi
 
-    // hozircha client side bo'lsin...
-    const pathname = usePathname();
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    // const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const navItems = [
         { name: "nav.conversion", href: `/${lang}`, icon: Home },
@@ -36,7 +33,7 @@ export default function Navbar({ lang }: { lang: Language }) {
             <div className="px-4 sm:px-8 lg:px-12 w-full flex h-14 items-center">
                 <div className="flex items-center space-x-8">
                     <Link href={`/${lang}`} className="flex items-center space-x-2">
-                        <div className="flex items-center justify-center w-8 h-8 lg:ml-[175px] rounded-lg border-2 border-blue-300">
+                        <div className="flex items-center justify-center w-8 h-8 lg:ml-[175px] rounded-lg border-2 border-muted">
                             <Image src="/favicon.ico" alt="logo" width={24} height={24} />
                         </div>
                     </Link>
@@ -76,14 +73,14 @@ export default function Navbar({ lang }: { lang: Language }) {
                     <ThemeToggle />
                     <LanguageSwitcher lang={lang} />
 
-                    <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                    {/* <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
                         {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
                         <span className="sr-only">Toggle menu</span>
-                    </Button>
+                    </Button> */}
                 </div>
             </div>
 
-            {mobileMenuOpen && (
+            {/* {mobileMenuOpen && (
                 <div className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex flex-col w-[100vw] h-[100vh]">
                     <div className="flex justify-between items-center px-4 py-2 border-b">
                         <Link href={`/${lang}`} className="flex items-center space-x-2">
@@ -123,7 +120,7 @@ export default function Navbar({ lang }: { lang: Language }) {
                         })}
                     </nav>
                 </div>
-            )}
+            )} */}
         </header>
     );
 }

@@ -6,8 +6,10 @@ const languages: Language[] = ["uz", "en", "ru"];
 const defaultLang: Language = "uz";
 
 export function middleware(request: NextRequest) {
-    const response = NextResponse.next();
     const pathname = request.nextUrl.pathname;
+    const headers = new Headers(request.headers);
+    headers.set("x-pathname", pathname);
+    const response = NextResponse.next({ request: { headers } });
 
     // Pathname language yo'qligini tekshiradi
     const isMissingLanguage = languages.every((language) => !pathname.startsWith(`/${language}/`) && pathname !== `/${language}`);
@@ -47,10 +49,10 @@ export function middleware(request: NextRequest) {
 
 export const config = {
     matcher: [
-        '/:lang(en|uz|ru)?',
-        '/:lang(en|uz|ru)?/calculator',
-        '/:lang(en|uz|ru)?/publications',
-        '/:lang(en|uz|ru)?/about',
-        '/:lang(en|uz|ru)?/info/:path*'
+        "/:lang(en|uz|ru)?",
+        "/:lang(en|uz|ru)?/calculator",
+        "/:lang(en|uz|ru)?/publications",
+        "/:lang(en|uz|ru)?/about",
+        "/:lang(en|uz|ru)?/info/:path*",
     ],
 };

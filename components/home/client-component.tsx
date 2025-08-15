@@ -78,7 +78,7 @@ export default function HomeComponent({ lang }: { lang: Language }) {
                         </SelectTrigger>
                         <SelectContent>
                             {NUMBER_SYSTEMS.map((system) => (
-                                <SelectItem key={system.value} value={system.value}>
+                                <SelectItem key={system.value} value={system.value} disabled={system.value === toBase}>
                                     {t(system.label)}
                                 </SelectItem>
                             ))}
@@ -110,7 +110,7 @@ export default function HomeComponent({ lang }: { lang: Language }) {
                         </SelectTrigger>
                         <SelectContent>
                             {NUMBER_SYSTEMS.map((system) => (
-                                <SelectItem key={system.value} value={system.value}>
+                                <SelectItem key={system.value} value={system.value} disabled={system.value === fromBase}>
                                     {t(system.label)}
                                 </SelectItem>
                             ))}

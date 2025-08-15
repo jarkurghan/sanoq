@@ -14,7 +14,7 @@ const nextConfig = {
         return [
             {
                 source: "/:lang/calculator",
-                destination: "/:lang/calculator/10",
+                destination: "/:lang/calculator/decimal",
                 permanent: true,
             },
             {

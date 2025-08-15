@@ -109,6 +109,16 @@
         border-bottom-color: hsl(var(--border));
     }
 
+    .prose code {
+        &::after {
+            content: initial;
+        }
+
+        &::before {
+            content: initial;
+        }
+    }
+
     body {
         @apply text-slate-800;
     }

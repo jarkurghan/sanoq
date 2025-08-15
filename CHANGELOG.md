@@ -7,7 +7,7 @@ Barcha versiya o‘zgarishlari shu yerda qayd etiladi.
 **O‘zgartirildi:**
 -   Design butunlay qayta qurildi
     -   Sidebar Left olib tashlandi
-    -   Sidebar Right navbarga o'tkazildi tashlandi
+    -   Sidebar Right navbarga o'tkazildi
     -   Komponentlar reuseble
         -   Container
         -   Content
@@ -28,7 +28,6 @@ Barcha versiya o‘zgarishlari shu yerda qayd etiladi.
 -   Konvertordagi kasr sonni chiqarishdagi xato tuzatildi
 
 **Yangi:**
--   Konvertor - Klaviatura orqali yozish funksiyasi qo'shildi
 -   Kalkulator - Klaviatura orqali yozish funksiyasi qo'shildi
 
 ---
