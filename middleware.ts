@@ -7,9 +7,7 @@ const defaultLang: Language = "uz";
 
 export function middleware(request: NextRequest) {
     const pathname = request.nextUrl.pathname;
-    const headers = new Headers(request.headers);
-    headers.set("x-pathname", pathname);
-    const response = NextResponse.next({ request: { headers } });
+    const response = NextResponse.next();
 
     // Pathname language yo'qligini tekshiradi
     const isMissingLanguage = languages.every((language) => !pathname.startsWith(`/${language}/`) && pathname !== `/${language}`);

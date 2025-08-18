@@ -2,7 +2,7 @@
 
 Barcha versiya o‘zgarishlari shu yerda qayd etiladi.
 
-### v1.2.0 — date
+### v1.2.0 — 2025-08-18
 
 **O‘zgartirildi:**
 -   Design butunlay qayta qurildi
@@ -17,10 +17,8 @@ Barcha versiya o‘zgarishlari shu yerda qayd etiladi.
         -   margin, padding, gap va boshqa bo'shliqlar
 -   About app page matni yangilandi
 -   SEO boyitildi
-    -   layoutlar qayta shakllantirildi
     -   Kalkulator page
         -   sanoq sistemasi asosi query paramsdan dynamic routega o'tkazildi. Buning yordamida qidiruv botlari har bir sanoq tizimi alohida sahifa sifatida ko‘radi va alohida indexlaydi
-        -   
 
 **Tuzatildi:**
 -   Konvertor - hisob-kitobdagi xatolar tuzatildi

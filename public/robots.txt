@@ -1,3 +1,6 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://sanoq.uz/sitemap.xml
+Sitemap: https://sanoq.uz/sitemap/general.xml
+Sitemap: https://sanoq.uz/sitemap/calculator.xml

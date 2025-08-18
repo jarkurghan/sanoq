@@ -38,13 +38,13 @@ export function convertFractionFromDecimal(fraction: FractionalPart, base: numbe
     }
 
     const firstIndex = seen.get(remainder);
-    const periodLength = result.length - firstIndex;
+    const periodLength = result.length - firstIndex + 1;
     const value = `.${result.slice(0, firstIndex - 1)}(${result.slice(firstIndex - 1)})`;
 
     if (periodLength > 15)
         return { period: { isPeriod: true, length: periodLength }, value: `.${result.slice(0, 15)}`, steps: steps.slice(0, 15), exact: false };
 
-    if (periodLength === 0) return { period: { isPeriod: false }, value: "." + result, steps, exact: true };
+    if (periodLength === 1) return { period: { isPeriod: false }, value: "." + result, steps, exact: true };
 
     return { period: { isPeriod: true, length: periodLength }, value, steps, exact: true };
 }

@@ -11,7 +11,7 @@ import { DropdownMenuItem } from "../utils/dropdown-menu";
 import { DropdownMenuTrigger } from "../utils/dropdown-menu";
 import Link from "next/link";
 
-export default function CalculatorSettings({ children, lang }: { children?: React.ReactNode; lang: Language }) {
+export default function CalculatorSettings({ children, lang, base }: { children?: React.ReactNode; lang: Language; base: Base }) {
     const t = getTranslation(lang);
 
     return (
@@ -25,7 +25,7 @@ export default function CalculatorSettings({ children, lang }: { children?: Reac
                 <div className="space-y-2 pb-2">
                     <label className="text-sm font-medium pr-3">{t("calculator.settings.label")}</label>
                     <DropdownMenu>
-                        <DropdownMenuTrigger className="px-4 py-2 border rounded-md">{t("calculator.settings.placeholder")}</DropdownMenuTrigger>
+                        <DropdownMenuTrigger className="px-4 py-2 border rounded-md">{t("numbersystem." + base)}</DropdownMenuTrigger>
                         <DropdownMenuContent className="max-h-64 overflow-y-auto">
                             {NUMBER_SYSTEMS.map((system) => (
                                 <DropdownMenuItem asChild key={system.value}>
