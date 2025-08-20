@@ -2,6 +2,22 @@
 
 Barcha versiya o‘zgarishlari shu yerda qayd etiladi.
 
+### v1.3.0 — 2025-08-18
+
+**Yangi:**
+-   Yangi tillar qo‘shildi
+    -   Turk tili
+    -   Ozarbayjon tili
+    -   Turkman tili
+    -   Qozoq tili
+    -   Qirg'iz tili
+    -   Tatar tili
+    -   Uyg'ur tili
+    -   Boshqird tili
+    -   Tojik tili
+    -   Arab tili
+-   Barcha tillar uchun yangi maqola qo'shildi: Pozitsion va nopozitsion sanoq sistemalari
+
 ### v1.2.0 — 2025-08-18
 
 **O‘zgartirildi:**

@@ -14,6 +14,7 @@ import bak from "./bak.json";
 import kaa from "./kaa.json";
 import crh from "./crh.json";
 
+// to-do: tugamadi
 const translations: Record<Language, Record<string, string>> = { en, uz, ru, tr, tg, az, kk, ky, tk, tt, ug, bak, kaa, crh };
 
 export function getTranslation(lang: Language) {

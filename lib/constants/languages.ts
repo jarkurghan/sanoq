@@ -10,9 +10,10 @@ export const LANGUAGES: { code: Language; name: string }[] = [
     { code: "tk", name: "Türkmençe" },
     { code: "tt", name: "Татар теле" },
     { code: "ug", name: "ئۇيغۇرچە" },
-    { code: "bak", name: "Башҡорт теле" },
-    { code: "kaa", name: "Qaraqalpaq tili" },
-    { code: "crh", name: "Qırımtatar tili" },
+    { code: "ba", name: "Башҡорт теле" },
+    // { code: "kaa", name: "Qaraqalpaq tili" },
+    // { code: "crh", name: "Qırımtatar tili" },
+    { code: "ar", name: "العربية" },
     { code: "en", name: "English" },
     { code: "ru", name: "Русский" },
 ];

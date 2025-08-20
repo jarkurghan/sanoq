@@ -48,10 +48,10 @@ export function middleware(request: NextRequest) {
 
 export const config = {
     matcher: [
-        "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|bak|kaa|crh)?",
-        "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|bak|kaa|crh)?/calculator",
-        "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|bak|kaa|crh)?/publications",
-        "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|bak|kaa|crh)?/about",
-        "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|bak|kaa|crh)?/info/:path*",
+        "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|ba|ar)?",
+        "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|ba|ar)?/calculator",
+        "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|ba|ar)?/publications",
+        "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|ba|ar)?/about",
+        "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|ba|ar)?/info/:path*",
     ],
 };

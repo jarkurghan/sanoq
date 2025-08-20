@@ -1,15 +1,12 @@
-import { use } from "react";
 import { getTranslation } from "@/lib/translater/i18n";
 import { Language } from "@/types/language";
 import type { Metadata } from "next";
 import PublicsComponent from "@/components/publications/client-component";
 import Content from "@/components/common/content";
 
-type Props = {
-    params: Promise<{ lang: Language }>;
-};
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    // to-do: publications to articles
+
     const { lang } = await params;
     const t = getTranslation(lang);
 
@@ -76,9 +73,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
-export default function PublicationsPage({ params }: Props) {
-    const { lang: rawLang } = use(params);
-    const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "uz") as Language;
+type Props = {
+    params: Promise<{ lang: Language }>;
+};
+
+export default async function PublicationsPage({ params }: Props) {
+    const { lang } = await params;
     const t = getTranslation(lang);
 
     return (

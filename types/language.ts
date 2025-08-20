@@ -1,1 +1,16 @@
-export type Language = "uz" | "en" | "ru" | "tg" | "tr" | "az" | "kk" | "ky" | "tk" | "tt" | "ug" | "bak" | "kaa" | "crh";
+export type Language =
+    | "uz"
+    | "en"
+    | "ru"
+    | "tg"
+    | "tr"
+    | "az"
+    | "kk"
+    | "ky"
+    | "tk"
+    | "tt"
+    | "ug"
+    | "ba"
+    // | "kaa"
+    // | "crh"
+    | "ar";

@@ -7,14 +7,18 @@ import { getTranslation } from "@/lib/translater/i18n";
 import { PUBLICATIONS } from "@/lib/constants/publications";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/utils/card";
 import { ChevronRight, Search, BookOpen } from "lucide-react";
+import { Language } from "@/types/language";
 import Link from "next/link";
 import clsx from "clsx";
 
-type Props = {
-    lang: "uz" | "en" | "ru";
-};
+type Props = { lang: Language };
 
 export default function PublicsComponent({ lang }: Props) {
+    // to-do: buni server componentga o'tkazish kerak
+    // to-do: seo
+
+    // to-do: style ustida ishlash kerak
+
     const t = getTranslation(lang);
 
     const [searchQuery, setSearchQuery] = useState("");

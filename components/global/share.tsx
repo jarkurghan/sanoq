@@ -9,8 +9,7 @@ import { Button } from "@/components/utils/button";
 import { getTranslation } from "@/lib/translater/i18n";
 import { Language } from "@/types/language";
 
-export default function ShareAppURL({ children, lang: rawLang }: { children?: React.ReactNode; lang: string }) {
-    const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "uz") as Language;
+export default function ShareAppURL({ children, lang }: { children?: React.ReactNode; lang: Language }) {
     const t = getTranslation(lang);
     const pathname = usePathname();
     const [url, setUrl] = useState("https://sanoq.uz");
