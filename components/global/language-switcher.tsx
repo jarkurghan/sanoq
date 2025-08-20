@@ -6,12 +6,7 @@ import { DropdownMenuItem, DropdownMenuTrigger } from "@/components/utils/dropdo
 import { useRouter, usePathname, useParams } from "next/navigation";
 import { Check, Globe } from "lucide-react";
 import { Language } from "@/types/language";
-
-const languages: { code: Language; name: string }[] = [
-    { code: "en", name: "English" },
-    { code: "uz", name: "O'zbek" },
-    { code: "ru", name: "Русский" },
-];
+import { LANGUAGES } from "@/lib/constants/languages";
 
 export default function LanguageSwitcher({ lang: language }: { lang: Language }) {
     const router = useRouter();
@@ -37,7 +32,7 @@ export default function LanguageSwitcher({ lang: language }: { lang: Language })
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-                {languages.map((lang) => (
+                {LANGUAGES.map((lang) => (
                     <DropdownMenuItem key={lang.code} onClick={() => handleLanguageChange(lang.code)} className="flex items-center justify-between">
                         {lang.name}
                         {language === lang.code && <Check className="h-4 w-4 ml-2" />}

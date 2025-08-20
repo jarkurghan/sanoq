@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { Language } from "./types/language";
+import { LANGUAGES } from "./lib/constants/languages";
 
-const languages: Language[] = ["uz", "en", "ru"];
+const languages: Language[] = LANGUAGES.map((lang) => lang.code);
 const defaultLang: Language = "uz";
 
 export function middleware(request: NextRequest) {
@@ -47,10 +48,10 @@ export function middleware(request: NextRequest) {
 
 export const config = {
     matcher: [
-        "/:lang(en|uz|ru)?",
-        "/:lang(en|uz|ru)?/calculator",
-        "/:lang(en|uz|ru)?/publications",
-        "/:lang(en|uz|ru)?/about",
-        "/:lang(en|uz|ru)?/info/:path*",
+        "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|bak|kaa|crh)?",
+        "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|bak|kaa|crh)?/calculator",
+        "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|bak|kaa|crh)?/publications",
+        "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|bak|kaa|crh)?/about",
+        "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|bak|kaa|crh)?/info/:path*",
     ],
 };
