@@ -1,11 +1,9 @@
 import ShareAppURL from "@/components/global/share";
+import Content from "@/components/common/content";
 import { Send, Share2 } from "lucide-react";
 import { getTranslation } from "@/lib/translater/i18n";
 import { Language } from "@/types/language";
 import type { Metadata } from "next";
-import { use } from "react";
-import Container from "@/components/common/container";
-import Content from "@/components/common/content";
 
 type Props = {
     params: Promise<{ lang: Language }>;
@@ -74,9 +72,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
-export default function AboutPage({ params }: Props) {
-    const { lang: rawLang } = use(params);
-    const lang = (["uz", "en", "ru"].includes(rawLang) ? rawLang : "uz") as Language;
+export default async function AboutPage({ params }: Props) {
+    const { lang } = await params;
     const t = getTranslation(lang);
 
     return (

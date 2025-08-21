@@ -1,56 +1,15 @@
 import Container from "@/components/common/container";
+import { ARTICLES_001_PVNSS_METALANG } from "@/lib/constants/publications/pozitsion-va-nopozitsion-sanoq-sistemalari";
+import { SEO } from "@/utils/generate-metadata";
 import type { Metadata } from "next";
 
 export function generateMetadata(): Metadata {
-    return {
-        title: "Pozision we pozision däl san ulgamlary",
-        description: "Bu makala san ulgamlarynyň düşünjesini ýönekeý we amaly mysallar bilen düşündirýär.",
-        keywords: ["san ulgamy", "pozision san ulgamy", "pozision däl san ulgamy", "Rim sanlary", "san ulgamlarynyň tapawudy"],
+    const url = ARTICLES_001_PVNSS_METALANG["tk"] as string;
+    const title = "Pozision we pozision däl san ulgamlary";
+    const description = "Bu makala san ulgamlarynyň düşünjesini ýönekeý we amaly mysallar bilen düşündirýär.";
+    const keywords = ["san ulgamy", "pozision san ulgamy", "pozision däl san ulgamy", "Rim sanlary", "san ulgamlarynyň tapawudy"];
 
-        authors: [{ name: "Najmiddin Nazirov", url: "https://sanoq.uz/about" }],
-        creator: "Najmiddin Nazirov",
-
-        robots: {
-            index: true,
-            follow: true,
-            nocache: false,
-            googleBot: {
-                index: true,
-                follow: true,
-                "max-video-preview": -1,
-                "max-image-preview": "large",
-                "max-snippet": -1,
-            },
-        },
-        openGraph: {
-            title: "Pozision we pozision däl san ulgamlary",
-            description: "Bu makala san ulgamlarynyň düşünjesini ýönekeý we amaly mysallar bilen düşündirýär.",
-            url: "https://sanoq.uz/tk/info/pozision-we-pozision-dal-san-ulgamlary",
-            siteName: "sanoq.uz",
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", width: 1000, height: 749, alt: "sanoq.uz" }],
-            locale: "tk",
-            type: "article",
-        },
-        twitter: {
-            card: "summary_large_image",
-            title: "Pozision we pozision däl san ulgamlary",
-            description: "Bu makala san ulgamlarynyň düşünjesini ýönekeý we amaly mysallar bilen düşündirýär.",
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", alt: "sanoq.uz" }],
-            creator: "@jarkurghan",
-        },
-
-        metadataBase: new URL("https://sanoq.uz"),
-        alternates: {
-            canonical: "https://sanoq.uz/tk/info/pozision-we-pozision-dal-san-ulgamlary",
-            languages: {
-                tk: "https://sanoq.uz/tk/info/pozision-we-pozision-dal-san-ulgamlary",
-                tr: "https://sanoq.uz/tr/info/konumsal-ve-konumsal-olmayan-sayi-sistemleri",
-                ru: "https://sanoq.uz/ru/info/pozitsionnye-i-nepozitsionnye-sistemy-schisleniya",
-                uz: "https://sanoq.uz/uz/info/pozitsion-va-nopozitsion-sanoq-sistemalari",
-                "x-default": "https://sanoq.uz/publications",
-            },
-        },
-    };
+    return SEO({ title, description, url, keywords, alterLangs: ARTICLES_001_PVNSS_METALANG });
 }
 
 export default function MakalaPozisionDalPozisionDal() {

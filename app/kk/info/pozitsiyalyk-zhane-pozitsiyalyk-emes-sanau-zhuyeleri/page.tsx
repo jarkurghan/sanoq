@@ -1,55 +1,15 @@
 import Container from "@/components/common/container";
+import { ARTICLES_001_PVNSS_METALANG } from "@/lib/constants/publications/pozitsion-va-nopozitsion-sanoq-sistemalari";
+import { SEO } from "@/utils/generate-metadata";
 import type { Metadata } from "next";
 
 export function generateMetadata(): Metadata {
-    return {
-        title: "Позициялық және позициялық емес санау жүйелері",
-        description: "Бұл мақала санау жүйелері ұғымын қарапайым әрі қолданбалы мысалдармен түсіндіреді.",
-        keywords: ["санау жүйесі", "позициялық санау жүйесі", "позициялық емес санау жүйесі", "рим цифрлары", "санау жүйелерінің айырмашылығы"],
+    const url = ARTICLES_001_PVNSS_METALANG["kk"] as string;
+    const title = "Позициялық және позициялық емес санау жүйелері";
+    const description = "Бұл мақала санау жүйелері ұғымын қарапайым әрі қолданбалы мысалдармен түсіндіреді.";
+    const keywords = ["санау жүйесі", "позициялық санау жүйесі", "позициялық емес санау жүйесі", "рим цифрлары", "санау жүйелерінің айырмашылығы"];
 
-        authors: [{ name: "Najmiddin Nazirov", url: "https://sanoq.uz/about" }],
-        creator: "Najmiddin Nazirov",
-
-        robots: {
-            index: true,
-            follow: true,
-            nocache: false,
-            googleBot: {
-                index: true,
-                follow: true,
-                "max-video-preview": -1,
-                "max-image-preview": "large",
-                "max-snippet": -1,
-            },
-        },
-        openGraph: {
-            title: "Позициялық және позициялық емес санау жүйелері",
-            description: "Бұл мақала санау жүйелері ұғымын қарапайым әрі қолданбалы мысалдармен түсіндіреді.",
-            url: "https://sanoq.uz/kk/info/pozitsiyalyk-zhane-pozitsiyalyk-emes-sanau-zhuyeleri",
-            siteName: "sanoq.uz",
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", width: 1000, height: 749, alt: "sanoq.uz" }],
-            locale: "kk",
-            type: "article",
-        },
-        twitter: {
-            card: "summary_large_image",
-            title: "Позициялық және позициялық емес санау жүйелері",
-            description: "Бұл мақала санау жүйелері ұғымын қарапайым әрі қолданбалы мысалдармен түсіндіреді.",
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", alt: "sanoq.uz" }],
-            creator: "@jarkurghan",
-        },
-
-        metadataBase: new URL("https://sanoq.uz"),
-        alternates: {
-            canonical: "https://sanoq.uz/kk/info/pozitsiyalyk-zhane-pozitsiyalyk-emes-sanau-zhuyeleri",
-            languages: {
-                ru: "https://sanoq.uz/ru/info/pozitsionnye-i-nepozitsionnye-sistemy-schisleniya",
-                uz: "https://sanoq.uz/uz/info/pozitsion-va-nopozitsion-sanoq-sistemalari",
-                kk: "https://sanoq.uz/kk/info/pozitsiyalyk-zhane-pozitsiyalyk-emes-sanau-zhuyeleri",
-                "x-default": "https://sanoq.uz/publications",
-            },
-        },
-    };
+    return SEO({ title, description, url, keywords, alterLangs: ARTICLES_001_PVNSS_METALANG });
 }
 
 export default function MaqolaPozitsionNopozitsion() {

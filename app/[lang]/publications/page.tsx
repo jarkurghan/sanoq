@@ -1,8 +1,8 @@
 import { getTranslation } from "@/lib/translater/i18n";
-import { Language } from "@/types/language";
-import type { Metadata } from "next";
 import PublicsComponent from "@/components/publications/client-component";
 import Content from "@/components/common/content";
+import { Language } from "@/types/language";
+import type { Metadata } from "next";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     // to-do: publications to articles

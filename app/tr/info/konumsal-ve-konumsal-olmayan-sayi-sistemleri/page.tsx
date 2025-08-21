@@ -1,55 +1,15 @@
 import Container from "@/components/common/container";
+import { ARTICLES_001_PVNSS_METALANG } from "@/lib/constants/publications/pozitsion-va-nopozitsion-sanoq-sistemalari";
+import { SEO } from "@/utils/generate-metadata";
 import type { Metadata } from "next";
 
 export function generateMetadata(): Metadata {
-    return {
-        title: "Konumsal ve konumsal olmayan sayı sistemleri",
-        description: "Bu makale sayı sistemi kavramını basit ve uygulamalı örneklerle açıklar.",
-        keywords: ["sayı sistemi", "konumsal sayı sistemi", "konumsal olmayan sayı sistemi", "Romen rakamları", "sayı sistemleri farkı"],
+    const url = ARTICLES_001_PVNSS_METALANG["tr"] as string;
+    const title = "Konumsal ve konumsal olmayan sayı sistemleri";
+    const description = "Bu makale sayı sistemi kavramını basit ve uygulamalı örneklerle açıklar.";
+    const keywords = ["sayı sistemi", "konumsal sayı sistemi", "konumsal olmayan sayı sistemi", "Romen rakamları", "sayı sistemleri farkı"];
 
-        authors: [{ name: "Najmiddin Nazirov", url: "https://sanoq.uz/about" }],
-        creator: "Najmiddin Nazirov",
-
-        robots: {
-            index: true,
-            follow: true,
-            nocache: false,
-            googleBot: {
-                index: true,
-                follow: true,
-                "max-video-preview": -1,
-                "max-image-preview": "large",
-                "max-snippet": -1,
-            },
-        },
-        openGraph: {
-            title: "Konumsal ve konumsal olmayan sayı sistemleri",
-            description: "Bu makale sayı sistemi kavramını basit ve uygulamalı örneklerle açıklar.",
-            url: "https://sanoq.uz/tr/info/konumsal-ve-konumsal-olmayan-sayi-sistemleri",
-            siteName: "sanoq.uz",
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", width: 1000, height: 749, alt: "sanoq.uz" }],
-            locale: "tr",
-            type: "article",
-        },
-        twitter: {
-            card: "summary_large_image",
-            title: "Konumsal ve konumsal olmayan sayı sistemleri",
-            description: "Bu makale sayı sistemi kavramını basit ve uygulamalı örneklerle açıklar.",
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", alt: "sanoq.uz" }],
-            creator: "@jarkurghan",
-        },
-
-        metadataBase: new URL("https://sanoq.uz"),
-        alternates: {
-            canonical: "https://sanoq.uz/tr/info/konumsal-ve-konumsal-olmayan-sayi-sistemleri",
-            languages: {
-                tr: "https://sanoq.uz/tr/info/konumsal-ve-konumsal-olmayan-sayi-sistemleri",
-                ru: "https://sanoq.uz/ru/info/pozitsionnye-i-nepozitsionnye-sistemy-schisleniya",
-                uz: "https://sanoq.uz/uz/info/pozitsion-va-nopozitsion-sanoq-sistemalari",
-                "x-default": "https://sanoq.uz/publications",
-            },
-        },
-    };
+    return SEO({ title, description, url, keywords, alterLangs: ARTICLES_001_PVNSS_METALANG });
 }
 
 export default function MakaleKonumsalNokonumsal() {

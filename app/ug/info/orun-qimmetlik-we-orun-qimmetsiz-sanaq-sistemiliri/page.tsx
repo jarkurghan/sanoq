@@ -1,61 +1,21 @@
 import Container from "@/components/common/container";
+import { ARTICLES_001_PVNSS_METALANG } from "@/lib/constants/publications/pozitsion-va-nopozitsion-sanoq-sistemalari";
+import { SEO } from "@/utils/generate-metadata";
 import type { Metadata } from "next";
 
 export function generateMetadata(): Metadata {
-    return {
-        title: "ئورۇن قىممەتلىك ۋە ئورۇن قىممەتسىز ساناق سىستېمىلىرى",
-        description: "بۇ ماقالە ساناق سىستېمىسى ئىقتىدارىنى ساددا چۈشەندۈرۈپ، ئەمەلىي مىساللار ئارقىلىق ئىزاھلايدۇ.",
-        keywords: [
-            "ساناق سىستېمىسى",
-            "ئورۇن قىممەتلىك ساناق سىستېمىسى",
-            "ئورۇن قىممەتسىز ساناق سىستېمىسى",
-            "رىم رەقەملېرى",
-            "ساناق سىستېمىلار ئارىسىدىكى پەرق",
-        ],
+    const url = ARTICLES_001_PVNSS_METALANG["ug"] as string;
+    const title = "ئورۇن قىممەتلىك ۋە ئورۇن قىممەتسىز ساناق سىستېمىلىرى";
+    const description = "بۇ ماقالە ساناق سىستېمىسى ئىقتىدارىنى ساددا چۈشەندۈرۈپ، ئەمەلىي مىساللار ئارقىلىق ئىزاھلايدۇ.";
+    const keywords = [
+        "ساناق سىستېمىسى",
+        "ئورۇن قىممەتلىك ساناق سىستېمىسى",
+        "ئورۇن قىممەتسىز ساناق سىستېمىسى",
+        "رىم رەقەملېرى",
+        "ساناق سىستېمىلار ئارىسىدىكى پەرق",
+    ];
 
-        authors: [{ name: "Najmiddin Nazirov", url: "https://sanoq.uz/about" }],
-        creator: "Najmiddin Nazirov",
-
-        robots: {
-            index: true,
-            follow: true,
-            nocache: false,
-            googleBot: {
-                index: true,
-                follow: true,
-                "max-video-preview": -1,
-                "max-image-preview": "large",
-                "max-snippet": -1,
-            },
-        },
-        openGraph: {
-            title: "ئورۇن قىممەتلىك ۋە ئورۇن قىممەتسىز ساناق سىستېمىلىرى",
-            description: "بۇ ماقالە ساناق سىستېمىسى ئىقتىدارىنى ساددا چۈشەندۈرۈپ، ئەمەلىي مىساللار ئارقىلىق ئىزاھلايدۇ.",
-            url: "https://sanoq.uz/ug/info/orun-qimmetlik-we-orun-qimmetsiz-sanaq-sistemiliri",
-            siteName: "sanoq.uz",
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", width: 1000, height: 749, alt: "sanoq.uz" }],
-            locale: "ug",
-            type: "article",
-        },
-        twitter: {
-            card: "summary_large_image",
-            title: "ئورۇن قىممەتلىك ۋە ئورۇن قىممەتسىز ساناق سىستېمىلىرى",
-            description: "بۇ ماقالە ساناق سىستېمىسى ئىقتىدارىنى ساددا چۈشەندۈرۈپ، ئەمەلىي مىساللار ئارقىلىق ئىزاھلايدۇ.",
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", alt: "sanoq.uz" }],
-            creator: "@jarkurghan",
-        },
-
-        metadataBase: new URL("https://sanoq.uz"),
-        alternates: {
-            canonical: "https://sanoq.uz/ug/info/orun-qimmetlik-we-orun-qimmetsiz-sanaq-sistemiliri",
-            languages: {
-                ru: "https://sanoq.uz/ru/info/pozitsionnye-i-nepozitsionnye-sistemy-schisleniya",
-                uz: "https://sanoq.uz/uz/info/pozitsion-va-nopozitsion-sanoq-sistemalari",
-                ug: "https://sanoq.uz/ug/info/orun-qimmetlik-we-orun-qimmetsiz-sanaq-sistemiliri",
-                "x-default": "https://sanoq.uz/publications",
-            },
-        },
-    };
+    return SEO({ title, description, url, keywords, alterLangs: ARTICLES_001_PVNSS_METALANG });
 }
 
 export default function MaqolaPozitsionNopozitsion_UY() {

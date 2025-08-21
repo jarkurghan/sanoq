@@ -1,55 +1,15 @@
 import Container from "@/components/common/container";
+import { ARTICLES_001_PVNSS_METALANG } from "@/lib/constants/publications/pozitsion-va-nopozitsion-sanoq-sistemalari";
+import { SEO } from "@/utils/generate-metadata";
 import type { Metadata } from "next";
 
 export function generateMetadata(): Metadata {
-    return {
-        title: "أنظمة العد الموضعية وغير الموضعية",
-        description: "تشرح هذه المقالة مفهوم أنظمة العد بأسلوب مبسّط مع أمثلة عملية.",
-        keywords: ["نظام عد", "نظام عد موضعي", "نظام عد غير موضعي", "الأرقام الرومانية", "الفرق بين أنظمة العد"],
+    const url = ARTICLES_001_PVNSS_METALANG["ar"] as string;
+    const title = "أنظمة العد الموضعية وغير الموضعية";
+    const description = "تشرح هذه المقالة مفهوم أنظمة العد بأسلوب مبسّط مع أمثلة عملية.";
+    const keywords = ["نظام عد", "نظام عد موضعي", "نظام عد غير موضعي", "الأرقام الرومانية", "الفرق بين أنظمة العد"];
 
-        authors: [{ name: "Najmiddin Nazirov", url: "https://sanoq.uz/about" }],
-        creator: "Najmiddin Nazirov",
-
-        robots: {
-            index: true,
-            follow: true,
-            nocache: false,
-            googleBot: {
-                index: true,
-                follow: true,
-                "max-video-preview": -1,
-                "max-image-preview": "large",
-                "max-snippet": -1,
-            },
-        },
-        openGraph: {
-            title: "أنظمة العد الموضعية وغير الموضعية",
-            description: "تشرح هذه المقالة مفهوم أنظمة العد بأسلوب مبسّط مع أمثلة عملية.",
-            url: "https://sanoq.uz/ar/info/anzimat-al-add-al-mawdiyya-wa-ghayr-al-mawdiyya",
-            siteName: "sanoq.uz",
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", width: 1000, height: 749, alt: "sanoq.uz" }],
-            locale: "ar",
-            type: "article",
-        },
-        twitter: {
-            card: "summary_large_image",
-            title: "أنظمة العد الموضعية وغير الموضعية",
-            description: "تشرح هذه المقالة مفهوم أنظمة العد بأسلوب مبسّط مع أمثلة عملية.",
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", alt: "sanoq.uz" }],
-            creator: "@jarkurghan",
-        },
-
-        metadataBase: new URL("https://sanoq.uz"),
-        alternates: {
-            canonical: "https://sanoq.uz/ar/info/anzimat-al-add-al-mawdiyya-wa-ghayr-al-mawdiyya",
-            languages: {
-                ru: "https://sanoq.uz/ru/info/pozitsionnye-i-nepozitsionnye-sistemy-schisleniya",
-                uz: "https://sanoq.uz/uz/info/pozitsion-va-nopozitsion-sanoq-sistemalari",
-                ar: "https://sanoq.uz/ar/info/anzimat-al-add-al-mawdiyya-wa-ghayr-al-mawdiyya",
-                "x-default": "https://sanoq.uz/publications",
-            },
-        },
-    };
+    return SEO({ title, description, url, keywords, alterLangs: ARTICLES_001_PVNSS_METALANG });
 }
 
 export default function MaqolaPozitsionNopozitsion_AR() {

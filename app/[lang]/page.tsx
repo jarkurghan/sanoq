@@ -3,7 +3,6 @@ import HomeComponent from "@/components/home/client-component";
 import { getTranslation } from "@/lib/translater/i18n";
 import { Language } from "@/types/language";
 import { Metadata } from "next";
-import { use } from "react";
 
 type Props = {
     params: Promise<{ lang: Language }>;
@@ -76,8 +75,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
-export default function HomePage({ params }: Props) {
-    const { lang } = use(params);
+export default async function HomePage({ params }: Props) {
+    const { lang } = await params;
     const t = getTranslation(lang);
 
     return (

@@ -1,54 +1,15 @@
 import Container from "@/components/common/container";
+import { ARTICLES_001_PVNSS_METALANG } from "@/lib/constants/publications/pozitsion-va-nopozitsion-sanoq-sistemalari";
+import { SEO } from "@/utils/generate-metadata";
 import type { Metadata } from "next";
 
 export function generateMetadata(): Metadata {
-    return {
-        title: "Pozitsion va nopozitsion sanoq sistemalari",
-        description: "Ushbu maqola sanoq sistemalari tushunchasini sodda va amaliy misollar bilan tushuntiradi.",
-        keywords: ["sanoq sistemasi", "pozitsion sanoq sistemi", "nopozitsion sanoq sistemi", "rim raqamlari", "sanoq sistemalari farqi"],
+    const url = ARTICLES_001_PVNSS_METALANG["uz"] as string;
+    const title = "Pozitsion va nopozitsion sanoq sistemalari";
+    const description = "Ushbu maqola sanoq sistemalari tushunchasini sodda va amaliy misollar bilan tushuntiradi.";
+    const keywords = ["sanoq sistemasi", "pozitsion sanoq sistemi", "nopozitsion sanoq sistemi", "rim raqamlari", "sanoq sistemalari farqi"];
 
-        authors: [{ name: "Najmiddin Nazirov", url: "https://sanoq.uz/about" }],
-        creator: "Najmiddin Nazirov",
-
-        robots: {
-            index: true,
-            follow: true,
-            nocache: false,
-            googleBot: {
-                index: true,
-                follow: true,
-                "max-video-preview": -1,
-                "max-image-preview": "large",
-                "max-snippet": -1,
-            },
-        },
-        openGraph: {
-            title: "Pozitsion va nopozitsion sanoq sistemalari",
-            description: "Ushbu maqola sanoq sistemalari tushunchasini sodda va amaliy misollar bilan tushuntiradi.",
-            url: "https://sanoq.uz/uz/info/pozitsion-va-nopozitsion-sanoq-sistemalari",
-            siteName: "sanoq.uz",
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", width: 1000, height: 749, alt: "sanoq.uz" }],
-            locale: "uz",
-            type: "article",
-        },
-        twitter: {
-            card: "summary_large_image",
-            title: "Pozitsion va nopozitsion sanoq sistemalari",
-            description: "Ushbu maqola sanoq sistemalari tushunchasini sodda va amaliy misollar bilan tushuntiradi.",
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", alt: "sanoq.uz" }],
-            creator: "@jarkurghan",
-        },
-
-        metadataBase: new URL("https://sanoq.uz"),
-        alternates: {
-            canonical: "https://sanoq.uz/uz/info/pozitsion-va-nopozitsion-sanoq-sistemalari",
-            languages: {
-                ru: "https://sanoq.uz/ru/info/pozitsionnye-i-nepozitsionnye-sistemy-schisleniya",
-                uz: "https://sanoq.uz/uz/info/pozitsion-va-nopozitsion-sanoq-sistemalari",
-                "x-default": "https://sanoq.uz/publications",
-            },
-        },
-    };
+    return SEO({ title, description, url, keywords, alterLangs: ARTICLES_001_PVNSS_METALANG });
 }
 
 export default function MaqolaPozitsionNopozitsion() {

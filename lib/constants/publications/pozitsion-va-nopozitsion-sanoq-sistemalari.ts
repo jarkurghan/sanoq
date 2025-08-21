@@ -1,9 +1,13 @@
+import { Color } from "@/types/color";
+import { IconType } from "@/types/icon";
+import { MetaLang } from "@/types/language";
 import { Publication } from "@/types/publication";
 import { MapPinCheckInside } from "lucide-react";
 
-const icon = MapPinCheckInside;
-const color = "sky";
-export const ARTICLES_POZITSION_VA_NOPOZITSION_SANOQ_SISTEMALARI = [
+const icon: IconType = MapPinCheckInside;
+const color: Color = "sky";
+
+export const ARTICLES_001_PVNSS = [
     {
         title: "Pozitsion va nopozitsion sanoq sistemalari",
         description: "Ushbu maqola sanoq sistemalari tushunchasini sodda va amaliy misollar bilan tushuntiradi.",
@@ -13,7 +17,7 @@ export const ARTICLES_POZITSION_VA_NOPOZITSION_SANOQ_SISTEMALARI = [
         color,
     },
     {
-        title: "Positional vs Non-Positional Numeral Systems",
+        title: "Positional vs Non‑Positional Numeral Systems",
         description: "This article explains numeral systems with simple, practical examples.",
         href: "/en/info/positional-vs-nonpositional-numeral-systems",
         lang: "en",
@@ -61,8 +65,8 @@ export const ARTICLES_POZITSION_VA_NOPOZITSION_SANOQ_SISTEMALARI = [
         color,
     },
     {
-        title: "Позициялық және позициялық емес санау жүйелері",
-        description: "Бұл мақала санау жүйелері ұғымын қарапайым әрі қолданбалы мысалдармен түсіндіреді.",
+        title: "Позициялык жана позициялык эмес санак системалары",
+        description: "Бул макала санак системалары түшүнүгүн жөнөкөй жана колдонмолуу мисалдар менен түшүндүрөт.",
         href: "/ky/info/pozitsiyalyk-zhana-pozitsiyalyk-emes-sanak-sistemalar",
         lang: "ky",
         icon,
@@ -109,3 +113,11 @@ export const ARTICLES_POZITSION_VA_NOPOZITSION_SANOQ_SISTEMALARI = [
         color,
     },
 ] satisfies readonly Publication[];
+
+export const ARTICLES_001_PVNSS_METALANG: MetaLang = ARTICLES_001_PVNSS.reduce(
+    (obj, article) => {
+        obj[article.lang] = `https://sanoq.uz${article.href}`;
+        return obj;
+    },
+    { "x-default": "https://sanoq.uz/publications" } as MetaLang
+);

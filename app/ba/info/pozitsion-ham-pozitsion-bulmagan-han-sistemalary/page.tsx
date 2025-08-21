@@ -1,64 +1,15 @@
 import Container from "@/components/common/container";
+import { ARTICLES_001_PVNSS_METALANG } from "@/lib/constants/publications/pozitsion-va-nopozitsion-sanoq-sistemalari";
+import { SEO } from "@/utils/generate-metadata";
 import type { Metadata } from "next";
-import { AlternateLinkDescriptor } from "next/dist/lib/metadata/types/alternative-urls-types";
 
 export function generateMetadata(): Metadata {
-    return {
-        title: "Позицион һәм позицион булмаған һан системалары",
-        description: "Был мәҡәлә һан системалары төшөнсәһен ябай һәм практик миҫалдар менән аңлата.",
-        keywords: ["һан системаһы", "позицион һан системаһы", "позицион булмаған һан системаһы", "рим һандары", "һан системалары айырмаһы"],
+    const url = ARTICLES_001_PVNSS_METALANG["ba"] as string;
+    const title = "Позицион һәм позицион булмаған һан системалары";
+    const description = "Был мәҡәлә һан системалары төшөнсәһен ябай һәм практик миҫалдар менән аңлата.";
+    const keywords = ["һан системаһы", "позицион һан системаһы", "позицион булмаған һан системаһы", "рим һандары", "һан системалары айырмаһы"];
 
-        authors: [{ name: "Najmiddin Nazirov", url: "https://sanoq.uz/about" }],
-        creator: "Najmiddin Nazirov",
-
-        robots: {
-            index: true,
-            follow: true,
-            nocache: false,
-            googleBot: {
-                index: true,
-                follow: true,
-                "max-video-preview": -1,
-                "max-image-preview": "large",
-                "max-snippet": -1,
-            },
-        },
-        openGraph: {
-            title: "Позицион һәм позицион булмаған һан системалары",
-            description: "Был мәҡәлә һан системалары төшөнсәһен ябай һәм практик миҫалдар менән аңлата.",
-            url: "https://sanoq.uz/ba/info/pozitsion-ham-pozitsion-bulmagan-han-sistemalary",
-            siteName: "sanoq.uz",
-            images: [
-                {
-                    url: "https://sanoq.uz/images/sanoq.uz.png",
-                    width: 1000,
-                    height: 749,
-                    alt: "sanoq.uz",
-                },
-            ],
-            locale: "ba",
-            type: "article",
-        },
-        twitter: {
-            card: "summary_large_image",
-            title: "Позицион һәм позицион булмаған һан системалары",
-            description: "Был мәҡәлә һан системалары төшөнсәһен ябай һәм практик миҫалдар менән аңлата.",
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", alt: "sanoq.uz" }],
-            creator: "@jarkurghan",
-        },
-
-        metadataBase: new URL("https://sanoq.uz"),
-        alternates: {
-            canonical: "https://sanoq.uz/ba/info/pozitsion-ham-pozitsion-bulmagan-han-sistemalary",
-            languages: {
-                ru: "https://sanoq.uz/ru/info/pozitsionnye-i-nepozitsionnye-sistemy-schisleniya",
-                uz: "https://sanoq.uz/uz/info/pozitsion-va-nopozitsion-sanoq-sistemalari",
-                az: "https://sanoq.uz/az/info/pozisional-ve-qeyri-pozisional-say-sistemleri",
-                ba: "https://sanoq.uz/ba/info/pozitsion-ham-pozitsion-bulmagan-han-sistemalary",
-                "x-default": "https://sanoq.uz/publications",
-            },
-        },
-    };
+    return SEO({ title, description, url, keywords, alterLangs: ARTICLES_001_PVNSS_METALANG });
 }
 
 export default function MaqalaPozitsionNopozitsion() {

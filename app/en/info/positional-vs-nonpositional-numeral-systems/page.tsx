@@ -1,55 +1,15 @@
 import Container from "@/components/common/container";
+import { ARTICLES_001_PVNSS_METALANG } from "@/lib/constants/publications/pozitsion-va-nopozitsion-sanoq-sistemalari";
+import { SEO } from "@/utils/generate-metadata";
 import type { Metadata } from "next";
 
 export function generateMetadata(): Metadata {
-    return {
-        title: "Positional vs Non-Positional Numeral Systems",
-        description: "This article explains numeral systems with simple, practical examples.",
-        keywords: ["numeral system", "number system", "positional numeral system", "non-positional numeral system", "difference between numeral systems"],
+    const url = ARTICLES_001_PVNSS_METALANG["en"] as string;
+    const title = "Positional vs Non-Positional Numeral Systems";
+    const description = "This article explains numeral systems with simple, practical examples.";
+    const keywords = ["numeral system", "number system", "positional numeral system", "non-positional numeral system", "difference between numeral systems"];
 
-        authors: [{ name: "Najmiddin Nazirov", url: "https://sanoq.uz/about" }],
-        creator: "Najmiddin Nazirov",
-
-        robots: {
-            index: true,
-            follow: true,
-            nocache: false,
-            googleBot: {
-                index: true,
-                follow: true,
-                "max-video-preview": -1,
-                "max-image-preview": "large",
-                "max-snippet": -1,
-            },
-        },
-        openGraph: {
-            title: "Positional vs Non-Positional Numeral Systems",
-            description: "This article explains numeral systems with simple, practical examples.",
-            url: "https://sanoq.uz/en/info/positional-vs-nonpositional-numeral-systems",
-            siteName: "sanoq.uz",
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", width: 1000, height: 749, alt: "sanoq.uz" }],
-            locale: "en",
-            type: "article",
-        },
-        twitter: {
-            card: "summary_large_image",
-            title: "Positional vs Non-Positional Numeral Systems",
-            description: "This article explains numeral systems with simple, practical examples.",
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", alt: "sanoq.uz" }],
-            creator: "@jarkurghan",
-        },
-
-        metadataBase: new URL("https://sanoq.uz"),
-        alternates: {
-            canonical: "https://sanoq.uz/en/info/positional-vs-nonpositional-numeral-systems",
-            languages: {
-                en: "https://sanoq.uz/en/info/positional-vs-nonpositional-numeral-systems",
-                ru: "https://sanoq.uz/ru/info/pozitsionnye-i-nepozitsionnye-sistemy-schisleniya",
-                uz: "https://sanoq.uz/uz/info/pozitsion-va-nopozitsion-sanoq-sistemalari",
-                "x-default": "https://sanoq.uz/publications",
-            },
-        },
-    };
+    return SEO({ title, description, url, keywords, alterLangs: ARTICLES_001_PVNSS_METALANG });
 }
 
 export default function ArticlePositionalNonpositional() {

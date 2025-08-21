@@ -10,12 +10,10 @@ import ky from "./ky.json";
 import tk from "./tk.json";
 import tt from "./tt.json";
 import ug from "./ug.json";
-import bak from "./bak.json";
-import kaa from "./kaa.json";
-import crh from "./crh.json";
+import ba from "./ba.json";
+import ar from "./ar.json";
 
-// to-do: tugamadi
-const translations: Record<Language, Record<string, string>> = { en, uz, ru, tr, tg, az, kk, ky, tk, tt, ug, bak, kaa, crh };
+const translations: Record<Language, Record<string, string>> = { en, uz, ru, tr, tg, az, kk, ky, tk, tt, ug, ba, ar };
 
 export function getTranslation(lang: Language) {
     return function t(key: string): string {

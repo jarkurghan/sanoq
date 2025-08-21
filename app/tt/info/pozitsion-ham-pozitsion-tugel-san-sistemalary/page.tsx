@@ -1,57 +1,15 @@
 import Container from "@/components/common/container";
+import { ARTICLES_001_PVNSS_METALANG } from "@/lib/constants/publications/pozitsion-va-nopozitsion-sanoq-sistemalari";
+import { SEO } from "@/utils/generate-metadata";
 import type { Metadata } from "next";
 
 export function generateMetadata(): Metadata {
-    return {
-        title: "Позицион һәм позицион түгел сан системалары",
-        description: "Бу мәкалә сан системасы төшенчәсен гади һәм гамәли мисаллар белән аңлата.",
-        keywords: ["сан системасы", "позицион сан системасы", "позицион түгел сан системасы", "Рим саннары", "сан системалары аермасы"],
+    const url = ARTICLES_001_PVNSS_METALANG["tt"] as string;
+    const title = "Позицион һәм позицион түгел сан системалары";
+    const description = "Бу мәкалә сан системасы төшенчәсен гади һәм гамәли мисаллар белән аңлата.";
+    const keywords = ["сан системасы", "позицион сан системасы", "позицион түгел сан системасы", "Рим саннары", "сан системалары аермасы"];
 
-        authors: [{ name: "Najmiddin Nazirov", url: "https://sanoq.uz/about" }],
-        creator: "Najmiddin Nazirov",
-
-        robots: {
-            index: true,
-            follow: true,
-            nocache: false,
-            googleBot: {
-                index: true,
-                follow: true,
-                "max-video-preview": -1,
-                "max-image-preview": "large",
-                "max-snippet": -1,
-            },
-        },
-        openGraph: {
-            title: "Позицион һәм позицион түгел сан системалары",
-            description: "Бу мәкалә сан системасы төшенчәсен гади һәм гамәли мисаллар белән аңлата.",
-            url: "https://sanoq.uz/tt/info/pozitsion-ham-pozitsion-tugel-san-sistemalary",
-            siteName: "sanoq.uz",
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", width: 1000, height: 749, alt: "sanoq.uz" }],
-            locale: "tt",
-            type: "article",
-        },
-        twitter: {
-            card: "summary_large_image",
-            title: "Позицион һәм позицион түгел сан системалары",
-            description: "Бу мәкалә сан системасы төшенчәсен гади һәм гамәли мисаллар белән аңлата.",
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", alt: "sanoq.uz" }],
-            creator: "@jarkurghan",
-        },
-
-        metadataBase: new URL("https://sanoq.uz"),
-        alternates: {
-            canonical: "https://sanoq.uz/tt/info/pozitsion-ham-pozitsion-tugel-san-sistemalary",
-            languages: {
-                tt: "https://sanoq.uz/tt/info/pozitsion-ham-pozitsion-tugel-san-sistemalary",
-                tr: "https://sanoq.uz/tr/info/konumsal-ve-konumsal-olmayan-sayi-sistemleri",
-                tk: "https://sanoq.uz/tk/info/pozision-we-pozision-dal-san-ulgamlary",
-                ru: "https://sanoq.uz/ru/info/pozitsionnye-i-nepozitsionnye-sistemy-schisleniya",
-                uz: "https://sanoq.uz/uz/info/pozitsion-va-nopozitsion-sanoq-sistemalari",
-                "x-default": "https://sanoq.uz/publications",
-            },
-        },
-    };
+    return SEO({ title, description, url, keywords, alterLangs: ARTICLES_001_PVNSS_METALANG });
 }
 
 export default function MaqalaPozitsionHemTugel() {

@@ -7,7 +7,6 @@ import { getTranslation } from "@/lib/translater/i18n";
 import { Language } from "@/types/language";
 import { Base } from "@/types/base";
 import { Metadata } from "next";
-import { use } from "react";
 
 type Props = {
     params: Promise<{ lang: Language; base: Base }>;
@@ -82,8 +81,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
-export default function CalculatorPage({ params }: Props) {
-    const { lang, base: baseStr } = use(params);
+export default async function CalculatorPage({ params }: Props) {
+    const { lang, base: baseStr } = await params;
     const base = LINGUISTIC_NAME_TO_NUMERAL_NAME[baseStr] || "10";
     const t = getTranslation(lang);
 

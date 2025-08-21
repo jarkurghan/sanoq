@@ -1,3 +1,6 @@
+import { AlternateLinkDescriptor } from "next/dist/lib/metadata/types/alternative-urls-types";
+import { Languages } from "next/dist/lib/metadata/types/alternative-urls-types";
+
 export type Language =
     | "uz"
     | "en"
@@ -14,3 +17,5 @@ export type Language =
     // | "kaa"
     // | "crh"
     | "ar";
+
+export type MetaLang = Languages<string | URL | AlternateLinkDescriptor[] | null>;

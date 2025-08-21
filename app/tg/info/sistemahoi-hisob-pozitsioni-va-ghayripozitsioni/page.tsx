@@ -1,56 +1,15 @@
 import Container from "@/components/common/container";
+import { ARTICLES_001_PVNSS_METALANG } from "@/lib/constants/publications/pozitsion-va-nopozitsion-sanoq-sistemalari";
+import { SEO } from "@/utils/generate-metadata";
 import type { Metadata } from "next";
 
 export function generateMetadata(): Metadata {
-    return {
-        title: "Системаҳои ҳисоб: позиционӣ ва ғайрипозиционӣ",
-        description: "Ин мақола мафҳуми системаҳои ҳисобро бо мисолҳои оддӣ ва амалӣ шарҳ медиҳад.",
-        keywords: ["системаи ҳисоб", "системаи позиционӣ", "системаи ғайрипозиционӣ", "рақамҳои римӣ", "фарқи системаҳои ҳисоб"],
+    const url = ARTICLES_001_PVNSS_METALANG["tg"] as string;
+    const title = "Системаҳои ҳисоб: позиционӣ ва ғайрипозиционӣ";
+    const description = "Ин мақола мафҳуми системаҳои ҳисобро бо мисолҳои оддӣ ва амалӣ шарҳ медиҳад.";
+    const keywords = ["системаи ҳисоб", "системаи позиционӣ", "системаи ғайрипозиционӣ", "рақамҳои римӣ", "фарқи системаҳои ҳисоб"];
 
-        authors: [{ name: "Najmiddin Nazirov", url: "https://sanoq.uz/about" }],
-        creator: "Najmiddin Nazirov",
-
-        robots: {
-            index: true,
-            follow: true,
-            nocache: false,
-            googleBot: {
-                index: true,
-                follow: true,
-                "max-video-preview": -1,
-                "max-image-preview": "large",
-                "max-snippet": -1,
-            },
-        },
-        openGraph: {
-            title: "Системаҳои ҳисоб: позиционӣ ва ғайрипозиционӣ",
-            description: "Ин мақола мафҳуми системаҳои ҳисобро бо мисолҳои оддӣ ва амалӣ шарҳ медиҳад.",
-            url: "https://sanoq.uz/tg/info/sistemahoi-hisob-pozitsioni-va-ghayripozitsioni",
-            siteName: "sanoq.uz",
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", width: 1000, height: 749, alt: "sanoq.uz" }],
-            locale: "tg",
-            type: "article",
-        },
-        twitter: {
-            card: "summary_large_image",
-            title: "Системаҳои ҳисоб: позиционӣ ва ғайрипозиционӣ",
-            description: "Ин мақола мафҳуми системаҳои ҳисобро бо мисолҳои оддӣ ва амалӣ шарҳ медиҳад.",
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", alt: "sanoq.uz" }],
-            creator: "@jarkurghan",
-        },
-
-        metadataBase: new URL("https://sanoq.uz"),
-        alternates: {
-            canonical: "https://sanoq.uz/tg/info/sistemahoi-hisob-pozitsioni-va-ghayripozitsioni",
-            languages: {
-                tg: "https://sanoq.uz/tg/info/sistemahoi-hisob-pozitsioni-va-ghayripozitsioni",
-                en: "https://sanoq.uz/en/info/positional-vs-nonpositional-numeral-systems",
-                ru: "https://sanoq.uz/ru/info/pozitsionnye-i-nepozitsionnye-sistemy-schisleniya",
-                uz: "https://sanoq.uz/uz/info/pozitsion-va-nopozitsion-sanoq-sistemalari",
-                "x-default": "https://sanoq.uz/publications",
-            },
-        },
-    };
+    return SEO({ title, description, url, keywords, alterLangs: ARTICLES_001_PVNSS_METALANG });
 }
 
 export default function MaqolaPozitsioniGhayripozitsioni() {

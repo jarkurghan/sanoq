@@ -2,7 +2,7 @@ import { Publication } from "@/types/publication";
 import { Calculator } from "lucide-react";
 import { History } from "lucide-react";
 import { Hash } from "lucide-react";
-import { ARTICLES_POZITSION_VA_NOPOZITSION_SANOQ_SISTEMALARI } from "./pozitsion-va-nopozitsion-sanoq-sistemalari";
+import { ARTICLES_001_PVNSS } from "./pozitsion-va-nopozitsion-sanoq-sistemalari";
 
 export const PUBLICATIONS = [
     {
@@ -30,5 +30,5 @@ export const PUBLICATIONS = [
         icon: Hash,
         color: "red",
     },
-    ...ARTICLES_POZITSION_VA_NOPOZITSION_SANOQ_SISTEMALARI,
+    ...ARTICLES_001_PVNSS,
 ] satisfies readonly Publication[];

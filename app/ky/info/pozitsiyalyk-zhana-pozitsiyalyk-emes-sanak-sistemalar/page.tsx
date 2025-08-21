@@ -1,56 +1,15 @@
 import Container from "@/components/common/container";
+import { ARTICLES_001_PVNSS_METALANG } from "@/lib/constants/publications/pozitsion-va-nopozitsion-sanoq-sistemalari";
+import { SEO } from "@/utils/generate-metadata";
 import type { Metadata } from "next";
 
 export function generateMetadata(): Metadata {
-    return {
-        title: "Позициялык жана позициялык эмес санак системалары",
-        description: "Бул макала санак системалары түшүнүгүн жөнөкөй жана колдонмолуу мисалдар менен түшүндүрөт.",
-        keywords: ["санак системасы", "позициялык санак системасы", "позициялык эмес санак системасы", "рим цифралары", "санак системаларынын айырмасы"],
+    const url = ARTICLES_001_PVNSS_METALANG["ky"] as string;
+    const title = "Позициялык жана позициялык эмес санак системалары";
+    const description = "Бул макала санак системалары түшүнүгүн жөнөкөй жана колдонмолуу мисалдар менен түшүндүрөт.";
+    const keywords = ["санак системасы", "позициялык санак системасы", "позициялык эмес санак системасы", "рим цифралары", "санак системаларынын айырмасы"];
 
-        authors: [{ name: "Najmiddin Nazirov", url: "https://sanoq.uz/about" }],
-        creator: "Najmiddin Nazirov",
-
-        robots: {
-            index: true,
-            follow: true,
-            nocache: false,
-            googleBot: {
-                index: true,
-                follow: true,
-                "max-video-preview": -1,
-                "max-image-preview": "large",
-                "max-snippet": -1,
-            },
-        },
-        openGraph: {
-            title: "Позициялык жана позициялык эмес санак системалары",
-            description: "Бул макала санак системалары түшүнүгүн жөнөкөй жана колдонмолуу мисалдар менен түшүндүрөт.",
-            url: "https://sanoq.uz/ky/info/pozitsiyalyk-zhana-pozitsiyalyk-emes-sanak-sistemalar",
-            siteName: "sanoq.uz",
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", width: 1000, height: 749, alt: "sanoq.uz" }],
-            locale: "ky",
-            type: "article",
-        },
-        twitter: {
-            card: "summary_large_image",
-            title: "Позициялык жана позициялык эмес санак системалары",
-            description: "Бул макала санак системалары түшүнүгүн жөнөкөй жана колдонмолуу мисалдар менен түшүндүрөт.",
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", alt: "sanoq.uz" }],
-            creator: "@jarkurghan",
-        },
-
-        metadataBase: new URL("https://sanoq.uz"),
-        alternates: {
-            canonical: "https://sanoq.uz/ky/info/pozitsiyalyk-zhana-pozitsiyalyk-emes-sanak-sistemalar",
-            languages: {
-                ru: "https://sanoq.uz/ru/info/pozitsionnye-i-nepozitsionnye-sistemy-schisleniya",
-                uz: "https://sanoq.uz/uz/info/pozitsion-va-nopozitsion-sanoq-sistemalari",
-                kk: "https://sanoq.uz/kk/info/pozitsiyalyk-zhane-pozitsiyalyk-emes-sanau-zhuyeleri",
-                ky: "https://sanoq.uz/ky/info/pozitsiyalyk-zhana-pozitsiyalyk-emes-sanak-sistemalar",
-                "x-default": "https://sanoq.uz/publications",
-            },
-        },
-    };
+    return SEO({ title, description, url, keywords, alterLangs: ARTICLES_001_PVNSS_METALANG });
 }
 
 export default function MaqolaPozitsionNopozitsion() {
