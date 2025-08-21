@@ -1,10 +1,10 @@
 import { Dialog, DialogHeader } from "@/components/utils/dialog";
 import { DialogContent, DialogTitle, DialogTrigger } from "@/components/utils/dialog";
 import { getTranslation } from "@/lib/translater/i18n";
-import { Language } from "@/types/language";
+import { Language } from "@/lib/types/language";
 import { NUMBER_SYSTEMS } from "@/lib/constants/numeral-system";
 import { NUMERAL_NAME_TO_LINGUISTIC_NAME } from "@/lib/constants/numeral-system";
-import { Base } from "@/types/base";
+import { Base } from "@/lib/types/base";
 import { DropdownMenu } from "../utils/dropdown-menu";
 import { DropdownMenuContent } from "../utils/dropdown-menu";
 import { DropdownMenuItem } from "../utils/dropdown-menu";

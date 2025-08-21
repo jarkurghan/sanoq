@@ -18,6 +18,12 @@ Barcha versiya o‘zgarishlari shu yerda qayd etiladi.
     -   Arab tili
 -   Barcha tillar uchun yangi maqola qo'shildi: Pozitsion va nopozitsion sanoq sistemalari
 
+**O‘zgartirildi:**
+-   publications -> article
+
+**Tuzatildi:**
+-   Maqola ichida tilni o'zgartirish ishga tushdi
+
 ### v1.2.0 — 2025-08-18
 
 **O‘zgartirildi:**

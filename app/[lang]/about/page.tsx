@@ -2,7 +2,8 @@ import ShareAppURL from "@/components/global/share";
 import Content from "@/components/common/content";
 import { Send, Share2 } from "lucide-react";
 import { getTranslation } from "@/lib/translater/i18n";
-import { Language } from "@/types/language";
+import { Language, MetaLang } from "@/lib/types/language";
+import { SEO } from "@/lib/utils/generate-metadata";
 import type { Metadata } from "next";
 
 type Props = {
@@ -13,63 +14,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { lang } = await params;
     const t = getTranslation(lang);
 
-    return {
-        title: t("about.title"),
-        description: t("about.description"),
-
-        authors: [{ name: "Najmiddin Nazirov", url: "https://sanoq.uz/about" }],
-        creator: "Najmiddin Nazirov",
-
-        robots: {
-            index: false,
-            follow: false,
-            nocache: false,
-            googleBot: {
-                index: false,
-                follow: false,
-            },
-        },
-
-        openGraph: {
-            title: t("about.title"),
-            description: t("about.description"),
-            url: "https://sanoq.uz",
-            siteName: "sanoq.uz",
-            images: [
-                {
-                    url: "https://sanoq.uz/images/sanoq.uz.png",
-                    width: 1000,
-                    height: 749,
-                    alt: "sanoq.uz",
-                },
-            ],
-            locale: lang,
-            type: "website",
-        },
-
-        twitter: {
-            card: "summary_large_image",
-            title: t("about.title"),
-            description: t("about.description"),
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", alt: "sanoq.uz" }],
-            creator: "@jarkurghan",
-        },
-
-        metadataBase: new URL("https://sanoq.uz"),
-        alternates: {
-            canonical: `https://sanoq.uz/${lang}/publications`,
-            languages: {
-                uz: "https://sanoq.uz/uz/publications",
-                en: "https://sanoq.uz/en/publications",
-                ru: "https://sanoq.uz/ru/publications",
-            },
-        },
-
-        other: {
-            "application-name": "sanoq.uz",
-            "apple-mobile-web-app-title": "sanoq.uz",
-        },
+    const title = t("about.title");
+    const description = t("about.description");
+    const url = `https://sanoq.uz/${lang}/about`;
+    const alterLangs: MetaLang = {
+        uz: "https://sanoq.uz/uz/about",
+        en: "https://sanoq.uz/en/about",
+        ru: "https://sanoq.uz/ru/about",
+        tg: "https://sanoq.uz/tg/about",
+        tr: "https://sanoq.uz/tr/about",
+        az: "https://sanoq.uz/az/about",
+        kk: "https://sanoq.uz/kk/about",
+        ky: "https://sanoq.uz/ky/about",
+        tk: "https://sanoq.uz/tk/about",
+        tt: "https://sanoq.uz/tt/about",
+        ug: "https://sanoq.uz/ug/about",
+        ba: "https://sanoq.uz/ba/about",
+        ar: "https://sanoq.uz/ar/about",
+        "x-default": "https://sanoq.uz/about",
     };
+
+    return SEO({ title, description, alterLangs, url, lang });
 }
 
 export default async function AboutPage({ params }: Props) {
@@ -95,9 +60,9 @@ export default async function AboutPage({ params }: Props) {
                         <p>{t("about.page.calculator.desription")}</p>
                     </div>
                     <div>
-                        <h3>{t("nav.publications")}</h3>
+                        <h3>{t("nav.article")}</h3>
                         <div></div>
-                        <p>{t("about.page.publications.desription")}</p>
+                        <p>{t("about.page.article.desription")}</p>
                     </div>
                     {/* <div>
                         <h3>{t("nav.code")}</h3>

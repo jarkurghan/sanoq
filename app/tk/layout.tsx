@@ -2,7 +2,7 @@ import type React from "react";
 import Navbar from "@/components/global/navbar";
 import Footer from "@/components/global/footer";
 // import Sidebar from "@/components/global/left-sidebar";
-import { Language } from "@/types/language";
+import { Language } from "@/lib/types/language";
 
 type Props = {
     children: React.ReactNode;

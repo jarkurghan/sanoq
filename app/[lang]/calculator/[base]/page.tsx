@@ -4,9 +4,10 @@ import CalculatorText from "@/components/calculator/standart-calculator-info";
 import Content from "@/components/common/content";
 import { LINGUISTIC_NAME_TO_NUMERAL_NAME } from "@/lib/constants/numeral-system";
 import { getTranslation } from "@/lib/translater/i18n";
-import { Language } from "@/types/language";
-import { Base } from "@/types/base";
+import { Language, MetaLang } from "@/lib/types/language";
+import { Base } from "@/lib/types/base";
 import { Metadata } from "next";
+import { SEO } from "@/lib/utils/generate-metadata";
 
 type Props = {
     params: Promise<{ lang: Language; base: Base }>;
@@ -15,70 +16,30 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { lang, base } = await params;
     const baseNum = LINGUISTIC_NAME_TO_NUMERAL_NAME[base] || "10";
-
     const t = getTranslation(lang);
 
-    return {
-        title: t("calculator.seo.title." + baseNum),
-        description: t("calculator.seo.description." + baseNum),
-        keywords: t("calculator.seo.keywords." + baseNum),
-
-        authors: [{ name: "Najmiddin Nazirov", url: "https://sanoq.uz/about" }],
-        creator: "Najmiddin Nazirov",
-
-        robots: {
-            index: true,
-            follow: true,
-            nocache: false,
-            googleBot: {
-                index: true,
-                follow: true,
-                "max-video-preview": -1,
-                "max-image-preview": "large",
-                "max-snippet": -1,
-            },
-        },
-
-        openGraph: {
-            title: t("calculator.seo.title." + baseNum),
-            description: t("calculator.seo.description." + baseNum),
-            url: "https://sanoq.uz",
-            siteName: "sanoq.uz",
-            images: [
-                {
-                    url: "https://sanoq.uz/images/sanoq.uz.png",
-                    width: 1000,
-                    height: 749,
-                    alt: "sanoq.uz",
-                },
-            ],
-            locale: lang,
-            type: "website",
-        },
-
-        twitter: {
-            card: "summary_large_image",
-            title: t("calculator.seo.title." + baseNum),
-            description: t("calculator.seo.description." + baseNum),
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", alt: "sanoq.uz" }],
-            creator: "@jarkurghan",
-        },
-
-        metadataBase: new URL("https://sanoq.uz"),
-        alternates: {
-            canonical: `https://sanoq.uz/${lang}/calculator/${baseNum}`,
-            languages: {
-                uz: "https://sanoq.uz/uz/calculator/" + baseNum,
-                en: "https://sanoq.uz/en/calculator/" + baseNum,
-                ru: "https://sanoq.uz/ru/calculator/" + baseNum,
-            },
-        },
-
-        other: {
-            "application-name": "sanoq.uz",
-            "apple-mobile-web-app-title": "sanoq.uz",
-        },
+    const title = t("calculator.seo.title." + baseNum);
+    const description = t("calculator.seo.description." + baseNum);
+    const keywords = t("calculator.seo.keywords." + baseNum);
+    const url = `https://sanoq.uz/${lang}/calculator/${base}`;
+    const alterLangs: MetaLang = {
+        uz: "https://sanoq.uz/uz/calculator/" + base,
+        en: "https://sanoq.uz/en/calculator/" + base,
+        ru: "https://sanoq.uz/ru/calculator/" + base,
+        tg: "https://sanoq.uz/tg/calculator/" + base,
+        tr: "https://sanoq.uz/tr/calculator/" + base,
+        az: "https://sanoq.uz/az/calculator/" + base,
+        kk: "https://sanoq.uz/kk/calculator/" + base,
+        ky: "https://sanoq.uz/ky/calculator/" + base,
+        tk: "https://sanoq.uz/tk/calculator/" + base,
+        tt: "https://sanoq.uz/tt/calculator/" + base,
+        ug: "https://sanoq.uz/ug/calculator/" + base,
+        ba: "https://sanoq.uz/ba/calculator/" + base,
+        ar: "https://sanoq.uz/ar/calculator/" + base,
+        "x-default": "https://sanoq.uz/calculator/" + base,
     };
+
+    return SEO({ title, description, keywords, url, lang, alterLangs });
 }
 
 export default async function CalculatorPage({ params }: Props) {

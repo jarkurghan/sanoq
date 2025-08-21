@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { Language } from "./types/language";
+import { Language } from "./lib/types/language";
 import { LANGUAGES } from "./lib/constants/languages";
 
 const languages: Language[] = LANGUAGES.map((lang) => lang.code);
@@ -50,8 +50,8 @@ export const config = {
     matcher: [
         "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|ba|ar)?",
         "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|ba|ar)?/calculator",
-        "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|ba|ar)?/publications",
+        "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|ba|ar)?/article",
         "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|ba|ar)?/about",
-        "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|ba|ar)?/info/:path*",
+        "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|ba|ar)?/article/:path*",
     ],
 };

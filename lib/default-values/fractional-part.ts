@@ -1,4 +1,4 @@
-import { FractionalPart, FractionalPartOnToBase } from "@/types/converter";
+import { FractionalPart, FractionalPartOnToBase } from "@/lib/types/converter";
 
 export const CONVERTER_SOLUTION_FRACTIONAL_PART: FractionalPart = {
     numerator: 0,

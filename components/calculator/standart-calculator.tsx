@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { Button } from "@/components/utils/button";
-import { Base } from "@/types/base";
+import { Base } from "@/lib/types/base";
 
 export default function StandartCalculator({ base }: { base: Base }) {
     type CalcState = { display: string; topDisplay: string; firstOperand: string | null; operator: string | null; waitingForSecondOperand: boolean };

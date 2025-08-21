@@ -16,7 +16,7 @@ import { getTranslation } from "@/lib/translater/i18n";
 import { DEFAULT_NUMBER_SYSTEM } from "@/lib/constants/numeral-system";
 import { DEFAULT_TWICE_NUMBER_SYSTEM } from "@/lib/constants/numeral-system";
 import { NUMBER_SYSTEMS } from "@/lib/constants/numeral-system";
-import { Language } from "@/types/language";
+import { Language } from "@/lib/types/language";
 import SolutionUz from "./solution-uz";
 import SolutionRu from "./solution-ru";
 import SolutionEn from "./solution-en";

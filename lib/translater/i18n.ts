@@ -1,4 +1,4 @@
-import { Language } from "@/types/language";
+import { Language } from "@/lib/types/language";
 import uz from "./uz.json";
 import ru from "./ru.json";
 import en from "./en.json";

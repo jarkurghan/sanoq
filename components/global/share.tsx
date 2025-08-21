@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { ClipboardCopy, Mail, Send } from "lucide-react";
 import { Button } from "@/components/utils/button";
 import { getTranslation } from "@/lib/translater/i18n";
-import { Language } from "@/types/language";
+import { Language } from "@/lib/types/language";
 
 export default function ShareAppURL({ children, lang }: { children?: React.ReactNode; lang: Language }) {
     const t = getTranslation(lang);

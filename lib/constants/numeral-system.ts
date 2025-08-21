@@ -1,4 +1,4 @@
-import { Base } from "@/types/base";
+import { Base } from "@/lib/types/base";
 
 export const NUMBER_SYSTEMS = [
     { value: "10", label: "numbersystem.decimal", name: "Decimal (Base 10)" },

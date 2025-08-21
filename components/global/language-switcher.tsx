@@ -5,7 +5,7 @@ import { DropdownMenu, DropdownMenuContent } from "@/components/utils/dropdown-m
 import { DropdownMenuItem, DropdownMenuTrigger } from "@/components/utils/dropdown-menu";
 import { useRouter, usePathname, useParams } from "next/navigation";
 import { Check, Globe } from "lucide-react";
-import { Language } from "@/types/language";
+import { Language } from "@/lib/types/language";
 import { LANGUAGES } from "@/lib/constants/languages";
 
 export default function LanguageSwitcher({ lang: language }: { lang: Language }) {
@@ -14,12 +14,15 @@ export default function LanguageSwitcher({ lang: language }: { lang: Language })
     const params = useParams();
 
     const handleLanguageChange = (newLang: Language) => {
+        const isInArticle = pathname.startsWith(`/${language}/article/`) && pathname !== `/${language}/article/`;
+        const articlePageURL = `/${newLang}/article/`;
+
         localStorage.setItem("language", newLang);
 
         const currentLang = params.lang as string;
         const pathWithoutLang = pathname.replace(`/${currentLang}`, "") || "";
 
-        const newPath = `/${newLang}${pathWithoutLang}`;
+        const newPath = isInArticle ? articlePageURL : `/${newLang}${pathWithoutLang}`;
         router.push(newPath);
     };
 

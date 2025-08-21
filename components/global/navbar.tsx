@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { usePathname } from "next/navigation";
-import { cn } from "@/utils/classname";
+import { cn } from "@/lib/utils/classname";
 import { Button } from "@/components/utils/button";
 import { Calculator } from "lucide-react";
 import { Code } from "lucide-react";
@@ -20,10 +20,10 @@ import LanguageSwitcher from "@/components/global/language-switcher";
 import ThemeToggle from "@/components/global/theme-toggle";
 import ShareAppURL from "./share";
 import { getTranslation } from "@/lib/translater/i18n";
-import { Language } from "@/types/language";
+import { Language } from "@/lib/types/language";
 import Image from "next/image";
 import CalculatorSettings from "../calculator/settings";
-import { Base } from "@/types/base";
+import { Base } from "@/lib/types/base";
 
 export default function Navbar({ lang }: { lang: Language }) {
     const t = getTranslation(lang);
@@ -39,7 +39,7 @@ export default function Navbar({ lang }: { lang: Language }) {
     const navItems = [
         { name: "nav.conversion", href: `/${lang}`, icon: Home, isActive: pathname === `/${lang}` },
         { name: "nav.calculator", href: `/${lang}/calculator`, icon: Calculator, isActive: isOnCalculatorPage },
-        { name: "nav.publications", href: `/${lang}/publications`, icon: BookOpen, isActive: pathname.startsWith(`/${lang}/publications`) },
+        { name: "nav.article", href: `/${lang}/article`, icon: BookOpen, isActive: pathname.startsWith(`/${lang}/article`) },
         // { name: "nav.code", href: `/${lang}/code`, icon: Code, isActive: pathname.startsWith(`/${lang}/code`) },
         { name: "nav.about", href: `/${lang}/about`, icon: Info, isActive: pathname.startsWith(`/${lang}/about`) },
     ];

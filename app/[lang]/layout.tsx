@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Language } from "@/types/language";
+import { Language } from "@/lib/types/language";
 import Navbar from "@/components/global/navbar";
 import Footer from "@/components/global/footer";
 
