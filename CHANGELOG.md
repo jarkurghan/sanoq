@@ -23,6 +23,7 @@ Barcha versiya o‘zgarishlari shu yerda qayd etiladi.
 
 **Tuzatildi:**
 -   Maqola ichida tilni o'zgartirish ishga tushdi
+-   header content kengligi body content kengligiga mos
 
 ### v1.2.0 — 2025-08-18
 

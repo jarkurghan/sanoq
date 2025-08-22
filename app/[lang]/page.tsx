@@ -1,5 +1,5 @@
 import Content from "@/components/common/content";
-import HomeComponent from "@/components/home/client-component";
+import HomeComponent from "@/components/converter/client-component";
 import { getTranslation } from "@/lib/translater/i18n";
 import { Language, MetaLang } from "@/lib/types/language";
 import { SEO } from "@/lib/utils/generate-metadata";

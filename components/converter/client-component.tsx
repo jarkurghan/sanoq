@@ -17,9 +17,7 @@ import { DEFAULT_NUMBER_SYSTEM } from "@/lib/constants/numeral-system";
 import { DEFAULT_TWICE_NUMBER_SYSTEM } from "@/lib/constants/numeral-system";
 import { NUMBER_SYSTEMS } from "@/lib/constants/numeral-system";
 import { Language } from "@/lib/types/language";
-import SolutionUz from "./solution-uz";
-import SolutionRu from "./solution-ru";
-import SolutionEn from "./solution-en";
+import Solution from "./solution";
 
 export default function HomeComponent({ lang }: { lang: Language }) {
     const t = getTranslation(lang);
@@ -120,43 +118,17 @@ export default function HomeComponent({ lang }: { lang: Language }) {
                 </div>
             </div>
             <div className="mt-8">
-                {lang === "en" ? (
-                    <SolutionEn
-                        lang={lang}
-                        inputNumber={solutionLeftValue}
-                        fromBase={solutionFromBase}
-                        toBase={solutionToBase}
-                        setResult={setRightValue}
-                        waiting={waiting}
-                        setWaiting={setWaiting}
-                        isHidden={isHiddenSolution}
-                        setIsHidden={setIsHiddenSolution}
-                    />
-                ) : lang === "ru" ? (
-                    <SolutionRu
-                        lang={lang}
-                        inputNumber={solutionLeftValue}
-                        fromBase={solutionFromBase}
-                        toBase={solutionToBase}
-                        setResult={setRightValue}
-                        waiting={waiting}
-                        setWaiting={setWaiting}
-                        isHidden={isHiddenSolution}
-                        setIsHidden={setIsHiddenSolution}
-                    />
-                ) : (
-                    <SolutionUz
-                        lang={lang}
-                        inputNumber={solutionLeftValue}
-                        fromBase={solutionFromBase}
-                        toBase={solutionToBase}
-                        setResult={setRightValue}
-                        waiting={waiting}
-                        setWaiting={setWaiting}
-                        isHidden={isHiddenSolution}
-                        setIsHidden={setIsHiddenSolution}
-                    />
-                )}
+                <Solution
+                    lang={lang}
+                    inputNumber={solutionLeftValue}
+                    fromBase={solutionFromBase}
+                    toBase={solutionToBase}
+                    setResult={setRightValue}
+                    waiting={waiting}
+                    setWaiting={setWaiting}
+                    isHidden={isHiddenSolution}
+                    setIsHidden={setIsHiddenSolution}
+                />
             </div>
         </Fragment>
     );

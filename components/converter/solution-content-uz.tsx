@@ -1,107 +1,28 @@
-"use client";
-
 import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
-import { Dispatch } from "react";
-import { SetStateAction } from "react";
-import { CONVERTER_SOLUTION_FRACTIONAL_PART } from "@/lib/default-values/fractional-part";
-import { CONVERTER_SOLUTION_FRACTIONAL_PART_ON_TO_BASE } from "@/lib/default-values/fractional-part";
-import { CONVERTER_SOLUTION_WHOLE_PART_ON_TO_BASE } from "@/lib/default-values/whole-part";
 import { NUMERAL_VALUE_DICTIONARY } from "@/lib/constants/numeral-system";
 import { SUPERSCRIPTMINUS } from "@/lib/constants/exponent";
 import { SUPERSCRIPTS } from "@/lib/constants/exponent";
 import { SUBSCRIPTS } from "@/lib/constants";
-import { Language } from "@/lib/types/language";
+import { SolutionContentProps } from "./solution";
 import { getTranslation } from "@/lib/translater/i18n";
-import { convertToDecimal } from "@/lib/utils/solution/convert-to-decimal";
-import { convertFractionToDecimal } from "@/lib/utils/solution/convert-fraction-to-decimal";
-import { convertFromDecimal } from "@/lib/utils/solution/convert-from-decimal";
-import { convertFractionFromDecimal } from "@/lib/utils/solution/convert-fraction-from-decimal";
-import { checkNumberFromBase } from "@/lib/utils/solution/check-number-from-base";
 import { InlineMath } from "react-katex";
 import { create, all } from "mathjs";
 import Spinner from "../global/spinner";
 
 const math = create(all);
 
-export type Props = {
-    inputNumber: string;
-    fromBase: number;
-    toBase: number;
-    lang: Language;
-    setResult: Dispatch<SetStateAction<string>>;
-    waiting: boolean;
-    setWaiting: Dispatch<SetStateAction<boolean>>;
-    isHidden: boolean;
-    setIsHidden: Dispatch<SetStateAction<boolean>>;
-};
+export default function SolutionContentUZ(props: SolutionContentProps) {
+    const { inputNumber, fromBase, toBase } = props;
+    const { part, isFractional, isNegative } = props;
+    const { waiting, isHidden } = props;
+    const { inputWholePart, inputFractionalPart } = props;
+    const { isHiddenStep1, isHiddenStep2 } = props;
+    const { isHiddenWholePart, isHiddenFractionalPart } = props;
+    const { decWholePart, decFractionalPart } = props;
+    const { toWholePart, toFractionalPart } = props;
+    const { lang } = props;
 
-export default function ConvertSolution({ inputNumber, fromBase, toBase, lang, setResult, setWaiting, waiting, isHidden, setIsHidden }: Props) {
     const t = getTranslation(lang);
-    const [isHiddenWholePart, setIsHiddenWholePart] = useState(true);
-    const [isHiddenFractionalPart, setIsHiddenFractionalPart] = useState(true);
-    const [isHiddenStep1, setIsHiddenStep1] = useState(true);
-    const [isHiddenStep2, setIsHiddenStep2] = useState(true);
-    const [part, setPart] = useState({ whole: false, fraction: false, negative: false, count: 0 });
-
-    const [isFractional, setIsFractional] = useState(false);
-    const [isNegative, setIsNegative] = useState(false);
-
-    const [inputWholePart, setInputWholePart] = useState("");
-    const [inputFractionalPart, setInputFractionalPart] = useState("");
-
-    const [decWholePart, setDecWholePart] = useState("");
-    const [decFractionalPart, setDecFractionalPart] = useState(CONVERTER_SOLUTION_FRACTIONAL_PART);
-
-    const [toWholePart, toDecWholePart] = useState(CONVERTER_SOLUTION_WHOLE_PART_ON_TO_BASE);
-    const [toFractionalPart, setToFractionalPart] = useState(CONVERTER_SOLUTION_FRACTIONAL_PART_ON_TO_BASE);
-
-    useEffect(() => {
-        const checkNumber = checkNumberFromBase(inputNumber, fromBase);
-        if (!checkNumber || !Boolean(inputNumber)) {
-            setIsHidden(true);
-        } else {
-            const checkNegative = inputNumber[0] === "-";
-            const checkFractional = inputNumber.includes(".");
-            const num = checkNegative ? inputNumber.slice(1).toUpperCase() : inputNumber.toUpperCase();
-
-            const wholePart = num.split(".")[0];
-            const fractionalPart = num.split(".")[1] || "";
-
-            const decWholePart = convertToDecimal(wholePart, fromBase);
-            const decFractionalPart = convertFractionToDecimal(fractionalPart, fromBase);
-
-            const toWholePart = convertFromDecimal(decWholePart, toBase);
-            const toFractionalPart = convertFractionFromDecimal(decFractionalPart, toBase);
-
-            setIsNegative(checkNegative);
-            setIsFractional(checkFractional);
-
-            setInputWholePart(wholePart);
-            setInputFractionalPart(fractionalPart);
-            setDecWholePart(String(decWholePart));
-            setDecFractionalPart(decFractionalPart);
-            toDecWholePart(toWholePart);
-            setToFractionalPart(toFractionalPart);
-
-            setPart({
-                whole: Boolean(wholePart),
-                fraction: Boolean(fractionalPart),
-                negative: checkNegative,
-                count: Number(Boolean(wholePart)) + Number(Boolean(fractionalPart)) + Number(checkNegative),
-            });
-
-            setResult(`${toFractionalPart.exact ? "" : "≈"}${checkNegative ? "-" : ""}${toWholePart.value}${checkFractional ? toFractionalPart.value : ""}`);
-
-            setIsHiddenStep1(fromBase === 10);
-            setIsHiddenStep2(toBase === 10);
-            setIsHiddenWholePart(!Boolean(wholePart));
-            setIsHiddenFractionalPart(!Boolean(fractionalPart));
-            setIsHidden(false);
-        }
-        setWaiting(false);
-    }, [inputNumber, fromBase, toBase]);
 
     return (
         <React.Fragment>
