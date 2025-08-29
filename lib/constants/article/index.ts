@@ -1,19 +1,11 @@
 import { Article } from "@/lib/types/article";
-import { Calculator } from "lucide-react";
+import { ARTICLES_001_PVNSS } from "./pozitsion-va-nopozitsion-sanoq-sistemalari";
+import { ARTICLES_002_SS } from "./sanoq-sistemasi";
 import { History } from "lucide-react";
 import { Hash } from "lucide-react";
-import { ARTICLES_001_PVNSS } from "./pozitsion-va-nopozitsion-sanoq-sistemalari";
 
 export const ARTICLES = [
-    {
-        title: "Numeral system",
-        description:
-            "A numeral system is a writing system for expressing numbers; that is, a mathematical notation for representing numbers of a given set, using digits or other symbols in a consistent manner.",
-        href: "/en/article/numeral-system",
-        lang: "en",
-        icon: Calculator,
-        color: "cyan",
-    },
+    ...ARTICLES_002_SS,
     {
         title: "O‘nlik sanoq sistemasi tarixi",
         description: "O‘nlik sanoq sistemasi tarixi, hind olimlari hissasi, al-Xorazmiy va nol raqami haqida tushunchalar",

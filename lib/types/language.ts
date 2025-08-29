@@ -14,8 +14,6 @@ export type Language =
     | "tt"
     | "ug"
     | "ba"
-    // | "kaa"
-    // | "crh"
     | "ar";
 
 export type MetaLang = Languages<string | URL | AlternateLinkDescriptor[] | null>;

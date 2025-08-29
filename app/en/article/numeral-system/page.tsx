@@ -1,67 +1,33 @@
 import React from "react";
 import Image from "next/image";
-import type { Metadata } from "next";
 import Container from "@/components/common/container";
+import { ARTICLES_002_SS_METALANG } from "@/lib/constants/article/sanoq-sistemasi";
+import { SEO } from "@/lib/utils/generate-metadata";
+import type { Metadata } from "next";
 
 export function generateMetadata(): Metadata {
-    return {
-        title: "Numeral system — Overview, History, and Types",
-        description:
-            "An in-depth article about numeral systems, their history, different types, and how numbers are represented across cultures, mathematics, and computing.",
-        keywords: [
-            "numeral system",
-            "number system",
-            "Hindu-Arabic numerals",
-            "history of numerals",
-            "positional notation",
-            "binary system",
-            "decimal system",
-            "Roman numerals",
-            "Maya numerals",
-            "mathematics",
-            "number representation",
-            "computing numeral systems",
-        ].join(", "),
+    const lang = "en";
+    const url = ARTICLES_002_SS_METALANG[lang] as string;
 
-        authors: [{ name: "Najmiddin Nazirov", url: "https://sanoq.uz/about" }],
-        creator: "Najmiddin Nazirov",
+    const title = "Numeral system — Overview, History, and Types";
+    const description =
+        "An in-depth article about numeral systems, their history, different types, and how numbers are represented across cultures, mathematics, and computing.";
+    const keywords = [
+        "numeral system",
+        "number system",
+        "Hindu-Arabic numerals",
+        "history of numerals",
+        "positional notation",
+        "binary system",
+        "decimal system",
+        "Roman numerals",
+        "Maya numerals",
+        "mathematics",
+        "number representation",
+        "computing numeral systems",
+    ].join(", ");
 
-        robots: {
-            index: true,
-            follow: true,
-            nocache: false,
-            googleBot: {
-                index: true,
-                follow: true,
-                "max-video-preview": -1,
-                "max-image-preview": "large",
-                "max-snippet": -1,
-            },
-        },
-
-        openGraph: {
-            title: "Numeral system — Overview, History, and Types",
-            description: "Explore the fascinating world of numeral systems including their history, variants, and significance in math and computing.",
-            url: "https://sanoq.uz/en/article/numeral-system",
-            siteName: "sanoq.uz",
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", width: 1000, height: 749, alt: "sanoq.uz" }],
-            locale: "en",
-            type: "article",
-        },
-        twitter: {
-            card: "summary_large_image",
-            title: "Numeral system — Overview, History, and Types",
-            description: "Detailed article on numeral systems and their impact on math, science, and technology.",
-            images: [{ url: "https://sanoq.uz/images/sanoq.uz.png", alt: "sanoq.uz" }],
-            creator: "@jarkurghan",
-        },
-
-        metadataBase: new URL("https://sanoq.uz"),
-        alternates: {
-            canonical: "https://sanoq.uz/en/article/numeral-system",
-            languages: { en: "https://sanoq.uz/en/article/numeral-system" },
-        },
-    };
+    return SEO({ title, description, url, keywords, alterLangs: ARTICLES_002_SS_METALANG, lang, pageType: "article" });
 }
 
 const NumeralSystem = () => {
