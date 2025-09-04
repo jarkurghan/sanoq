@@ -17,6 +17,7 @@ Barcha versiya o‘zgarishlari shu yerda qayd etiladi.
     -   Tojik tili
     -   Arab tili
 -   Barcha tillar uchun yangi maqola qo'shildi: Pozitsion va nopozitsion sanoq sistemalari
+-   Barcha tillar uchun yangi maqola qo'shildi: Sanoq sistemasi
 
 **O‘zgartirildi:**
 -   publications -> article
