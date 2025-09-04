@@ -49,7 +49,7 @@ export default async function CalculatorPage({ params }: Props) {
 
     return (
         <div className="flex">
-            <Content className="prose prose-lg prose-sm flex-1">
+            <Content className="prose prose-lg flex-1">
                 <div className="sm:grid grid-cols-[1fr_auto] gap-8 xl:gap-20">
                     <header>
                         <h1>{t("calculator.standard.title")}</h1>

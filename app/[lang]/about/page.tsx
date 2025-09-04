@@ -43,7 +43,7 @@ export default async function AboutPage({ params }: Props) {
 
     return (
         <div className="flex">
-            <Content className="flex-1 prose prose-lg prose-sm text-justify">
+            <Content className="flex-1 prose prose-lg text-justify">
                 <div>
                     <header>
                         <h1>{t("about.title")}</h1>

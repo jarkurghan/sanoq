@@ -16,7 +16,7 @@ export default function ArticlePositionalNonpositional() {
     return (
         <main className="flex">
             <article className="flex-1 text-justify">
-                <Container className="prose prose-lg prose-sm">
+                <Container className="prose prose-lg">
                     <header>
                         <h1>Positional vs Non-Positional Numeral Systems</h1>
                         <p>

@@ -28,7 +28,9 @@ export default function ShareAppURL({ children, lang }: { children?: React.React
 
     return (
         <Dialog>
-            <DialogTrigger className="h-6 w-6 sm:h-9 sm:w-9 flex items-center justify-center">{children}</DialogTrigger>
+            <DialogTrigger className="flex items-center justify-center" asChild>
+                {children}
+            </DialogTrigger>
             <DialogContent>
                 <DialogHeader>
                     <DialogTitle>{t("share.title")}</DialogTitle>

@@ -4,7 +4,7 @@ export default function Footer() {
             <div className="container py-4 text-center text-xs">
                 <p>
                     {/* © {new Date().getFullYear()} Number Systems. {t("footer.rights")} */}
-                    Sanoq.uz {new Date().getFullYear()}
+                    sanoq.uz {new Date().getFullYear()}
                 </p>
             </div>
         </footer>

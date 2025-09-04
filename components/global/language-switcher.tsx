@@ -1,47 +1,85 @@
-"use client";
-
+import Link from "next/link";
 import { Button } from "@/components/utils/button";
-import { DropdownMenu, DropdownMenuContent } from "@/components/utils/dropdown-menu";
-import { DropdownMenuItem, DropdownMenuTrigger } from "@/components/utils/dropdown-menu";
-import { useRouter, usePathname, useParams } from "next/navigation";
-import { Check, Globe } from "lucide-react";
-import { Language } from "@/lib/types/language";
+import { DropdownMenu } from "@/components/utils/dropdown-menu";
+import { DropdownMenuItem } from "@/components/utils/dropdown-menu";
+import { DropdownMenuContent } from "@/components/utils/dropdown-menu";
+import { DropdownMenuTrigger } from "@/components/utils/dropdown-menu";
 import { LANGUAGES } from "@/lib/constants/languages";
+import { Language } from "@/lib/types/language";
+import { Base } from "@/lib/types/base";
+import { Check } from "lucide-react";
+import { Globe } from "lucide-react";
 
-export default function LanguageSwitcher({ lang: language }: { lang: Language }) {
-    const router = useRouter();
-    const pathname = usePathname();
-    const params = useParams();
-
-    const handleLanguageChange = (newLang: Language) => {
-        const isInArticle = pathname.startsWith(`/${language}/article/`) && pathname !== `/${language}/article/`;
-        const articlePageURL = `/${newLang}/article/`;
-
-        localStorage.setItem("language", newLang);
-
-        const currentLang = params.lang as string;
-        const pathWithoutLang = pathname.replace(`/${currentLang}`, "") || "";
-
-        const newPath = isInArticle ? articlePageURL : `/${newLang}${pathWithoutLang}`;
-        router.push(newPath);
-    };
-
+type Props = { lang: Language; page: "article" | "converter" | "about" | "calculator"; base?: Base };
+export default function LanguageSwitcher({ lang: language, page, base }: Props) {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="h-6 w-6 sm:h-9 sm:w-9">
-                    <Globe className="h-4 w-4" />
+                <Button variant="ghost" size="icon" type="button" aria-label="change-lang">
+                    <Globe className="h-6 w-6" />
                     <span className="sr-only">Switch language</span>
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
                 {LANGUAGES.map((lang) => (
-                    <DropdownMenuItem key={lang.code} onClick={() => handleLanguageChange(lang.code)} className="flex items-center justify-between">
-                        {lang.name}
-                        {language === lang.code && <Check className="h-4 w-4 ml-2" />}
-                    </DropdownMenuItem>
+                    <MenuItem base={base} lang={lang} language={language} page={page} key={lang.code} />
                 ))}
             </DropdownMenuContent>
         </DropdownMenu>
     );
+}
+
+type PropsMenuItem = {
+    base?: Base;
+    language: Language;
+    lang: { code: Language; name: string };
+    page: "article" | "converter" | "about" | "calculator";
+};
+function MenuItem({ page, lang, language, base }: PropsMenuItem) {
+    const icon = <Check className="h-4 w-4 ml-2" />;
+
+    switch (page) {
+        case "about":
+            return (
+                <DropdownMenuItem>
+                    <Link href={`/${lang.code}/about`} className="flex items-center justify-between">
+                        {lang.name} {language === lang.code && icon}
+                    </Link>
+                </DropdownMenuItem>
+            );
+
+        case "article":
+            return (
+                <DropdownMenuItem>
+                    {language === lang.code ? (
+                        <div className="flex items-center justify-between">
+                            {lang.name} {icon}
+                        </div>
+                    ) : (
+                        <Link href={`/${lang.code}/article`}>{lang.name}</Link>
+                    )}
+                </DropdownMenuItem>
+            );
+
+        case "converter":
+            return (
+                <DropdownMenuItem>
+                    <Link href={`/${lang.code}`} className="flex items-center justify-between">
+                        {lang.name} {language === lang.code && icon}
+                    </Link>
+                </DropdownMenuItem>
+            );
+
+        case "calculator":
+            return (
+                <DropdownMenuItem>
+                    <Link href={`/${lang.code}/calculator/${base}`} className="flex items-center justify-between">
+                        {lang.name} {language === lang.code && icon}
+                    </Link>
+                </DropdownMenuItem>
+            );
+
+        default:
+            return <div></div>;
+    }
 }

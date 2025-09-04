@@ -16,7 +16,7 @@ export default function MaqolaPozitsionNopozitsion_AR() {
     return (
         <main className="flex" dir="rtl" lang="ar">
             <article className="flex-1 text-justify">
-                <Container className="prose prose-lg prose-sm">
+                <Container className="prose prose-lg">
                     <header>
                         <h1>أنظمة العد الموضعية وغير الموضعية</h1>
                         <p>

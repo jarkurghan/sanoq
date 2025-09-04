@@ -44,7 +44,7 @@ export default async function ArticlesPage({ params }: Props) {
     return (
         <div className="flex">
             <div className="flex-1">
-                <Content className="prose prose-lg prose-sm">
+                <Content className="prose prose-lg">
                     <header className="hidden">
                         <h1>{t("article.seo.title")}</h1>
                         <p>{t("article.seo.description")}</p>

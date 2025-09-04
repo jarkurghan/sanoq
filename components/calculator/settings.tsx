@@ -1,22 +1,25 @@
-import { Dialog, DialogHeader } from "@/components/utils/dialog";
-import { DialogContent, DialogTitle, DialogTrigger } from "@/components/utils/dialog";
+import Link from "next/link";
+import { Dialog } from "@/components/utils/dialog";
+import { DialogHeader } from "@/components/utils/dialog";
+import { DialogContent } from "@/components/utils/dialog";
+import { DialogTitle } from "@/components/utils/dialog";
+import { DialogTrigger } from "@/components/utils/dialog";
+import { NUMERAL_NAME_TO_LINGUISTIC_NAME } from "@/lib/constants/numeral-system";
+import { NUMBER_SYSTEMS } from "@/lib/constants/numeral-system";
+import { DropdownMenuContent } from "../utils/dropdown-menu";
+import { DropdownMenuTrigger } from "../utils/dropdown-menu";
+import { DropdownMenuItem } from "../utils/dropdown-menu";
+import { DropdownMenu } from "../utils/dropdown-menu";
 import { getTranslation } from "@/lib/translater/i18n";
 import { Language } from "@/lib/types/language";
-import { NUMBER_SYSTEMS } from "@/lib/constants/numeral-system";
-import { NUMERAL_NAME_TO_LINGUISTIC_NAME } from "@/lib/constants/numeral-system";
 import { Base } from "@/lib/types/base";
-import { DropdownMenu } from "../utils/dropdown-menu";
-import { DropdownMenuContent } from "../utils/dropdown-menu";
-import { DropdownMenuItem } from "../utils/dropdown-menu";
-import { DropdownMenuTrigger } from "../utils/dropdown-menu";
-import Link from "next/link";
 
 export default function CalculatorSettings({ children, lang, base }: { children?: React.ReactNode; lang: Language; base: Base }) {
     const t = getTranslation(lang);
 
     return (
         <Dialog>
-            <DialogTrigger className="h-6 w-6 sm:h-9 sm:w-9 flex items-center justify-center">{children}</DialogTrigger>
+            <DialogTrigger className="flex items-center justify-center">{children}</DialogTrigger>
             <DialogContent>
                 <DialogHeader>
                     <DialogTitle>{t("calculator.settings.title")}</DialogTitle>

@@ -16,7 +16,7 @@ export default function MaqalaPozitsionHemTugel() {
     return (
         <main className="flex">
             <article className="flex-1 text-justify">
-                <Container className="prose prose-lg prose-sm">
+                <Container className="prose prose-lg">
                     <header>
                         <h1>Позицион һәм позицион түгел сан системалары</h1>
                         <p>

@@ -51,7 +51,7 @@ export default function SanoqSistemalarFarqiSonRaqamVaQiymat() {
     return (
         <main className="flex">
             <article className="flex-1 text-justify">
-                <Container className="prose prose-lg prose-sm">
+                <Container className="prose prose-lg">
                     <header>
                         <h1 >Sanoq sistemalari farqi: Son, raqam va qiymat</h1>
                     </header>

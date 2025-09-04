@@ -16,7 +16,7 @@ export default function MaqolaPozitsionNopozitsion() {
     return (
         <main className="flex">
             <article className="flex-1 text-justify">
-                <Container className="prose prose-lg prose-sm">
+                <Container className="prose prose-lg">
                     <header>
                         <h1>Pozitsion va nopozitsion sanoq sistemalari</h1>
                         <p>

@@ -1,21 +1,20 @@
-import type React from "react";
+import type { ReactNode } from "react";
+import { Language } from "@/lib/types/language";
 import Navbar from "@/components/global/header/navbar";
 import Footer from "@/components/global/footer";
-// import Sidebar from "@/components/global/left-sidebar";
-import { Language } from "@/lib/types/language";
 
 type Props = {
-    children: React.ReactNode;
+    children: ReactNode;
+    params: Promise<{ lang: Language }>;
 };
 
-export default function Layout({ children }: Props) {
-    const lang: Language = "uz";
+export default async function Layout({ children, params }: Props) {
+    const { lang } = await params;
 
     return (
         <div className="flex min-h-screen flex-col">
-            <Navbar lang={lang} page="article" />
+            <Navbar lang={lang} page="converter" />
             <div className="flex flex-1">
-                {/* <Sidebar lang={lang} /> */}
                 <main className="flex-1">{children}</main>
             </div>
             <Footer />

@@ -44,7 +44,7 @@ export default async function HomePage({ params }: Props) {
     return (
         <div className="flex">
             <div className="flex-1 text-justify">
-                <Content className="prose prose-lg prose-sm">
+                <Content className="prose prose-lg">
                     <header>
                         <h1>{t("home.seo.title")}</h1>
                         {/* <div className="hidden sm:block border-b pt-2 pb-4 mb-6 text-sm"> */}

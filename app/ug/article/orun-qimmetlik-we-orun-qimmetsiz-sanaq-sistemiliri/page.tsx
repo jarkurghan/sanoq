@@ -22,7 +22,7 @@ export default function MaqolaPozitsionNopozitsion_UY() {
     return (
         <main className="flex" dir="rtl" lang="ug">
             <article className="flex-1 text-justify">
-                <Container className="prose prose-lg prose-sm">
+                <Container className="prose prose-lg">
                     <header>
                         <h1>ئورۇن قىممەتلىك ۋە ئورۇن قىممەتسىز ساناق سىستېمىلىرى</h1>
                         <p>
