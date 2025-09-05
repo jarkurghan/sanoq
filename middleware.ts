@@ -7,6 +7,8 @@ const languages: Language[] = LANGUAGES.map((lang) => lang.code);
 const defaultLang: Language = "uz";
 
 export function middleware(request: NextRequest) {
+    const ip = request.headers.get("x-forwarded-for")?.split(",")[0] || "unknown";
+
     const pathname = request.nextUrl.pathname;
     const response = NextResponse.next();
 
@@ -50,6 +52,7 @@ export const config = {
     matcher: [
         "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|ba|ar)?",
         "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|ba|ar)?/calculator",
+        "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|ba|ar)?/calculator/:path*",
         "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|ba|ar)?/article",
         "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|ba|ar)?/about",
         "/:lang(uz|en|ru|tg|tr|az|kk|ky|tk|tt|ug|ba|ar)?/article/:path*",

@@ -117,6 +117,8 @@ export default async function AboutPage({ params }: Props) {
                             </div>
                         </div>
                     </div>
+
+                    {/* to-do: our team */}
                 </div>
             </Content>
         </div>

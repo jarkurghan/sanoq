@@ -2,7 +2,7 @@
 
 Barcha versiya o‘zgarishlari shu yerda qayd etiladi.
 
-### v1.3.0 — 2025-08-18
+### v1.3.0 — 2025-09-05
 
 **Yangi:**
 -   Yangi tillar qo‘shildi
@@ -18,13 +18,19 @@ Barcha versiya o‘zgarishlari shu yerda qayd etiladi.
     -   Arab tili
 -   Barcha tillar uchun yangi maqola qo'shildi: Pozitsion va nopozitsion sanoq sistemalari
 -   Barcha tillar uchun yangi maqola qo'shildi: Sanoq sistemasi
+-   middleware orqali saytga kirish kuzatib boriladi
 
 **O‘zgartirildi:**
 -   publications -> article
+-   navbar server side qilindi
 
 **Tuzatildi:**
 -   Maqola ichida tilni o'zgartirish ishga tushdi
 -   header content kengligi body content kengligiga mos
+-   /calculator/:base pagedan /:lang/calculator/:base pagega yo'naltiriladi
+
+**Muammo:**
+-   Solution faqat o'zbek tilida
 
 ### v1.2.0 — 2025-08-18
 
